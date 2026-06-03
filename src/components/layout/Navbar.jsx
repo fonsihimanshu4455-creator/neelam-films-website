@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { Link, NavLink, useLocation } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Menu, X, ChevronDown, Film } from 'lucide-react'
+import { Menu, X, ChevronDown, Clapperboard } from 'lucide-react'
 import { useData } from '../../context/DataContext'
 import Button from '../common/Button'
 
@@ -18,41 +18,40 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const location = useLocation()
 
-  // Close mobile menu on route change
   useEffect(() => {
     setOpen(false)
     setServicesOpen(false)
   }, [location.pathname])
 
-  // Shadow on scroll
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 10)
+    const onScroll = () => setScrolled(window.scrollY > 24)
+    onScroll()
     window.addEventListener('scroll', onScroll)
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
   const linkClass = ({ isActive }) =>
-    `text-sm font-medium transition-colors ${
-      isActive ? 'text-primary-500' : 'text-dark-900 hover:text-primary-500'
+    `link-underline text-sm font-medium transition-colors ${
+      isActive ? 'text-primary-400' : 'text-white/80 hover:text-white'
     }`
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 bg-white transition-shadow duration-300 ${
-        scrolled ? 'shadow-md' : 'shadow-sm'
+      className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${
+        scrolled ? 'border-b border-white/10 bg-ink-950/70 backdrop-blur-xl' : 'bg-transparent'
       }`}
     >
-      <nav className="mx-auto flex h-[72px] max-w-7xl items-center justify-between px-4 md:px-8">
+      <nav className="mx-auto flex h-[76px] max-w-7xl items-center justify-between px-5 md:px-8">
         {/* Logo */}
-        <Link to="/" className="flex items-center gap-2">
-          <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-primary-500 to-primary-700 text-white">
-            <Film size={22} />
+        <Link to="/" className="group flex items-center gap-2.5">
+          <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-primary-400 to-primary-700 text-white shadow-lg shadow-primary-500/30 transition group-hover:scale-105">
+            <Clapperboard size={20} />
           </span>
           <span className="flex flex-col leading-none">
-            <span className="font-display text-lg font-extrabold text-dark-900">
-              Neelam<span className="text-primary-500"> Films</span>
+            <span className="font-display text-lg font-extrabold tracking-tight text-white">
+              Neelam<span className="text-primary-400"> Films</span>
             </span>
-            <span className="text-[10px] font-medium uppercase tracking-widest text-slate-400">
+            <span className="text-[9px] font-medium uppercase tracking-[0.3em] text-white/40">
               Since 1995
             </span>
           </span>
@@ -66,33 +65,33 @@ export default function Navbar() {
             </NavLink>
           ))}
 
-          {/* Services dropdown */}
           <div
             className="relative"
             onMouseEnter={() => setServicesOpen(true)}
             onMouseLeave={() => setServicesOpen(false)}
           >
-            <button className="flex items-center gap-1 text-sm font-medium text-dark-900 transition-colors hover:text-primary-500">
+            <button className="flex items-center gap-1 text-sm font-medium text-white/80 transition-colors hover:text-white">
               Services
-              <ChevronDown size={16} className={servicesOpen ? 'rotate-180 transition' : 'transition'} />
+              <ChevronDown size={15} className={`transition ${servicesOpen ? 'rotate-180' : ''}`} />
             </button>
             <AnimatePresence>
               {servicesOpen && (
                 <motion.div
-                  initial={{ opacity: 0, y: 10 }}
+                  initial={{ opacity: 0, y: 12 }}
                   animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: 10 }}
+                  exit={{ opacity: 0, y: 12 }}
                   transition={{ duration: 0.2 }}
-                  className="absolute left-1/2 top-full w-64 -translate-x-1/2 pt-3"
+                  className="absolute left-1/2 top-full w-72 -translate-x-1/2 pt-4"
                 >
-                  <div className="overflow-hidden rounded-2xl border border-slate-100 bg-white p-2 shadow-xl">
+                  <div className="glass overflow-hidden rounded-2xl p-2 shadow-2xl">
                     {services.map((s) => (
                       <Link
                         key={s.id}
                         to={s.slug}
-                        className="block rounded-xl px-4 py-2.5 text-sm font-medium text-dark-700 transition hover:bg-primary-50 hover:text-primary-600"
+                        className="flex items-center justify-between rounded-xl px-4 py-2.5 text-sm font-medium text-white/75 transition hover:bg-primary-500/15 hover:text-white"
                       >
                         {s.title}
+                        <ChevronDown size={14} className="-rotate-90 opacity-50" />
                       </Link>
                     ))}
                   </div>
@@ -101,23 +100,16 @@ export default function Navbar() {
             </AnimatePresence>
           </div>
 
-          <NavLink to="/portfolio" className={linkClass}>
-            Portfolio
-          </NavLink>
-          <NavLink to="/contact" className={linkClass}>
-            Contact
-          </NavLink>
+          <NavLink to="/portfolio" className={linkClass}>Portfolio</NavLink>
+          <NavLink to="/contact" className={linkClass}>Contact</NavLink>
         </div>
 
         <div className="hidden lg:block">
-          <Button to="/contact" className="px-6 py-2.5">
-            Get Quote
-          </Button>
+          <Button to="/contact" className="px-6 py-2.5">Get Quote</Button>
         </div>
 
-        {/* Mobile toggle */}
         <button
-          className="lg:hidden"
+          className="text-white lg:hidden"
           onClick={() => setOpen((o) => !o)}
           aria-label="Toggle menu"
         >
@@ -133,22 +125,17 @@ export default function Navbar() {
             animate={{ height: 'auto', opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="overflow-hidden border-t border-slate-100 bg-white lg:hidden"
+            className="overflow-hidden border-t border-white/10 bg-ink-950/95 backdrop-blur-xl lg:hidden"
           >
-            <div className="flex flex-col gap-1 px-4 py-4">
+            <div className="flex flex-col gap-1 px-5 py-5">
               {NAV_LINKS.map((l) => (
-                <NavLink
-                  key={l.to}
-                  to={l.to}
-                  className="rounded-lg px-3 py-2.5 font-medium text-dark-900 hover:bg-primary-50"
-                >
+                <NavLink key={l.to} to={l.to} className="rounded-lg px-3 py-2.5 font-medium text-white/85 hover:bg-white/5">
                   {l.label}
                 </NavLink>
               ))}
-
               <button
                 onClick={() => setServicesOpen((s) => !s)}
-                className="flex items-center justify-between rounded-lg px-3 py-2.5 font-medium text-dark-900 hover:bg-primary-50"
+                className="flex items-center justify-between rounded-lg px-3 py-2.5 font-medium text-white/85 hover:bg-white/5"
               >
                 Services
                 <ChevronDown size={16} className={servicesOpen ? 'rotate-180' : ''} />
@@ -162,27 +149,16 @@ export default function Navbar() {
                     className="overflow-hidden pl-4"
                   >
                     {services.map((s) => (
-                      <Link
-                        key={s.id}
-                        to={s.slug}
-                        className="block rounded-lg px-3 py-2 text-sm text-dark-700 hover:bg-primary-50 hover:text-primary-600"
-                      >
+                      <Link key={s.id} to={s.slug} className="block rounded-lg px-3 py-2 text-sm text-white/65 hover:bg-white/5 hover:text-primary-300">
                         {s.title}
                       </Link>
                     ))}
                   </motion.div>
                 )}
               </AnimatePresence>
-
-              <NavLink to="/portfolio" className="rounded-lg px-3 py-2.5 font-medium text-dark-900 hover:bg-primary-50">
-                Portfolio
-              </NavLink>
-              <NavLink to="/contact" className="rounded-lg px-3 py-2.5 font-medium text-dark-900 hover:bg-primary-50">
-                Contact
-              </NavLink>
-              <Button to="/contact" className="mt-2 w-full">
-                Get Quote
-              </Button>
+              <NavLink to="/portfolio" className="rounded-lg px-3 py-2.5 font-medium text-white/85 hover:bg-white/5">Portfolio</NavLink>
+              <NavLink to="/contact" className="rounded-lg px-3 py-2.5 font-medium text-white/85 hover:bg-white/5">Contact</NavLink>
+              <Button to="/contact" className="mt-2 w-full">Get Quote</Button>
             </div>
           </motion.div>
         )}

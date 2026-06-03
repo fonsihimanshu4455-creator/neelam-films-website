@@ -1,18 +1,19 @@
 import { Link } from 'react-router-dom'
-import { motion } from 'framer-motion'
+import Magnetic from './Magnetic'
 
 /**
- * Reusable button. Renders as a Link (internal), <a> (external) or <button>.
- * Variants: primary | outline | white | dark
+ * Premium pill button with a sliding fill on hover.
+ * Renders as Link (internal), <a> (external) or <button>.
+ * Variants: primary | outline | white | ghost | dark
  */
 const VARIANTS = {
   primary:
-    'bg-primary-500 text-white hover:bg-primary-600 shadow-lg shadow-primary-500/30',
+    'text-white bg-primary-500 shadow-[0_8px_30px_-6px_rgba(14,165,233,0.6)] hover:shadow-[0_12px_40px_-6px_rgba(14,165,233,0.8)] before:bg-white hover:text-primary-700',
   outline:
-    'border-2 border-primary-500 text-primary-600 hover:bg-primary-500 hover:text-white',
-  white: 'bg-white text-dark-900 hover:bg-primary-50',
-  dark: 'bg-dark-900 text-white hover:bg-dark-800',
-  ghost: 'text-white border-2 border-white/40 hover:bg-white/10',
+    'text-white border border-white/25 before:bg-white hover:text-ink-950',
+  white: 'text-ink-950 bg-white before:bg-primary-500 hover:text-white',
+  ghost: 'text-white border border-white/15 bg-white/5 before:bg-white hover:text-ink-950',
+  dark: 'text-white bg-ink-800 before:bg-primary-500 hover:text-white',
 }
 
 export default function Button({
@@ -21,47 +22,38 @@ export default function Button({
   href,
   variant = 'primary',
   className = '',
+  magnetic = true,
   ...props
 }) {
   const base =
-    'inline-flex items-center justify-center gap-2 rounded-full px-7 py-3.5 text-sm font-semibold transition-all duration-300 ' +
+    'group relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-full px-7 py-3.5 text-sm font-semibold transition-colors duration-500 ' +
+    'before:absolute before:inset-0 before:-z-0 before:origin-bottom before:scale-y-0 before:rounded-full before:transition-transform before:duration-500 before:ease-[cubic-bezier(0.65,0,0.35,1)] hover:before:scale-y-100 ' +
     (VARIANTS[variant] || VARIANTS.primary) +
     ' ' +
     className
 
-  const motionProps = {
-    whileHover: { scale: 1.04 },
-    whileTap: { scale: 0.97 },
-  }
+  const content = <span className="relative z-10 inline-flex items-center gap-2">{children}</span>
 
+  let el
   if (to) {
-    return (
-      <motion.div {...motionProps} className="inline-block">
-        <Link to={to} className={base} {...props}>
-          {children}
-        </Link>
-      </motion.div>
+    el = (
+      <Link to={to} className={base} {...props}>
+        {content}
+      </Link>
+    )
+  } else if (href) {
+    el = (
+      <a href={href} target="_blank" rel="noopener noreferrer" className={base} {...props}>
+        {content}
+      </a>
+    )
+  } else {
+    el = (
+      <button className={base} {...props}>
+        {content}
+      </button>
     )
   }
 
-  if (href) {
-    return (
-      <motion.a
-        href={href}
-        target="_blank"
-        rel="noopener noreferrer"
-        className={base}
-        {...motionProps}
-        {...props}
-      >
-        {children}
-      </motion.a>
-    )
-  }
-
-  return (
-    <motion.button className={base} {...motionProps} {...props}>
-      {children}
-    </motion.button>
-  )
+  return magnetic ? <Magnetic strength={0.25}>{el}</Magnetic> : el
 }

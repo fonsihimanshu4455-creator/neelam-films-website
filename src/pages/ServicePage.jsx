@@ -8,11 +8,11 @@ import CTASection from '../components/common/CTASection'
 import VideoModal from '../components/common/VideoModal'
 import Button from '../components/common/Button'
 import Icon from '../components/common/Icon'
+import Reveal from '../components/common/Reveal'
 import EquipmentGrid from '../components/services/EquipmentGrid'
 
 /**
- * Generic service page driven by the service id (from services.json).
- * Renders hero, offers, process, gallery, sample video, pricing & CTA.
+ * Generic dark service page driven by the service id (services.json).
  */
 export default function ServicePage({ serviceId }) {
   const { data } = useData()
@@ -36,65 +36,67 @@ export default function ServicePage({ serviceId }) {
         image={service.hero}
       >
         <Button to="/contact">
-          Request a Quote <ArrowRight size={18} />
+          Request a quote <ArrowRight size={18} />
         </Button>
       </PageHero>
 
       {/* What we offer */}
-      <section className="px-4 py-24 md:px-8">
+      <section className="px-5 py-24 md:px-8 md:py-32">
         <div className="mx-auto max-w-7xl">
-          <SectionHeader
-            eyebrow="What We Offer"
-            title={`Our ${service.title} Capabilities`}
-            subtitle="A complete, end-to-end offering tailored to your needs."
-          />
-          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mb-14">
+            <SectionHeader
+              align="left"
+              eyebrow="What we offer"
+              title={`Our ${service.title} capabilities`}
+              subtitle="A complete, end-to-end offering tailored to your needs."
+            />
+          </div>
+          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {service.offers.map((o, i) => (
               <motion.div
                 key={o.title}
                 initial={{ opacity: 0, y: 24 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: (i % 3) * 0.08 }}
-                whileHover={{ y: -5 }}
-                className="rounded-3xl border border-slate-100 bg-white p-7 shadow-sm transition hover:shadow-lg"
+                transition={{ duration: 0.5, delay: (i % 3) * 0.08 }}
+                whileHover={{ y: -6 }}
+                className="group rounded-3xl border border-white/10 bg-white/[0.03] p-7 transition hover:border-primary-500/40 hover:bg-white/[0.06]"
               >
-                <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-primary-50 text-primary-500">
+                <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-primary-500/15 text-primary-400 transition group-hover:bg-primary-500 group-hover:text-white">
                   <Icon name={service.icon} size={24} />
                 </span>
-                <h3 className="mt-4 font-display text-lg font-bold text-dark-900">{o.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-slate-500">{o.desc}</p>
+                <h3 className="mt-5 font-display text-xl font-bold text-white">{o.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-slate-400">{o.desc}</p>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Equipment grid (only for equipment rental) */}
+      {/* Equipment grid (equipment rental only) */}
       {service.id === 'equipment-rental' && <EquipmentGrid />}
 
       {/* Our process */}
-      <section className="bg-dark-900 px-4 py-24 md:px-8">
+      <section className="border-y border-white/10 bg-ink-900/40 px-5 py-24 md:px-8 md:py-32">
         <div className="mx-auto max-w-7xl">
-          <SectionHeader
-            light
-            eyebrow="How We Work"
-            title="Our Process"
-            subtitle="A proven, transparent workflow from first call to final delivery."
-          />
-          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mb-14 flex justify-center text-center">
+            <SectionHeader
+              eyebrow="How we work"
+              title="Our process"
+              subtitle="A proven, transparent workflow from first call to final delivery."
+            />
+          </div>
+          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {service.process.map((p, i) => (
               <motion.div
                 key={p.step}
                 initial={{ opacity: 0, y: 24 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: i * 0.1 }}
-                className="relative rounded-3xl border border-white/10 bg-white/5 p-7"
+                transition={{ duration: 0.5, delay: i * 0.1 }}
+                className="relative rounded-3xl border border-white/10 bg-white/[0.03] p-7"
               >
-                <span className="font-display text-5xl font-extrabold text-primary-500/40">
-                  {p.step}
-                </span>
+                <span className="font-display text-6xl font-extrabold text-primary-500/25">{p.step}</span>
                 <h3 className="mt-3 font-display text-lg font-bold text-white">{p.title}</h3>
                 <p className="mt-2 text-sm text-slate-400">{p.desc}</p>
               </motion.div>
@@ -104,9 +106,11 @@ export default function ServicePage({ serviceId }) {
       </section>
 
       {/* Gallery */}
-      <section className="px-4 py-24 md:px-8">
+      <section className="px-5 py-24 md:px-8 md:py-32">
         <div className="mx-auto max-w-7xl">
-          <SectionHeader eyebrow="Showcase" title="Recent Work" />
+          <div className="mb-14 flex justify-center text-center">
+            <SectionHeader eyebrow="Showcase" title="Recent work" />
+          </div>
           <div className="grid grid-cols-2 gap-4 md:grid-cols-3">
             {service.gallery.map((img, i) => (
               <motion.div
@@ -114,14 +118,14 @@ export default function ServicePage({ serviceId }) {
                 initial={{ opacity: 0, scale: 0.95 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: (i % 3) * 0.08 }}
+                transition={{ duration: 0.5, delay: (i % 3) * 0.08 }}
                 className="group aspect-square overflow-hidden rounded-2xl"
               >
                 <img
                   src={img}
                   alt={`${service.title} work ${i + 1}`}
                   loading="lazy"
-                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
               </motion.div>
             ))}
@@ -130,39 +134,42 @@ export default function ServicePage({ serviceId }) {
       </section>
 
       {/* Sample video */}
-      <section className="bg-white px-4 pb-24 md:px-8">
+      <section className="px-5 pb-24 md:px-8 md:pb-32">
         <div className="mx-auto max-w-5xl">
-          <SectionHeader eyebrow="Watch" title="Sample Reel" />
-          <motion.button
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            onClick={() => setVideoOpen(true)}
-            className="group relative block aspect-video w-full overflow-hidden rounded-3xl shadow-xl"
-          >
-            <img
-              src={service.gallery[0]}
-              alt="Sample reel"
-              loading="lazy"
-              className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-            />
-            <div className="absolute inset-0 bg-dark-900/40" />
-            <span className="absolute left-1/2 top-1/2 flex h-20 w-20 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white/90 text-primary-600 transition group-hover:scale-110">
-              <Play size={32} fill="currentColor" />
-            </span>
-          </motion.button>
+          <div className="mb-14 flex justify-center text-center">
+            <SectionHeader eyebrow="Watch" title="Sample reel" />
+          </div>
+          <Reveal variant="scale">
+            <button
+              onClick={() => setVideoOpen(true)}
+              className="group relative block aspect-video w-full overflow-hidden rounded-3xl border border-white/10"
+            >
+              <img
+                src={service.gallery[0]}
+                alt="Sample reel"
+                loading="lazy"
+                className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-ink-950/50" />
+              <span className="absolute left-1/2 top-1/2 flex h-20 w-20 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white/90 text-primary-600 transition group-hover:scale-110">
+                <Play size={32} fill="currentColor" />
+              </span>
+            </button>
+          </Reveal>
         </div>
       </section>
 
       {/* Pricing */}
       {service.pricing && service.pricing.length > 0 && (
-        <section className="bg-[#F8FAFC] px-4 py-24 md:px-8">
+        <section className="border-t border-white/10 bg-ink-900/40 px-5 py-24 md:px-8 md:py-32">
           <div className="mx-auto max-w-7xl">
-            <SectionHeader
-              eyebrow="Pricing"
-              title="Transparent Packages"
-              subtitle="Indicative starting prices. Contact us for a custom quote."
-            />
+            <div className="mb-14 flex justify-center text-center">
+              <SectionHeader
+                eyebrow="Pricing"
+                title="Transparent packages"
+                subtitle="Indicative starting prices. Contact us for a custom quote."
+              />
+            </div>
             <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
               {service.pricing.map((p, i) => (
                 <motion.div
@@ -170,30 +177,28 @@ export default function ServicePage({ serviceId }) {
                   initial={{ opacity: 0, y: 24 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: i * 0.1 }}
-                  className={`flex flex-col rounded-3xl border p-8 shadow-sm ${
+                  transition={{ duration: 0.5, delay: i * 0.1 }}
+                  className={`flex flex-col rounded-3xl border p-8 ${
                     i === 1
-                      ? 'border-primary-500 bg-white ring-2 ring-primary-500'
-                      : 'border-slate-100 bg-white'
+                      ? 'border-primary-500/50 bg-primary-500/[0.08] shadow-[0_0_60px_-15px_rgba(14,165,233,0.4)]'
+                      : 'border-white/10 bg-white/[0.03]'
                   }`}
                 >
-                  <h3 className="font-display text-lg font-bold text-dark-900">{p.name}</h3>
+                  <h3 className="font-display text-lg font-bold text-white">{p.name}</h3>
                   <div className="mt-3 flex items-end gap-1">
-                    <span className="font-display text-3xl font-extrabold text-primary-600">
-                      {p.price}
-                    </span>
-                    <span className="mb-1 text-sm text-slate-400">/ {p.unit}</span>
+                    <span className="font-display text-3xl font-extrabold text-gradient">{p.price}</span>
+                    <span className="mb-1 text-sm text-slate-500">/ {p.unit}</span>
                   </div>
                   <ul className="mt-6 flex-1 space-y-3">
                     {p.features.map((f) => (
-                      <li key={f} className="flex items-center gap-2 text-sm text-slate-600">
-                        <Check size={16} className="text-primary-500" />
+                      <li key={f} className="flex items-center gap-2 text-sm text-slate-300">
+                        <Check size={16} className="text-primary-400" />
                         {f}
                       </li>
                     ))}
                   </ul>
                   <Button to="/contact" variant={i === 1 ? 'primary' : 'outline'} className="mt-7 w-full">
-                    Book Now
+                    Book now
                   </Button>
                 </motion.div>
               ))}

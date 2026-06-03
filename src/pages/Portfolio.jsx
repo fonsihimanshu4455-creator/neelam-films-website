@@ -36,8 +36,8 @@ export default function Portfolio() {
                 onClick={() => setFilter(f)}
                 className={`rounded-full px-5 py-2.5 text-sm font-semibold transition ${
                   filter === f
-                    ? 'bg-primary-500 text-white shadow-md shadow-primary-500/30'
-                    : 'bg-white text-slate-600 hover:bg-primary-50'
+                    ? 'bg-primary-500 text-white shadow-lg shadow-primary-500/30'
+                    : 'border border-white/10 bg-white/[0.03] text-slate-300 hover:border-primary-500/40'
                 }`}
               >
                 {f}
