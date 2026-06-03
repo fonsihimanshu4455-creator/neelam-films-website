@@ -18,8 +18,8 @@ export default function Home() {
       <Statement />
 
       {/* Kinetic divider */}
-      <div className="overflow-hidden border-y border-white/10 bg-ink-900/40 py-6">
-        <Marquee items={WORDS} outline />
+      <div className="overflow-hidden bg-gradient-to-r from-primary-600 via-primary-500 to-primary-600 py-6">
+        <Marquee items={WORDS} white />
       </div>
 
       <ServicesGrid />

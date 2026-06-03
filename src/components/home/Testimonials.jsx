@@ -21,12 +21,12 @@ export default function Testimonials() {
   const t = items[index]
 
   return (
-    <section className="relative overflow-hidden px-5 py-24 md:px-8 md:py-32">
-      <Quote className="pointer-events-none absolute -left-6 top-10 text-white/[0.03]" size={260} />
+    <section className="relative overflow-hidden border-y border-slate-200 bg-white px-5 py-24 md:px-8 md:py-32">
+      <Quote className="pointer-events-none absolute -left-6 top-10 text-primary-500/5" size={260} />
 
       <div className="relative mx-auto max-w-5xl">
         <Reveal>
-          <span className="mb-12 flex items-center justify-center gap-2 text-xs font-bold uppercase tracking-[0.25em] text-primary-400">
+          <span className="mb-12 flex items-center justify-center gap-2 text-xs font-bold uppercase tracking-[0.25em] text-primary-600">
             <span className="h-px w-8 bg-primary-500" /> Client love <span className="h-px w-8 bg-primary-500" />
           </span>
         </Reveal>
@@ -42,10 +42,10 @@ export default function Testimonials() {
           >
             <div className="mb-6 flex justify-center gap-1">
               {Array.from({ length: t.rating }).map((_, i) => (
-                <Star key={i} size={18} className="text-primary-400" fill="currentColor" />
+                <Star key={i} size={18} className="text-amber-400" fill="currentColor" />
               ))}
             </div>
-            <p className="mx-auto max-w-3xl font-display text-2xl font-semibold leading-snug text-white md:text-4xl md:leading-[1.25]">
+            <p className="mx-auto max-w-3xl font-display text-2xl font-semibold leading-snug text-ink-900 md:text-4xl md:leading-[1.25]">
               “{t.quote}”
             </p>
 
@@ -54,11 +54,11 @@ export default function Testimonials() {
                 src={t.avatar}
                 alt={t.name}
                 loading="lazy"
-                className="h-14 w-14 rounded-full border border-primary-500/50 object-cover"
+                className="h-14 w-14 rounded-full border-2 border-primary-200 object-cover"
               />
               <div className="text-left">
-                <p className="font-display font-bold text-white">{t.name}</p>
-                <p className="text-sm text-slate-400">{t.role}</p>
+                <p className="font-display font-bold text-ink-900">{t.name}</p>
+                <p className="text-sm text-slate-500">{t.role}</p>
               </div>
             </div>
           </motion.div>
@@ -68,7 +68,7 @@ export default function Testimonials() {
           <button
             onClick={prev}
             aria-label="Previous"
-            className="flex h-11 w-11 items-center justify-center rounded-full border border-white/15 text-white transition hover:border-primary-500 hover:bg-primary-500"
+            className="flex h-11 w-11 items-center justify-center rounded-full border border-slate-300 text-ink-900 transition hover:border-primary-500 hover:bg-primary-500 hover:text-white"
           >
             <ChevronLeft size={20} />
           </button>
@@ -79,7 +79,7 @@ export default function Testimonials() {
                 onClick={() => setIndex(i)}
                 aria-label={`Go to ${i + 1}`}
                 className={`h-2 rounded-full transition-all ${
-                  i === index ? 'w-7 bg-primary-500' : 'w-2 bg-white/20'
+                  i === index ? 'w-7 bg-primary-500' : 'w-2 bg-slate-300'
                 }`}
               />
             ))}
@@ -87,7 +87,7 @@ export default function Testimonials() {
           <button
             onClick={next}
             aria-label="Next"
-            className="flex h-11 w-11 items-center justify-center rounded-full border border-white/15 text-white transition hover:border-primary-500 hover:bg-primary-500"
+            className="flex h-11 w-11 items-center justify-center rounded-full border border-slate-300 text-ink-900 transition hover:border-primary-500 hover:bg-primary-500 hover:text-white"
           >
             <ChevronRight size={20} />
           </button>

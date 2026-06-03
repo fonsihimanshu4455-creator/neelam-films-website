@@ -1,7 +1,8 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { Clapperboard, MapPin, Phone, Mail, Camera, Send, ArrowUpRight } from 'lucide-react'
+import { MapPin, Phone, Mail, Camera, Send, ArrowUpRight } from 'lucide-react'
 import { useData } from '../../context/DataContext'
+import Logo from '../common/Logo'
 
 export default function Footer() {
   const { data } = useData()
@@ -19,10 +20,10 @@ export default function Footer() {
   }
 
   return (
-    <footer className="relative overflow-hidden border-t border-white/10 bg-ink-950 text-slate-400">
+    <footer className="relative overflow-hidden border-t border-slate-200 bg-white text-slate-600">
       {/* Giant brand wordmark */}
       <div className="pointer-events-none select-none overflow-hidden">
-        <p className="-mb-4 whitespace-nowrap text-center font-display text-[18vw] font-extrabold leading-none text-white/[0.03] md:-mb-8">
+        <p className="-mb-4 whitespace-nowrap text-center font-display text-[18vw] font-extrabold leading-none text-slate-900/[0.035] md:-mb-8">
           NEELAM FILMS
         </p>
       </div>
@@ -31,14 +32,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-4">
           {/* About */}
           <div>
-            <Link to="/" className="flex items-center gap-2.5">
-              <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-primary-400 to-primary-700 text-white">
-                <Clapperboard size={20} />
-              </span>
-              <span className="font-display text-lg font-extrabold text-white">
-                Neelam<span className="text-primary-400"> Films</span>
-              </span>
-            </Link>
+            <Logo className="h-14 w-auto" />
             <p className="mt-5 text-sm leading-relaxed text-slate-500">
               Delhi's trusted production house & live event specialists since 1995. Three decades of
               crafting stories that move and events that matter.
@@ -55,7 +49,7 @@ export default function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={s.label}
-                  className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/5 transition hover:border-primary-500 hover:bg-primary-500 hover:text-white"
+                  className="flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-600 transition hover:border-primary-500 hover:bg-primary-500 hover:text-white"
                 >
                   <s.icon size={17} />
                 </a>
@@ -63,9 +57,9 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Quick links */}
+          {/* Quick links — Admin removed */}
           <div>
-            <h4 className="mb-5 font-display text-sm font-semibold uppercase tracking-wider text-white">
+            <h4 className="mb-5 font-display text-sm font-semibold uppercase tracking-wider text-ink-900">
               Explore
             </h4>
             <ul className="space-y-3 text-sm">
@@ -74,10 +68,9 @@ export default function Footer() {
                 { label: 'About Us', to: '/about' },
                 { label: 'Portfolio', to: '/portfolio' },
                 { label: 'Contact', to: '/contact' },
-                { label: 'Admin', to: '/admin' },
               ].map((l) => (
                 <li key={l.to}>
-                  <Link to={l.to} className="inline-flex items-center gap-1 text-slate-500 transition hover:text-primary-400">
+                  <Link to={l.to} className="text-slate-500 transition hover:text-primary-600">
                     {l.label}
                   </Link>
                 </li>
@@ -87,13 +80,13 @@ export default function Footer() {
 
           {/* Services */}
           <div>
-            <h4 className="mb-5 font-display text-sm font-semibold uppercase tracking-wider text-white">
+            <h4 className="mb-5 font-display text-sm font-semibold uppercase tracking-wider text-ink-900">
               Services
             </h4>
             <ul className="space-y-3 text-sm">
               {services.map((s) => (
                 <li key={s.id}>
-                  <Link to={s.slug} className="text-slate-500 transition hover:text-primary-400">
+                  <Link to={s.slug} className="text-slate-500 transition hover:text-primary-600">
                     {s.title}
                   </Link>
                 </li>
@@ -103,21 +96,21 @@ export default function Footer() {
 
           {/* Contact + newsletter */}
           <div>
-            <h4 className="mb-5 font-display text-sm font-semibold uppercase tracking-wider text-white">
+            <h4 className="mb-5 font-display text-sm font-semibold uppercase tracking-wider text-ink-900">
               Get in touch
             </h4>
             <ul className="space-y-4 text-sm text-slate-500">
               <li className="flex gap-3">
-                <MapPin size={17} className="mt-0.5 shrink-0 text-primary-400" />
+                <MapPin size={17} className="mt-0.5 shrink-0 text-primary-500" />
                 <span>{contact.address}</span>
               </li>
               <li className="flex gap-3">
-                <Phone size={17} className="shrink-0 text-primary-400" />
-                <a href={`tel:${contact.phoneRaw}`} className="hover:text-primary-400">{contact.phone}</a>
+                <Phone size={17} className="shrink-0 text-primary-500" />
+                <a href={`tel:${contact.phoneRaw}`} className="hover:text-primary-600">{contact.phone}</a>
               </li>
               <li className="flex gap-3">
-                <Mail size={17} className="shrink-0 text-primary-400" />
-                <a href={`mailto:${contact.email}`} className="hover:text-primary-400">{contact.email}</a>
+                <Mail size={17} className="shrink-0 text-primary-500" />
+                <a href={`mailto:${contact.email}`} className="hover:text-primary-600">{contact.email}</a>
               </li>
             </ul>
 
@@ -129,7 +122,7 @@ export default function Footer() {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="Email for updates"
-                  className="w-full rounded-full border border-white/10 bg-white/5 px-4 py-2.5 text-sm text-white placeholder-slate-500 outline-none focus:border-primary-500"
+                  className="w-full rounded-full border border-slate-200 bg-slate-50 px-4 py-2.5 text-sm text-ink-900 placeholder-slate-400 outline-none focus:border-primary-500"
                 />
                 <button
                   type="submit"
@@ -139,18 +132,16 @@ export default function Footer() {
                   <Send size={15} />
                 </button>
               </div>
-              {subscribed && <p className="mt-2 text-xs text-primary-400">Thanks for subscribing! 🎉</p>}
+              {subscribed && <p className="mt-2 text-xs text-primary-600">Thanks for subscribing! 🎉</p>}
             </form>
           </div>
         </div>
       </div>
 
-      <div className="relative border-t border-white/10">
+      <div className="relative border-t border-slate-200">
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-2 px-5 py-6 text-xs text-slate-500 md:flex-row md:px-8">
           <p>© {new Date().getFullYear()} Neelam Films. All rights reserved.</p>
-          <p className="flex items-center gap-1">
-            Crafted in Delhi <ArrowUpRight size={12} />
-          </p>
+          <p className="flex items-center gap-1">Crafted in Delhi <ArrowUpRight size={12} /></p>
         </div>
       </div>
     </footer>

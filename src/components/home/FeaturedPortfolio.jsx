@@ -27,13 +27,13 @@ export default function FeaturedPortfolio() {
         <div className="mb-14 flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
           <div>
             <Reveal>
-              <span className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.25em] text-primary-400">
+              <span className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.25em] text-primary-600">
                 <span className="h-px w-8 bg-primary-500" /> Selected work
               </span>
             </Reveal>
             <Reveal delay={0.1}>
-              <h2 className="mt-4 font-display text-4xl font-extrabold leading-tight text-white md:text-6xl">
-                Frames we're <span className="font-serif font-normal italic text-primary-300">proud</span> of
+              <h2 className="mt-4 font-display text-4xl font-extrabold leading-tight text-ink-900 md:text-6xl">
+                Frames we're <span className="font-serif font-normal italic text-primary-600">proud</span> of
               </h2>
             </Reveal>
           </div>

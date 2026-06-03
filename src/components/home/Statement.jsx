@@ -29,12 +29,12 @@ export default function Statement() {
 }
 
 function Word({ progress, range, word }) {
-  const opacity = useTransform(progress, range, [0.12, 1])
+  const opacity = useTransform(progress, range, [0.15, 1])
   const highlight = ['cinema', 'movements', 'trusted', 'production'].some((k) =>
     word.toLowerCase().includes(k),
   )
   return (
-    <motion.span style={{ opacity }} className={highlight ? 'text-gradient' : 'text-white'}>
+    <motion.span style={{ opacity }} className={highlight ? 'text-gradient' : 'text-ink-900'}>
       {word}
     </motion.span>
   )

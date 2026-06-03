@@ -8,12 +8,12 @@ import Magnetic from './Magnetic'
  */
 const VARIANTS = {
   primary:
-    'text-white bg-primary-500 shadow-[0_8px_30px_-6px_rgba(14,165,233,0.6)] hover:shadow-[0_12px_40px_-6px_rgba(14,165,233,0.8)] before:bg-white hover:text-primary-700',
+    'text-white bg-primary-500 shadow-glow before:bg-ink-900 hover:text-white',
   outline:
-    'text-white border border-white/25 before:bg-white hover:text-ink-950',
-  white: 'text-ink-950 bg-white before:bg-primary-500 hover:text-white',
-  ghost: 'text-white border border-white/15 bg-white/5 before:bg-white hover:text-ink-950',
-  dark: 'text-white bg-ink-800 before:bg-primary-500 hover:text-white',
+    'text-ink-900 border border-ink-900/15 before:bg-ink-900 hover:text-white',
+  white: 'text-primary-700 bg-white shadow-soft before:bg-ink-900 hover:text-white',
+  ghost: 'text-ink-900 border border-ink-900/12 bg-white/70 before:bg-ink-900 hover:text-white',
+  dark: 'text-white bg-ink-900 before:bg-primary-500 hover:text-white',
 }
 
 export default function Button({

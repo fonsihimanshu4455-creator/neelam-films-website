@@ -9,7 +9,7 @@ export default function SectionHeader({
   title,
   subtitle,
   align = 'center',
-  light = true,
+  light = false,
 }) {
   const alignClass =
     align === 'left' ? 'text-left items-start' : 'text-center items-center mx-auto'
@@ -36,7 +36,7 @@ export default function SectionHeader({
         {title}
       </h2>
       {subtitle && (
-        <p className={`text-base md:text-lg ${light ? 'text-slate-400' : 'text-slate-500'}`}>
+        <p className={`text-base md:text-lg ${light ? 'text-slate-300' : 'text-slate-500'}`}>
           {subtitle}
         </p>
       )}

@@ -27,8 +27,8 @@ export default function Contact() {
       <PageHero
         eyebrow="Get in touch"
         title="Let's talk about your project"
-        subtitle="Whether it's a film, an event, or a digital campaign — our team is ready to make it happen. Reach out for a free quote."
-        image="https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=1600&q=80"
+        subtitle="Whether it's a film, an event, a website or an app — our team is ready to make it happen. Reach out for a free quote."
+        image="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1200&q=80"
       />
 
       <section className="px-5 py-24 md:px-8 md:py-32">
@@ -39,10 +39,10 @@ export default function Contact() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="rounded-3xl border border-white/10 bg-white/[0.03] p-8 md:p-10"
+            className="rounded-3xl border border-slate-100 bg-white p-8 shadow-soft md:p-10"
           >
-            <h2 className="font-display text-2xl font-bold text-white">Send us a message</h2>
-            <p className="mt-2 text-sm text-slate-400">Fill the form and we'll get back within 24 hours.</p>
+            <h2 className="font-display text-2xl font-bold text-ink-900">Send us a message</h2>
+            <p className="mt-2 text-sm text-slate-500">Fill the form and we'll get back within 24 hours.</p>
 
             <form onSubmit={handleSubmit} className="mt-8 space-y-5">
               <div className="grid gap-5 sm:grid-cols-2">
@@ -52,13 +52,13 @@ export default function Contact() {
               <Field label="Email" name="email" type="email" value={form.email} onChange={handleChange} required />
 
               <div>
-                <label className="mb-1.5 block text-sm font-medium text-slate-300">Service</label>
+                <label className="mb-1.5 block text-sm font-medium text-ink-800">Service</label>
                 <select
                   name="service"
                   value={form.service}
                   onChange={handleChange}
                   required
-                  className="w-full rounded-xl border border-white/10 bg-ink-900 px-4 py-3 text-sm text-white outline-none transition focus:border-primary-500"
+                  className="w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm text-ink-900 outline-none transition focus:border-primary-500 focus:ring-2 focus:ring-primary-100"
                 >
                   <option value="">Select a service</option>
                   {services.map((s) => (
@@ -69,7 +69,7 @@ export default function Contact() {
               </div>
 
               <div>
-                <label className="mb-1.5 block text-sm font-medium text-slate-300">Message</label>
+                <label className="mb-1.5 block text-sm font-medium text-ink-800">Message</label>
                 <textarea
                   name="message"
                   rows={4}
@@ -77,7 +77,7 @@ export default function Contact() {
                   onChange={handleChange}
                   required
                   placeholder="Tell us about your project..."
-                  className="w-full rounded-xl border border-white/10 bg-ink-900 px-4 py-3 text-sm text-white placeholder-slate-600 outline-none transition focus:border-primary-500"
+                  className="w-full rounded-xl border border-slate-200 px-4 py-3 text-sm text-ink-900 placeholder-slate-400 outline-none transition focus:border-primary-500 focus:ring-2 focus:ring-primary-100"
                 />
               </div>
 
@@ -85,7 +85,7 @@ export default function Contact() {
                 type="submit"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                className="flex w-full items-center justify-center gap-2 rounded-full bg-primary-500 py-3.5 text-sm font-semibold text-white shadow-lg shadow-primary-500/30 transition hover:bg-primary-600"
+                className="flex w-full items-center justify-center gap-2 rounded-full bg-primary-500 py-3.5 text-sm font-semibold text-white shadow-glow transition hover:bg-primary-600"
               >
                 <Send size={18} />
                 Send message
@@ -95,7 +95,7 @@ export default function Contact() {
                 <motion.div
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
-                  className="flex items-center gap-2 rounded-xl border border-green-500/30 bg-green-500/10 px-4 py-3 text-sm text-green-400"
+                  className="flex items-center gap-2 rounded-xl border border-green-200 bg-green-50 px-4 py-3 text-sm text-green-700"
                 >
                   <CheckCircle2 size={18} />
                   Thank you! Your message has been received.
@@ -112,9 +112,9 @@ export default function Contact() {
             transition={{ duration: 0.6 }}
             className="space-y-6"
           >
-            <div className="rounded-3xl border border-white/10 bg-ink-900 p-8 md:p-10">
-              <h2 className="font-display text-2xl font-bold text-white">Contact information</h2>
-              <p className="mt-2 text-sm text-slate-400">Reach us directly through any of these channels.</p>
+            <div className="rounded-3xl bg-gradient-to-br from-primary-600 to-primary-800 p-8 text-white shadow-soft md:p-10">
+              <h2 className="font-display text-2xl font-bold">Contact information</h2>
+              <p className="mt-2 text-sm text-primary-100">Reach us directly through any of these channels.</p>
 
               <ul className="mt-7 space-y-5 text-sm">
                 <InfoRow icon={MapPin} label="Address" value={contact.address} />
@@ -128,20 +128,20 @@ export default function Contact() {
                 href={`https://wa.me/${contact.whatsapp}?text=Hi%20Neelam%20Films`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-7 flex items-center justify-center gap-2 rounded-full bg-[#25D366] py-3.5 text-sm font-semibold text-white transition hover:bg-[#1ebe57]"
+                className="mt-7 flex items-center justify-center gap-2 rounded-full bg-white py-3.5 text-sm font-semibold text-primary-700 transition hover:bg-primary-50"
               >
-                <MessageCircle size={18} fill="white" />
+                <MessageCircle size={18} className="text-[#25D366]" fill="currentColor" />
                 Chat on WhatsApp
               </a>
             </div>
 
-            <div className="overflow-hidden rounded-3xl border border-white/10">
+            <div className="overflow-hidden rounded-3xl border border-slate-200 shadow-sm">
               <iframe
                 title="Neelam Films location"
                 src={contact.mapEmbed}
                 width="100%"
                 height="280"
-                style={{ border: 0, filter: 'invert(0.92) hue-rotate(180deg)' }}
+                style={{ border: 0 }}
                 allowFullScreen=""
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
@@ -157,14 +157,14 @@ export default function Contact() {
 function Field({ label, name, type = 'text', value, onChange, required }) {
   return (
     <div>
-      <label className="mb-1.5 block text-sm font-medium text-slate-300">{label}</label>
+      <label className="mb-1.5 block text-sm font-medium text-ink-800">{label}</label>
       <input
         type={type}
         name={name}
         value={value}
         onChange={onChange}
         required={required}
-        className="w-full rounded-xl border border-white/10 bg-ink-900 px-4 py-3 text-sm text-white outline-none transition focus:border-primary-500"
+        className="w-full rounded-xl border border-slate-200 px-4 py-3 text-sm text-ink-900 outline-none transition focus:border-primary-500 focus:ring-2 focus:ring-primary-100"
       />
     </div>
   )
@@ -173,18 +173,18 @@ function Field({ label, name, type = 'text', value, onChange, required }) {
 function InfoRow({ icon: IconCmp, label, value, href }) {
   const content = (
     <div className="flex gap-4">
-      <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-primary-500/15 text-primary-400">
+      <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-white/15 text-white">
         <IconCmp size={18} />
       </span>
       <div>
-        <p className="text-xs uppercase tracking-wider text-slate-500">{label}</p>
-        <p className="text-slate-200">{value}</p>
+        <p className="text-xs uppercase tracking-wider text-primary-200">{label}</p>
+        <p className="text-white">{value}</p>
       </div>
     </div>
   )
   return href ? (
     <li>
-      <a href={href} target={href.startsWith('http') ? '_blank' : undefined} rel="noopener noreferrer" className="transition hover:text-primary-400">
+      <a href={href} target={href.startsWith('http') ? '_blank' : undefined} rel="noopener noreferrer" className="transition hover:opacity-80">
         {content}
       </a>
     </li>

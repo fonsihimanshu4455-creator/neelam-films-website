@@ -12,7 +12,7 @@ export default function Layout() {
   const location = useLocation()
 
   return (
-    <div className="grain relative flex min-h-screen flex-col bg-ink-950 text-slate-200">
+    <div className="grain relative flex min-h-screen flex-col bg-[#F8FAFC] text-ink-900">
       <ScrollProgress />
       <Navbar />
       <main className="flex-1">
