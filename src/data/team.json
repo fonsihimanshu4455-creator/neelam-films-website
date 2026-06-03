@@ -1,0 +1,20 @@
+{
+  "founder": {
+    "name": "Mr. Neelam Founder",
+    "role": "Founder & Creative Director",
+    "avatar": "https://i.pravatar.cc/300?img=68",
+    "bio": "With over 30 years behind the lens, our founder built Neelam Films from a single camera in 1995 into one of Delhi's most trusted production houses. A passion for storytelling and an uncompromising eye for quality remain at the heart of everything we do.",
+    "quote": "Every frame tells a story. Our job is to tell it beautifully."
+  },
+  "timeline": [
+    { "year": "1995", "title": "The Beginning", "desc": "Neelam Films founded in Delhi with a vision for quality production." },
+    { "year": "2000", "title": "First Big Brands", "desc": "Started producing corporate films for national clients." },
+    { "year": "2005", "title": "Studio Expansion", "desc": "Launched our in-house recording & editing studio." },
+    { "year": "2010", "title": "Live Events Division", "desc": "Expanded into full-scale live event production." },
+    { "year": "2015", "title": "Going Digital", "desc": "Added live streaming & digital growth services." },
+    { "year": "2020", "title": "1000+ Projects", "desc": "Crossed a major milestone serving 500+ clients." },
+    { "year": "2025", "title": "30 Years Strong", "desc": "Celebrating three decades of trust & creativity." }
+  ],
+  "mission": "To craft compelling visual stories and unforgettable live experiences that elevate every brand we partner with — combining decades of craft with cutting-edge technology.",
+  "vision": "To be the most trusted and innovative production house in India, setting the benchmark for quality, creativity, and client delight."
+}

@@ -1,0 +1,14 @@
+[
+  { "id": 1, "name": "Canon EOS R6 Mark II", "category": "Camera", "rate": "₹3,500", "unit": "day", "image": "https://images.unsplash.com/photo-1502920917128-1aa500764cbd?w=800&q=80", "desc": "Full-frame mirrorless, 4K 60fps, superb low-light." },
+  { "id": 2, "name": "Sony FX3", "category": "Camera", "rate": "₹6,000", "unit": "day", "image": "https://images.unsplash.com/photo-1606986628253-05620e9b5d79?w=800&q=80", "desc": "Cinema line full-frame, dual-base ISO, compact body." },
+  { "id": 3, "name": "Insta360 X3", "category": "Camera", "rate": "₹1,500", "unit": "day", "image": "https://images.unsplash.com/photo-1495707902641-75cac588d2e9?w=800&q=80", "desc": "360° action camera for immersive shots." },
+  { "id": 4, "name": "Godox LC500", "category": "Light", "rate": "₹800", "unit": "day", "image": "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=800&q=80", "desc": "RGB LED tube light, app-controlled effects." },
+  { "id": 5, "name": "Godox SL60W", "category": "Light", "rate": "₹600", "unit": "day", "image": "https://images.unsplash.com/photo-1542204165-65bf26472b9b?w=800&q=80", "desc": "Daylight LED COB light, silent operation." },
+  { "id": 6, "name": "Aputure 300D", "category": "Light", "rate": "₹1,200", "unit": "day", "image": "https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=800&q=80", "desc": "Powerful 300W daylight point-source LED." },
+  { "id": 7, "name": "Saramonic Witalk 9", "category": "Audio", "rate": "₹500", "unit": "day", "image": "https://images.unsplash.com/photo-1590602847861-f357a9332bbc?w=800&q=80", "desc": "Full-duplex wireless intercom system." },
+  { "id": 8, "name": "Rode Wireless Pro", "category": "Audio", "rate": "₹800", "unit": "day", "image": "https://images.unsplash.com/photo-1546435770-a3e426bf472b?w=800&q=80", "desc": "Dual-channel wireless mic with 32-bit float." },
+  { "id": 9, "name": "Zoom H6", "category": "Audio", "rate": "₹400", "unit": "day", "image": "https://images.unsplash.com/photo-1520170350707-b2da59970118?w=800&q=80", "desc": "6-track portable handy recorder." },
+  { "id": 10, "name": "Chroma Studio", "category": "Studio", "rate": "₹2,500", "unit": "hour", "image": "https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=800&q=80", "desc": "Green-screen studio with pro lighting." },
+  { "id": 11, "name": "Recording Studio", "category": "Studio", "rate": "₹500", "unit": "hour", "image": "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800&q=80", "desc": "Acoustically-treated music recording room." },
+  { "id": 12, "name": "Podcast Studio", "category": "Studio", "rate": "₹500", "unit": "hour", "image": "https://images.unsplash.com/photo-1590602847861-f357a9332bbc?w=800&q=80", "desc": "Multi-mic podcast setup with cameras." }
+]

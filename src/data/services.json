@@ -1,0 +1,214 @@
+[
+  {
+    "id": "production",
+    "icon": "Film",
+    "title": "Production House",
+    "slug": "/services/production",
+    "short": "TVCs, corporate films, documentaries, short films & music videos crafted with cinematic precision.",
+    "image": "https://images.unsplash.com/photo-1485846234645-a62644f84728?w=800&q=80",
+    "hero": "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=1600&q=80",
+    "tagline": "Cinematic storytelling for brands that demand the best.",
+    "description": "For three decades, Neelam Films has produced award-winning films that connect brands with audiences. Our end-to-end production capabilities cover everything from concept to final delivery.",
+    "videoId": "dQw4w9WgXcQ",
+    "offers": [
+      { "title": "TV Commercials (TVCs)", "desc": "High-impact commercials engineered for television and digital reach." },
+      { "title": "Corporate Films", "desc": "Polished brand films, profiles, and internal communications." },
+      { "title": "Documentaries", "desc": "Compelling long-form storytelling rooted in real narratives." },
+      { "title": "Short Films", "desc": "Festival-grade short films with strong creative direction." },
+      { "title": "Music Videos", "desc": "Visually arresting music videos for artists and labels." }
+    ],
+    "process": [
+      { "step": "01", "title": "Discovery", "desc": "We understand your brand, goals & audience." },
+      { "step": "02", "title": "Pre-Production", "desc": "Scripting, storyboarding, casting & planning." },
+      { "step": "03", "title": "Production", "desc": "Cinema-grade shoot with our expert crew." },
+      { "step": "04", "title": "Post & Delivery", "desc": "Editing, color, sound & multi-format delivery." }
+    ],
+    "gallery": [
+      "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=800&q=80",
+      "https://images.unsplash.com/photo-1485846234645-a62644f84728?w=800&q=80",
+      "https://images.unsplash.com/photo-1574267432553-4b4628081c31?w=800&q=80",
+      "https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=800&q=80",
+      "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800&q=80",
+      "https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?w=800&q=80"
+    ],
+    "pricing": []
+  },
+  {
+    "id": "live-events",
+    "icon": "Speaker",
+    "title": "Live Events",
+    "slug": "/services/live-events",
+    "short": "End-to-end live event production — sound, LED, stage, lighting & multi-cam coverage.",
+    "image": "https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?w=800&q=80",
+    "hero": "https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?w=1600&q=80",
+    "tagline": "Grand productions, flawlessly executed.",
+    "description": "From corporate conferences to grand religious gatherings, Neelam Films delivers turnkey live event production with world-class equipment and a seasoned crew.",
+    "videoId": "dQw4w9WgXcQ",
+    "offers": [
+      { "title": "Professional Sound", "desc": "Line-array systems for crystal-clear audio at any scale." },
+      { "title": "LED Walls & Screens", "desc": "High-resolution LED displays for immersive visuals." },
+      { "title": "Stage & Truss", "desc": "Custom stage design, fabrication & rigging." },
+      { "title": "Stage Lighting", "desc": "Dynamic intelligent lighting & ambience design." },
+      { "title": "Multi-Cam Coverage", "desc": "Live multi-camera switching & recording." },
+      { "title": "Religious Events", "desc": "Specialists in ISKCON, Jagran & devotional events." }
+    ],
+    "process": [
+      { "step": "01", "title": "Consultation", "desc": "We map your vision, venue & scale." },
+      { "step": "02", "title": "Design & Plan", "desc": "Stage, sound & lighting blueprint." },
+      { "step": "03", "title": "Setup & Rig", "desc": "On-site installation & sound check." },
+      { "step": "04", "title": "Live Execution", "desc": "Flawless show-day management." }
+    ],
+    "gallery": [
+      "https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?w=800&q=80",
+      "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=800&q=80",
+      "https://images.unsplash.com/photo-1540039155733-5bb30b53aa14?w=800&q=80",
+      "https://images.unsplash.com/photo-1429962714451-bb934ecdc4ec?w=800&q=80",
+      "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800&q=80",
+      "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=800&q=80"
+    ],
+    "pricing": []
+  },
+  {
+    "id": "live-streaming",
+    "icon": "Radio",
+    "title": "Live Streaming",
+    "slug": "/services/live-streaming",
+    "short": "Multi-platform live streaming for cricket, religious, corporate & sports events.",
+    "image": "https://images.unsplash.com/photo-1574267432553-4b4628081c31?w=800&q=80",
+    "hero": "https://images.unsplash.com/photo-1574267432553-4b4628081c31?w=1600&q=80",
+    "tagline": "Broadcast-quality streaming to the world.",
+    "description": "Reach audiences everywhere with our professional live streaming services. Multi-platform, multi-camera, broadcast-grade — engineered for reliability.",
+    "videoId": "dQw4w9WgXcQ",
+    "offers": [
+      { "title": "Cricket & Sports", "desc": "Live scoreboards, replays & multi-cam coverage." },
+      { "title": "Religious Streaming", "desc": "Devotional events streamed with reverence." },
+      { "title": "Corporate Webcasts", "desc": "AGMs, launches & town-halls in HD." },
+      { "title": "Multi-Platform", "desc": "Simulcast to YouTube, Facebook & more." }
+    ],
+    "process": [
+      { "step": "01", "title": "Tech Recce", "desc": "Internet, power & camera planning." },
+      { "step": "02", "title": "Setup", "desc": "Encoders, cameras & graphics ready." },
+      { "step": "03", "title": "Go Live", "desc": "Stable multi-platform broadcast." },
+      { "step": "04", "title": "Archive", "desc": "Recording & VOD delivery." }
+    ],
+    "gallery": [
+      "https://images.unsplash.com/photo-1574267432553-4b4628081c31?w=800&q=80",
+      "https://images.unsplash.com/photo-1540039155733-5bb30b53aa14?w=800&q=80",
+      "https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=800&q=80",
+      "https://images.unsplash.com/photo-1522199755839-a2bacb67c546?w=800&q=80",
+      "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=800&q=80",
+      "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=80"
+    ],
+    "pricing": [
+      { "name": "Cricket / Sports Stream", "price": "₹5,000+", "unit": "per match", "features": ["Multi-cam", "Live scoreboard", "Instant replays", "YouTube simulcast"] },
+      { "name": "Religious Stream", "price": "₹4,000+", "unit": "per event", "features": ["HD coverage", "Multi-platform", "Recording included"] },
+      { "name": "Corporate Webcast", "price": "₹8,000+", "unit": "per event", "features": ["Pro graphics", "Multi-cam", "Private streaming", "Analytics"] }
+    ]
+  },
+  {
+    "id": "recording-studio",
+    "icon": "Mic",
+    "title": "Recording Studio",
+    "slug": "/services/recording-studio",
+    "short": "Professional song recording, voice-overs, dubbing & podcast production.",
+    "image": "https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=800&q=80",
+    "hero": "https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=1600&q=80",
+    "tagline": "Where sound becomes art.",
+    "description": "Our acoustically-treated studio is equipped with premium gear for pristine recordings. Whether it's a chartbuster, a brand voice-over or a podcast — we deliver studio perfection.",
+    "videoId": "dQw4w9WgXcQ",
+    "offers": [
+      { "title": "Song Recording", "desc": "Full vocal & instrument recording sessions." },
+      { "title": "Voice-Over", "desc": "Ads, films, e-learning & IVR voice-overs." },
+      { "title": "Dubbing", "desc": "Multilingual dubbing & ADR services." },
+      { "title": "Podcast Production", "desc": "Record, edit & publish your podcast." }
+    ],
+    "process": [
+      { "step": "01", "title": "Book Session", "desc": "Pick your slot & service." },
+      { "step": "02", "title": "Setup", "desc": "Mic, monitoring & levels dialed in." },
+      { "step": "03", "title": "Record", "desc": "Capture with our sound engineer." },
+      { "step": "04", "title": "Mix & Master", "desc": "Polished, release-ready output." }
+    ],
+    "gallery": [
+      "https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=800&q=80",
+      "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800&q=80",
+      "https://images.unsplash.com/photo-1520523839897-bd0b52f945a0?w=800&q=80",
+      "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=800&q=80",
+      "https://images.unsplash.com/photo-1525362081669-2b476bb628c3?w=800&q=80",
+      "https://images.unsplash.com/photo-1574267432553-4b4628081c31?w=800&q=80"
+    ],
+    "pricing": [
+      { "name": "Song Recording", "price": "₹3,000–5,000", "unit": "per song", "features": ["Vocal recording", "Basic mixing", "Sound engineer", "Studio time"] },
+      { "name": "Voice-Over", "price": "₹2,000+", "unit": "per script", "features": ["Pro mic chain", "Multiple takes", "Clean export"] },
+      { "name": "Podcast Studio", "price": "₹500", "unit": "per hour", "features": ["Multi-mic setup", "Recording", "Basic edit"] }
+    ]
+  },
+  {
+    "id": "equipment-rental",
+    "icon": "Camera",
+    "title": "Equipment Rental",
+    "slug": "/services/equipment-rental",
+    "short": "Rent pro cameras, lights, audio gear & studios at the best daily rates in Delhi.",
+    "image": "https://images.unsplash.com/photo-1502920917128-1aa500764cbd?w=800&q=80",
+    "hero": "https://images.unsplash.com/photo-1502920917128-1aa500764cbd?w=1600&q=80",
+    "tagline": "Pro gear, ready when you are.",
+    "description": "Access our extensive inventory of professional cinema cameras, lighting, and audio equipment at competitive daily rates. Well-maintained, fully insured, ready to roll.",
+    "videoId": "dQw4w9WgXcQ",
+    "offers": [
+      { "title": "Cinema Cameras", "desc": "Canon, Sony & action cameras for any shoot." },
+      { "title": "Lighting Kits", "desc": "Godox & Aputure LED & continuous lights." },
+      { "title": "Audio Gear", "desc": "Wireless mics, recorders & monitoring." },
+      { "title": "Studio Spaces", "desc": "Chroma, recording & podcast studios on rent." }
+    ],
+    "process": [
+      { "step": "01", "title": "Browse", "desc": "Pick your gear & dates." },
+      { "step": "02", "title": "Reserve", "desc": "Confirm availability & quote." },
+      { "step": "03", "title": "Collect / Deliver", "desc": "Pickup or doorstep delivery." },
+      { "step": "04", "title": "Return", "desc": "Easy returns, no hassle." }
+    ],
+    "gallery": [
+      "https://images.unsplash.com/photo-1502920917128-1aa500764cbd?w=800&q=80",
+      "https://images.unsplash.com/photo-1606986628253-05620e9b5d79?w=800&q=80",
+      "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=800&q=80",
+      "https://images.unsplash.com/photo-1495707902641-75cac588d2e9?w=800&q=80",
+      "https://images.unsplash.com/photo-1542204165-65bf26472b9b?w=800&q=80",
+      "https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=800&q=80"
+    ],
+    "pricing": []
+  },
+  {
+    "id": "digital-growth",
+    "icon": "TrendingUp",
+    "title": "Digital Growth",
+    "slug": "/services/digital-growth",
+    "short": "Meta & Google Ads, web & app development, SEO, social media & data analytics.",
+    "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80",
+    "hero": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1600&q=80",
+    "tagline": "Grow your brand, the digital way.",
+    "description": "Beyond the lens, we help brands scale online. From performance marketing to full-stack development, our digital team drives measurable growth.",
+    "videoId": "dQw4w9WgXcQ",
+    "offers": [
+      { "title": "Meta Ads", "desc": "ROI-focused Facebook & Instagram campaigns." },
+      { "title": "Google Ads", "desc": "Search, display & YouTube ad management." },
+      { "title": "Website Development", "desc": "Fast, modern, conversion-ready websites." },
+      { "title": "App Development", "desc": "Cross-platform mobile apps." },
+      { "title": "SEO", "desc": "Rank higher & drive organic traffic." },
+      { "title": "Social Media", "desc": "Content, management & community growth." },
+      { "title": "Data Analytics", "desc": "Insights & dashboards that drive decisions." }
+    ],
+    "process": [
+      { "step": "01", "title": "Audit", "desc": "Analyze your current digital footprint." },
+      { "step": "02", "title": "Strategy", "desc": "Custom growth roadmap." },
+      { "step": "03", "title": "Execute", "desc": "Launch campaigns & builds." },
+      { "step": "04", "title": "Optimize", "desc": "Measure, learn & scale." }
+    ],
+    "gallery": [
+      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80",
+      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80",
+      "https://images.unsplash.com/photo-1432888622747-4eb9a8efeb07?w=800&q=80",
+      "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=800&q=80",
+      "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=800&q=80",
+      "https://images.unsplash.com/photo-1533750349088-cd871a92f312?w=800&q=80"
+    ],
+    "pricing": []
+  }
+]
