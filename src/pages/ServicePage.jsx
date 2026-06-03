@@ -77,7 +77,7 @@ export default function ServicePage({ serviceId }) {
       {service.id === 'equipment-rental' && <EquipmentGrid />}
 
       {/* Our process */}
-      <section className="border-y border-slate-200 bg-white px-5 py-24 md:px-8 md:py-32">
+      <section className="border-y border-white/60 bg-white/55 px-5 py-24 backdrop-blur-md md:px-8 md:py-32">
         <div className="mx-auto max-w-7xl">
           <div className="mb-14 flex justify-center text-center">
             <SectionHeader
@@ -161,7 +161,7 @@ export default function ServicePage({ serviceId }) {
 
       {/* Pricing */}
       {service.pricing && service.pricing.length > 0 && (
-        <section className="border-t border-slate-200 bg-white px-5 py-24 md:px-8 md:py-32">
+        <section className="border-t border-white/60 bg-white/55 px-5 py-24 backdrop-blur-md md:px-8 md:py-32">
           <div className="mx-auto max-w-7xl">
             <div className="mb-14 flex justify-center text-center">
               <SectionHeader

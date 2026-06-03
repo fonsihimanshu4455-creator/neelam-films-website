@@ -10,7 +10,7 @@ export default function Stats() {
   const stats = data.hero.stats
 
   return (
-    <section className="border-y border-slate-200 bg-white">
+    <section className="border-y border-white/60 bg-white/50 backdrop-blur-md">
       <div className="mx-auto grid max-w-7xl grid-cols-2 lg:grid-cols-4">
         {stats.map((s, i) => (
           <motion.div

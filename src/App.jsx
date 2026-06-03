@@ -44,6 +44,8 @@ export default function App() {
               <Route path="/services/recording-studio" element={<ServicePage serviceId="recording-studio" />} />
               <Route path="/services/equipment-rental" element={<ServicePage serviceId="equipment-rental" />} />
               <Route path="/services/digital-growth" element={<ServicePage serviceId="digital-growth" />} />
+              <Route path="/services/web-development" element={<ServicePage serviceId="web-development" />} />
+              <Route path="/services/app-development" element={<ServicePage serviceId="app-development" />} />
               <Route path="/portfolio" element={<Portfolio />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="*" element={<NotFound />} />

@@ -210,5 +210,83 @@
       "https://images.unsplash.com/photo-1533750349088-cd871a92f312?w=800&q=80"
     ],
     "pricing": []
+  },
+  {
+    "id": "web-development",
+    "icon": "Globe",
+    "title": "Website Development",
+    "slug": "/services/web-development",
+    "short": "Fast, modern, conversion-ready websites — business sites, e-commerce & web apps.",
+    "image": "https://images.unsplash.com/photo-1547658719-da2b51169166?w=800&q=80",
+    "hero": "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=1600&q=80",
+    "tagline": "Websites that work as hard as you do.",
+    "description": "We design and build blazing-fast, beautiful websites that turn visitors into customers. From sleek business sites to full e-commerce stores — responsive, SEO-ready and built to scale.",
+    "videoId": "dQw4w9WgXcQ",
+    "offers": [
+      { "title": "Business Websites", "desc": "Premium, responsive sites that build instant trust." },
+      { "title": "E-commerce Stores", "desc": "Secure online stores with payments & inventory." },
+      { "title": "Landing Pages", "desc": "High-converting pages for campaigns & launches." },
+      { "title": "Web Applications", "desc": "Custom dashboards, portals & SaaS products." },
+      { "title": "SEO & Speed", "desc": "Optimised to rank higher and load instantly." },
+      { "title": "Care & Maintenance", "desc": "Ongoing updates, security & support." }
+    ],
+    "process": [
+      { "step": "01", "title": "Discovery", "desc": "We map goals, audience & content." },
+      { "step": "02", "title": "Design", "desc": "Modern UI mockups for your approval." },
+      { "step": "03", "title": "Build", "desc": "Pixel-perfect, responsive development." },
+      { "step": "04", "title": "Launch", "desc": "Deploy, test & hand over." }
+    ],
+    "gallery": [
+      "https://images.unsplash.com/photo-1547658719-da2b51169166?w=800&q=80",
+      "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=800&q=80",
+      "https://images.unsplash.com/photo-1559028012-481c04fa702d?w=800&q=80",
+      "https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?w=800&q=80",
+      "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=800&q=80",
+      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80"
+    ],
+    "pricing": [
+      { "name": "Starter Site", "price": "₹15,000+", "unit": "project", "features": ["Up to 5 pages", "Mobile responsive", "Contact form", "Basic SEO"] },
+      { "name": "Business Pro", "price": "₹35,000+", "unit": "project", "features": ["Up to 12 pages", "CMS / admin panel", "Advanced SEO", "Analytics setup"] },
+      { "name": "E-commerce", "price": "₹60,000+", "unit": "project", "features": ["Online store", "Payment gateway", "Inventory & orders", "Launch support"] }
+    ]
+  },
+  {
+    "id": "app-development",
+    "icon": "Smartphone",
+    "title": "App Development",
+    "slug": "/services/app-development",
+    "short": "Cross-platform Android & iOS apps that are fast, beautiful and loved by users.",
+    "image": "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&q=80",
+    "hero": "https://images.unsplash.com/photo-1526498460520-4c246339dccb?w=1600&q=80",
+    "tagline": "Your idea, in everyone's pocket.",
+    "description": "From concept to the app store, we build cross-platform mobile apps with smooth performance and delightful design. Android, iOS and everything in between — backed by solid engineering.",
+    "videoId": "dQw4w9WgXcQ",
+    "offers": [
+      { "title": "Android & iOS", "desc": "Native-quality apps for both platforms." },
+      { "title": "Cross-Platform", "desc": "One codebase, every device, faster launch." },
+      { "title": "UI / UX Design", "desc": "Intuitive, modern interfaces users enjoy." },
+      { "title": "Backend & APIs", "desc": "Scalable servers, databases & integrations." },
+      { "title": "App Store Launch", "desc": "We handle publishing on Play Store & App Store." },
+      { "title": "Support & Updates", "desc": "Ongoing maintenance & feature rollouts." }
+    ],
+    "process": [
+      { "step": "01", "title": "Strategy", "desc": "Define features, flows & scope." },
+      { "step": "02", "title": "Design", "desc": "Prototype the full app experience." },
+      { "step": "03", "title": "Develop", "desc": "Build, integrate & test rigorously." },
+      { "step": "04", "title": "Launch", "desc": "Publish & support post-launch." }
+    ],
+    "gallery": [
+      "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&q=80",
+      "https://images.unsplash.com/photo-1526498460520-4c246339dccb?w=800&q=80",
+      "https://images.unsplash.com/photo-1607252650355-f7fd0460ccdb?w=800&q=80",
+      "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=800&q=80",
+      "https://images.unsplash.com/photo-1556656793-08538906a9f8?w=800&q=80",
+      "https://images.unsplash.com/photo-1481349518771-20055b2a7b24?w=800&q=80"
+    ],
+    "pricing": [
+      { "name": "MVP App", "price": "₹60,000+", "unit": "project", "features": ["Core features", "Single platform", "Basic backend", "Store launch"] },
+      { "name": "Business App", "price": "₹1,20,000+", "unit": "project", "features": ["Android + iOS", "Custom backend", "Admin panel", "3 months support"] },
+      { "name": "Enterprise", "price": "Custom", "unit": "quote", "features": ["Complex features", "Integrations", "Scalable infra", "Dedicated team"] }
+    ]
   }
 ]

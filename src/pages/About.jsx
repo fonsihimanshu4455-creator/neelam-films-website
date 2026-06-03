@@ -72,7 +72,7 @@ export default function About() {
       </section>
 
       {/* Timeline */}
-      <section className="border-y border-slate-200 bg-white px-5 py-24 md:px-8 md:py-32">
+      <section className="border-y border-white/60 bg-white/55 px-5 py-24 backdrop-blur-md md:px-8 md:py-32">
         <div className="mx-auto max-w-5xl">
           <div className="mb-16 flex justify-center text-center">
             <SectionHeader
@@ -145,7 +145,7 @@ export default function About() {
       </section>
 
       {/* Founder */}
-      <section className="border-t border-slate-200 bg-white px-5 py-24 md:px-8 md:py-32">
+      <section className="border-t border-white/60 bg-white/55 px-5 py-24 backdrop-blur-md md:px-8 md:py-32">
         <div className="mx-auto max-w-5xl">
           <div className="mb-14 flex justify-center text-center">
             <SectionHeader eyebrow="Leadership" title="Meet our founder" />

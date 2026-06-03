@@ -21,7 +21,7 @@ export default function Testimonials() {
   const t = items[index]
 
   return (
-    <section className="relative overflow-hidden border-y border-slate-200 bg-white px-5 py-24 md:px-8 md:py-32">
+    <section className="relative overflow-hidden border-y border-white/60 bg-white/50 px-5 py-24 backdrop-blur-md md:px-8 md:py-32">
       <Quote className="pointer-events-none absolute -left-6 top-10 text-primary-500/5" size={260} />
 
       <div className="relative mx-auto max-w-5xl">

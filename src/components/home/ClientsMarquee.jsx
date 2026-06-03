@@ -22,7 +22,7 @@ export default function ClientsMarquee() {
   )
 
   return (
-    <section className="overflow-hidden border-y border-slate-200 bg-white py-16">
+    <section className="overflow-hidden border-y border-white/60 bg-white/40 py-16 backdrop-blur-md">
       <div className="mb-10 text-center">
         <span className="text-xs font-medium uppercase tracking-[0.3em] text-slate-400">
           30 years · 500+ brands · one promise

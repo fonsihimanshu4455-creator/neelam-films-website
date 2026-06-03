@@ -4,6 +4,7 @@ import Navbar from './Navbar'
 import Footer from './Footer'
 import WhatsAppButton from './WhatsAppButton'
 import ScrollProgress from '../common/ScrollProgress'
+import MeshBackground from '../common/MeshBackground'
 
 /**
  * Public site shell: scroll bar + grain + navbar + animated outlet + footer.
@@ -12,7 +13,8 @@ export default function Layout() {
   const location = useLocation()
 
   return (
-    <div className="grain relative flex min-h-screen flex-col bg-[#F8FAFC] text-ink-900">
+    <div className="grain relative flex min-h-screen flex-col text-ink-900">
+      <MeshBackground />
       <ScrollProgress />
       <Navbar />
       <main className="flex-1">

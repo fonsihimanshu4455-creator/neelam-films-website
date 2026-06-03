@@ -19,7 +19,7 @@ export default function EquipmentGrid() {
   const items = filter === 'All' ? equipment : equipment.filter((e) => e.category === filter)
 
   return (
-    <section className="border-y border-slate-200 bg-white px-5 py-24 md:px-8 md:py-32">
+    <section className="border-y border-white/60 bg-white/55 px-5 py-24 backdrop-blur-md md:px-8 md:py-32">
       <div className="mx-auto max-w-7xl">
         <div className="mb-12 flex justify-center text-center">
           <SectionHeader

@@ -35,7 +35,7 @@ export default function ServicesGrid() {
             </Reveal>
             <Reveal delay={0.1}>
               <h2 className="mt-4 max-w-2xl font-display text-4xl font-extrabold leading-tight text-ink-900 md:text-6xl">
-                Six pillars of <span className="font-serif font-normal italic text-primary-600">excellence</span>
+                Everything under <span className="font-serif font-normal italic text-primary-600">one roof</span>
               </h2>
             </Reveal>
           </div>

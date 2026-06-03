@@ -8,7 +8,7 @@ import Testimonials from '../components/home/Testimonials'
 import CTASection from '../components/common/CTASection'
 import Marquee from '../components/common/Marquee'
 
-const WORDS = ['Production', 'Live Events', 'Streaming', 'Recording', 'Equipment', 'Digital Growth']
+const WORDS = ['Production', 'Live Events', 'Streaming', 'Recording', 'Equipment', 'Websites', 'Apps', 'Digital Growth']
 
 export default function Home() {
   return (
