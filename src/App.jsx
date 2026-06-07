@@ -26,6 +26,7 @@ import ClientsEditor from './pages/admin/ClientsEditor'
 import TestimonialsEditor from './pages/admin/TestimonialsEditor'
 import EquipmentEditor from './pages/admin/EquipmentEditor'
 import ContactEditor from './pages/admin/ContactEditor'
+import AboutEditor from './pages/admin/AboutEditor'
 
 export default function App() {
   return (
@@ -69,6 +70,7 @@ export default function App() {
               <Route path="/admin/clients" element={<ClientsEditor />} />
               <Route path="/admin/testimonials" element={<TestimonialsEditor />} />
               <Route path="/admin/equipment" element={<EquipmentEditor />} />
+              <Route path="/admin/about" element={<AboutEditor />} />
               <Route path="/admin/contact" element={<ContactEditor />} />
             </Route>
           </Routes>

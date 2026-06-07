@@ -99,6 +99,35 @@ export function ImageField({ label = 'Image URL', value, onChange }) {
   )
 }
 
+/**
+ * On/off switch with a label & optional helper text.
+ */
+export function Toggle({ label, checked, onChange, hint }) {
+  return (
+    <div className="flex items-center justify-between gap-4 rounded-xl border border-slate-200 bg-slate-50 px-4 py-3">
+      <div>
+        <p className="text-sm font-medium text-dark-700">{label}</p>
+        {hint && <p className="mt-0.5 text-xs text-slate-500">{hint}</p>}
+      </div>
+      <button
+        type="button"
+        role="switch"
+        aria-checked={checked}
+        onClick={() => onChange(!checked)}
+        className={`relative h-6 w-11 shrink-0 rounded-full transition ${
+          checked ? 'bg-primary-500' : 'bg-slate-300'
+        }`}
+      >
+        <span
+          className={`absolute top-0.5 h-5 w-5 rounded-full bg-white shadow transition-all ${
+            checked ? 'left-[22px]' : 'left-0.5'
+          }`}
+        />
+      </button>
+    </div>
+  )
+}
+
 export function Card({ children, onDelete }) {
   return (
     <div className="relative rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">

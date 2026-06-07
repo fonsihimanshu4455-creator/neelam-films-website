@@ -7,6 +7,7 @@ import {
   Users,
   MessageSquareQuote,
   Camera,
+  UserSquare,
   Phone,
   ArrowRight,
 } from 'lucide-react'
@@ -19,6 +20,7 @@ const CARDS = [
   { to: '/admin/clients', label: 'Clients', icon: Users, key: 'clients', desc: 'Client logos' },
   { to: '/admin/testimonials', label: 'Testimonials', icon: MessageSquareQuote, key: 'testimonials', desc: 'Client reviews' },
   { to: '/admin/equipment', label: 'Equipment', icon: Camera, key: 'equipment', desc: 'Rental inventory' },
+  { to: '/admin/about', label: 'About / Founder', icon: UserSquare, key: null, desc: 'Founder, mission & timeline' },
   { to: '/admin/contact', label: 'Contact Info', icon: Phone, key: null, desc: 'Address & channels' },
 ]
 

@@ -9,6 +9,7 @@ import {
   Users,
   MessageSquareQuote,
   Camera,
+  UserSquare,
   Phone,
   LogOut,
   ExternalLink,
@@ -25,6 +26,7 @@ const NAV = [
   { to: '/admin/clients', label: 'Clients', icon: Users },
   { to: '/admin/testimonials', label: 'Testimonials', icon: MessageSquareQuote },
   { to: '/admin/equipment', label: 'Equipment', icon: Camera },
+  { to: '/admin/about', label: 'About / Founder', icon: UserSquare },
   { to: '/admin/contact', label: 'Contact', icon: Phone },
 ]
 

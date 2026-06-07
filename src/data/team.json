@@ -1,9 +1,10 @@
 {
   "founder": {
-    "name": "Mr. Neelam Founder",
-    "role": "Founder & Creative Director",
+    "show": false,
+    "name": "Sachin Chaudhary",
+    "role": "Founder & Owner",
     "avatar": "https://i.pravatar.cc/300?img=68",
-    "bio": "With over 30 years behind the lens, our founder built Neelam Films from a single camera in 1995 into one of Delhi's most trusted production houses. A passion for storytelling and an uncompromising eye for quality remain at the heart of everything we do.",
+    "bio": "With over 30 years behind the lens, Neelam Films grew from a single camera in 1995 into one of Delhi's most trusted production houses. A passion for storytelling and an uncompromising eye for quality remain at the heart of everything we do.",
     "quote": "Every frame tells a story. Our job is to tell it beautifully."
   },
   "timeline": [

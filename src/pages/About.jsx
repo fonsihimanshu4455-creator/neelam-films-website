@@ -145,6 +145,7 @@ export default function About() {
       </section>
 
       {/* Founder */}
+      {founder.show !== false && (
       <section className="border-t border-white/60 bg-white/55 px-5 py-24 backdrop-blur-md md:px-8 md:py-32">
         <div className="mx-auto max-w-5xl">
           <div className="mb-14 flex justify-center text-center">
@@ -171,6 +172,7 @@ export default function About() {
           </Reveal>
         </div>
       </section>
+      )}
 
       <CTASection />
     </>
