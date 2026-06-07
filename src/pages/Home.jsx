@@ -1,7 +1,7 @@
 import Hero from '../components/home/Hero'
-import Stats from '../components/home/Stats'
-import Statement from '../components/home/Statement'
 import ServicesGrid from '../components/home/ServicesGrid'
+import ParallaxBanner from '../components/home/ParallaxBanner'
+import Statement from '../components/home/Statement'
 import ClientsMarquee from '../components/home/ClientsMarquee'
 import FeaturedPortfolio from '../components/home/FeaturedPortfolio'
 import Testimonials from '../components/home/Testimonials'
@@ -14,17 +14,17 @@ export default function Home() {
   return (
     <>
       <Hero />
-      <Stats />
-      <Statement />
+      <ServicesGrid />
 
       {/* Kinetic divider */}
       <div className="overflow-hidden bg-gradient-to-r from-primary-600 via-primary-500 to-primary-600 py-6">
         <Marquee items={WORDS} white />
       </div>
 
-      <ServicesGrid />
-      <ClientsMarquee />
+      <ParallaxBanner />
+      <Statement />
       <FeaturedPortfolio />
+      <ClientsMarquee />
       <Testimonials />
       <CTASection />
     </>

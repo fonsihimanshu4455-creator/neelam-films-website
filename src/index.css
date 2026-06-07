@@ -112,6 +112,15 @@ body {
   }
 }
 
+/* Custom cursor: hide native on precise pointers */
+@media (pointer: fine) {
+  body,
+  a,
+  button {
+    cursor: none;
+  }
+}
+
 /* Subtle film grain overlay */
 .grain::before {
   content: '';

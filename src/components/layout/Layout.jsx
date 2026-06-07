@@ -5,6 +5,7 @@ import Footer from './Footer'
 import WhatsAppButton from './WhatsAppButton'
 import ScrollProgress from '../common/ScrollProgress'
 import MeshBackground from '../common/MeshBackground'
+import Cursor from '../common/Cursor'
 
 /**
  * Public site shell: scroll bar + grain + navbar + animated outlet + footer.
@@ -15,6 +16,7 @@ export default function Layout() {
   return (
     <div className="grain relative flex min-h-screen flex-col text-ink-900">
       <MeshBackground />
+      <Cursor />
       <ScrollProgress />
       <Navbar />
       <main className="flex-1">
