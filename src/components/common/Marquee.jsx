@@ -12,7 +12,10 @@ export default function Marquee({ items = [], reverse = false, outline = false, 
     : 'text-transparent [-webkit-text-stroke:1.5px_rgba(15,23,42,0.18)]'
 
   return (
-    <div className={`flex w-max ${reverse ? 'animate-marquee-reverse' : 'animate-marquee'} ${className}`}>
+    <div
+      className={`flex w-max transform-gpu will-change-transform ${reverse ? 'animate-marquee-reverse' : 'animate-marquee'} ${className}`}
+      style={{ backfaceVisibility: 'hidden' }}
+    >
       {track.map((word, i) => (
         <span key={i} className="flex items-center">
           <span className={`px-6 font-display text-5xl font-extrabold uppercase tracking-tight md:text-7xl ${outline ? stroke : fill}`}>

@@ -8,10 +8,10 @@ export default function MeshBackground() {
       {/* warm base */}
       <div className="absolute inset-0 bg-gradient-to-b from-cream-50 via-cream-100 to-cream-200" />
 
-      {/* soft warm glows */}
-      <div className="absolute -left-40 -top-40 h-[40rem] w-[40rem] rounded-full bg-primary-300/25 blur-[140px] animate-aurora" />
-      <div className="absolute right-[-12rem] top-[22%] h-[34rem] w-[34rem] rounded-full bg-amber-300/25 blur-[140px] animate-aurora [animation-delay:-7s]" />
-      <div className="absolute bottom-[-12rem] left-[26%] h-[38rem] w-[38rem] rounded-full bg-primary-200/30 blur-[150px] animate-aurora [animation-delay:-13s]" />
+      {/* soft warm glows (animation only on larger screens for mobile perf) */}
+      <div className="absolute -left-40 -top-40 h-[40rem] w-[40rem] rounded-full bg-primary-300/25 blur-[80px] md:blur-[140px] md:animate-aurora" />
+      <div className="absolute right-[-12rem] top-[22%] h-[34rem] w-[34rem] rounded-full bg-amber-300/25 blur-[80px] md:blur-[140px] md:animate-aurora md:[animation-delay:-7s]" />
+      <div className="absolute bottom-[-12rem] left-[26%] h-[38rem] w-[38rem] rounded-full bg-primary-200/30 blur-[80px] md:blur-[150px] md:animate-aurora md:[animation-delay:-13s]" />
 
       {/* fine editorial grid lines */}
       <div
