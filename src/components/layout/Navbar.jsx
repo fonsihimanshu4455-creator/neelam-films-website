@@ -32,16 +32,16 @@ export default function Navbar() {
   }, [])
 
   const linkClass = ({ isActive }) =>
-    `link-underline text-sm font-medium transition-colors ${
-      isActive ? 'text-primary-600' : 'text-ink-700 hover:text-primary-600'
+    `link-underline text-xs font-bold uppercase tracking-[0.12em] transition-colors ${
+      isActive ? 'text-primary-600' : 'text-ink-900 hover:text-primary-600'
     }`
 
   return (
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${
         scrolled
-          ? 'border-b border-slate-200/80 bg-white/80 backdrop-blur-xl shadow-soft'
-          : 'bg-white/40 backdrop-blur-md'
+          ? 'border-b-2 border-ink-900 bg-cream-50/90 backdrop-blur-xl'
+          : 'bg-transparent'
       }`}
     >
       <nav className="mx-auto flex h-[78px] max-w-7xl items-center justify-between px-5 md:px-8">
@@ -60,7 +60,7 @@ export default function Navbar() {
             onMouseEnter={() => setServicesOpen(true)}
             onMouseLeave={() => setServicesOpen(false)}
           >
-            <button className="flex items-center gap-1 text-sm font-medium text-ink-700 transition-colors hover:text-primary-600">
+            <button className="flex items-center gap-1 text-xs font-bold uppercase tracking-[0.12em] text-ink-900 transition-colors hover:text-primary-600">
               Services
               <ChevronDown size={15} className={`transition ${servicesOpen ? 'rotate-180' : ''}`} />
             </button>

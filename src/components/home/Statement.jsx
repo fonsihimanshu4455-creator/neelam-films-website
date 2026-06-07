@@ -17,7 +17,7 @@ export default function Statement() {
 
   return (
     <section ref={ref} className="relative mx-auto max-w-6xl px-5 py-28 md:px-8 md:py-40">
-      <p className="flex flex-wrap gap-x-3 gap-y-1 font-display text-2xl font-bold leading-snug sm:text-4xl lg:text-[3.25rem] lg:leading-[1.15]">
+      <p className="flex flex-wrap gap-x-3 gap-y-2 font-serif text-3xl italic leading-snug sm:text-5xl lg:text-[3.75rem] lg:leading-[1.2]">
         {words.map((w, i) => {
           const start = i / words.length
           const end = start + 1 / words.length

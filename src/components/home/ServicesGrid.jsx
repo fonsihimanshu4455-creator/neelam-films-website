@@ -64,7 +64,7 @@ export default function ServicesGrid() {
                 }`}
               >
                 <span className="font-display text-sm font-bold text-primary-300">0{i + 1}</span>
-                <h3 className="mt-2 max-w-xl font-display text-3xl font-extrabold text-white transition-transform duration-500 group-hover:translate-y-[-4px] md:text-6xl">
+                <h3 className="mt-2 max-w-xl font-display text-3xl uppercase leading-[0.95] tracking-tightest text-white transition-transform duration-500 group-hover:translate-y-[-4px] md:text-6xl">
                   {s.title}
                 </h3>
                 <p className="mt-3 max-w-md text-sm text-slate-200 md:text-base">{s.short}</p>
