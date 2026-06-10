@@ -6,8 +6,8 @@ import Button from '../common/Button'
 import VideoModal from '../common/VideoModal'
 
 /**
- * Bold editorial / film-poster hero: huge uppercase type on warm paper,
- * orange accents, a wide showreel key-art band.
+ * Cinema-luxe hero: towering condensed type on noir, champagne accents,
+ * a wide showreel key-art band and a scroll cue.
  */
 export default function Hero() {
   const { data } = useData()
@@ -27,45 +27,45 @@ export default function Hero() {
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 0.6 }}
-          className="flex items-center justify-between border-y-2 border-ink-900 py-3 text-[11px] font-bold uppercase tracking-[0.2em] text-ink-900"
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="flex items-center justify-between border-y border-cream-50/15 py-3 text-[10px] font-bold uppercase tracking-[0.3em] text-cream-300"
         >
           <span>Delhi's Production House</span>
-          <span className="hidden sm:inline">Films · Events · Digital</span>
+          <span className="hidden sm:inline text-primary-400">Films · Events · Digital</span>
           <span>Est. 1995</span>
         </motion.div>
 
         {/* MEGA headline */}
-        <h1 className="mt-8 font-display text-[3.4rem] uppercase leading-[0.86] tracking-tightest text-ink-900 sm:text-[6rem] lg:text-[8.5rem]">
-          <motion.span initial="hidden" animate="show" transition={{ staggerChildren: 0.12, delayChildren: 0.1 }} className="block">
+        <h1 className="mt-10 font-display text-[4.2rem] uppercase leading-[0.85] text-cream-50 sm:text-[7.5rem] lg:text-[10.5rem]">
+          <motion.span initial="hidden" animate="show" transition={{ staggerChildren: 0.12, delayChildren: 0.25 }} className="block">
             <span className="block overflow-hidden">
               <motion.span variants={line} className="inline-block">Stories that</motion.span>
             </span>
             <span className="block overflow-hidden">
-              <motion.span variants={line} className="inline-block text-primary-500">move.</motion.span>
+              <motion.span variants={line} className="inline-block text-gradient pr-2">move.</motion.span>
             </span>
             <span className="block overflow-hidden">
               <motion.span variants={line} className="inline-block">
-                <span className="font-serif lowercase italic tracking-normal text-ink-700">events that </span>matter
+                <span className="font-serif lowercase italic tracking-normal text-cream-300">events that </span>matter
               </motion.span>
             </span>
           </motion.span>
         </h1>
 
         {/* sub row */}
-        <div className="mt-10 grid gap-8 border-t-2 border-ink-900 pt-8 md:grid-cols-[1fr_auto] md:items-end">
+        <div className="mt-12 grid gap-8 border-t border-cream-50/15 pt-8 md:grid-cols-[1fr_auto] md:items-end">
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.6 }}
-            className="max-w-xl text-base leading-relaxed text-ink-700 md:text-lg"
+            transition={{ duration: 0.7, delay: 0.8 }}
+            className="max-w-xl text-base leading-relaxed text-cream-300 md:text-lg"
           >
             {hero.subheadline}
           </motion.p>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.75 }}
+            transition={{ duration: 0.7, delay: 0.95 }}
             className="flex flex-wrap items-center gap-4"
           >
             <Button to={hero.primaryCta.link}>
@@ -83,12 +83,12 @@ export default function Hero() {
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
-        className="mx-auto mt-12 max-w-7xl"
+        transition={{ duration: 1, delay: 0.6, ease: [0.22, 1, 0.36, 1] }}
+        className="mx-auto mt-14 max-w-7xl"
       >
         <button
           onClick={() => setOpen(true)}
-          className="group relative block aspect-[16/9] w-full overflow-hidden border-2 border-ink-900 bg-ink-950 md:aspect-[21/9]"
+          className="group relative block aspect-[16/9] w-full overflow-hidden border border-cream-50/15 bg-ink-900 md:aspect-[21/9]"
         >
           <iframe
             title="Showreel"
@@ -97,17 +97,31 @@ export default function Hero() {
             allow="autoplay; encrypted-media"
             frameBorder="0"
           />
-          <div className="absolute inset-0 bg-ink-950/30 transition group-hover:bg-ink-950/10" />
-          <span className="absolute left-1/2 top-1/2 flex h-24 w-24 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-primary-500 text-white shadow-glow transition group-hover:scale-110">
+          <div className="absolute inset-0 bg-ink-950/40 transition duration-500 group-hover:bg-ink-950/15" />
+          <span className="absolute left-1/2 top-1/2 flex h-24 w-24 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-primary-500 text-ink-950 shadow-glow transition duration-500 group-hover:scale-110">
             <Play size={34} fill="currentColor" className="ml-1" />
           </span>
-          <span className="absolute bottom-4 left-4 bg-white px-3 py-1.5 text-xs font-bold uppercase tracking-wider text-ink-900">
+          <span className="absolute bottom-4 left-4 bg-cream-50 px-3 py-1.5 text-xs font-bold uppercase tracking-wider text-ink-950">
             ▶ Showreel 2025
           </span>
-          <span className="absolute right-4 top-4 flex items-center gap-1.5 bg-primary-500 px-3 py-1.5 text-xs font-bold uppercase tracking-wider text-white">
+          <span className="absolute right-4 top-4 flex items-center gap-1.5 bg-primary-500 px-3 py-1.5 text-xs font-bold uppercase tracking-wider text-ink-950">
             <Star size={12} fill="currentColor" /> 30+ Years
           </span>
         </button>
+      </motion.div>
+
+      {/* scroll cue */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1.4, duration: 0.8 }}
+        className="mx-auto mt-10 flex max-w-7xl items-center justify-center gap-3"
+        aria-hidden="true"
+      >
+        <span className="text-[10px] font-bold uppercase tracking-[0.4em] text-cream-400">Scroll</span>
+        <span className="h-10 w-px overflow-hidden bg-cream-50/10">
+          <span className="block h-full w-full animate-scroll-cue bg-primary-500" />
+        </span>
       </motion.div>
 
       <VideoModal open={open} onClose={() => setOpen(false)} videoId={vid} title="Neelam Films Showreel" />

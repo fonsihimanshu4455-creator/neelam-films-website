@@ -21,7 +21,7 @@ export default function Portfolio() {
     <>
       <PageHero
         eyebrow="Our Work"
-        title="A Portfolio Built Over 30 Years"
+        title="A portfolio built over 30 years"
         subtitle="Explore a selection of our productions across TVCs, corporate films, live events, documentaries and music videos."
         image="https://images.unsplash.com/photo-1574267432553-4b4628081c31?w=1600&q=80"
       />
@@ -34,10 +34,10 @@ export default function Portfolio() {
               <button
                 key={f}
                 onClick={() => setFilter(f)}
-                className={`rounded-full px-5 py-2.5 text-sm font-semibold transition ${
+                className={`px-5 py-2.5 text-xs font-bold uppercase tracking-[0.15em] transition ${
                   filter === f
-                    ? 'bg-primary-500 text-white shadow-glow'
-                    : 'border border-slate-200 bg-white text-slate-600 hover:border-primary-300'
+                    ? 'bg-primary-500 text-ink-950 shadow-glow'
+                    : 'border border-cream-50/15 text-cream-300 hover:border-primary-500/60 hover:text-primary-400'
                 }`}
               >
                 {f}
@@ -58,7 +58,7 @@ export default function Portfolio() {
                   transition={{ duration: 0.3 }}
                   whileHover={{ y: -6 }}
                   onClick={() => setActive(p)}
-                  className="group relative aspect-[4/3] overflow-hidden rounded-3xl text-left shadow-sm"
+                  className="group relative aspect-[4/3] overflow-hidden border border-cream-50/10 text-left"
                 >
                   <img
                     src={p.image}
@@ -66,16 +66,16 @@ export default function Portfolio() {
                     loading="lazy"
                     className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-dark-900/90 via-dark-900/20 to-transparent" />
-                  <span className="absolute left-1/2 top-1/2 flex h-14 w-14 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white/90 text-primary-600 opacity-0 transition group-hover:opacity-100">
+                  <div className="absolute inset-0 bg-gradient-to-t from-ink-950/95 via-ink-950/25 to-transparent" />
+                  <span className="absolute left-1/2 top-1/2 flex h-14 w-14 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-primary-500 text-ink-950 opacity-0 transition group-hover:opacity-100">
                     <Play size={22} fill="currentColor" />
                   </span>
                   <div className="absolute bottom-0 left-0 p-5">
-                    <span className="text-xs font-semibold uppercase tracking-wider text-primary-400">
+                    <span className="text-[11px] font-semibold uppercase tracking-[0.2em] text-primary-400">
                       {p.category} • {p.year}
                     </span>
-                    <h3 className="font-display text-lg font-bold text-white">{p.title}</h3>
-                    <p className="text-sm text-slate-300">{p.client}</p>
+                    <h3 className="font-display text-2xl uppercase text-cream-50">{p.title}</h3>
+                    <p className="text-sm text-cream-300">{p.client}</p>
                   </div>
                 </motion.button>
               ))}
@@ -83,7 +83,7 @@ export default function Portfolio() {
           </motion.div>
 
           {items.length === 0 && (
-            <p className="py-16 text-center text-slate-400">No projects in this category yet.</p>
+            <p className="py-16 text-center text-cream-400">No projects in this category yet.</p>
           )}
         </div>
       </section>

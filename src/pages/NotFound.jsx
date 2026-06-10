@@ -1,20 +1,21 @@
-import { Link } from 'react-router-dom'
 import { Home } from 'lucide-react'
+import Button from '../components/common/Button'
 
 export default function NotFound() {
   return (
     <div className="flex min-h-[70vh] flex-col items-center justify-center px-4 text-center">
-      <span className="font-display text-8xl font-extrabold text-gradient">404</span>
-      <h1 className="mt-4 font-display text-2xl font-bold text-ink-900">Page Not Found</h1>
-      <p className="mt-2 max-w-md text-slate-500">
-        The page you're looking for doesn't exist or has been moved.
+      <span className="font-display text-9xl leading-none text-gradient">404</span>
+      <h1 className="mt-4 font-display text-4xl uppercase text-cream-50">
+        Scene <span className="font-serif lowercase italic tracking-normal text-primary-400">missing</span>
+      </h1>
+      <p className="mt-3 max-w-md text-cream-300">
+        This reel doesn't exist — the page you're looking for was cut in the edit.
       </p>
-      <Link
-        to="/"
-        className="mt-8 inline-flex items-center gap-2 rounded-full bg-primary-500 px-7 py-3.5 text-sm font-semibold text-white transition hover:bg-primary-600"
-      >
-        <Home size={18} /> Back to Home
-      </Link>
+      <div className="mt-9">
+        <Button to="/">
+          <Home size={16} /> Back to home
+        </Button>
+      </div>
     </div>
   )
 }

@@ -6,6 +6,9 @@ import PageHero from '../components/common/PageHero'
 
 const INITIAL = { name: '', phone: '', email: '', service: '', message: '' }
 
+const FIELD_CLASS =
+  'w-full border border-cream-50/15 bg-ink-950 px-4 py-3 text-sm text-cream-50 placeholder-cream-500 outline-none transition focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20'
+
 export default function Contact() {
   const { data } = useData()
   const { contact, services } = data
@@ -14,12 +17,20 @@ export default function Contact() {
 
   const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value })
 
+  // No backend — compose the enquiry into a pre-filled WhatsApp message.
   const handleSubmit = (e) => {
     e.preventDefault()
-    console.log('Contact form submission:', form)
+    const msg =
+      `Hi Neelam Films! I'd like a quote.\n\n` +
+      `Name: ${form.name}\n` +
+      `Phone: ${form.phone}\n` +
+      `Email: ${form.email}\n` +
+      `Service: ${form.service}\n\n` +
+      `${form.message}`
+    window.open(`https://wa.me/${contact.whatsapp}?text=${encodeURIComponent(msg)}`, '_blank', 'noopener,noreferrer')
     setSent(true)
     setForm(INITIAL)
-    setTimeout(() => setSent(false), 5000)
+    setTimeout(() => setSent(false), 6000)
   }
 
   return (
@@ -39,10 +50,12 @@ export default function Contact() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="rounded-3xl border border-slate-100 bg-white p-8 shadow-soft md:p-10"
+            className="border border-cream-50/10 bg-ink-900 p-8 shadow-soft md:p-10"
           >
-            <h2 className="font-display text-2xl font-bold text-ink-900">Send us a message</h2>
-            <p className="mt-2 text-sm text-slate-500">Fill the form and we'll get back within 24 hours.</p>
+            <h2 className="font-display text-3xl uppercase text-cream-50">Send us a message</h2>
+            <p className="mt-2 text-sm text-cream-400">
+              Fill the form — it opens WhatsApp with your enquiry ready to send, and we reply within 24 hours.
+            </p>
 
             <form onSubmit={handleSubmit} className="mt-8 space-y-5">
               <div className="grid gap-5 sm:grid-cols-2">
@@ -52,13 +65,13 @@ export default function Contact() {
               <Field label="Email" name="email" type="email" value={form.email} onChange={handleChange} required />
 
               <div>
-                <label className="mb-1.5 block text-sm font-medium text-ink-800">Service</label>
+                <label className="mb-1.5 block text-sm font-medium text-cream-200">Service</label>
                 <select
                   name="service"
                   value={form.service}
                   onChange={handleChange}
                   required
-                  className="w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm text-ink-900 outline-none transition focus:border-primary-500 focus:ring-2 focus:ring-primary-100"
+                  className={FIELD_CLASS}
                 >
                   <option value="">Select a service</option>
                   {services.map((s) => (
@@ -69,7 +82,7 @@ export default function Contact() {
               </div>
 
               <div>
-                <label className="mb-1.5 block text-sm font-medium text-ink-800">Message</label>
+                <label className="mb-1.5 block text-sm font-medium text-cream-200">Message</label>
                 <textarea
                   name="message"
                   rows={4}
@@ -77,7 +90,7 @@ export default function Contact() {
                   onChange={handleChange}
                   required
                   placeholder="Tell us about your project..."
-                  className="w-full rounded-xl border border-slate-200 px-4 py-3 text-sm text-ink-900 placeholder-slate-400 outline-none transition focus:border-primary-500 focus:ring-2 focus:ring-primary-100"
+                  className={FIELD_CLASS}
                 />
               </div>
 
@@ -85,20 +98,20 @@ export default function Contact() {
                 type="submit"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                className="flex w-full items-center justify-center gap-2 rounded-full bg-primary-500 py-3.5 text-sm font-semibold text-white shadow-glow transition hover:bg-primary-600"
+                className="flex w-full items-center justify-center gap-2 bg-primary-500 py-3.5 text-xs font-bold uppercase tracking-[0.15em] text-ink-950 shadow-glow transition hover:bg-primary-400"
               >
                 <Send size={18} />
-                Send message
+                Send via WhatsApp
               </motion.button>
 
               {sent && (
                 <motion.div
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
-                  className="flex items-center gap-2 rounded-xl border border-green-200 bg-green-50 px-4 py-3 text-sm text-green-700"
+                  className="flex items-center gap-2 border border-primary-500/40 bg-primary-500/10 px-4 py-3 text-sm text-primary-300"
                 >
                   <CheckCircle2 size={18} />
-                  Thank you! Your message has been received.
+                  WhatsApp is opening with your message pre-filled — just hit send!
                 </motion.div>
               )}
             </form>
@@ -112,9 +125,9 @@ export default function Contact() {
             transition={{ duration: 0.6 }}
             className="space-y-6"
           >
-            <div className="rounded-3xl bg-gradient-to-br from-primary-600 to-primary-800 p-8 text-white shadow-soft md:p-10">
-              <h2 className="font-display text-2xl font-bold">Contact information</h2>
-              <p className="mt-2 text-sm text-primary-100">Reach us directly through any of these channels.</p>
+            <div className="bg-gradient-to-br from-primary-400 to-primary-600 p-8 text-ink-950 shadow-soft md:p-10">
+              <h2 className="font-display text-3xl uppercase">Contact information</h2>
+              <p className="mt-2 text-sm text-ink-900/70">Reach us directly through any of these channels.</p>
 
               <ul className="mt-7 space-y-5 text-sm">
                 <InfoRow icon={MapPin} label="Address" value={contact.address} />
@@ -128,20 +141,20 @@ export default function Contact() {
                 href={`https://wa.me/${contact.whatsapp}?text=Hi%20Neelam%20Films`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-7 flex items-center justify-center gap-2 rounded-full bg-white py-3.5 text-sm font-semibold text-primary-700 transition hover:bg-primary-50"
+                className="mt-7 flex items-center justify-center gap-2 bg-ink-950 py-3.5 text-xs font-bold uppercase tracking-[0.15em] text-cream-50 transition hover:bg-ink-800"
               >
                 <MessageCircle size={18} className="text-[#25D366]" fill="currentColor" />
                 Chat on WhatsApp
               </a>
             </div>
 
-            <div className="overflow-hidden rounded-3xl border border-slate-200 shadow-sm">
+            <div className="overflow-hidden border border-cream-50/10 shadow-soft">
               <iframe
                 title="Neelam Films location"
                 src={contact.mapEmbed}
                 width="100%"
                 height="280"
-                style={{ border: 0 }}
+                style={{ border: 0, filter: 'grayscale(1) invert(0.92) contrast(0.9)' }}
                 allowFullScreen=""
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
@@ -157,14 +170,14 @@ export default function Contact() {
 function Field({ label, name, type = 'text', value, onChange, required }) {
   return (
     <div>
-      <label className="mb-1.5 block text-sm font-medium text-ink-800">{label}</label>
+      <label className="mb-1.5 block text-sm font-medium text-cream-200">{label}</label>
       <input
         type={type}
         name={name}
         value={value}
         onChange={onChange}
         required={required}
-        className="w-full rounded-xl border border-slate-200 px-4 py-3 text-sm text-ink-900 outline-none transition focus:border-primary-500 focus:ring-2 focus:ring-primary-100"
+        className={FIELD_CLASS}
       />
     </div>
   )
@@ -173,18 +186,18 @@ function Field({ label, name, type = 'text', value, onChange, required }) {
 function InfoRow({ icon: IconCmp, label, value, href }) {
   const content = (
     <div className="flex gap-4">
-      <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-white/15 text-white">
+      <span className="flex h-10 w-10 shrink-0 items-center justify-center bg-ink-950/10 text-ink-950">
         <IconCmp size={18} />
       </span>
       <div>
-        <p className="text-xs uppercase tracking-wider text-primary-200">{label}</p>
-        <p className="text-white">{value}</p>
+        <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-ink-900/60">{label}</p>
+        <p className="font-medium text-ink-950">{value}</p>
       </div>
     </div>
   )
   return href ? (
     <li>
-      <a href={href} target={href.startsWith('http') ? '_blank' : undefined} rel="noopener noreferrer" className="transition hover:opacity-80">
+      <a href={href} target={href.startsWith('http') ? '_blank' : undefined} rel="noopener noreferrer" className="transition hover:opacity-75">
         {content}
       </a>
     </li>

@@ -5,7 +5,9 @@ import { motion, useScroll, useTransform } from 'framer-motion'
  * Big editorial statement where words light up as you scroll.
  */
 const TEXT =
-  'For three decades, Neelam Films has turned ideas into cinema and moments into movements — Delhi’s most trusted name in production & live events.'
+  'Thirty years. Three thousand stories. One obsession — making every frame unforgettable. From Delhi’s grandest stages to the quietest studio sessions, we craft cinema, sound and spectacle.'
+
+const HIGHLIGHTS = ['stories', 'unforgettable', 'cinema', 'spectacle']
 
 export default function Statement() {
   const ref = useRef(null)
@@ -17,6 +19,9 @@ export default function Statement() {
 
   return (
     <section ref={ref} className="relative mx-auto max-w-6xl px-5 py-28 md:px-8 md:py-40">
+      <span className="mb-10 inline-flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.3em] text-primary-400">
+        <span className="h-px w-8 bg-primary-500" /> ( 02 ) — The house
+      </span>
       <p className="flex flex-wrap gap-x-3 gap-y-2 font-serif text-3xl italic leading-snug sm:text-5xl lg:text-[3.75rem] lg:leading-[1.2]">
         {words.map((w, i) => {
           const start = i / words.length
@@ -29,12 +34,10 @@ export default function Statement() {
 }
 
 function Word({ progress, range, word }) {
-  const opacity = useTransform(progress, range, [0.15, 1])
-  const highlight = ['cinema', 'movements', 'trusted', 'production'].some((k) =>
-    word.toLowerCase().includes(k),
-  )
+  const opacity = useTransform(progress, range, [0.12, 1])
+  const highlight = HIGHLIGHTS.some((k) => word.toLowerCase().includes(k))
   return (
-    <motion.span style={{ opacity }} className={highlight ? 'text-gradient' : 'text-ink-900'}>
+    <motion.span style={{ opacity }} className={highlight ? 'text-gradient' : 'text-cream-100'}>
       {word}
     </motion.span>
   )

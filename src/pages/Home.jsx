@@ -17,8 +17,8 @@ export default function Home() {
       <ServicesGrid />
 
       {/* Kinetic divider */}
-      <div className="overflow-hidden bg-gradient-to-r from-primary-600 via-primary-500 to-primary-600 py-6">
-        <Marquee items={WORDS} white />
+      <div className="overflow-hidden border-y border-cream-50/10 bg-ink-900 py-6">
+        <Marquee items={WORDS} outline />
       </div>
 
       <ParallaxBanner />

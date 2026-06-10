@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -11,43 +11,43 @@ h1,
 h2,
 h3,
 h4 {
-  font-family: 'Archivo Black', Impact, sans-serif;
-  letter-spacing: -0.02em;
+  font-family: 'Bebas Neue', Impact, sans-serif;
+  letter-spacing: 0.01em;
 }
 
 html {
   scroll-behavior: smooth;
-  background: #f8f3ea;
+  background: #0a0908;
 }
 
 body {
   margin: 0;
-  background: #f8f3ea;
-  color: #1c1714;
+  background: #0a0908;
+  color: #eae2d0;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
   overflow-x: hidden;
 }
 
 ::selection {
-  background: #f9580f;
-  color: #fff;
+  background: #d49b3a;
+  color: #0a0908;
 }
 
-/* Warm scrollbar */
+/* Noir scrollbar */
 ::-webkit-scrollbar {
   width: 10px;
 }
 ::-webkit-scrollbar-track {
-  background: #efe7d8;
+  background: #100e0c;
 }
 ::-webkit-scrollbar-thumb {
-  background: #c7b8a3;
+  background: #2a251f;
   border-radius: 0;
-  border: 2px solid #efe7d8;
+  border: 2px solid #100e0c;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #f9580f;
+  background: #d49b3a;
 }
 
 .no-scrollbar::-webkit-scrollbar {
@@ -60,14 +60,14 @@ body {
 
 @layer components {
   .text-gradient {
-    background-image: linear-gradient(120deg, #c2330c 0%, #f9580f 55%, #fb923c 100%);
+    background-image: linear-gradient(120deg, #f1dcab 0%, #e0b055 45%, #bb7f2b 100%);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
   }
 
   .text-shimmer {
-    background: linear-gradient(110deg, #6b5d52 35%, #f9580f 50%, #6b5d52 65%);
+    background: linear-gradient(110deg, #92866c 35%, #e8c67c 50%, #92866c 65%);
     background-size: 200% auto;
     -webkit-background-clip: text;
     background-clip: text;
@@ -75,17 +75,27 @@ body {
     animation: shimmer 6s linear infinite;
   }
 
+  /* Hollow display type for marquees / backdrops */
+  .text-outline {
+    color: transparent;
+    -webkit-text-stroke: 1.5px rgba(246, 241, 230, 0.22);
+  }
+  .text-outline-gold {
+    color: transparent;
+    -webkit-text-stroke: 1.5px rgba(212, 155, 58, 0.5);
+  }
+
   .glass {
-    background: rgba(255, 255, 255, 0.7);
-    border: 1px solid rgba(28, 23, 20, 0.1);
+    background: rgba(10, 9, 8, 0.65);
+    border: 1px solid rgba(246, 241, 230, 0.08);
     backdrop-filter: blur(16px);
   }
 
   .shadow-soft {
-    box-shadow: 0 1px 2px rgba(28, 23, 20, 0.05), 0 14px 36px -14px rgba(28, 23, 20, 0.2);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4), 0 18px 44px -16px rgba(0, 0, 0, 0.65);
   }
   .shadow-glow {
-    box-shadow: 0 18px 50px -18px rgba(249, 88, 15, 0.55);
+    box-shadow: 0 18px 50px -18px rgba(212, 155, 58, 0.5);
   }
 
   .link-underline {
@@ -96,7 +106,7 @@ body {
     position: absolute;
     left: 0;
     bottom: -3px;
-    height: 2px;
+    height: 1.5px;
     width: 100%;
     background: currentColor;
     transform: scaleX(0);
@@ -116,6 +126,6 @@ body {
   inset: 0;
   z-index: 9999;
   pointer-events: none;
-  opacity: 0.04;
+  opacity: 0.05;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }

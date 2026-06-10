@@ -2,7 +2,7 @@ import { useRef } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
 
 /**
- * Cinematic full-bleed inner-page hero with a parallax image & overlay.
+ * Cinematic full-bleed inner-page hero with a parallax image & noir overlay.
  */
 export default function PageHero({ eyebrow, title, subtitle, image, children }) {
   const ref = useRef(null)
@@ -18,11 +18,11 @@ export default function PageHero({ eyebrow, title, subtitle, image, children }) 
           aria-hidden="true"
           loading="eager"
           style={{ y }}
-          className="absolute inset-0 h-[120%] w-full object-cover"
+          className="absolute inset-0 h-[120%] w-full object-cover opacity-70"
         />
       )}
-      <div className="absolute inset-0 bg-gradient-to-t from-ink-950 via-ink-950/55 to-ink-950/30" />
-      <div className="absolute inset-0 bg-gradient-to-r from-primary-950/60 via-transparent to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-t from-ink-950 via-ink-950/60 to-ink-950/30" />
+      <div className="absolute inset-0 bg-gradient-to-r from-ink-950/70 via-transparent to-transparent" />
 
       <div className="relative z-10 mx-auto w-full max-w-7xl px-5 pb-16 md:px-8 md:pb-20">
         <motion.div
@@ -33,15 +33,15 @@ export default function PageHero({ eyebrow, title, subtitle, image, children }) 
         >
           {eyebrow && (
             <div className="mb-5 flex items-center gap-3">
-              <span className="h-px w-12 bg-primary-400" />
-              <span className="text-xs font-semibold uppercase tracking-[0.3em] text-primary-300">{eyebrow}</span>
+              <span className="h-px w-12 bg-primary-500" />
+              <span className="text-[11px] font-semibold uppercase tracking-[0.35em] text-primary-400">{eyebrow}</span>
             </div>
           )}
-          <h1 className="font-display text-4xl font-extrabold leading-[1.0] tracking-tightest text-white sm:text-6xl lg:text-7xl">
+          <h1 className="font-display text-5xl uppercase leading-[0.9] text-cream-50 sm:text-7xl lg:text-8xl">
             {title}
           </h1>
           {subtitle && (
-            <p className="mt-6 max-w-2xl text-base leading-relaxed text-slate-200 sm:text-lg">{subtitle}</p>
+            <p className="mt-6 max-w-2xl text-base leading-relaxed text-cream-200 sm:text-lg">{subtitle}</p>
           )}
           {children && <div className="mt-9">{children}</div>}
         </motion.div>

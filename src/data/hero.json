@@ -1,9 +1,9 @@
 {
   "videoId": "dQw4w9WgXcQ",
-  "eyebrow": "Since 1995 • Delhi NCR",
+  "eyebrow": "Production House · Est. 1995 · Delhi",
   "headline": "Stories That Move. Events That Matter.",
-  "subheadline": "Delhi's Trusted Production House & Live Event Specialists for over 30 years. From cinematic TVCs to grand live productions — we bring vision to life.",
-  "primaryCta": { "label": "Get a Free Quote", "link": "/contact" },
+  "subheadline": "Thirty years. Three thousand productions. One standard — cinema-grade craft in every frame, from TVCs and brand films to live spectacles streamed to the world.",
+  "primaryCta": { "label": "Start a Project", "link": "/contact" },
   "secondaryCta": { "label": "View Our Work", "link": "/portfolio" },
   "stats": [
     { "value": 30, "suffix": "+", "label": "Years of Legacy" },

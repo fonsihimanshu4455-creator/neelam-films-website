@@ -20,10 +20,10 @@ export default function ParallaxBanner() {
         alt="On set with Neelam Films"
         loading="lazy"
         style={{ y }}
-        className="absolute inset-0 h-[125%] w-full object-cover"
+        className="absolute inset-0 h-[125%] w-full object-cover opacity-60"
       />
-      <div className="absolute inset-0 bg-ink-950/70" />
-      <div className="absolute inset-0 bg-gradient-to-t from-ink-950 via-transparent to-ink-950/40" />
+      <div className="absolute inset-0 bg-ink-950/60" />
+      <div className="absolute inset-0 bg-gradient-to-t from-ink-950 via-transparent to-ink-950/60" />
 
       <div className="relative z-10 mx-auto flex h-full max-w-5xl flex-col items-center justify-center px-5 text-center">
         <motion.h2
@@ -31,10 +31,10 @@ export default function ParallaxBanner() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-          className="font-display text-4xl font-extrabold leading-tight text-white md:text-7xl"
+          className="font-display text-5xl uppercase leading-[0.9] text-cream-50 md:text-8xl"
         >
           30 years behind <br />
-          <span className="font-serif font-normal italic text-primary-300">the lens.</span>
+          <span className="font-serif lowercase italic tracking-normal text-primary-400">the lens.</span>
         </motion.h2>
 
         <div className="mt-14 grid w-full grid-cols-2 gap-8 md:grid-cols-4">
@@ -47,10 +47,10 @@ export default function ParallaxBanner() {
               transition={{ duration: 0.5, delay: i * 0.1 }}
               className="text-center"
             >
-              <div className="font-display text-4xl font-extrabold text-white md:text-6xl">
+              <div className="font-display text-5xl text-gradient md:text-7xl">
                 <CountUp value={s.value} suffix={s.suffix} />
               </div>
-              <p className="mt-2 text-[11px] font-medium uppercase tracking-[0.2em] text-white/60 md:text-sm">
+              <p className="mt-2 text-[11px] font-medium uppercase tracking-[0.25em] text-cream-300 md:text-sm">
                 {s.label}
               </p>
             </motion.div>

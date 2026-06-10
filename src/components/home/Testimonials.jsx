@@ -4,6 +4,16 @@ import { ChevronLeft, ChevronRight, Quote, Star } from 'lucide-react'
 import { useData } from '../../context/DataContext'
 import Reveal from '../common/Reveal'
 
+function initials(name = '') {
+  return name
+    .split(' ')
+    .map((w) => w[0])
+    .filter(Boolean)
+    .slice(0, 2)
+    .join('')
+    .toUpperCase()
+}
+
 export default function Testimonials() {
   const { data } = useData()
   const items = data.testimonials
@@ -21,13 +31,13 @@ export default function Testimonials() {
   const t = items[index]
 
   return (
-    <section className="relative overflow-hidden border-y border-white/60 bg-white/50 px-5 py-24 backdrop-blur-md md:px-8 md:py-32">
-      <Quote className="pointer-events-none absolute -left-6 top-10 text-primary-500/5" size={260} />
+    <section className="relative overflow-hidden border-y border-cream-50/10 bg-ink-900/50 px-5 py-24 md:px-8 md:py-32">
+      <Quote className="pointer-events-none absolute -left-6 top-10 text-primary-500/[0.06]" size={260} />
 
       <div className="relative mx-auto max-w-5xl">
         <Reveal>
-          <span className="mb-12 flex items-center justify-center gap-2 text-xs font-bold uppercase tracking-[0.25em] text-primary-600">
-            <span className="h-px w-8 bg-primary-500" /> Client love <span className="h-px w-8 bg-primary-500" />
+          <span className="mb-12 flex items-center justify-center gap-3 text-[11px] font-bold uppercase tracking-[0.3em] text-primary-400">
+            <span className="h-px w-8 bg-primary-500" /> ( 04 ) — Client love <span className="h-px w-8 bg-primary-500" />
           </span>
         </Reveal>
 
@@ -42,23 +52,20 @@ export default function Testimonials() {
           >
             <div className="mb-6 flex justify-center gap-1">
               {Array.from({ length: t.rating }).map((_, i) => (
-                <Star key={i} size={18} className="text-amber-400" fill="currentColor" />
+                <Star key={i} size={18} className="text-primary-400" fill="currentColor" />
               ))}
             </div>
-            <p className="mx-auto max-w-3xl font-display text-2xl font-semibold leading-snug text-ink-900 md:text-4xl md:leading-[1.25]">
+            <p className="mx-auto max-w-3xl font-serif text-2xl italic leading-snug text-cream-100 md:text-4xl md:leading-[1.3]">
               “{t.quote}”
             </p>
 
             <div className="mt-10 flex items-center justify-center gap-4">
-              <img
-                src={t.avatar}
-                alt={t.name}
-                loading="lazy"
-                className="h-14 w-14 rounded-full border-2 border-primary-200 object-cover"
-              />
+              <span className="flex h-14 w-14 items-center justify-center rounded-full border border-primary-500/50 bg-primary-500/10 font-display text-xl text-primary-400">
+                {initials(t.name)}
+              </span>
               <div className="text-left">
-                <p className="font-display font-bold text-ink-900">{t.name}</p>
-                <p className="text-sm text-slate-500">{t.role}</p>
+                <p className="font-display text-lg uppercase tracking-wide text-cream-50">{t.name}</p>
+                <p className="text-sm text-cream-400">{t.role}</p>
               </div>
             </div>
           </motion.div>
@@ -68,7 +75,7 @@ export default function Testimonials() {
           <button
             onClick={prev}
             aria-label="Previous"
-            className="flex h-11 w-11 items-center justify-center rounded-full border border-slate-300 text-ink-900 transition hover:border-primary-500 hover:bg-primary-500 hover:text-white"
+            className="flex h-11 w-11 items-center justify-center rounded-full border border-cream-50/20 text-cream-100 transition hover:border-primary-500 hover:bg-primary-500 hover:text-ink-950"
           >
             <ChevronLeft size={20} />
           </button>
@@ -79,7 +86,7 @@ export default function Testimonials() {
                 onClick={() => setIndex(i)}
                 aria-label={`Go to ${i + 1}`}
                 className={`h-2 rounded-full transition-all ${
-                  i === index ? 'w-7 bg-primary-500' : 'w-2 bg-slate-300'
+                  i === index ? 'w-7 bg-primary-500' : 'w-2 bg-cream-50/20'
                 }`}
               />
             ))}
@@ -87,7 +94,7 @@ export default function Testimonials() {
           <button
             onClick={next}
             aria-label="Next"
-            className="flex h-11 w-11 items-center justify-center rounded-full border border-slate-300 text-ink-900 transition hover:border-primary-500 hover:bg-primary-500 hover:text-white"
+            className="flex h-11 w-11 items-center justify-center rounded-full border border-cream-50/20 text-cream-100 transition hover:border-primary-500 hover:bg-primary-500 hover:text-ink-950"
           >
             <ChevronRight size={20} />
           </button>

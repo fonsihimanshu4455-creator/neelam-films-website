@@ -1,43 +1,53 @@
 import { useData } from '../../context/DataContext'
+import { useMemo } from 'react'
 
 /**
- * Dual-row infinite client-logo marquee on light.
+ * Dual-row typographic client marquee — pure wordmarks, no logo files needed.
+ * Alternates condensed caps with italic serif for an editorial rhythm.
  */
 export default function ClientsMarquee() {
   const { data } = useData()
   const clients = data.clients
-  const mid = Math.ceil(clients.length / 2)
-  const rowA = [...clients.slice(0, mid), ...clients.slice(0, mid)]
-  const rowB = [...clients.slice(mid), ...clients.slice(mid)]
 
-  const Logo = ({ c }) => (
-    <div className="flex h-16 w-40 shrink-0 items-center justify-center rounded-2xl border border-slate-200 bg-white px-6 shadow-sm transition hover:border-primary-300 hover:shadow-soft">
-      <img
-        src={c.logo}
-        alt={c.name}
-        loading="lazy"
-        className="max-h-9 w-auto opacity-70 grayscale transition hover:opacity-100 hover:grayscale-0"
-      />
-    </div>
+  const { rowA, rowB } = useMemo(() => {
+    const mid = Math.ceil(clients.length / 2)
+    const a = clients.slice(0, mid)
+    const b = clients.slice(mid)
+    return { rowA: [...a, ...a], rowB: [...b, ...b] }
+  }, [clients])
+
+  const Name = ({ c, i }) => (
+    <span className="flex shrink-0 items-center">
+      <span
+        className={
+          i % 2 === 0
+            ? 'px-8 font-display text-3xl uppercase tracking-wide text-cream-200/70 transition hover:text-primary-400 md:text-5xl'
+            : 'px-8 font-serif text-3xl italic text-cream-300/60 transition hover:text-primary-400 md:text-5xl'
+        }
+      >
+        {c.name}
+      </span>
+      <span className="text-primary-500/60">✦</span>
+    </span>
   )
 
   return (
-    <section className="overflow-hidden border-y border-white/60 bg-white/40 py-16 backdrop-blur-md">
+    <section className="overflow-hidden border-y border-cream-50/10 bg-ink-900/50 py-16">
       <div className="mb-10 text-center">
-        <span className="text-xs font-medium uppercase tracking-[0.3em] text-slate-400">
+        <span className="text-[11px] font-medium uppercase tracking-[0.35em] text-cream-400">
           30 years · 500+ brands · one promise
         </span>
       </div>
 
-      <div className="relative space-y-4">
-        <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-32 bg-gradient-to-r from-white to-transparent" />
-        <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-32 bg-gradient-to-l from-white to-transparent" />
+      <div className="relative space-y-6">
+        <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-32 bg-gradient-to-r from-ink-950 to-transparent" />
+        <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-32 bg-gradient-to-l from-ink-950 to-transparent" />
 
-        <div className="flex w-max animate-marquee gap-4">
-          {rowA.map((c, i) => <Logo key={i} c={c} />)}
+        <div className="flex w-max animate-marquee items-center">
+          {rowA.map((c, i) => <Name key={i} c={c} i={i} />)}
         </div>
-        <div className="flex w-max animate-marquee-reverse gap-4">
-          {rowB.map((c, i) => <Logo key={i} c={c} />)}
+        <div className="flex w-max animate-marquee-reverse items-center">
+          {rowB.map((c, i) => <Name key={i} c={c} i={i + 1} />)}
         </div>
       </div>
     </section>

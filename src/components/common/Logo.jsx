@@ -11,14 +11,14 @@ export default function Logo({ className = 'h-12 w-auto', to = '/' }) {
 
   const inner = error ? (
     <span className="flex items-center gap-2.5">
-      <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-primary-400 to-primary-700 text-white shadow-glow">
+      <span className="flex h-10 w-10 items-center justify-center bg-gradient-to-br from-primary-400 to-primary-700 text-ink-950 shadow-glow">
         <Clapperboard size={20} />
       </span>
       <span className="flex flex-col leading-none">
-        <span className="font-display text-lg font-extrabold tracking-tight text-ink-900">
-          Neelam<span className="text-primary-500"> Films</span>
+        <span className="font-display text-2xl tracking-wide text-cream-50">
+          Neelam<span className="text-primary-400"> Films</span>
         </span>
-        <span className="text-[9px] font-medium uppercase tracking-[0.3em] text-slate-400">
+        <span className="text-[9px] font-medium uppercase tracking-[0.3em] text-cream-400">
           Since 1995
         </span>
       </span>

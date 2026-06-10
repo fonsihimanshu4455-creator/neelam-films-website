@@ -4,47 +4,52 @@ export default {
   theme: {
     extend: {
       colors: {
-        // Bold warm orange accent (was blue)
+        // Champagne gold accent — cinema luxe
         primary: {
-          50: '#fff7ed',
-          100: '#ffedd5',
-          200: '#fed7aa',
-          300: '#fdba74',
-          400: '#fb923c',
-          500: '#f9580f',
-          600: '#ea420c',
-          700: '#c2330c',
-          800: '#9a2a12',
-          900: '#7c2512',
+          50: '#fdf9ef',
+          100: '#f9efd7',
+          200: '#f1dcab',
+          300: '#e8c67c',
+          400: '#e0b055',
+          500: '#d49b3a',
+          600: '#bb7f2b',
+          700: '#9b6425',
+          800: '#7e5024',
+          900: '#684221',
+          950: '#3b2310',
         },
-        // Warm espresso "ink" for text & dark blocks
+        // Warm noir "ink" — base surfaces
         ink: {
-          950: '#140f0c',
-          900: '#1c1714',
-          800: '#2c2521',
-          700: '#473d36',
-          600: '#6b5d52',
+          950: '#0a0908',
+          900: '#100e0c',
+          850: '#15120f',
+          800: '#1c1916',
+          700: '#2a251f',
+          600: '#4d4639',
+          500: '#6f6757',
         },
-        // Warm paper neutrals
+        // Warm paper neutrals — text on noir
         cream: {
-          50: '#fdfbf7',
-          100: '#f8f3ea',
-          200: '#efe7d8',
-          300: '#e3d6c0',
+          50: '#f6f1e6',
+          100: '#eae2d0',
+          200: '#d6cab1',
+          300: '#b4a78c',
+          400: '#92866c',
+          500: '#776c55',
         },
         dark: {
-          900: '#1c1714',
-          800: '#2c2521',
-          700: '#473d36',
+          900: '#0a0908',
+          800: '#1c1916',
+          700: '#2a251f',
         },
       },
       fontFamily: {
         sans: ['Inter', 'sans-serif'],
-        display: ['"Archivo Black"', 'Impact', 'sans-serif'],
+        display: ['"Bebas Neue"', 'Impact', 'sans-serif'],
         serif: ['"Instrument Serif"', 'Georgia', 'serif'],
       },
       letterSpacing: {
-        tightest: '-0.04em',
+        tightest: '-0.01em',
       },
       keyframes: {
         marquee: { '0%': { transform: 'translateX(0)' }, '100%': { transform: 'translateX(-50%)' } },
@@ -62,6 +67,12 @@ export default {
         },
         shimmer: { '0%': { backgroundPosition: '200% center' }, '100%': { backgroundPosition: '-200% center' } },
         spinSlow: { to: { transform: 'rotate(360deg)' } },
+        scrollCue: {
+          '0%': { transform: 'scaleY(0)', transformOrigin: 'top' },
+          '45%': { transform: 'scaleY(1)', transformOrigin: 'top' },
+          '55%': { transform: 'scaleY(1)', transformOrigin: 'bottom' },
+          '100%': { transform: 'scaleY(0)', transformOrigin: 'bottom' },
+        },
       },
       animation: {
         marquee: 'marquee 36s linear infinite',
@@ -72,6 +83,7 @@ export default {
         aurora: 'auroraMove 18s ease-in-out infinite',
         shimmer: 'shimmer 6s linear infinite',
         'spin-slow': 'spinSlow 24s linear infinite',
+        'scroll-cue': 'scrollCue 2s cubic-bezier(0.65,0,0.35,1) infinite',
       },
     },
   },

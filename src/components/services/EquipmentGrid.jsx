@@ -9,7 +9,7 @@ const CATEGORY_ICONS = { Camera, Light: Lightbulb, Audio: Mic, Studio: Building2
 const FILTERS = ['All', 'Camera', 'Light', 'Audio', 'Studio']
 
 /**
- * Filterable equipment rental cards with daily/hourly rates (light theme).
+ * Filterable equipment rental cards with daily/hourly rates (noir theme).
  */
 export default function EquipmentGrid() {
   const { data } = useData()
@@ -19,7 +19,7 @@ export default function EquipmentGrid() {
   const items = filter === 'All' ? equipment : equipment.filter((e) => e.category === filter)
 
   return (
-    <section className="border-y border-white/60 bg-white/55 px-5 py-24 backdrop-blur-md md:px-8 md:py-32">
+    <section className="border-y border-cream-50/10 bg-ink-900/50 px-5 py-24 md:px-8 md:py-32">
       <div className="mx-auto max-w-7xl">
         <div className="mb-12 flex justify-center text-center">
           <SectionHeader
@@ -34,10 +34,10 @@ export default function EquipmentGrid() {
             <button
               key={f}
               onClick={() => setFilter(f)}
-              className={`rounded-full px-5 py-2 text-sm font-semibold transition ${
+              className={`px-5 py-2 text-xs font-bold uppercase tracking-[0.15em] transition ${
                 filter === f
-                  ? 'bg-primary-500 text-white shadow-glow'
-                  : 'border border-slate-200 bg-white text-slate-600 hover:border-primary-300'
+                  ? 'bg-primary-500 text-ink-950 shadow-glow'
+                  : 'border border-cream-50/15 text-cream-300 hover:border-primary-500/60 hover:text-primary-400'
               }`}
             >
               {f}
@@ -57,7 +57,7 @@ export default function EquipmentGrid() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: (i % 3) * 0.06 }}
                 whileHover={{ y: -6 }}
-                className="group overflow-hidden rounded-3xl border border-slate-100 bg-white shadow-sm transition hover:border-primary-200 hover:shadow-soft"
+                className="group overflow-hidden border border-cream-50/10 bg-ink-900 transition hover:border-primary-500/40 hover:shadow-soft"
               >
                 <div className="relative h-44 overflow-hidden">
                   <img
@@ -66,18 +66,18 @@ export default function EquipmentGrid() {
                     loading="lazy"
                     className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
                   />
-                  <span className="absolute left-3 top-3 flex items-center gap-1 rounded-full bg-white/90 px-3 py-1 text-xs font-semibold text-primary-600 backdrop-blur">
+                  <span className="absolute left-3 top-3 flex items-center gap-1 bg-ink-950/85 px-3 py-1 text-xs font-semibold text-primary-400 backdrop-blur">
                     <CatIcon size={14} />
                     {e.category}
                   </span>
                 </div>
                 <div className="p-6">
-                  <h3 className="font-display text-lg font-bold text-ink-900">{e.name}</h3>
-                  <p className="mt-1 text-sm text-slate-500">{e.desc}</p>
+                  <h3 className="font-display text-2xl uppercase text-cream-50">{e.name}</h3>
+                  <p className="mt-1 text-sm text-cream-400">{e.desc}</p>
                   <div className="mt-4 flex items-center justify-between">
-                    <span className="font-display text-xl font-extrabold text-gradient">
+                    <span className="font-display text-2xl text-gradient">
                       {e.rate}
-                      <span className="text-sm font-medium text-slate-400"> / {e.unit}</span>
+                      <span className="text-sm font-medium text-cream-400"> / {e.unit}</span>
                     </span>
                     <Button to="/contact" className="px-5 py-2 text-xs" magnetic={false}>
                       Rent now
