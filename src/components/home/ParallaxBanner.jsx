@@ -37,7 +37,7 @@ export default function ParallaxBanner() {
           <span className="font-serif lowercase italic tracking-normal text-primary-400">the lens.</span>
         </motion.h2>
 
-        <div className="mt-14 grid w-full grid-cols-2 gap-8 md:grid-cols-4">
+        <div className="mt-14 grid w-full grid-cols-3 gap-8">
           {stats.map((s, i) => (
             <motion.div
               key={s.label}
@@ -47,7 +47,7 @@ export default function ParallaxBanner() {
               transition={{ duration: 0.5, delay: i * 0.1 }}
               className="text-center"
             >
-              <div className="font-display text-5xl text-gradient md:text-7xl">
+              <div className="font-display text-5xl text-cream-50 md:text-7xl">
                 <CountUp value={s.value} suffix={s.suffix} />
               </div>
               <p className="mt-2 text-[11px] font-medium uppercase tracking-[0.25em] text-cream-300 md:text-sm">

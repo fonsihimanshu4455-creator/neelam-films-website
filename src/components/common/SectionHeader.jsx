@@ -16,10 +16,8 @@ export default function SectionHeader({ eyebrow, title, subtitle, align = 'cente
       className={`flex max-w-2xl flex-col gap-4 ${alignClass}`}
     >
       {eyebrow && (
-        <span className="inline-flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.3em] text-primary-400">
-          <span className="h-px w-8 bg-primary-500" />
+        <span className="text-[11px] font-bold uppercase tracking-[0.3em] text-primary-400">
           {eyebrow}
-          {align !== 'left' && <span className="h-px w-8 bg-primary-500" />}
         </span>
       )}
       <h2 className="font-display text-4xl uppercase leading-[0.95] text-cream-50 md:text-6xl">

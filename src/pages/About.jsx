@@ -32,7 +32,7 @@ export default function About() {
               className="border border-cream-50/15 shadow-soft"
             />
             <div className="absolute -bottom-6 -right-4 border border-cream-50/10 bg-ink-900 px-7 py-5 shadow-soft md:-right-6">
-              <div className="font-display text-4xl text-gradient">
+              <div className="font-display text-4xl text-primary-400">
                 <CountUp value={30} suffix="+" />
               </div>
               <p className="text-sm text-cream-400">Years of legacy</p>
@@ -45,22 +45,21 @@ export default function About() {
             </div>
             <div className="space-y-4 text-cream-300">
               <p>
-                Founded in 1995 in the heart of Delhi, Neelam Films set out with a simple belief:
-                that every brand and every moment deserves to be captured beautifully. Over three
-                decades, that belief has powered thousands of productions across television,
-                corporate, and live event landscapes.
+                Neelam Films started in 1995 with one camera and a small room in Pandav Nagar.
+                Thirty years later the room is bigger, the cameras are 4K, and the work spans
+                television commercials, corporate films, live events and streaming.
               </p>
               <p>
-                Today, we are a full-service production house and live event specialist — trusted by
-                names like HP, Indian Oil, Audi, DHL, and Colgate. Our journey spans the analog era
-                to the digital age, always evolving, always raising the bar.
+                We've shot for HP, Indian Oil, Audi, DHL and Colgate — and for plenty of local
+                businesses, artists and committees whose names you won't recognise but whose events
+                kept us busy every season. Both kinds of work get the same crew and the same care.
               </p>
             </div>
 
             <div className="mt-8 grid grid-cols-3 gap-4">
-              {hero.stats.slice(1).map((s) => (
+              {hero.stats.map((s) => (
                 <div key={s.label} className="border border-cream-50/10 bg-ink-900 p-4 text-center">
-                  <div className="font-display text-3xl text-gradient">
+                  <div className="font-display text-3xl text-primary-400">
                     <CountUp value={s.value} suffix={s.suffix} />
                   </div>
                   <p className="mt-1 text-xs text-cream-400">{s.label}</p>
@@ -100,7 +99,7 @@ export default function About() {
                   <div className="absolute left-4 top-2 z-10 h-4 w-4 -translate-x-1/2 rounded-full border-4 border-ink-950 bg-primary-500 md:left-1/2" />
                   <div className={`ml-10 md:ml-0 md:w-1/2 ${i % 2 === 0 ? 'md:pr-12 md:text-right' : 'md:pl-12'}`}>
                     <div className="border border-cream-50/10 bg-ink-900 p-5 transition hover:border-primary-500/40 hover:shadow-soft">
-                      <span className="font-display text-3xl text-gradient">{t.year}</span>
+                      <span className="font-display text-3xl text-primary-400">{t.year}</span>
                       <h3 className="mt-1 font-display text-xl uppercase text-cream-50">{t.title}</h3>
                       <p className="mt-1 text-sm text-cream-400">{t.desc}</p>
                     </div>

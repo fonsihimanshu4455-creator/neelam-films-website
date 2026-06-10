@@ -2,13 +2,12 @@
   "videoId": "dQw4w9WgXcQ",
   "eyebrow": "Production House · Est. 1995 · Delhi",
   "headline": "Stories That Move. Events That Matter.",
-  "subheadline": "Thirty years. Three thousand productions. One standard — cinema-grade craft in every frame, from TVCs and brand films to live spectacles streamed to the world.",
-  "primaryCta": { "label": "Start a Project", "link": "/contact" },
+  "subheadline": "Production house and live events team in Delhi since 1995. TVCs, corporate films, jagrans, cricket streams, a recording studio and gear on rent — plus the websites and ads to go with them.",
+  "primaryCta": { "label": "Get a Quote", "link": "/contact" },
   "secondaryCta": { "label": "View Our Work", "link": "/portfolio" },
   "stats": [
-    { "value": 30, "suffix": "+", "label": "Years of Legacy" },
+    { "value": 30, "suffix": "+", "label": "Years in Delhi" },
     { "value": 3000, "suffix": "+", "label": "Projects Delivered" },
-    { "value": 500, "suffix": "+", "label": "Happy Clients" },
-    { "value": 50, "suffix": "+", "label": "Awards Won" }
+    { "value": 500, "suffix": "+", "label": "Repeat Clients" }
   ]
 }

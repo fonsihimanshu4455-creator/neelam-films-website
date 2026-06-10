@@ -75,7 +75,7 @@ export default function EquipmentGrid() {
                   <h3 className="font-display text-2xl uppercase text-cream-50">{e.name}</h3>
                   <p className="mt-1 text-sm text-cream-400">{e.desc}</p>
                   <div className="mt-4 flex items-center justify-between">
-                    <span className="font-display text-2xl text-gradient">
+                    <span className="font-display text-2xl text-primary-400">
                       {e.rate}
                       <span className="text-sm font-medium text-cream-400"> / {e.unit}</span>
                     </span>

@@ -27,8 +27,8 @@ export default function FeaturedPortfolio() {
         <div className="mb-14 flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
           <div>
             <Reveal>
-              <span className="inline-flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.3em] text-primary-400">
-                <span className="h-px w-8 bg-primary-500" /> ( 03 ) — Selected work
+              <span className="text-[11px] font-bold uppercase tracking-[0.3em] text-primary-400">
+                Selected work
               </span>
             </Reveal>
             <Reveal delay={0.1}>
@@ -62,10 +62,9 @@ export default function FeaturedPortfolio() {
                 className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-ink-950 via-ink-950/20 to-transparent" />
-              <div className="absolute inset-0 bg-primary-500/0 transition-colors duration-500 group-hover:bg-primary-500/10" />
 
-              <span className="absolute right-4 top-4 flex h-12 w-12 translate-y-2 items-center justify-center rounded-full bg-primary-500 text-ink-950 opacity-0 transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100">
-                <Play size={20} fill="currentColor" />
+              <span className="absolute right-4 top-4 flex h-11 w-11 items-center justify-center rounded-full bg-ink-950/70 text-cream-50 opacity-0 backdrop-blur transition-opacity duration-300 group-hover:opacity-100">
+                <Play size={18} fill="currentColor" />
               </span>
 
               <div className="absolute bottom-0 left-0 p-5">

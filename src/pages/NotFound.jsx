@@ -4,7 +4,7 @@ import Button from '../components/common/Button'
 export default function NotFound() {
   return (
     <div className="flex min-h-[70vh] flex-col items-center justify-center px-4 text-center">
-      <span className="font-display text-9xl leading-none text-gradient">404</span>
+      <span className="font-display text-9xl leading-none text-primary-400">404</span>
       <h1 className="mt-4 font-display text-4xl uppercase text-cream-50">
         Scene <span className="font-serif lowercase italic tracking-normal text-primary-400">missing</span>
       </h1>

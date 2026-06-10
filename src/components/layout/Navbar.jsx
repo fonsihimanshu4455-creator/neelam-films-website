@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { Link, NavLink, useLocation } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Menu, X, ChevronDown, ArrowUpRight } from 'lucide-react'
+import { Menu, X, ChevronDown, ArrowUpRight, Phone } from 'lucide-react'
 import { useData } from '../../context/DataContext'
 import Button from '../common/Button'
 import Logo from '../common/Logo'
@@ -20,7 +20,7 @@ const MOBILE_LINKS = [
 
 export default function Navbar() {
   const { data } = useData()
-  const services = data.services
+  const { services, contact } = data
   const [open, setOpen] = useState(false)
   const [servicesOpen, setServicesOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
@@ -54,10 +54,20 @@ export default function Navbar() {
   return (
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${
-        scrolled ? 'border-b border-cream-50/10 bg-ink-950/85 backdrop-blur-xl' : 'bg-transparent'
+        scrolled ? 'border-b border-cream-50/10 bg-ink-950/90 backdrop-blur-xl' : 'bg-transparent'
       }`}
     >
-      <nav className="mx-auto flex h-[78px] max-w-7xl items-center justify-between px-5 md:px-8">
+      {/* utility strip — phone & hours, like a real shopfront */}
+      <div className="hidden border-b border-cream-50/10 md:block">
+        <div className="mx-auto flex h-9 max-w-7xl items-center justify-between px-5 text-[11px] text-cream-400 md:px-8">
+          <span>{contact.hours} · Pandav Nagar, Delhi</span>
+          <a href={`tel:${contact.phoneRaw}`} className="flex items-center gap-1.5 font-semibold text-cream-200 transition hover:text-primary-400">
+            <Phone size={11} /> {contact.phone}
+          </a>
+        </div>
+      </div>
+
+      <nav className="mx-auto flex h-[72px] max-w-7xl items-center justify-between px-5 md:px-8">
         <Logo className="h-12 w-auto md:h-14" />
 
         {/* Desktop nav */}
@@ -80,26 +90,20 @@ export default function Navbar() {
             <AnimatePresence>
               {servicesOpen && (
                 <motion.div
-                  initial={{ opacity: 0, y: 12 }}
+                  initial={{ opacity: 0, y: 8 }}
                   animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: 12 }}
-                  transition={{ duration: 0.2 }}
+                  exit={{ opacity: 0, y: 8 }}
+                  transition={{ duration: 0.18 }}
                   className="absolute left-1/2 top-full w-72 -translate-x-1/2 pt-4"
                 >
                   <div className="overflow-hidden border border-cream-50/10 bg-ink-900 p-2 shadow-soft">
-                    {services.map((s, i) => (
+                    {services.map((s) => (
                       <Link
                         key={s.id}
                         to={s.slug}
-                        className="group flex items-center justify-between px-4 py-2.5 text-sm font-medium text-cream-200 transition hover:bg-primary-500 hover:text-ink-950"
+                        className="block px-4 py-2.5 text-sm font-medium text-cream-200 transition hover:bg-ink-800 hover:text-primary-400"
                       >
-                        <span className="flex items-center gap-3">
-                          <span className="font-display text-xs text-primary-500 group-hover:text-ink-950">
-                            {String(i + 1).padStart(2, '0')}
-                          </span>
-                          {s.title}
-                        </span>
-                        <ArrowUpRight size={14} className="opacity-40 group-hover:opacity-100" />
+                        {s.title}
                       </Link>
                     ))}
                   </div>
@@ -132,16 +136,16 @@ export default function Navbar() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
             className="fixed inset-0 z-[60] flex h-[100dvh] flex-col overflow-y-auto bg-ink-950 px-6 pb-10 pt-24 lg:hidden"
           >
             <nav className="flex flex-col">
               {MOBILE_LINKS.map((l, i) => (
                 <motion.div
                   key={l.to}
-                  initial={{ y: 40, opacity: 0 }}
+                  initial={{ y: 30, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
-                  transition={{ duration: 0.5, delay: 0.08 + i * 0.06, ease: [0.22, 1, 0.36, 1] }}
+                  transition={{ duration: 0.4, delay: 0.06 + i * 0.05, ease: [0.22, 1, 0.36, 1] }}
                   className="border-b border-cream-50/10"
                 >
                   <NavLink
@@ -162,15 +166,15 @@ export default function Navbar() {
             <motion.p
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ delay: 0.35 }}
+              transition={{ delay: 0.3 }}
               className="mt-8 text-[10px] font-bold uppercase tracking-[0.3em] text-primary-400"
             >
               Services
             </motion.p>
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.4, duration: 0.5 }}
+              transition={{ delay: 0.35, duration: 0.4 }}
               className="mt-3 grid grid-cols-2 gap-x-4 gap-y-2.5"
             >
               {services.map((s) => (
@@ -183,13 +187,16 @@ export default function Navbar() {
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ delay: 0.5 }}
+              transition={{ delay: 0.45 }}
               className="mt-auto pt-10"
             >
+              <a
+                href={`tel:${contact.phoneRaw}`}
+                className="mb-3 flex items-center justify-center gap-2 border border-cream-50/20 py-3.5 text-xs font-bold uppercase tracking-[0.15em] text-cream-100"
+              >
+                <Phone size={14} /> {contact.phone}
+              </a>
               <Button to="/contact" className="w-full" magnetic={false}>Get a Free Quote</Button>
-              <p className="mt-6 text-center text-[10px] uppercase tracking-[0.4em] text-cream-400">
-                Est. 1995 — Delhi
-              </p>
             </motion.div>
           </motion.div>
         )}

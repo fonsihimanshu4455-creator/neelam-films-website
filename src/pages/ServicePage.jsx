@@ -186,7 +186,7 @@ export default function ServicePage({ serviceId }) {
                 >
                   <h3 className="font-display text-2xl uppercase text-cream-50">{p.name}</h3>
                   <div className="mt-3 flex items-end gap-1">
-                    <span className="font-display text-4xl text-gradient">{p.price}</span>
+                    <span className="font-display text-4xl text-primary-400">{p.price}</span>
                     <span className="mb-1 text-sm text-cream-400">/ {p.unit}</span>
                   </div>
                   <ul className="mt-6 flex-1 space-y-3">

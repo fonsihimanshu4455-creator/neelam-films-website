@@ -1,54 +1,31 @@
 import { useData } from '../../context/DataContext'
-import { useMemo } from 'react'
+import Reveal from '../common/Reveal'
 
 /**
- * Dual-row typographic client marquee — pure wordmarks, no logo files needed.
- * Alternates condensed caps with italic serif for an editorial rhythm.
+ * Plain client list — names, no animation, no fake logos.
  */
 export default function ClientsMarquee() {
   const { data } = useData()
   const clients = data.clients
 
-  const { rowA, rowB } = useMemo(() => {
-    const mid = Math.ceil(clients.length / 2)
-    const a = clients.slice(0, mid)
-    const b = clients.slice(mid)
-    return { rowA: [...a, ...a], rowB: [...b, ...b] }
-  }, [clients])
-
-  const Name = ({ c, i }) => (
-    <span className="flex shrink-0 items-center">
-      <span
-        className={
-          i % 2 === 0
-            ? 'px-8 font-display text-3xl uppercase tracking-wide text-cream-200/70 transition hover:text-primary-400 md:text-5xl'
-            : 'px-8 font-serif text-3xl italic text-cream-300/60 transition hover:text-primary-400 md:text-5xl'
-        }
-      >
-        {c.name}
-      </span>
-      <span className="text-primary-500/60">✦</span>
-    </span>
-  )
-
   return (
-    <section className="overflow-hidden border-y border-cream-50/10 bg-ink-900/50 py-16">
-      <div className="mb-10 text-center">
-        <span className="text-[11px] font-medium uppercase tracking-[0.35em] text-cream-400">
-          30 years · 500+ brands · one promise
-        </span>
-      </div>
-
-      <div className="relative space-y-6">
-        <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-32 bg-gradient-to-r from-ink-950 to-transparent" />
-        <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-32 bg-gradient-to-l from-ink-950 to-transparent" />
-
-        <div className="flex w-max animate-marquee items-center">
-          {rowA.map((c, i) => <Name key={i} c={c} i={i} />)}
-        </div>
-        <div className="flex w-max animate-marquee-reverse items-center">
-          {rowB.map((c, i) => <Name key={i} c={c} i={i + 1} />)}
-        </div>
+    <section className="border-y border-cream-50/10 bg-ink-900/40 px-5 py-20 md:px-8">
+      <div className="mx-auto max-w-7xl">
+        <Reveal>
+          <span className="text-[11px] font-bold uppercase tracking-[0.3em] text-primary-400">
+            Brands we've shot for
+          </span>
+        </Reveal>
+        <Reveal delay={0.08}>
+          <p className="mt-6 max-w-4xl font-display text-2xl uppercase leading-relaxed text-cream-300 md:text-4xl">
+            {clients.map((c, i) => (
+              <span key={c.name}>
+                <span className="transition-colors hover:text-cream-50">{c.name}</span>
+                {i < clients.length - 1 && <span className="px-3 text-primary-500/60">·</span>}
+              </span>
+            ))}
+          </p>
+        </Reveal>
       </div>
     </section>
   )
