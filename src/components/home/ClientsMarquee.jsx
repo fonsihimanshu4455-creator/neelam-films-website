@@ -2,29 +2,32 @@ import { useData } from '../../context/DataContext'
 import Reveal from '../common/Reveal'
 
 /**
- * Plain client list — names, no animation, no fake logos.
+ * Client register — a plain typeset line, like names in a ledger.
  */
 export default function ClientsMarquee() {
   const { data } = useData()
   const clients = data.clients
 
   return (
-    <section className="border-y border-cream-50/10 bg-ink-900/40 px-5 py-20 md:px-8">
+    <section className="px-5 pb-24 md:px-8 md:pb-32">
       <div className="mx-auto max-w-7xl">
         <Reveal>
-          <span className="text-[11px] font-bold uppercase tracking-[0.3em] text-primary-400">
-            Brands we've shot for
-          </span>
+          <div className="rule-heavy pt-3">
+            <span className="doc-label text-primary-600">Client register</span>
+          </div>
         </Reveal>
         <Reveal delay={0.08}>
-          <p className="mt-6 max-w-4xl font-display text-2xl uppercase leading-relaxed text-cream-300 md:text-4xl">
+          <p className="mt-7 max-w-5xl font-serif text-2xl leading-relaxed text-ink-700 md:text-3xl">
             {clients.map((c, i) => (
               <span key={c.name}>
-                <span className="transition-colors hover:text-cream-50">{c.name}</span>
-                {i < clients.length - 1 && <span className="px-3 text-primary-500/60">·</span>}
+                <span className="transition-colors hover:text-ink-950">{c.name}</span>
+                {i < clients.length - 1 && <span className="px-2.5 font-mono text-base text-primary-500">/</span>}
               </span>
             ))}
           </p>
+        </Reveal>
+        <Reveal delay={0.12}>
+          <p className="doc-label mt-6 text-ink-500">…and the local businesses, artists &amp; committees that keep us booked every season.</p>
         </Reveal>
       </div>
     </section>

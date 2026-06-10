@@ -1,9 +1,9 @@
 import Hero from '../components/home/Hero'
 import ServicesGrid from '../components/home/ServicesGrid'
-import ParallaxBanner from '../components/home/ParallaxBanner'
 import Statement from '../components/home/Statement'
-import ClientsMarquee from '../components/home/ClientsMarquee'
+import ParallaxBanner from '../components/home/ParallaxBanner'
 import FeaturedPortfolio from '../components/home/FeaturedPortfolio'
+import ClientsMarquee from '../components/home/ClientsMarquee'
 import CTASection from '../components/common/CTASection'
 
 export default function Home() {
@@ -11,8 +11,8 @@ export default function Home() {
     <>
       <Hero />
       <ServicesGrid />
-      <ParallaxBanner />
       <Statement />
+      <ParallaxBanner />
       <FeaturedPortfolio />
       <ClientsMarquee />
       <CTASection />

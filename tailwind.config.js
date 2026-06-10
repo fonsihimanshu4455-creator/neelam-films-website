@@ -4,52 +4,44 @@ export default {
   theme: {
     extend: {
       colors: {
-        // Champagne gold accent — cinema luxe
+        // Director's-marker red — the single accent
         primary: {
-          50: '#fdf9ef',
-          100: '#f9efd7',
-          200: '#f1dcab',
-          300: '#e8c67c',
-          400: '#e0b055',
-          500: '#d49b3a',
-          600: '#bb7f2b',
-          700: '#9b6425',
-          800: '#7e5024',
-          900: '#684221',
-          950: '#3b2310',
+          50: '#fbeeec',
+          100: '#f7ded9',
+          200: '#eeb7ac',
+          300: '#e58a78',
+          400: '#dd5c44',
+          500: '#d8341f',
+          600: '#b82b18',
+          700: '#95220f',
+          800: '#771d10',
+          900: '#621a11',
         },
-        // Warm noir "ink" — base surfaces
+        // Warm paper
+        paper: {
+          50: '#faf7f0',
+          100: '#f3eee2',
+          200: '#e7dfcd',
+          300: '#d5cab2',
+        },
+        // Ink
         ink: {
-          950: '#0a0908',
-          900: '#100e0c',
-          850: '#15120f',
-          800: '#1c1916',
-          700: '#2a251f',
-          600: '#4d4639',
-          500: '#6f6757',
-        },
-        // Warm paper neutrals — text on noir
-        cream: {
-          50: '#f6f1e6',
-          100: '#eae2d0',
-          200: '#d6cab1',
-          300: '#b4a78c',
-          400: '#92866c',
-          500: '#776c55',
+          950: '#15120c',
+          900: '#1d1913',
+          700: '#45403a',
+          600: '#5f594c',
+          500: '#7c7567',
         },
         dark: {
-          900: '#0a0908',
-          800: '#1c1916',
-          700: '#2a251f',
+          900: '#15120c',
+          800: '#1d1913',
+          700: '#45403a',
         },
       },
       fontFamily: {
         sans: ['Inter', 'sans-serif'],
-        display: ['"Bebas Neue"', 'Impact', 'sans-serif'],
-        serif: ['"Instrument Serif"', 'Georgia', 'serif'],
-      },
-      letterSpacing: {
-        tightest: '-0.01em',
+        serif: ['Fraunces', 'Georgia', 'serif'],
+        mono: ['"Space Mono"', 'ui-monospace', 'monospace'],
       },
       keyframes: {
         pulseRing: {
@@ -57,9 +49,11 @@ export default {
           '70%': { transform: 'scale(1.6)', opacity: '0' },
           '100%': { transform: 'scale(1.6)', opacity: '0' },
         },
+        blink: { '0%, 100%': { opacity: '1' }, '50%': { opacity: '0.15' } },
       },
       animation: {
         pulseRing: 'pulseRing 2.4s cubic-bezier(0.4,0,0.6,1) infinite',
+        blink: 'blink 1.6s step-end infinite',
       },
     },
   },

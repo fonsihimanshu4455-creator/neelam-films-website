@@ -43,7 +43,7 @@ export default function VideoModal({ open, onClose, videoId, title }) {
             exit={{ scale: 0.9, opacity: 0 }}
             transition={{ type: 'spring', damping: 25, stiffness: 300 }}
             onClick={(e) => e.stopPropagation()}
-            className="aspect-video w-full max-w-4xl overflow-hidden border border-cream-50/10 shadow-2xl"
+            className="aspect-video w-full max-w-4xl overflow-hidden border-2 border-paper-50/20 shadow-2xl"
           >
             <iframe
               className="h-full w-full"

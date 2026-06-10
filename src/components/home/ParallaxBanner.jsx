@@ -1,61 +1,35 @@
-import { useRef } from 'react'
-import { motion, useScroll, useTransform } from 'framer-motion'
 import CountUp from '../common/CountUp'
+import Reveal from '../common/Reveal'
 import { useData } from '../../context/DataContext'
 
 /**
- * Full-bleed cinematic parallax banner with overlaid stats.
+ * Production log — the numbers, set like a ledger total. Ink block on paper.
  */
 export default function ParallaxBanner() {
   const { data } = useData()
   const stats = data.hero.stats
-  const ref = useRef(null)
-  const { scrollYProgress } = useScroll({ target: ref, offset: ['start end', 'end start'] })
-  const y = useTransform(scrollYProgress, [0, 1], ['-12%', '12%'])
 
   return (
-    <section ref={ref} className="relative h-[80vh] overflow-hidden">
-      <motion.img
-        src="https://images.unsplash.com/photo-1485846234645-a62644f84728?w=1800&q=80"
-        alt="On set with Neelam Films"
-        loading="lazy"
-        style={{ y }}
-        className="absolute inset-0 h-[125%] w-full object-cover opacity-60"
-      />
-      <div className="absolute inset-0 bg-ink-950/60" />
-      <div className="absolute inset-0 bg-gradient-to-t from-ink-950 via-transparent to-ink-950/60" />
-
-      <div className="relative z-10 mx-auto flex h-full max-w-5xl flex-col items-center justify-center px-5 text-center">
-        <motion.h2
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-          className="font-display text-5xl uppercase leading-[0.9] text-cream-50 md:text-8xl"
-        >
-          30 years behind <br />
-          <span className="font-serif lowercase italic tracking-normal text-primary-400">the lens.</span>
-        </motion.h2>
-
-        <div className="mt-14 grid w-full grid-cols-3 gap-8">
-          {stats.map((s, i) => (
-            <motion.div
-              key={s.label}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="text-center"
-            >
-              <div className="font-display text-5xl text-cream-50 md:text-7xl">
-                <CountUp value={s.value} suffix={s.suffix} />
-              </div>
-              <p className="mt-2 text-[11px] font-medium uppercase tracking-[0.25em] text-cream-300 md:text-sm">
-                {s.label}
-              </p>
-            </motion.div>
-          ))}
-        </div>
+    <section className="px-5 md:px-8">
+      <div className="mx-auto max-w-7xl">
+        <Reveal>
+          <div className="bg-ink-950 px-6 py-14 text-paper-50 md:px-12 md:py-20">
+            <div className="flex flex-wrap items-baseline justify-between gap-4 border-b border-paper-50/20 pb-4">
+              <span className="doc-label text-primary-400">Production log — running totals</span>
+              <span className="doc-label text-paper-50/50">1995 → today</span>
+            </div>
+            <div className="mt-10 grid gap-10 sm:grid-cols-3">
+              {stats.map((s) => (
+                <div key={s.label}>
+                  <div className="font-serif text-6xl font-light text-paper-50 md:text-7xl">
+                    <CountUp value={s.value} suffix={s.suffix} />
+                  </div>
+                  <p className="doc-label mt-3 text-paper-50/60">{s.label}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </Reveal>
       </div>
     </section>
   )

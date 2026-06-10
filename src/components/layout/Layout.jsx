@@ -6,13 +6,13 @@ import WhatsAppButton from './WhatsAppButton'
 import ScrollProgress from '../common/ScrollProgress'
 
 /**
- * Public site shell: grain + scroll bar + navbar + animated outlet + footer.
+ * Public site shell — paper document feel.
  */
 export default function Layout() {
   const location = useLocation()
 
   return (
-    <div className="grain relative flex min-h-screen flex-col bg-ink-950 text-cream-100">
+    <div className="relative flex min-h-screen flex-col bg-paper-50 text-ink-900">
       <ScrollProgress />
       <Navbar />
       <main className="flex-1">
@@ -22,7 +22,7 @@ export default function Layout() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.35, ease: 'easeOut' }}
+            transition={{ duration: 0.3, ease: 'easeOut' }}
           >
             <Outlet />
           </motion.div>

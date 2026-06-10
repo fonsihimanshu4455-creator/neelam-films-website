@@ -1,18 +1,16 @@
 import { useState } from 'react'
-import { motion } from 'framer-motion'
 import { Check, Play, ArrowRight } from 'lucide-react'
 import { useData } from '../context/DataContext'
 import PageHero from '../components/common/PageHero'
-import SectionHeader from '../components/common/SectionHeader'
 import CTASection from '../components/common/CTASection'
 import VideoModal from '../components/common/VideoModal'
 import Button from '../components/common/Button'
-import Icon from '../components/common/Icon'
 import Reveal from '../components/common/Reveal'
 import EquipmentGrid from '../components/services/EquipmentGrid'
 
 /**
- * Generic noir service page driven by the service id (services.json).
+ * Service page set like a department sheet: scope list, working method,
+ * recent frames, rate card.
  */
 export default function ServicePage({ serviceId }) {
   const { data } = useData()
@@ -21,7 +19,7 @@ export default function ServicePage({ serviceId }) {
 
   if (!service) {
     return (
-      <div className="flex min-h-[60vh] items-center justify-center text-cream-400">
+      <div className="flex min-h-[60vh] items-center justify-center font-mono text-sm text-ink-500">
         Service not found.
       </div>
     )
@@ -30,184 +28,134 @@ export default function ServicePage({ serviceId }) {
   return (
     <>
       <PageHero
-        eyebrow={service.title}
+        eyebrow={`Dept. — ${service.title}`}
         title={service.tagline}
         subtitle={service.description}
-        image={service.hero}
       >
         <Button to="/contact">
-          Request a quote <ArrowRight size={18} />
+          Request a quote <ArrowRight size={15} />
         </Button>
       </PageHero>
 
-      {/* What we offer */}
-      <section className="px-5 py-24 md:px-8 md:py-32">
-        <div className="mx-auto max-w-7xl">
-          <div className="mb-14">
-            <SectionHeader
-              align="left"
-              eyebrow="What we offer"
-              title={`Our ${service.title} capabilities`}
-              subtitle="A complete, end-to-end offering tailored to your needs."
-            />
-          </div>
-          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+      {/* Scope of work — ruled list */}
+      <section className="px-5 py-16 md:px-8 md:py-24">
+        <div className="mx-auto grid max-w-7xl gap-12 md:grid-cols-12">
+          <Reveal className="md:col-span-3">
+            <div className="rule-heavy pt-3">
+              <span className="doc-label text-primary-600">Scope of work</span>
+            </div>
+          </Reveal>
+          <div className="border-t border-ink-900/20 md:col-span-8 md:col-start-5">
             {service.offers.map((o, i) => (
-              <motion.div
-                key={o.title}
-                initial={{ opacity: 0, y: 24 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: (i % 3) * 0.08 }}
-                whileHover={{ y: -6 }}
-                className="group border border-cream-50/10 bg-ink-900 p-7 transition hover:border-primary-500/40 hover:shadow-soft"
-              >
-                <span className="flex h-12 w-12 items-center justify-center bg-primary-500/10 text-primary-400 transition group-hover:bg-primary-500 group-hover:text-ink-950">
-                  <Icon name={service.icon} size={24} />
-                </span>
-                <h3 className="mt-5 font-display text-2xl uppercase text-cream-50">{o.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-cream-400">{o.desc}</p>
-              </motion.div>
+              <Reveal key={o.title} delay={Math.min(i * 0.03, 0.12)} amount={0.3}>
+                <div className="grid grid-cols-[3rem_1fr] items-baseline gap-4 border-b border-ink-900/20 py-5">
+                  <span className="font-mono text-xs font-bold text-primary-500">
+                    {String(i + 1).padStart(2, '0')}
+                  </span>
+                  <div>
+                    <h3 className="font-serif text-2xl text-ink-950">{o.title}</h3>
+                    <p className="mt-1 text-sm text-ink-600">{o.desc}</p>
+                  </div>
+                </div>
+              </Reveal>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Equipment grid (equipment rental only) */}
+      {/* Equipment inventory (rental dept. only) */}
       {service.id === 'equipment-rental' && <EquipmentGrid />}
 
-      {/* Our process */}
-      <section className="border-y border-cream-50/10 bg-ink-900/50 px-5 py-24 md:px-8 md:py-32">
+      {/* Working method — numbered strip */}
+      <section className="px-5 py-16 md:px-8 md:py-24">
         <div className="mx-auto max-w-7xl">
-          <div className="mb-14 flex justify-center text-center">
-            <SectionHeader
-              eyebrow="How we work"
-              title="Our process"
-              subtitle="A proven, transparent workflow from first call to final delivery."
-            />
-          </div>
-          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
-            {service.process.map((p, i) => (
-              <motion.div
-                key={p.step}
-                initial={{ opacity: 0, y: 24 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: i * 0.1 }}
-                className="relative border border-cream-50/10 bg-ink-900 p-7"
-              >
-                <span className="font-display text-7xl leading-none text-primary-500/20">{p.step}</span>
-                <h3 className="mt-3 font-display text-2xl uppercase text-cream-50">{p.title}</h3>
-                <p className="mt-2 text-sm text-cream-400">{p.desc}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Gallery */}
-      <section className="px-5 py-24 md:px-8 md:py-32">
-        <div className="mx-auto max-w-7xl">
-          <div className="mb-14 flex justify-center text-center">
-            <SectionHeader eyebrow="Showcase" title="Recent work" />
-          </div>
-          <div className="grid grid-cols-2 gap-4 md:grid-cols-3">
-            {service.gallery.map((img, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, scale: 0.95 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: (i % 3) * 0.08 }}
-                className="group aspect-square overflow-hidden border border-cream-50/10"
-              >
-                <img
-                  src={img}
-                  alt={`${service.title} work ${i + 1}`}
-                  loading="lazy"
-                  className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
-                />
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Sample video */}
-      <section className="px-5 pb-24 md:px-8 md:pb-32">
-        <div className="mx-auto max-w-5xl">
-          <div className="mb-14 flex justify-center text-center">
-            <SectionHeader eyebrow="Watch" title="Sample reel" />
-          </div>
-          <Reveal variant="scale">
-            <button
-              onClick={() => setVideoOpen(true)}
-              className="group relative block aspect-video w-full overflow-hidden border border-cream-50/15 shadow-soft"
-            >
-              <img
-                src={service.gallery[0]}
-                alt="Sample reel"
-                loading="lazy"
-                className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-ink-950/40" />
-              <span className="absolute left-1/2 top-1/2 flex h-20 w-20 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-primary-500 text-ink-950 shadow-glow transition group-hover:scale-110">
-                <Play size={32} fill="currentColor" />
-              </span>
-            </button>
-          </Reveal>
-        </div>
-      </section>
-
-      {/* Pricing */}
-      {service.pricing && service.pricing.length > 0 && (
-        <section className="border-t border-cream-50/10 bg-ink-900/50 px-5 py-24 md:px-8 md:py-32">
-          <div className="mx-auto max-w-7xl">
-            <div className="mb-14 flex justify-center text-center">
-              <SectionHeader
-                eyebrow="Pricing"
-                title="Transparent packages"
-                subtitle="Indicative starting prices. Contact us for a custom quote."
-              />
+          <Reveal>
+            <div className="rule-heavy flex items-baseline justify-between pt-3">
+              <span className="doc-label text-primary-600">Working method</span>
+              <span className="doc-label hidden text-ink-500 sm:block">First call → final delivery</span>
             </div>
-            <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
+          </Reveal>
+          <div className="mt-10 grid gap-px border border-ink-900/20 bg-ink-900/20 sm:grid-cols-2 lg:grid-cols-4">
+            {service.process.map((p, i) => (
+              <Reveal key={p.step} delay={i * 0.06} className="bg-paper-50">
+                <div className="h-full px-6 py-7">
+                  <span className="font-mono text-xs font-bold text-primary-500">STEP {p.step}</span>
+                  <h3 className="mt-3 font-serif text-2xl text-ink-950">{p.title}</h3>
+                  <p className="mt-2 text-sm text-ink-600">{p.desc}</p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Frames — contact sheet */}
+      <section className="px-5 py-16 md:px-8 md:py-24">
+        <div className="mx-auto max-w-7xl">
+          <Reveal>
+            <div className="rule-heavy flex items-baseline justify-between pt-3">
+              <span className="doc-label text-primary-600">Recent frames</span>
+              <button onClick={() => setVideoOpen(true)} className="doc-label link-underline flex items-center gap-1.5 text-ink-900">
+                <Play size={11} fill="currentColor" className="text-primary-500" /> Watch sample reel
+              </button>
+            </div>
+          </Reveal>
+          <div className="mt-8 grid grid-cols-2 gap-3 md:grid-cols-3">
+            {service.gallery.map((img, i) => (
+              <Reveal key={i} delay={(i % 3) * 0.05} amount={0.2}>
+                <div className="group aspect-[4/3] overflow-hidden border border-ink-900/20 bg-paper-200">
+                  <img
+                    src={img}
+                    alt={`${service.title} work ${i + 1}`}
+                    loading="lazy"
+                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Rate card — table, not cards */}
+      {service.pricing && service.pricing.length > 0 && (
+        <section className="px-5 py-16 md:px-8 md:py-24">
+          <div className="mx-auto max-w-7xl">
+            <Reveal>
+              <div className="rule-heavy flex items-baseline justify-between pt-3">
+                <span className="doc-label text-primary-600">Rate card</span>
+                <span className="doc-label hidden text-ink-500 sm:block">Indicative — final quote on scale &amp; dates</span>
+              </div>
+            </Reveal>
+            <div className="mt-10 border-t-2 border-ink-900">
               {service.pricing.map((p, i) => (
-                <motion.div
-                  key={p.name}
-                  initial={{ opacity: 0, y: 24 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: i * 0.1 }}
-                  className={`flex flex-col border p-8 ${
-                    i === 1
-                      ? 'border-primary-500/60 bg-primary-500/5 shadow-glow'
-                      : 'border-cream-50/10 bg-ink-900'
-                  }`}
-                >
-                  <h3 className="font-display text-2xl uppercase text-cream-50">{p.name}</h3>
-                  <div className="mt-3 flex items-end gap-1">
-                    <span className="font-display text-4xl text-primary-400">{p.price}</span>
-                    <span className="mb-1 text-sm text-cream-400">/ {p.unit}</span>
+                <Reveal key={p.name} delay={i * 0.05}>
+                  <div className="grid gap-4 border-b border-ink-900/20 py-6 md:grid-cols-[minmax(0,1.2fr)_minmax(0,2fr)_10rem_auto] md:items-center md:gap-8">
+                    <div>
+                      <h3 className="font-serif text-2xl text-ink-950">{p.name}</h3>
+                      <p className="doc-label mt-1 text-ink-500">per {p.unit}</p>
+                    </div>
+                    <ul className="flex flex-wrap gap-x-5 gap-y-1.5">
+                      {p.features.map((f) => (
+                        <li key={f} className="flex items-center gap-1.5 text-sm text-ink-700">
+                          <Check size={13} className="text-primary-500" />
+                          {f}
+                        </li>
+                      ))}
+                    </ul>
+                    <span className="font-mono text-xl font-bold text-ink-950 md:text-right">{p.price}</span>
+                    <Button to="/contact" variant="outline" className="px-5 py-2.5 md:justify-self-end">
+                      Book
+                    </Button>
                   </div>
-                  <ul className="mt-6 flex-1 space-y-3">
-                    {p.features.map((f) => (
-                      <li key={f} className="flex items-center gap-2 text-sm text-cream-300">
-                        <Check size={16} className="text-primary-500" />
-                        {f}
-                      </li>
-                    ))}
-                  </ul>
-                  <Button to="/contact" variant={i === 1 ? 'primary' : 'outline'} className="mt-7 w-full">
-                    Book now
-                  </Button>
-                </motion.div>
+                </Reveal>
               ))}
             </div>
           </div>
         </section>
       )}
 
-      <CTASection title={`Ready to start your ${service.title.toLowerCase()} project?`} />
+      <CTASection title={`Ready to book ${service.title.toLowerCase()}?`} />
 
       <VideoModal
         open={videoOpen}

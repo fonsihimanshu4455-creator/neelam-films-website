@@ -1,9 +1,8 @@
 import { useState, useEffect } from 'react'
 import { Link, NavLink, useLocation } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Menu, X, ChevronDown, ArrowUpRight, Phone } from 'lucide-react'
+import { Menu, X, ChevronDown, Phone } from 'lucide-react'
 import { useData } from '../../context/DataContext'
-import Button from '../common/Button'
 import Logo from '../common/Logo'
 
 const NAV_LINKS = [
@@ -23,7 +22,6 @@ export default function Navbar() {
   const { services, contact } = data
   const [open, setOpen] = useState(false)
   const [servicesOpen, setServicesOpen] = useState(false)
-  const [scrolled, setScrolled] = useState(false)
   const location = useLocation()
 
   useEffect(() => {
@@ -32,14 +30,6 @@ export default function Navbar() {
   }, [location.pathname])
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 24)
-    onScroll()
-    window.addEventListener('scroll', onScroll)
-    return () => window.removeEventListener('scroll', onScroll)
-  }, [])
-
-  // Lock body scroll while the full-screen menu is open
-  useEffect(() => {
     document.body.style.overflow = open ? 'hidden' : ''
     return () => {
       document.body.style.overflow = ''
@@ -47,28 +37,25 @@ export default function Navbar() {
   }, [open])
 
   const linkClass = ({ isActive }) =>
-    `link-underline text-xs font-bold uppercase tracking-[0.15em] transition-colors ${
-      isActive ? 'text-primary-400' : 'text-cream-100 hover:text-primary-400'
+    `link-underline font-mono text-[11px] font-bold uppercase tracking-[0.15em] transition-colors ${
+      isActive ? 'text-primary-600' : 'text-ink-900 hover:text-primary-600'
     }`
 
   return (
-    <header
-      className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${
-        scrolled ? 'border-b border-cream-50/10 bg-ink-950/90 backdrop-blur-xl' : 'bg-transparent'
-      }`}
-    >
-      {/* utility strip — phone & hours, like a real shopfront */}
-      <div className="hidden border-b border-cream-50/10 md:block">
-        <div className="mx-auto flex h-9 max-w-7xl items-center justify-between px-5 text-[11px] text-cream-400 md:px-8">
-          <span>{contact.hours} · Pandav Nagar, Delhi</span>
-          <a href={`tel:${contact.phoneRaw}`} className="flex items-center gap-1.5 font-semibold text-cream-200 transition hover:text-primary-400">
-            <Phone size={11} /> {contact.phone}
-          </a>
+    <header className="fixed inset-x-0 top-0 z-50 border-b border-ink-900/20 bg-paper-50/95 backdrop-blur">
+      {/* letterhead strip */}
+      <div className="hidden border-b border-ink-900/15 md:block">
+        <div className="mx-auto flex h-8 max-w-7xl items-center justify-between px-5 font-mono text-[10px] uppercase tracking-[0.15em] text-ink-600 md:px-8">
+          <span>Production House &amp; Live Events — Est. 1995</span>
+          <span className="flex items-center gap-1.5">
+            <span className="h-1.5 w-1.5 animate-blink rounded-full bg-primary-500" />
+            Pandav Nagar, Delhi 110091
+          </span>
         </div>
       </div>
 
-      <nav className="mx-auto flex h-[72px] max-w-7xl items-center justify-between px-5 md:px-8">
-        <Logo className="h-12 w-auto md:h-14" />
+      <nav className="mx-auto flex h-16 max-w-7xl items-center justify-between px-5 md:px-8">
+        <Logo className="h-10 w-auto" />
 
         {/* Desktop nav */}
         <div className="hidden items-center gap-8 lg:flex">
@@ -83,26 +70,27 @@ export default function Navbar() {
             onMouseEnter={() => setServicesOpen(true)}
             onMouseLeave={() => setServicesOpen(false)}
           >
-            <button className="flex items-center gap-1 text-xs font-bold uppercase tracking-[0.15em] text-cream-100 transition-colors hover:text-primary-400">
+            <button className="flex items-center gap-1 font-mono text-[11px] font-bold uppercase tracking-[0.15em] text-ink-900 transition-colors hover:text-primary-600">
               Services
-              <ChevronDown size={15} className={`transition ${servicesOpen ? 'rotate-180' : ''}`} />
+              <ChevronDown size={14} className={`transition ${servicesOpen ? 'rotate-180' : ''}`} />
             </button>
             <AnimatePresence>
               {servicesOpen && (
                 <motion.div
-                  initial={{ opacity: 0, y: 8 }}
+                  initial={{ opacity: 0, y: 6 }}
                   animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: 8 }}
-                  transition={{ duration: 0.18 }}
-                  className="absolute left-1/2 top-full w-72 -translate-x-1/2 pt-4"
+                  exit={{ opacity: 0, y: 6 }}
+                  transition={{ duration: 0.15 }}
+                  className="absolute left-1/2 top-full w-80 -translate-x-1/2 pt-3"
                 >
-                  <div className="overflow-hidden border border-cream-50/10 bg-ink-900 p-2 shadow-soft">
-                    {services.map((s) => (
+                  <div className="border-2 border-ink-900 bg-paper-50 shadow-[4px_4px_0_0_rgba(29,25,19,1)]">
+                    {services.map((s, i) => (
                       <Link
                         key={s.id}
                         to={s.slug}
-                        className="block px-4 py-2.5 text-sm font-medium text-cream-200 transition hover:bg-ink-800 hover:text-primary-400"
+                        className="flex items-baseline gap-3 border-b border-ink-900/10 px-4 py-2.5 text-sm text-ink-900 transition last:border-b-0 hover:bg-paper-100 hover:text-primary-600"
                       >
+                        <span className="font-mono text-[10px] text-primary-500">{String(i + 1).padStart(2, '0')}</span>
                         {s.title}
                       </Link>
                     ))}
@@ -116,12 +104,15 @@ export default function Navbar() {
           <NavLink to="/contact" className={linkClass}>Contact</NavLink>
         </div>
 
-        <div className="hidden lg:block">
-          <Button to="/contact" className="px-6 py-2.5">Get Quote</Button>
-        </div>
+        <a
+          href={`tel:${contact.phoneRaw}`}
+          className="hidden items-center gap-2 border-2 border-ink-900 px-4 py-2 font-mono text-[11px] font-bold uppercase tracking-[0.12em] text-ink-900 transition hover:bg-ink-900 hover:text-paper-50 lg:flex"
+        >
+          <Phone size={13} /> {contact.phone}
+        </a>
 
         <button
-          className="relative z-[70] text-cream-50 lg:hidden"
+          className="relative z-[70] text-ink-900 lg:hidden"
           onClick={() => setOpen((o) => !o)}
           aria-label="Toggle menu"
         >
@@ -129,75 +120,63 @@ export default function Navbar() {
         </button>
       </nav>
 
-      {/* Full-screen mobile menu */}
+      {/* Full-screen mobile menu — paper sheet */}
       <AnimatePresence>
         {open && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-            className="fixed inset-0 z-[60] flex h-[100dvh] flex-col overflow-y-auto bg-ink-950 px-6 pb-10 pt-24 lg:hidden"
+            transition={{ duration: 0.25 }}
+            className="fixed inset-0 z-[60] flex h-[100dvh] flex-col overflow-y-auto bg-paper-50 px-6 pb-10 pt-24 lg:hidden"
           >
             <nav className="flex flex-col">
               {MOBILE_LINKS.map((l, i) => (
                 <motion.div
                   key={l.to}
-                  initial={{ y: 30, opacity: 0 }}
+                  initial={{ y: 24, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
-                  transition={{ duration: 0.4, delay: 0.06 + i * 0.05, ease: [0.22, 1, 0.36, 1] }}
-                  className="border-b border-cream-50/10"
+                  transition={{ duration: 0.35, delay: 0.05 + i * 0.05, ease: [0.22, 1, 0.36, 1] }}
+                  className="border-b border-ink-900/15"
                 >
                   <NavLink
                     to={l.to}
                     className={({ isActive }) =>
-                      `flex items-center justify-between py-4 font-display text-4xl uppercase ${
-                        isActive ? 'text-primary-400' : 'text-cream-50'
+                      `flex items-baseline gap-4 py-4 font-serif text-4xl ${
+                        isActive ? 'text-primary-600' : 'text-ink-950'
                       }`
                     }
                   >
+                    <span className="font-mono text-xs text-primary-500">{String(i + 1).padStart(2, '0')}</span>
                     {l.label}
-                    <ArrowUpRight size={22} className="text-primary-500" />
                   </NavLink>
                 </motion.div>
               ))}
             </nav>
 
-            <motion.p
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.3 }}
-              className="mt-8 text-[10px] font-bold uppercase tracking-[0.3em] text-primary-400"
-            >
-              Services
-            </motion.p>
-            <motion.div
-              initial={{ opacity: 0, y: 16 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.35, duration: 0.4 }}
-              className="mt-3 grid grid-cols-2 gap-x-4 gap-y-2.5"
-            >
+            <p className="doc-label mt-8 text-primary-600">Services</p>
+            <div className="mt-3 grid grid-cols-2 gap-x-4 gap-y-2.5">
               {services.map((s) => (
-                <Link key={s.id} to={s.slug} className="text-sm text-cream-300 transition hover:text-primary-400">
+                <Link key={s.id} to={s.slug} className="text-sm text-ink-700 transition hover:text-primary-600">
                   {s.title}
                 </Link>
               ))}
-            </motion.div>
+            </div>
 
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.45 }}
-              className="mt-auto pt-10"
-            >
+            <div className="mt-auto pt-10">
               <a
                 href={`tel:${contact.phoneRaw}`}
-                className="mb-3 flex items-center justify-center gap-2 border border-cream-50/20 py-3.5 text-xs font-bold uppercase tracking-[0.15em] text-cream-100"
+                className="flex items-center justify-center gap-2 border-2 border-ink-900 py-3.5 font-mono text-xs font-bold uppercase tracking-[0.15em] text-ink-900"
               >
                 <Phone size={14} /> {contact.phone}
               </a>
-              <Button to="/contact" className="w-full" magnetic={false}>Get a Free Quote</Button>
-            </motion.div>
+              <Link
+                to="/contact"
+                className="mt-3 flex items-center justify-center bg-primary-500 py-3.5 font-mono text-xs font-bold uppercase tracking-[0.15em] text-paper-50"
+              >
+                Get a free quote
+              </Link>
+            </div>
           </motion.div>
         )}
       </AnimatePresence>

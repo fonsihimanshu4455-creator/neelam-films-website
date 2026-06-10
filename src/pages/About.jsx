@@ -1,8 +1,6 @@
-import { motion } from 'framer-motion'
-import { Target, Eye, Quote } from 'lucide-react'
+import { Quote } from 'lucide-react'
 import { useData } from '../context/DataContext'
 import PageHero from '../components/common/PageHero'
-import SectionHeader from '../components/common/SectionHeader'
 import CTASection from '../components/common/CTASection'
 import CountUp from '../components/common/CountUp'
 import Reveal from '../components/common/Reveal'
@@ -15,162 +13,120 @@ export default function About() {
   return (
     <>
       <PageHero
-        eyebrow="Since 1995"
-        title="Three decades of storytelling"
-        subtitle="What began as a single camera and a big dream is today one of Delhi's most trusted production houses — built on craft, consistency, and client trust."
-        image="https://images.unsplash.com/photo-1485846234645-a62644f84728?w=1200&q=80"
+        eyebrow="Page 02 — About"
+        title="Thirty years, one phone number."
+        subtitle="Neelam Films started in 1995 with one camera and a small room in Pandav Nagar. The room is bigger now and the cameras are 4K — the way we work hasn't changed much."
       />
 
-      {/* Story */}
-      <section className="px-5 py-24 md:px-8 md:py-32">
-        <div className="mx-auto grid max-w-7xl items-center gap-14 lg:grid-cols-2">
-          <Reveal variant="right" className="relative">
-            <img
-              src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=900&q=80"
-              alt="Neelam Films production"
-              loading="lazy"
-              className="border border-cream-50/15 shadow-soft"
-            />
-            <div className="absolute -bottom-6 -right-4 border border-cream-50/10 bg-ink-900 px-7 py-5 shadow-soft md:-right-6">
-              <div className="font-display text-4xl text-primary-400">
-                <CountUp value={30} suffix="+" />
+      {/* Story + numbers */}
+      <section className="px-5 py-16 md:px-8 md:py-24">
+        <div className="mx-auto grid max-w-7xl gap-12 md:grid-cols-12">
+          <Reveal className="md:col-span-3">
+            <div className="rule-heavy pt-3">
+              <span className="doc-label text-primary-600">The story</span>
+            </div>
+          </Reveal>
+          <div className="md:col-span-8 md:col-start-5">
+            <Reveal>
+              <div className="space-y-5 text-base leading-relaxed text-ink-700 md:text-lg">
+                <p>
+                  We've shot television commercials, corporate films, documentaries and music
+                  videos. We've built stages, rigged sound and lights, and run multi-camera
+                  streams for cricket matches and jagrans. Somewhere along the way we added a
+                  recording studio, a rental inventory, and a digital team for websites and ads.
+                </p>
+                <p>
+                  We've worked with HP, Indian Oil, Audi, DHL and Colgate — and with plenty of
+                  local businesses, artists and committees whose names you won't recognise but
+                  whose events kept us busy every season. Both kinds of work get the same crew
+                  and the same care.
+                </p>
               </div>
-              <p className="text-sm text-cream-400">Years of legacy</p>
+            </Reveal>
+
+            <Reveal delay={0.1}>
+              <dl className="rule-heavy mt-10 grid grid-cols-3 gap-px border-b-2 border-ink-900 bg-ink-900/20">
+                {hero.stats.map((s) => (
+                  <div key={s.label} className="bg-paper-50 px-4 py-5">
+                    <dt className="doc-label text-ink-500">{s.label}</dt>
+                    <dd className="mt-2 font-serif text-3xl text-ink-950 md:text-4xl">
+                      <CountUp value={s.value} suffix={s.suffix} />
+                    </dd>
+                  </div>
+                ))}
+              </dl>
+            </Reveal>
+          </div>
+        </div>
+      </section>
+
+      {/* Timeline — production diary */}
+      <section className="px-5 py-16 md:px-8 md:py-24">
+        <div className="mx-auto grid max-w-7xl gap-12 md:grid-cols-12">
+          <Reveal className="md:col-span-3">
+            <div className="rule-heavy pt-3">
+              <span className="doc-label text-primary-600">The diary</span>
             </div>
           </Reveal>
-
-          <Reveal variant="left">
-            <div className="mb-8">
-              <SectionHeader align="left" eyebrow="Our story" title="From one camera to countless stories" />
-            </div>
-            <div className="space-y-4 text-cream-300">
-              <p>
-                Neelam Films started in 1995 with one camera and a small room in Pandav Nagar.
-                Thirty years later the room is bigger, the cameras are 4K, and the work spans
-                television commercials, corporate films, live events and streaming.
-              </p>
-              <p>
-                We've shot for HP, Indian Oil, Audi, DHL and Colgate — and for plenty of local
-                businesses, artists and committees whose names you won't recognise but whose events
-                kept us busy every season. Both kinds of work get the same crew and the same care.
-              </p>
-            </div>
-
-            <div className="mt-8 grid grid-cols-3 gap-4">
-              {hero.stats.map((s) => (
-                <div key={s.label} className="border border-cream-50/10 bg-ink-900 p-4 text-center">
-                  <div className="font-display text-3xl text-primary-400">
-                    <CountUp value={s.value} suffix={s.suffix} />
+          <div className="border-t border-ink-900/20 md:col-span-8 md:col-start-5">
+            {timeline.map((t, i) => (
+              <Reveal key={t.year} delay={Math.min(i * 0.04, 0.16)} amount={0.3}>
+                <div className="grid grid-cols-[5rem_1fr] items-baseline gap-6 border-b border-ink-900/20 py-5">
+                  <span className="font-mono text-sm font-bold text-primary-600">{t.year}</span>
+                  <div>
+                    <h3 className="font-serif text-2xl text-ink-950">{t.title}</h3>
+                    <p className="mt-1 text-sm text-ink-600">{t.desc}</p>
                   </div>
-                  <p className="mt-1 text-xs text-cream-400">{s.label}</p>
                 </div>
-              ))}
-            </div>
-          </Reveal>
-        </div>
-      </section>
-
-      {/* Timeline */}
-      <section className="border-y border-cream-50/10 bg-ink-900/50 px-5 py-24 md:px-8 md:py-32">
-        <div className="mx-auto max-w-5xl">
-          <div className="mb-16 flex justify-center text-center">
-            <SectionHeader
-              eyebrow="Our journey"
-              title="Milestones through the decades"
-              subtitle="Every year, a new chapter in our story of growth."
-            />
-          </div>
-
-          <div className="relative">
-            <div className="absolute left-4 top-0 h-full w-px bg-gradient-to-b from-primary-500 via-cream-50/15 to-transparent md:left-1/2 md:-translate-x-1/2" />
-
-            <div className="space-y-10">
-              {timeline.map((t, i) => (
-                <motion.div
-                  key={t.year}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5 }}
-                  className={`relative flex items-start gap-6 md:gap-0 ${
-                    i % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
-                  }`}
-                >
-                  <div className="absolute left-4 top-2 z-10 h-4 w-4 -translate-x-1/2 rounded-full border-4 border-ink-950 bg-primary-500 md:left-1/2" />
-                  <div className={`ml-10 md:ml-0 md:w-1/2 ${i % 2 === 0 ? 'md:pr-12 md:text-right' : 'md:pl-12'}`}>
-                    <div className="border border-cream-50/10 bg-ink-900 p-5 transition hover:border-primary-500/40 hover:shadow-soft">
-                      <span className="font-display text-3xl text-primary-400">{t.year}</span>
-                      <h3 className="mt-1 font-display text-xl uppercase text-cream-50">{t.title}</h3>
-                      <p className="mt-1 text-sm text-cream-400">{t.desc}</p>
-                    </div>
-                  </div>
-                  <div className="hidden md:block md:w-1/2" />
-                </motion.div>
-              ))}
-            </div>
+              </Reveal>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Mission & Vision */}
-      <section className="px-5 py-24 md:px-8 md:py-32">
-        <div className="mx-auto grid max-w-6xl gap-6 md:grid-cols-2">
+      {/* Mission & Vision — two ruled columns */}
+      <section className="px-5 py-16 md:px-8 md:py-24">
+        <div className="mx-auto grid max-w-7xl gap-10 md:grid-cols-2">
           {[
-            { icon: Target, title: 'Our mission', text: mission, gold: true },
-            { icon: Eye, title: 'Our vision', text: vision, gold: false },
+            { label: 'Mission', text: mission },
+            { label: 'Vision', text: vision },
           ].map((b, i) => (
-            <motion.div
-              key={b.title}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.1 }}
-              className={`relative overflow-hidden p-9 shadow-soft ${
-                b.gold
-                  ? 'bg-gradient-to-br from-primary-400 to-primary-600 text-ink-950'
-                  : 'border border-cream-50/10 bg-ink-900'
-              }`}
-            >
-              <span className={`flex h-14 w-14 items-center justify-center ${b.gold ? 'bg-ink-950/10 text-ink-950' : 'bg-primary-500/10 text-primary-400'}`}>
-                <b.icon size={28} />
-              </span>
-              <h3 className={`mt-5 font-display text-3xl uppercase ${b.gold ? 'text-ink-950' : 'text-cream-50'}`}>
-                {b.title}
-              </h3>
-              <p className={`mt-3 leading-relaxed ${b.gold ? 'text-ink-900/80' : 'text-cream-300'}`}>{b.text}</p>
-            </motion.div>
+            <Reveal key={b.label} delay={i * 0.08}>
+              <div className="rule-heavy pt-4">
+                <span className="doc-label text-primary-600">{b.label}</span>
+                <p className="mt-5 font-serif text-xl leading-relaxed text-ink-900 md:text-2xl">{b.text}</p>
+              </div>
+            </Reveal>
           ))}
         </div>
       </section>
 
       {/* Founder */}
       {founder.show !== false && (
-      <section className="border-t border-cream-50/10 bg-ink-900/50 px-5 py-24 md:px-8 md:py-32">
-        <div className="mx-auto max-w-5xl">
-          <div className="mb-14 flex justify-center text-center">
-            <SectionHeader eyebrow="Leadership" title="Meet our founder" />
-          </div>
-          <Reveal>
-            <div className="grid items-center gap-8 border border-cream-50/10 bg-ink-900 p-8 md:grid-cols-[auto,1fr] md:p-12">
-              <img
-                src={founder.avatar}
-                alt={founder.name}
-                loading="lazy"
-                className="mx-auto h-44 w-44 border-2 border-primary-500/40 object-cover shadow-soft"
-              />
-              <div>
-                <Quote className="mb-3 text-primary-500" size={32} />
-                <p className="font-serif text-2xl italic text-cream-100">“{founder.quote}”</p>
-                <p className="mt-5 text-sm leading-relaxed text-cream-400">{founder.bio}</p>
-                <div className="mt-5">
-                  <p className="font-display text-2xl uppercase text-cream-50">{founder.name}</p>
-                  <p className="text-sm text-primary-400">{founder.role}</p>
+        <section className="px-5 py-16 md:px-8 md:py-24">
+          <div className="mx-auto max-w-7xl">
+            <Reveal>
+              <div className="border-2 border-ink-900 bg-paper-100 p-8 shadow-[6px_6px_0_0_rgba(29,25,19,1)] md:p-12">
+                <span className="doc-label text-primary-600">Directed by</span>
+                <div className="mt-6 grid items-center gap-8 md:grid-cols-[auto,1fr]">
+                  <img
+                    src={founder.avatar}
+                    alt={founder.name}
+                    loading="lazy"
+                    className="mx-auto h-40 w-40 border-2 border-ink-900 object-cover"
+                  />
+                  <div>
+                    <Quote className="mb-3 text-primary-500" size={28} />
+                    <p className="font-serif text-2xl italic text-ink-900">“{founder.quote}”</p>
+                    <p className="mt-4 text-sm leading-relaxed text-ink-600">{founder.bio}</p>
+                    <p className="mt-4 font-serif text-xl text-ink-950">{founder.name}</p>
+                    <p className="doc-label mt-1 text-ink-500">{founder.role}</p>
+                  </div>
                 </div>
               </div>
-            </div>
-          </Reveal>
-        </div>
-      </section>
+            </Reveal>
+          </div>
+        </section>
       )}
 
       <CTASection />

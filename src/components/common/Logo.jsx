@@ -1,27 +1,18 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { Clapperboard } from 'lucide-react'
 
 /**
- * Brand logo. Renders the image at /logo.png when present;
- * falls back to a styled wordmark if the file is missing.
+ * Brand mark. Renders /logo.png when present; otherwise a typeset wordmark.
  */
-export default function Logo({ className = 'h-12 w-auto', to = '/' }) {
+export default function Logo({ className = 'h-10 w-auto', to = '/' }) {
   const [error, setError] = useState(false)
 
   const inner = error ? (
-    <span className="flex items-center gap-2.5">
-      <span className="flex h-10 w-10 items-center justify-center bg-gradient-to-br from-primary-400 to-primary-700 text-ink-950 shadow-glow">
-        <Clapperboard size={20} />
+    <span className="flex flex-col leading-none">
+      <span className="font-serif text-2xl font-semibold tracking-tight text-ink-950">
+        Neelam Films<span className="text-primary-500">.</span>
       </span>
-      <span className="flex flex-col leading-none">
-        <span className="font-display text-2xl tracking-wide text-cream-50">
-          Neelam<span className="text-primary-400"> Films</span>
-        </span>
-        <span className="text-[9px] font-medium uppercase tracking-[0.3em] text-cream-400">
-          Since 1995
-        </span>
-      </span>
+      <span className="doc-label mt-1 text-[8px] text-ink-600">Prod. Est. 1995 — Delhi</span>
     </span>
   ) : (
     <img
@@ -33,7 +24,7 @@ export default function Logo({ className = 'h-12 w-auto', to = '/' }) {
   )
 
   return to ? (
-    <Link to={to} className="inline-flex items-center transition hover:opacity-90">
+    <Link to={to} className="inline-flex items-center transition hover:opacity-80">
       {inner}
     </Link>
   ) : (

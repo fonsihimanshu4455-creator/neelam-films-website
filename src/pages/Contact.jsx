@@ -1,13 +1,13 @@
 import { useState } from 'react'
-import { motion } from 'framer-motion'
-import { MapPin, Phone, Mail, Clock, MessageCircle, Send, CheckCircle2, Camera as Instagram } from 'lucide-react'
+import { MessageCircle, Send, CheckCircle2 } from 'lucide-react'
 import { useData } from '../context/DataContext'
 import PageHero from '../components/common/PageHero'
+import Reveal from '../components/common/Reveal'
 
 const INITIAL = { name: '', phone: '', email: '', service: '', message: '' }
 
 const FIELD_CLASS =
-  'w-full border border-cream-50/15 bg-ink-950 px-4 py-3 text-sm text-cream-50 placeholder-cream-500 outline-none transition focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20'
+  'w-full border-0 border-b-2 border-ink-900/30 bg-transparent px-0 py-2.5 font-mono text-sm text-ink-950 placeholder-ink-500/50 outline-none transition focus:border-primary-500'
 
 export default function Contact() {
   const { data } = useData()
@@ -36,44 +36,33 @@ export default function Contact() {
   return (
     <>
       <PageHero
-        eyebrow="Get in touch"
-        title="Let's talk about your project"
-        subtitle="Whether it's a film, an event, a website or an app — our team is ready to make it happen. Reach out for a free quote."
-        image="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1200&q=80"
+        eyebrow="Page 04 — Contact"
+        title="Tell us the plan."
+        subtitle="A film, an event, a stream, a website — write it down below or just call. We reply within a day, usually sooner."
       />
 
-      <section className="px-5 py-24 md:px-8 md:py-32">
-        <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-2">
-          {/* Form */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="border border-cream-50/10 bg-ink-900 p-8 shadow-soft md:p-10"
-          >
-            <h2 className="font-display text-3xl uppercase text-cream-50">Send us a message</h2>
-            <p className="mt-2 text-sm text-cream-400">
-              Fill the form — it opens WhatsApp with your enquiry ready to send, and we reply within 24 hours.
+      <section className="px-5 pb-24 md:px-8 md:pb-32">
+        <div className="mx-auto grid max-w-7xl gap-14 lg:grid-cols-12">
+          {/* Enquiry form — typewriter sheet */}
+          <Reveal className="lg:col-span-7">
+            <div className="rule-heavy pt-3">
+              <span className="doc-label text-primary-600">Enquiry form</span>
+            </div>
+            <p className="mt-4 text-sm text-ink-600">
+              Submitting opens WhatsApp with your enquiry typed out and ready to send.
             </p>
 
-            <form onSubmit={handleSubmit} className="mt-8 space-y-5">
-              <div className="grid gap-5 sm:grid-cols-2">
-                <Field label="Full name" name="name" value={form.name} onChange={handleChange} required />
-                <Field label="Phone" name="phone" type="tel" value={form.phone} onChange={handleChange} required />
+            <form onSubmit={handleSubmit} className="mt-8 space-y-7">
+              <div className="grid gap-7 sm:grid-cols-2">
+                <Field label="01 — Full name" name="name" value={form.name} onChange={handleChange} required />
+                <Field label="02 — Phone" name="phone" type="tel" value={form.phone} onChange={handleChange} required />
               </div>
-              <Field label="Email" name="email" type="email" value={form.email} onChange={handleChange} required />
+              <Field label="03 — Email" name="email" type="email" value={form.email} onChange={handleChange} required />
 
               <div>
-                <label className="mb-1.5 block text-sm font-medium text-cream-200">Service</label>
-                <select
-                  name="service"
-                  value={form.service}
-                  onChange={handleChange}
-                  required
-                  className={FIELD_CLASS}
-                >
-                  <option value="">Select a service</option>
+                <label className="doc-label mb-1 block text-ink-600">04 — Service required</label>
+                <select name="service" value={form.service} onChange={handleChange} required className={FIELD_CLASS}>
+                  <option value="">— select —</option>
                   {services.map((s) => (
                     <option key={s.id} value={s.title}>{s.title}</option>
                   ))}
@@ -82,85 +71,92 @@ export default function Contact() {
               </div>
 
               <div>
-                <label className="mb-1.5 block text-sm font-medium text-cream-200">Message</label>
+                <label className="doc-label mb-1 block text-ink-600">05 — The plan</label>
                 <textarea
                   name="message"
                   rows={4}
                   value={form.message}
                   onChange={handleChange}
                   required
-                  placeholder="Tell us about your project..."
+                  placeholder="Dates, venue, scale, budget if you have one…"
                   className={FIELD_CLASS}
                 />
               </div>
 
-              <motion.button
+              <button
                 type="submit"
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                className="flex w-full items-center justify-center gap-2 bg-primary-500 py-3.5 text-xs font-bold uppercase tracking-[0.15em] text-ink-950 shadow-glow transition hover:bg-primary-400"
+                className="flex w-full items-center justify-center gap-2 border-2 border-primary-500 bg-primary-500 py-3.5 font-mono text-xs font-bold uppercase tracking-[0.15em] text-paper-50 transition hover:border-primary-600 hover:bg-primary-600 sm:w-auto sm:px-10"
               >
-                <Send size={18} />
+                <Send size={15} />
                 Send via WhatsApp
-              </motion.button>
+              </button>
 
               {sent && (
-                <motion.div
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  className="flex items-center gap-2 border border-primary-500/40 bg-primary-500/10 px-4 py-3 text-sm text-primary-300"
-                >
-                  <CheckCircle2 size={18} />
-                  WhatsApp is opening with your message pre-filled — just hit send!
-                </motion.div>
+                <p className="flex items-center gap-2 border-l-2 border-primary-500 pl-4 text-sm text-ink-700">
+                  <CheckCircle2 size={16} className="text-primary-600" />
+                  WhatsApp is opening with your message typed out — just hit send.
+                </p>
               )}
             </form>
-          </motion.div>
+          </Reveal>
 
-          {/* Info + map */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="space-y-6"
-          >
-            <div className="bg-gradient-to-br from-primary-400 to-primary-600 p-8 text-ink-950 shadow-soft md:p-10">
-              <h2 className="font-display text-3xl uppercase">Contact information</h2>
-              <p className="mt-2 text-sm text-ink-900/70">Reach us directly through any of these channels.</p>
-
-              <ul className="mt-7 space-y-5 text-sm">
-                <InfoRow icon={MapPin} label="Address" value={contact.address} />
-                <InfoRow icon={Phone} label="Phone" value={contact.phone} href={`tel:${contact.phoneRaw}`} />
-                <InfoRow icon={Mail} label="Email" value={contact.email} href={`mailto:${contact.email}`} />
-                <InfoRow icon={Instagram} label="Instagram" value={contact.instagram} href={contact.instagramUrl} />
-                <InfoRow icon={Clock} label="Working hours" value={contact.hours} />
-              </ul>
-
+          {/* Office card */}
+          <Reveal delay={0.1} className="lg:col-span-5">
+            <div className="border-2 border-ink-900 bg-paper-100 shadow-[6px_6px_0_0_rgba(29,25,19,1)]">
+              <div className="border-b-2 border-ink-900 px-6 py-4">
+                <span className="doc-label text-primary-600">The office</span>
+              </div>
+              <dl className="space-y-5 px-6 py-6 text-sm">
+                {[
+                  ['Address', contact.address],
+                  ['Phone', contact.phone, `tel:${contact.phoneRaw}`],
+                  ['Email', contact.email, `mailto:${contact.email}`],
+                  ['Instagram', contact.instagram, contact.instagramUrl],
+                  ['Hours', contact.hours],
+                ].map(([k, v, href]) => (
+                  <div key={k}>
+                    <dt className="doc-label text-ink-500">{k}</dt>
+                    <dd className="mt-1 font-mono text-ink-900">
+                      {href ? (
+                        <a
+                          href={href}
+                          target={href.startsWith('http') ? '_blank' : undefined}
+                          rel="noopener noreferrer"
+                          className="underline decoration-primary-500 decoration-2 underline-offset-4 transition hover:text-primary-600"
+                        >
+                          {v}
+                        </a>
+                      ) : (
+                        v
+                      )}
+                    </dd>
+                  </div>
+                ))}
+              </dl>
               <a
                 href={`https://wa.me/${contact.whatsapp}?text=Hi%20Neelam%20Films`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-7 flex items-center justify-center gap-2 bg-ink-950 py-3.5 text-xs font-bold uppercase tracking-[0.15em] text-cream-50 transition hover:bg-ink-800"
+                className="flex items-center justify-center gap-2 border-t-2 border-ink-900 bg-ink-950 py-4 font-mono text-xs font-bold uppercase tracking-[0.15em] text-paper-50 transition hover:bg-ink-900"
               >
-                <MessageCircle size={18} className="text-[#25D366]" fill="currentColor" />
+                <MessageCircle size={16} className="text-[#25D366]" fill="currentColor" />
                 Chat on WhatsApp
               </a>
             </div>
 
-            <div className="overflow-hidden border border-cream-50/10 shadow-soft">
+            <div className="mt-6 overflow-hidden border border-ink-900/30">
               <iframe
                 title="Neelam Films location"
                 src={contact.mapEmbed}
                 width="100%"
-                height="280"
-                style={{ border: 0, filter: 'grayscale(1) invert(0.92) contrast(0.9)' }}
+                height="240"
+                style={{ border: 0, filter: 'grayscale(1) contrast(0.95)' }}
                 allowFullScreen=""
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
               />
             </div>
-          </motion.div>
+          </Reveal>
         </div>
       </section>
     </>
@@ -170,7 +166,7 @@ export default function Contact() {
 function Field({ label, name, type = 'text', value, onChange, required }) {
   return (
     <div>
-      <label className="mb-1.5 block text-sm font-medium text-cream-200">{label}</label>
+      <label className="doc-label mb-1 block text-ink-600">{label}</label>
       <input
         type={type}
         name={name}
@@ -180,28 +176,5 @@ function Field({ label, name, type = 'text', value, onChange, required }) {
         className={FIELD_CLASS}
       />
     </div>
-  )
-}
-
-function InfoRow({ icon: IconCmp, label, value, href }) {
-  const content = (
-    <div className="flex gap-4">
-      <span className="flex h-10 w-10 shrink-0 items-center justify-center bg-ink-950/10 text-ink-950">
-        <IconCmp size={18} />
-      </span>
-      <div>
-        <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-ink-900/60">{label}</p>
-        <p className="font-medium text-ink-950">{value}</p>
-      </div>
-    </div>
-  )
-  return href ? (
-    <li>
-      <a href={href} target={href.startsWith('http') ? '_blank' : undefined} rel="noopener noreferrer" className="transition hover:opacity-75">
-        {content}
-      </a>
-    </li>
-  ) : (
-    <li>{content}</li>
   )
 }

@@ -1,66 +1,80 @@
 import { Link } from 'react-router-dom'
-import { ArrowUpRight } from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
 import { useData } from '../../context/DataContext'
 import Reveal from '../common/Reveal'
 
+/** Lowest "from ₹X" figure across a service's pricing rows, if any. */
+function fromPrice(pricing) {
+  if (!pricing?.length) return null
+  const nums = pricing
+    .map((p) => {
+      const m = String(p.price).match(/[\d,]+/)
+      return m ? Number(m[0].replace(/,/g, '')) : null
+    })
+    .filter((n) => n)
+  if (!nums.length) return null
+  return `from ₹${Math.min(...nums).toLocaleString('en-IN')}`
+}
+
 /**
- * Plain editorial service index — numbered rows, quiet hover.
+ * Services as a call-sheet ledger: numbered rows, scope column, rate column.
  */
 export default function ServicesGrid() {
   const { data } = useData()
   const services = data.services
 
   return (
-    <section className="relative py-24 md:py-32">
-      <div className="mx-auto max-w-7xl px-5 md:px-8">
-        <div className="mb-14 flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
-          <div>
-            <Reveal>
-              <span className="text-[11px] font-bold uppercase tracking-[0.3em] text-primary-400">
-                What we do
-              </span>
-            </Reveal>
-            <Reveal delay={0.08}>
-              <h2 className="mt-4 max-w-2xl font-display text-5xl uppercase leading-[0.9] text-cream-50 md:text-7xl">
-                Everything under <span className="font-serif lowercase italic tracking-normal text-primary-400">one roof</span>
-              </h2>
-            </Reveal>
+    <section className="px-5 py-24 md:px-8 md:py-32">
+      <div className="mx-auto max-w-7xl">
+        <Reveal>
+          <div className="rule-heavy flex flex-wrap items-baseline justify-between gap-4 pt-3">
+            <span className="doc-label text-primary-600">Scene 01 — What we do</span>
+            <span className="doc-label hidden text-ink-500 md:block">8 departments, one phone number</span>
           </div>
-          <Reveal delay={0.12}>
-            <p className="max-w-sm text-cream-300">
-              Shoots, events, streams, studio time, gear on rent — and the websites and ads to go
-              with them. One call covers all of it.
-            </p>
-          </Reveal>
-        </div>
-      </div>
+        </Reveal>
+        <Reveal delay={0.08}>
+          <h2 className="mt-8 max-w-3xl font-serif text-4xl leading-[1.02] text-ink-950 md:text-6xl">
+            Shoots, shows, streams, studio &amp; the digital to go with it.
+          </h2>
+        </Reveal>
 
-      {/* Index list */}
-      <div className="mx-auto max-w-7xl px-5 md:px-8">
-        <div className="border-t border-cream-50/10">
-          {services.map((s, i) => (
-            <Reveal key={s.id} delay={Math.min(i * 0.03, 0.15)} amount={0.15}>
-              <Link
-                to={s.slug}
-                className="group flex items-center gap-5 border-b border-cream-50/10 py-6 md:gap-10 md:py-7"
-              >
-                <span className="w-10 shrink-0 font-display text-base text-cream-500 md:text-lg">
-                  {String(i + 1).padStart(2, '0')}
-                </span>
-                <span className="flex-1 font-display text-3xl uppercase leading-none text-cream-50 transition-colors duration-300 group-hover:text-primary-400 sm:text-4xl md:text-5xl">
-                  {s.title}
-                </span>
-                <span className="hidden max-w-xs text-sm leading-snug text-cream-400 lg:block">
-                  {s.short}
-                </span>
-                <ArrowUpRight
-                  size={22}
-                  className="shrink-0 text-cream-500 transition-all duration-300 group-hover:translate-x-1 group-hover:text-primary-400"
-                />
-              </Link>
-            </Reveal>
-          ))}
+        {/* ledger */}
+        <div className="mt-12 border-t border-ink-900/20">
+          {services.map((s, i) => {
+            const rate = fromPrice(s.pricing)
+            return (
+              <Reveal key={s.id} delay={Math.min(i * 0.03, 0.12)} amount={0.2}>
+                <Link
+                  to={s.slug}
+                  className="group grid grid-cols-[2.5rem_1fr_auto] items-baseline gap-4 border-b border-ink-900/20 py-5 transition-colors hover:bg-paper-100 md:grid-cols-[3rem_minmax(0,1.2fr)_minmax(0,1fr)_8rem_2rem] md:gap-6"
+                >
+                  <span className="font-mono text-xs font-bold text-primary-500">
+                    {String(i + 1).padStart(2, '0')}
+                  </span>
+                  <span className="font-serif text-2xl leading-tight text-ink-950 transition-colors group-hover:text-primary-600 md:text-3xl">
+                    {s.title}
+                  </span>
+                  <span className="hidden text-sm leading-snug text-ink-600 md:block">
+                    {s.short}
+                  </span>
+                  <span className="hidden text-right font-mono text-xs text-ink-700 md:block">
+                    {rate || 'on quote'}
+                  </span>
+                  <ArrowRight
+                    size={18}
+                    className="hidden justify-self-end text-ink-400 transition-all group-hover:translate-x-1 group-hover:text-primary-500 md:block"
+                  />
+                </Link>
+              </Reveal>
+            )
+          })}
         </div>
+
+        <Reveal delay={0.1}>
+          <p className="mt-4 text-right font-mono text-[10px] uppercase tracking-[0.15em] text-ink-500">
+            Rates indicative — final quote depends on scale &amp; dates
+          </p>
+        </Reveal>
       </div>
     </section>
   )

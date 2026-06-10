@@ -1,15 +1,12 @@
 import { useState } from 'react'
-import { motion } from 'framer-motion'
-import { Camera, Lightbulb, Mic, Building2 } from 'lucide-react'
 import { useData } from '../../context/DataContext'
-import SectionHeader from '../common/SectionHeader'
+import Reveal from '../common/Reveal'
 import Button from '../common/Button'
 
-const CATEGORY_ICONS = { Camera, Light: Lightbulb, Audio: Mic, Studio: Building2 }
 const FILTERS = ['All', 'Camera', 'Light', 'Audio', 'Studio']
 
 /**
- * Filterable equipment rental cards with daily/hourly rates (noir theme).
+ * Rental inventory as a stock register — thumbnail, item, category, rate.
  */
 export default function EquipmentGrid() {
   const { data } = useData()
@@ -19,74 +16,55 @@ export default function EquipmentGrid() {
   const items = filter === 'All' ? equipment : equipment.filter((e) => e.category === filter)
 
   return (
-    <section className="border-y border-cream-50/10 bg-ink-900/50 px-5 py-24 md:px-8 md:py-32">
+    <section className="px-5 py-16 md:px-8 md:py-24">
       <div className="mx-auto max-w-7xl">
-        <div className="mb-12 flex justify-center text-center">
-          <SectionHeader
-            eyebrow="Rental catalogue"
-            title="Browse our inventory"
-            subtitle="Professional, well-maintained gear at the best rates in Delhi."
-          />
-        </div>
+        <Reveal>
+          <div className="rule-heavy flex flex-wrap items-baseline justify-between gap-4 pt-3">
+            <span className="doc-label text-primary-600">Stock register — rental inventory</span>
+            <div className="flex flex-wrap gap-x-5 gap-y-2">
+              {FILTERS.map((f) => (
+                <button
+                  key={f}
+                  onClick={() => setFilter(f)}
+                  className={`doc-label pb-0.5 transition ${
+                    filter === f
+                      ? 'border-b-2 border-primary-500 text-primary-600'
+                      : 'border-b-2 border-transparent text-ink-600 hover:text-ink-950'
+                  }`}
+                >
+                  {f}
+                </button>
+              ))}
+            </div>
+          </div>
+        </Reveal>
 
-        <div className="mb-10 flex flex-wrap justify-center gap-3">
-          {FILTERS.map((f) => (
-            <button
-              key={f}
-              onClick={() => setFilter(f)}
-              className={`px-5 py-2 text-xs font-bold uppercase tracking-[0.15em] transition ${
-                filter === f
-                  ? 'bg-primary-500 text-ink-950 shadow-glow'
-                  : 'border border-cream-50/15 text-cream-300 hover:border-primary-500/60 hover:text-primary-400'
-              }`}
-            >
-              {f}
-            </button>
-          ))}
-        </div>
-
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {items.map((e, i) => {
-            const CatIcon = CATEGORY_ICONS[e.category] || Camera
-            return (
-              <motion.div
-                key={e.id}
-                layout
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: (i % 3) * 0.06 }}
-                whileHover={{ y: -6 }}
-                className="group overflow-hidden border border-cream-50/10 bg-ink-900 transition hover:border-primary-500/40 hover:shadow-soft"
-              >
-                <div className="relative h-44 overflow-hidden">
-                  <img
-                    src={e.image}
-                    alt={e.name}
-                    loading="lazy"
-                    className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
-                  />
-                  <span className="absolute left-3 top-3 flex items-center gap-1 bg-ink-950/85 px-3 py-1 text-xs font-semibold text-primary-400 backdrop-blur">
-                    <CatIcon size={14} />
-                    {e.category}
+        <div className="mt-8 border-t border-ink-900/20">
+          {items.map((e, i) => (
+            <Reveal key={e.id} delay={Math.min(i * 0.02, 0.1)} amount={0.2}>
+              <div className="grid grid-cols-[4.5rem_1fr_auto] items-center gap-4 border-b border-ink-900/20 py-4 md:grid-cols-[5.5rem_minmax(0,1.2fr)_minmax(0,1.4fr)_7rem_8rem_auto] md:gap-6">
+                <span className="block aspect-[4/3] w-full overflow-hidden border border-ink-900/20 bg-paper-200">
+                  <img src={e.image} alt={e.name} loading="lazy" className="h-full w-full object-cover" />
+                </span>
+                <span className="min-w-0">
+                  <span className="block truncate font-serif text-lg leading-tight text-ink-950 md:text-xl">{e.name}</span>
+                  <span className="mt-0.5 block font-mono text-[10px] uppercase tracking-[0.12em] text-ink-500 md:hidden">
+                    {e.category} — {e.rate}/{e.unit}
                   </span>
-                </div>
-                <div className="p-6">
-                  <h3 className="font-display text-2xl uppercase text-cream-50">{e.name}</h3>
-                  <p className="mt-1 text-sm text-cream-400">{e.desc}</p>
-                  <div className="mt-4 flex items-center justify-between">
-                    <span className="font-display text-2xl text-primary-400">
-                      {e.rate}
-                      <span className="text-sm font-medium text-cream-400"> / {e.unit}</span>
-                    </span>
-                    <Button to="/contact" className="px-5 py-2 text-xs" magnetic={false}>
-                      Rent now
-                    </Button>
-                  </div>
-                </div>
-              </motion.div>
-            )
-          })}
+                </span>
+                <span className="hidden text-sm text-ink-600 md:block">{e.desc}</span>
+                <span className="hidden font-mono text-[10px] uppercase tracking-[0.12em] text-ink-500 md:block">
+                  {e.category}
+                </span>
+                <span className="hidden text-right font-mono text-sm font-bold text-ink-950 md:block">
+                  {e.rate}<span className="font-normal text-ink-500">/{e.unit}</span>
+                </span>
+                <Button to="/contact" variant="outline" className="px-4 py-2 text-[10px]">
+                  Rent
+                </Button>
+              </div>
+            </Reveal>
+          ))}
         </div>
       </div>
     </section>
