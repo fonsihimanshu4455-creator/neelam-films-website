@@ -47,10 +47,10 @@ export default function Hero() {
 
           <motion.h1
             initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.1 }}
-            className="font-display text-6xl leading-[0.92] text-primary-700 sm:text-7xl lg:text-8xl"
+            className="font-display text-[3.4rem] leading-[0.95] text-primary-700 sm:text-6xl lg:text-[5.5rem]"
           >
-            Stories that <span className="text-gradient">move</span><br />
-            <span className="text-ink-900">&amp; events that</span> <span className="text-gradient">matter</span>
+            Stories that <span className="font-serif font-normal italic text-gradient">move</span><br />
+            <span className="text-ink-900">&amp; events</span> <span className="font-serif font-normal italic text-gradient">that&nbsp;matter</span>
           </motion.h1>
 
           <motion.p

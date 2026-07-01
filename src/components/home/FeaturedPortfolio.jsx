@@ -32,8 +32,8 @@ export default function FeaturedPortfolio() {
               </span>
             </Reveal>
             <Reveal delay={0.1}>
-              <h2 className="mt-4 font-display text-4xl font-extrabold leading-tight text-white md:text-6xl">
-                Frames we're <span className="font-serif font-normal italic text-gold-400">proud</span> of
+              <h2 className="mt-4 font-display text-4xl leading-tight text-primary-700 md:text-6xl">
+                Frames we're <span className="font-serif font-normal italic text-gradient">proud</span> of
               </h2>
             </Reveal>
           </div>

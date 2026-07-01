@@ -58,9 +58,9 @@ export default {
       },
       fontFamily: {
         sans: ['Sora', 'Inter', 'sans-serif'],
-        display: ['"Bebas Neue"', 'Impact', 'sans-serif'],
+        display: ['Fraunces', 'Georgia', 'serif'],
         heading: ['Sora', 'Inter', 'sans-serif'],
-        serif: ['"Instrument Serif"', 'Georgia', 'serif'],
+        serif: ['Fraunces', 'Georgia', 'serif'],
       },
       letterSpacing: {
         tightest: '-0.04em',
