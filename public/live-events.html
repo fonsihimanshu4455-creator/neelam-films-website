@@ -376,7 +376,7 @@
 var WHATSAPP_NUMBER = "919999672912";
 var WA_MSG = "Hi Neelam Films \ud83d\udc4b I would like to plan a live event. Please share details and a quote.";
 // 🔗 PASTE your Google Apps Script Web-App URL below (ends with /exec). See GOOGLE-SHEET-SETUP.md
-var SHEET_ENDPOINT = "";
+var SHEET_ENDPOINT = "https://script.google.com/macros/s/AKfycbyfg6fbi_k9mB1cOA6SgAWI1T-qHb8Fdw996LB8iFmVuGnhsuGPEg6aFS67qzOka6teuA/exec";
 function waLink(extra){ var m = WA_MSG + (extra ? ("\n\n"+extra) : ""); return "https://wa.me/"+WHATSAPP_NUMBER+"?text="+encodeURIComponent(m); }
 ["wa-hero","wa-final","wa-footer","wa-sticky","wa-success"].forEach(function(id){var el=document.getElementById(id);if(el)el.href=waLink();});
 document.getElementById("submitBtn").addEventListener("click", async function(){
