@@ -25,7 +25,7 @@ export default function Logo({ className = 'h-12 w-auto', to = '/' }) {
     </span>
   ) : (
     <img
-      src="/logo.png"
+      src="/logo.svg"
       alt="Neelam Films — Production House & Live Events"
       className={className}
       onError={() => setError(true)}

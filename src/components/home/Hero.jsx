@@ -4,10 +4,11 @@ import { Play, ArrowRight, Star } from 'lucide-react'
 import { useData } from '../../context/DataContext'
 import Button from '../common/Button'
 import VideoModal from '../common/VideoModal'
+import Chain from '../common/Chain'
 
 /**
- * Bold editorial / film-poster hero: huge uppercase type on warm paper,
- * orange accents, a wide showreel key-art band.
+ * Bold editorial / film-poster hero: huge uppercase type on cool paper,
+ * blue accents, a wide showreel key-art band "hung" from swaying chains.
  */
 export default function Hero() {
   const { data } = useData()
@@ -79,17 +80,36 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Wide showreel key-art */}
+      {/* Wide showreel key-art — "hung" from swaying chains */}
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
-        className="mx-auto mt-12 max-w-7xl"
+        className="relative mx-auto mt-16 max-w-7xl"
       >
+        {/* rotating conic glow behind the poster */}
+        <div className="pointer-events-none absolute -inset-6 -z-10 opacity-60 blur-2xl">
+          <div
+            className="h-full w-full animate-conic-spin rounded-[2rem]"
+            style={{
+              background:
+                'conic-gradient(from 0deg, rgba(43,144,232,0.35), rgba(142,205,255,0.05), rgba(25,92,168,0.35), rgba(43,144,232,0.35))',
+            }}
+          />
+        </div>
+
+        {/* hanging chains */}
+        <Chain className="absolute -top-16 left-10 z-10 md:left-20" links={7} />
+        <Chain className="absolute -top-16 right-10 z-10 md:right-20" links={7} swayAlt />
+
         <button
           onClick={() => setOpen(true)}
           className="group relative block aspect-[16/9] w-full overflow-hidden border-2 border-ink-900 bg-ink-950 md:aspect-[21/9]"
         >
+          {/* trending shine sweep on hover */}
+          <span className="pointer-events-none absolute inset-0 z-20 overflow-hidden">
+            <span className="absolute -inset-y-2 left-0 w-1/3 -translate-x-[120%] bg-gradient-to-r from-transparent via-white/25 to-transparent group-hover:animate-shine" />
+          </span>
           <iframe
             title="Showreel"
             className="pointer-events-none absolute left-1/2 top-1/2 h-[140%] w-[140%] -translate-x-1/2 -translate-y-1/2"

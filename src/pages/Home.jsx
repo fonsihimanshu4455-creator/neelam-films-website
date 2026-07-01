@@ -7,6 +7,7 @@ import FeaturedPortfolio from '../components/home/FeaturedPortfolio'
 import Testimonials from '../components/home/Testimonials'
 import CTASection from '../components/common/CTASection'
 import Marquee from '../components/common/Marquee'
+import Chain from '../components/common/Chain'
 
 const WORDS = ['Production', 'Live Events', 'Streaming', 'Recording', 'Equipment', 'Websites', 'Apps', 'Digital Growth']
 
@@ -24,6 +25,12 @@ export default function Home() {
       <ParallaxBanner />
       <Statement />
       <FeaturedPortfolio />
+
+      {/* Decorative chain divider */}
+      <div className="flex justify-center py-8">
+        <Chain orientation="horizontal" links={16} />
+      </div>
+
       <ClientsMarquee />
       <Testimonials />
       <CTASection />

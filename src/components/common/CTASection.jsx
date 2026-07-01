@@ -30,6 +30,7 @@ export default function CTASection({
       />
       <div className="absolute inset-0 bg-ink-950/75" />
       <div className="absolute inset-0 bg-gradient-to-br from-primary-700/70 via-primary-900/40 to-transparent" />
+      <div className="pattern-diamond-dark absolute inset-0 opacity-70" />
 
       <div className="relative z-10 mx-auto max-w-4xl px-5 py-28 text-center md:py-36">
         <motion.div

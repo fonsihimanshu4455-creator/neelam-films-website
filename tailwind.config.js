@@ -4,38 +4,40 @@ export default {
   theme: {
     extend: {
       colors: {
-        // Bold warm orange accent (was blue)
+        // Brand blue — pulled from the Neelam Films "n" logo
+        // (bright sky-cyan highlight → deep royal blue)
         primary: {
-          50: '#fff7ed',
-          100: '#ffedd5',
-          200: '#fed7aa',
-          300: '#fdba74',
-          400: '#fb923c',
-          500: '#f9580f',
-          600: '#ea420c',
-          700: '#c2330c',
-          800: '#9a2a12',
-          900: '#7c2512',
+          50: '#eef7ff',
+          100: '#d9edff',
+          200: '#bce0ff',
+          300: '#8ecdff',
+          400: '#57b2f5',
+          500: '#2b90e8',
+          600: '#1b74cf',
+          700: '#195ca8',
+          800: '#1a4d88',
+          900: '#1b426f',
+          950: '#122845',
         },
-        // Warm espresso "ink" for text & dark blocks
+        // Cool navy "ink" for text & dark blocks
         ink: {
-          950: '#140f0c',
-          900: '#1c1714',
-          800: '#2c2521',
-          700: '#473d36',
-          600: '#6b5d52',
+          950: '#08111f',
+          900: '#0d1b2e',
+          800: '#182a44',
+          700: '#33455f',
+          600: '#5a6b85',
         },
-        // Warm paper neutrals
+        // Cool paper neutrals (white theme)
         cream: {
-          50: '#fdfbf7',
-          100: '#f8f3ea',
-          200: '#efe7d8',
-          300: '#e3d6c0',
+          50: '#fbfdff',
+          100: '#f2f7fc',
+          200: '#e4eef7',
+          300: '#d0e0ee',
         },
         dark: {
-          900: '#1c1714',
-          800: '#2c2521',
-          700: '#473d36',
+          900: '#0d1b2e',
+          800: '#182a44',
+          700: '#33455f',
         },
       },
       fontFamily: {
@@ -62,6 +64,32 @@ export default {
         },
         shimmer: { '0%': { backgroundPosition: '200% center' }, '100%': { backgroundPosition: '-200% center' } },
         spinSlow: { to: { transform: 'rotate(360deg)' } },
+        // Decorative hanging-chain sway
+        chainSway: {
+          '0%, 100%': { transform: 'rotate(-3.5deg)' },
+          '50%': { transform: 'rotate(3.5deg)' },
+        },
+        chainSwayAlt: {
+          '0%, 100%': { transform: 'rotate(3deg)' },
+          '50%': { transform: 'rotate(-3deg)' },
+        },
+        // Trending: animated gradient wash
+        gradientShift: {
+          '0%, 100%': { backgroundPosition: '0% 50%' },
+          '50%': { backgroundPosition: '100% 50%' },
+        },
+        // Trending: slow drifting geometric pattern
+        patternDrift: {
+          '0%': { backgroundPosition: '0 0' },
+          '100%': { backgroundPosition: '120px 120px' },
+        },
+        // Trending: shine sweep across cards
+        shine: {
+          '0%': { transform: 'translateX(-120%) skewX(-20deg)' },
+          '100%': { transform: 'translateX(220%) skewX(-20deg)' },
+        },
+        // Conic glow rotation behind hero art
+        conicSpin: { to: { transform: 'rotate(360deg)' } },
       },
       animation: {
         marquee: 'marquee 36s linear infinite',
@@ -72,6 +100,12 @@ export default {
         aurora: 'auroraMove 18s ease-in-out infinite',
         shimmer: 'shimmer 6s linear infinite',
         'spin-slow': 'spinSlow 24s linear infinite',
+        'chain-sway': 'chainSway 5s ease-in-out infinite',
+        'chain-sway-alt': 'chainSwayAlt 6s ease-in-out infinite',
+        'gradient-shift': 'gradientShift 8s ease infinite',
+        'pattern-drift': 'patternDrift 24s linear infinite',
+        shine: 'shine 1.1s ease-out',
+        'conic-spin': 'conicSpin 14s linear infinite',
       },
     },
   },

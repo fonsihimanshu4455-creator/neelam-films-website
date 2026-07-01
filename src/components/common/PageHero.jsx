@@ -23,6 +23,7 @@ export default function PageHero({ eyebrow, title, subtitle, image, children }) 
       )}
       <div className="absolute inset-0 bg-gradient-to-t from-ink-950 via-ink-950/55 to-ink-950/30" />
       <div className="absolute inset-0 bg-gradient-to-r from-primary-950/60 via-transparent to-transparent" />
+      <div className="pattern-diamond-dark absolute inset-0 opacity-60" />
 
       <div className="relative z-10 mx-auto w-full max-w-7xl px-5 pb-16 md:px-8 md:pb-20">
         <motion.div

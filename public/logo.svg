@@ -1,0 +1,30 @@
+<svg width="420" height="120" viewBox="0 0 420 120" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Neelam Films">
+  <defs>
+    <linearGradient id="nfBlue" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#57b2f5"/>
+      <stop offset="50%" stop-color="#2b90e8"/>
+      <stop offset="100%" stop-color="#195ca8"/>
+    </linearGradient>
+    <linearGradient id="nfSwoosh" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#8ecdff"/>
+      <stop offset="55%" stop-color="#2b90e8"/>
+      <stop offset="100%" stop-color="#1a4d88"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Mark: rounded-square badge with an "n" and a flowing swoosh -->
+  <g>
+    <rect x="14" y="16" width="88" height="88" rx="22" fill="none" stroke="url(#nfBlue)" stroke-width="7"/>
+    <!-- lowercase n -->
+    <path d="M45 82 V52 M45 60 C50 51 63 49 70 56 C74 60 74 66 74 70 V82"
+          fill="none" stroke="url(#nfBlue)" stroke-width="7.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <!-- flowing swoosh across the mark -->
+    <path d="M2 72 C34 52 56 92 84 66 C98 53 108 58 116 66"
+          fill="none" stroke="url(#nfSwoosh)" stroke-width="6" stroke-linecap="round"/>
+    <circle cx="103" cy="24" r="5" fill="none" stroke="#2b90e8" stroke-width="2.4"/>
+  </g>
+
+  <!-- Wordmark -->
+  <text x="126" y="62" font-family="'Archivo Black', Impact, sans-serif" font-size="34" font-weight="900" letter-spacing="-0.5" fill="#0d1b2e">Neelam<tspan fill="#2b90e8"> Films</tspan></text>
+  <text x="128" y="88" font-family="Inter, sans-serif" font-size="12" font-weight="600" letter-spacing="6" fill="#5a6b85">SINCE 1995</text>
+</svg>
