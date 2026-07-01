@@ -19,7 +19,7 @@ export default function Marquee({ items = [], reverse = false, outline = false, 
           <span className={`px-6 font-display text-5xl font-extrabold uppercase tracking-tight md:text-7xl ${outline ? stroke : fill}`}>
             {word}
           </span>
-          <Star size={26} className={white ? 'text-white' : 'text-primary-500'} fill="currentColor" />
+          <Star size={26} className={white ? 'text-white' : 'text-gold-400'} fill="currentColor" />
         </span>
       ))}
     </div>

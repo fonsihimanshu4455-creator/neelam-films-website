@@ -27,13 +27,13 @@ export default function FeaturedPortfolio() {
         <div className="mb-14 flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
           <div>
             <Reveal>
-              <span className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.25em] text-primary-600">
-                <span className="h-px w-8 bg-primary-500" /> Selected work
+              <span className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.25em] text-gold-400">
+                <span className="h-px w-8 bg-gold-400" /> Selected work
               </span>
             </Reveal>
             <Reveal delay={0.1}>
               <h2 className="mt-4 font-display text-4xl font-extrabold leading-tight text-white md:text-6xl">
-                Frames we're <span className="font-serif font-normal italic text-primary-600">proud</span> of
+                Frames we're <span className="font-serif font-normal italic text-gold-400">proud</span> of
               </h2>
             </Reveal>
           </div>
@@ -64,12 +64,12 @@ export default function FeaturedPortfolio() {
               <div className="absolute inset-0 bg-gradient-to-t from-ink-950 via-ink-950/20 to-transparent" />
               <div className="absolute inset-0 bg-primary-500/0 transition-colors duration-500 group-hover:bg-primary-500/10" />
 
-              <span className="absolute right-4 top-4 flex h-12 w-12 translate-y-2 items-center justify-center rounded-full bg-white/90 text-primary-600 opacity-0 transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100">
+              <span className="absolute right-4 top-4 flex h-12 w-12 translate-y-2 items-center justify-center rounded-full bg-white/90 text-gold-400 opacity-0 transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100">
                 <Play size={20} fill="currentColor" />
               </span>
 
               <div className="absolute bottom-0 left-0 p-5">
-                <span className="text-[11px] font-semibold uppercase tracking-wider text-primary-300">
+                <span className="text-[11px] font-semibold uppercase tracking-wider text-gold-300">
                   {p.category} · {p.year}
                 </span>
                 <h3 className="font-display text-xl font-bold text-white">{p.title}</h3>

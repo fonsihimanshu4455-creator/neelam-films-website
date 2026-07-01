@@ -41,7 +41,7 @@ export default function AdminLogin() {
             <Film size={28} />
           </span>
           <h1 className="mt-4 font-display text-2xl font-extrabold text-dark-900">
-            Neelam<span className="text-primary-500"> Films</span>
+            Neelam<span className="text-gold-400"> Films</span>
           </h1>
           <p className="text-sm text-slate-400">Admin Panel Login</p>
         </div>
@@ -56,7 +56,7 @@ export default function AdminLogin() {
                 onChange={(e) => setUsername(e.target.value)}
                 placeholder="himanshu"
                 required
-                className="w-full rounded-xl border border-white/10 py-3 pl-11 pr-4 text-sm outline-none transition focus:border-primary-500 focus:ring-2 focus:ring-primary-100"
+                className="w-full rounded-xl border border-white/10 py-3 pl-11 pr-4 text-sm outline-none transition focus:border-gold-400 focus:ring-2 focus:ring-gold-400"
               />
             </div>
           </div>
@@ -71,7 +71,7 @@ export default function AdminLogin() {
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="••••••••"
                 required
-                className="w-full rounded-xl border border-white/10 py-3 pl-11 pr-4 text-sm outline-none transition focus:border-primary-500 focus:ring-2 focus:ring-primary-100"
+                className="w-full rounded-xl border border-white/10 py-3 pl-11 pr-4 text-sm outline-none transition focus:border-gold-400 focus:ring-2 focus:ring-gold-400"
               />
             </div>
           </div>
@@ -85,7 +85,7 @@ export default function AdminLogin() {
 
           <button
             type="submit"
-            className="w-full rounded-full bg-primary-500 py-3.5 text-sm font-semibold text-white shadow-lg shadow-primary-500/30 transition hover:bg-primary-600"
+            className="w-full rounded-full bg-gold-400 py-3.5 text-sm font-semibold text-white shadow-lg shadow-primary-500/30 transition hover:bg-primary-600"
           >
             Sign In
           </button>
@@ -93,7 +93,7 @@ export default function AdminLogin() {
 
         <Link
           to="/"
-          className="mt-6 block text-center text-xs text-slate-400 transition hover:text-primary-500"
+          className="mt-6 block text-center text-xs text-slate-400 transition hover:text-gold-400"
         >
           ← Back to website
         </Link>

@@ -34,7 +34,7 @@ export default function ParallaxBanner() {
           className="font-display text-4xl font-extrabold leading-tight text-white md:text-7xl"
         >
           30 years behind <br />
-          <span className="font-serif font-normal italic text-primary-300">the lens.</span>
+          <span className="font-serif font-normal italic text-gold-300">the lens.</span>
         </motion.h2>
 
         <div className="mt-14 grid w-full grid-cols-2 gap-8 md:grid-cols-4">

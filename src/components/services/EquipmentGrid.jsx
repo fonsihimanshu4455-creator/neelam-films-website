@@ -36,8 +36,8 @@ export default function EquipmentGrid() {
               onClick={() => setFilter(f)}
               className={`rounded-full px-5 py-2 text-sm font-semibold transition ${
                 filter === f
-                  ? 'bg-primary-500 text-white shadow-glow'
-                  : 'border border-white/10 bg-white/5 text-slate-300 hover:border-primary-400'
+                  ? 'bg-gold-400 text-white shadow-glow'
+                  : 'border border-white/10 bg-white/5 text-slate-300 hover:border-gold-400'
               }`}
             >
               {f}
@@ -57,7 +57,7 @@ export default function EquipmentGrid() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: (i % 3) * 0.06 }}
                 whileHover={{ y: -6 }}
-                className="group overflow-hidden rounded-3xl border border-white/10 bg-white/[0.03] shadow-sm transition hover:border-primary-500/50 hover:shadow-soft"
+                className="group overflow-hidden rounded-3xl border border-white/10 bg-white/[0.03] shadow-sm transition hover:border-gold-400/50 hover:shadow-soft"
               >
                 <div className="relative h-44 overflow-hidden">
                   <img
@@ -66,7 +66,7 @@ export default function EquipmentGrid() {
                     loading="lazy"
                     className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
                   />
-                  <span className="absolute left-3 top-3 flex items-center gap-1 rounded-full bg-white/90 px-3 py-1 text-xs font-semibold text-primary-600 backdrop-blur">
+                  <span className="absolute left-3 top-3 flex items-center gap-1 rounded-full bg-white/90 px-3 py-1 text-xs font-semibold text-gold-400 backdrop-blur">
                     <CatIcon size={14} />
                     {e.category}
                   </span>

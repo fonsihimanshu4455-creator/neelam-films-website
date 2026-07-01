@@ -97,9 +97,9 @@ export default function About() {
                     i % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
                   }`}
                 >
-                  <div className="absolute left-4 top-2 z-10 h-4 w-4 -translate-x-1/2 rounded-full border-4 border-white bg-primary-500 shadow md:left-1/2" />
+                  <div className="absolute left-4 top-2 z-10 h-4 w-4 -translate-x-1/2 rounded-full border-4 border-white bg-gold-400 shadow md:left-1/2" />
                   <div className={`ml-10 md:ml-0 md:w-1/2 ${i % 2 === 0 ? 'md:pr-12 md:text-right' : 'md:pl-12'}`}>
-                    <div className="rounded-2xl border border-white/10 bg-white/5 p-5 transition hover:border-primary-500/50 hover:shadow-soft">
+                    <div className="rounded-2xl border border-white/10 bg-white/5 p-5 transition hover:border-gold-400/50 hover:shadow-soft">
                       <span className="font-display text-2xl font-extrabold text-gradient">{t.year}</span>
                       <h3 className="mt-1 font-display text-lg font-bold text-white">{t.title}</h3>
                       <p className="mt-1 text-sm text-slate-400">{t.desc}</p>
@@ -132,13 +132,13 @@ export default function About() {
                   : 'border border-white/10 bg-white'
               }`}
             >
-              <span className={`flex h-14 w-14 items-center justify-center rounded-2xl ${b.blue ? 'bg-white/15 text-white' : 'bg-primary-50 text-primary-600'}`}>
+              <span className={`flex h-14 w-14 items-center justify-center rounded-2xl ${b.blue ? 'bg-white/15 text-white' : 'bg-gold-400/10 text-gold-400'}`}>
                 <b.icon size={28} />
               </span>
               <h3 className={`mt-5 font-display text-2xl font-bold ${b.blue ? 'text-white' : 'text-white'}`}>
                 {b.title}
               </h3>
-              <p className={`mt-3 leading-relaxed ${b.blue ? 'text-primary-50' : 'text-slate-400'}`}>{b.text}</p>
+              <p className={`mt-3 leading-relaxed ${b.blue ? 'text-white/70' : 'text-slate-400'}`}>{b.text}</p>
             </motion.div>
           ))}
         </div>
@@ -157,15 +157,15 @@ export default function About() {
                 src={founder.avatar}
                 alt={founder.name}
                 loading="lazy"
-                className="mx-auto h-44 w-44 rounded-3xl border-2 border-primary-200 object-cover shadow-soft"
+                className="mx-auto h-44 w-44 rounded-3xl border-2 border-gold-400 object-cover shadow-soft"
               />
               <div>
-                <Quote className="mb-3 text-primary-500" size={32} />
+                <Quote className="mb-3 text-gold-400" size={32} />
                 <p className="font-serif text-2xl italic text-slate-100">“{founder.quote}”</p>
                 <p className="mt-5 text-sm leading-relaxed text-slate-400">{founder.bio}</p>
                 <div className="mt-5">
                   <p className="font-display text-xl font-bold text-white">{founder.name}</p>
-                  <p className="text-sm text-primary-600">{founder.role}</p>
+                  <p className="text-sm text-gold-400">{founder.role}</p>
                 </div>
               </div>
             </div>

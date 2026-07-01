@@ -43,7 +43,7 @@ export default function AdminLayout() {
   const linkClass = ({ isActive }) =>
     `flex items-center gap-3 rounded-xl px-4 py-3 text-sm font-medium transition ${
       isActive
-        ? 'bg-primary-500 text-white shadow-md shadow-primary-500/30'
+        ? 'bg-gold-400 text-white shadow-md shadow-primary-500/30'
         : 'text-slate-300 hover:bg-white/5 hover:text-white'
     }`
 
@@ -54,7 +54,7 @@ export default function AdminLayout() {
           <Film size={20} />
         </span>
         <span className="font-display text-lg font-extrabold text-white">
-          Neelam<span className="text-primary-500"> Films</span>
+          Neelam<span className="text-gold-400"> Films</span>
         </span>
       </Link>
 
@@ -98,7 +98,7 @@ export default function AdminLayout() {
       {/* Mobile top bar */}
       <div className="flex items-center justify-between bg-dark-900 p-4 lg:hidden">
         <Link to="/admin/dashboard" className="flex items-center gap-2">
-          <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary-500 text-white">
+          <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-gold-400 text-white">
             <Film size={18} />
           </span>
           <span className="font-display font-extrabold text-white">Neelam Films</span>

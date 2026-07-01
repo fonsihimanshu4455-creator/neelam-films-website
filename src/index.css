@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Anton&family=Sora:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Great+Vibes&family=Sora:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -19,21 +19,21 @@
 
 html {
   scroll-behavior: smooth;
-  background: #08090f;
+  background: #121212;
 }
 
 body {
   margin: 0;
-  background: #08090f;
-  color: #e7e9f2;
+  background: #121212;
+  color: #ededed;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
   overflow-x: hidden;
 }
 
 ::selection {
-  background: #2b90e8;
-  color: #fff;
+  background: #d4a24b;
+  color: #222;
 }
 
 /* Dark scrollbar */
@@ -41,15 +41,15 @@ body {
   width: 10px;
 }
 ::-webkit-scrollbar-track {
-  background: #0a0c12;
+  background: #141414;
 }
 ::-webkit-scrollbar-thumb {
-  background: #1e2330;
+  background: #7a0e2c;
   border-radius: 999px;
-  border: 2px solid #0a0c12;
+  border: 2px solid #141414;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #2b90e8;
+  background: #d4a24b;
 }
 
 .no-scrollbar::-webkit-scrollbar {
@@ -64,24 +64,27 @@ body {
   .font-display {
     font-family: 'Anton', Impact, sans-serif;
   }
+  .font-script {
+    font-family: 'Great Vibes', cursive;
+  }
 
+  /* Gold gradient — headline accents on dark */
   .text-gradient {
-    background-image: linear-gradient(120deg, #8ecdff 0%, #2b90e8 50%, #1b74cf 100%);
+    background-image: linear-gradient(120deg, #e7c06a 0%, #d4a24b 50%, #a5751f 100%);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
   }
 
-  /* alias kept from earlier iterations — now a blue gradient */
   .text-gold {
-    background-image: linear-gradient(120deg, #8ecdff 0%, #57b2f5 50%, #2b90e8 100%);
+    background-image: linear-gradient(120deg, #f3dfae 0%, #d4a24b 55%, #a5751f 100%);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
   }
 
   .text-shimmer {
-    background: linear-gradient(110deg, #6b7690 30%, #8ecdff 50%, #6b7690 70%);
+    background: linear-gradient(110deg, #8a8a8a 30%, #e7c06a 50%, #8a8a8a 70%);
     background-size: 200% auto;
     -webkit-background-clip: text;
     background-clip: text;
@@ -112,19 +115,19 @@ body {
     border: 1px solid rgba(255, 255, 255, 0.08);
   }
 
-  /* Gradient hairline border (blue) */
+  /* Gradient hairline border (gold) */
   .border-glow {
     border: 1px solid transparent;
     background:
-      linear-gradient(#0a0c12, #0a0c12) padding-box,
-      linear-gradient(135deg, rgba(87, 178, 245, 0.6), rgba(255, 255, 255, 0.04) 45%, rgba(43, 144, 232, 0.5)) border-box;
+      linear-gradient(#141414, #141414) padding-box,
+      linear-gradient(135deg, rgba(212, 162, 75, 0.7), rgba(255, 255, 255, 0.04) 45%, rgba(122, 14, 44, 0.6)) border-box;
   }
 
   .shadow-soft {
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4), 0 24px 60px -22px rgba(0, 0, 0, 0.75);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4), 0 24px 60px -22px rgba(0, 0, 0, 0.8);
   }
   .shadow-glow {
-    box-shadow: 0 0 0 1px rgba(87, 178, 245, 0.25), 0 18px 60px -14px rgba(43, 144, 232, 0.7);
+    box-shadow: 0 0 0 1px rgba(212, 162, 75, 0.3), 0 18px 55px -16px rgba(212, 162, 75, 0.55);
   }
 
   .link-underline {
@@ -148,16 +151,16 @@ body {
   }
 
   .bg-animated-gradient {
-    background: linear-gradient(120deg, #0a0c12, #12151f, #195ca8, #05060a);
+    background: linear-gradient(120deg, #141414, #1c1c1c, #7a0e2c, #0c0c0c);
     background-size: 220% 220%;
     animation: gradientShift 12s ease infinite;
   }
 
   .bg-paper {
-    background: #08090f;
+    background: #121212;
   }
   .bg-navy {
-    background: linear-gradient(180deg, #0a0c12 0%, #0d1120 100%);
+    background: linear-gradient(180deg, #161616 0%, #1a0e13 100%);
   }
 
   /* --- subtle dark geometric textures --- */
@@ -176,8 +179,8 @@ body {
   .pattern-crosshatch,
   .pattern-triangles {
     background-image:
-      linear-gradient(45deg, rgba(87, 178, 245, 0.06) 1px, transparent 1px),
-      linear-gradient(-45deg, rgba(87, 178, 245, 0.06) 1px, transparent 1px);
+      linear-gradient(45deg, rgba(212, 162, 75, 0.06) 1px, transparent 1px),
+      linear-gradient(-45deg, rgba(212, 162, 75, 0.06) 1px, transparent 1px);
     background-size: 54px 54px;
   }
 }

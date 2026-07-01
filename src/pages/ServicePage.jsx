@@ -60,9 +60,9 @@ export default function ServicePage({ serviceId }) {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: (i % 3) * 0.08 }}
                 whileHover={{ y: -6 }}
-                className="group rounded-3xl border border-white/10 bg-white/[0.03] p-7 shadow-sm transition hover:border-primary-500/50 hover:shadow-soft"
+                className="group rounded-3xl border border-white/10 bg-white/[0.03] p-7 shadow-sm transition hover:border-gold-400/50 hover:shadow-soft"
               >
-                <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-primary-50 text-primary-600 transition group-hover:bg-primary-500 group-hover:text-white">
+                <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gold-400/10 text-gold-400 transition group-hover:bg-gold-400 group-hover:text-white">
                   <Icon name={service.icon} size={24} />
                 </span>
                 <h3 className="mt-5 font-display text-xl font-bold text-white">{o.title}</h3>
@@ -96,7 +96,7 @@ export default function ServicePage({ serviceId }) {
                 transition={{ duration: 0.5, delay: i * 0.1 }}
                 className="relative rounded-3xl border border-white/10 bg-white/5 p-7"
               >
-                <span className="font-display text-6xl font-extrabold text-primary-500/25">{p.step}</span>
+                <span className="font-display text-6xl font-extrabold text-gold-400/25">{p.step}</span>
                 <h3 className="mt-3 font-display text-lg font-bold text-white">{p.title}</h3>
                 <p className="mt-2 text-sm text-slate-400">{p.desc}</p>
               </motion.div>
@@ -151,7 +151,7 @@ export default function ServicePage({ serviceId }) {
                 className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-ink-900/30" />
-              <span className="absolute left-1/2 top-1/2 flex h-20 w-20 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white/90 text-primary-600 shadow-glow transition group-hover:scale-110">
+              <span className="absolute left-1/2 top-1/2 flex h-20 w-20 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white/90 text-gold-400 shadow-glow transition group-hover:scale-110">
                 <Play size={32} fill="currentColor" />
               </span>
             </button>
@@ -180,7 +180,7 @@ export default function ServicePage({ serviceId }) {
                   transition={{ duration: 0.5, delay: i * 0.1 }}
                   className={`flex flex-col rounded-3xl border p-8 ${
                     i === 1
-                      ? 'border-primary-300 bg-primary-50 shadow-soft'
+                      ? 'border-gold-400 bg-gold-400/10 shadow-soft'
                       : 'border-white/10 bg-white/[0.03] shadow-sm'
                   }`}
                 >
@@ -192,7 +192,7 @@ export default function ServicePage({ serviceId }) {
                   <ul className="mt-6 flex-1 space-y-3">
                     {p.features.map((f) => (
                       <li key={f} className="flex items-center gap-2 text-sm text-slate-300">
-                        <Check size={16} className="text-primary-500" />
+                        <Check size={16} className="text-gold-400" />
                         {f}
                       </li>
                     ))}

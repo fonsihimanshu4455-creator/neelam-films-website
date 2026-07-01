@@ -25,7 +25,7 @@ export default function ServicesEditor() {
         {draft.map((s, i) => (
           <Card key={s.id}>
             <div className="mb-3 flex items-center gap-2">
-              <span className="rounded-md bg-primary-50 px-2 py-1 text-xs font-semibold text-primary-600">
+              <span className="rounded-md bg-primary-50 px-2 py-1 text-xs font-semibold text-gold-400">
                 {s.slug}
               </span>
             </div>

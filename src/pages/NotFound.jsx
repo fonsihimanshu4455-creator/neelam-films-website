@@ -11,7 +11,7 @@ export default function NotFound() {
       </p>
       <Link
         to="/"
-        className="mt-8 inline-flex items-center gap-2 rounded-full bg-primary-500 px-7 py-3.5 text-sm font-semibold text-white transition hover:bg-primary-600"
+        className="mt-8 inline-flex items-center gap-2 rounded-full bg-gold-400 px-7 py-3.5 text-sm font-semibold text-white transition hover:bg-primary-600"
       >
         <Home size={18} /> Back to Home
       </Link>

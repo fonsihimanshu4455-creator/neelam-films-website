@@ -6,11 +6,11 @@ import Magnetic from './Magnetic'
  * Variants: primary | outline | white | ghost | dark
  */
 const VARIANTS = {
-  primary: 'text-white bg-primary-500 before:bg-white hover:text-ink-950 shadow-glow',
-  outline: 'text-white border border-white/25 before:bg-primary-500 hover:text-white hover:border-primary-500',
-  white: 'text-ink-950 bg-white before:bg-primary-500 hover:text-white',
+  primary: 'text-white bg-gold-400 before:bg-white hover:text-ink-950 shadow-glow',
+  outline: 'text-white border border-white/25 before:bg-gold-400 hover:text-white hover:border-gold-400',
+  white: 'text-ink-950 bg-white before:bg-gold-400 hover:text-white',
   ghost: 'text-white border border-white/20 before:bg-white/10 hover:text-white',
-  dark: 'text-white bg-white/5 border border-white/10 before:bg-primary-500 hover:text-white',
+  dark: 'text-white bg-white/5 border border-white/10 before:bg-gold-400 hover:text-white',
 }
 
 export default function Button({

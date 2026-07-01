@@ -20,8 +20,8 @@ export default function ProcessSteps() {
       <div className="relative mx-auto max-w-7xl px-5 md:px-8">
         <div className="mb-16 max-w-2xl">
           <Reveal>
-            <span className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.25em] text-primary-400">
-              <span className="h-px w-8 bg-primary-500" /> How we work
+            <span className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.25em] text-gold-400">
+              <span className="h-px w-8 bg-gold-400" /> How we work
             </span>
           </Reveal>
           <Reveal delay={0.1}>
@@ -45,7 +45,7 @@ export default function ProcessSteps() {
               className="relative"
             >
               <div className="relative z-10 mb-6 flex h-18 w-18">
-                <span className="flex h-16 w-16 items-center justify-center rounded-2xl border border-white/10 bg-ink-900 text-primary-300 shadow-glow">
+                <span className="flex h-16 w-16 items-center justify-center rounded-2xl border border-white/10 bg-ink-900 text-gold-300 shadow-glow">
                   <s.Icon size={24} />
                 </span>
                 <span className="absolute -right-1 -top-2 font-display text-2xl text-white/10">{s.n}</span>

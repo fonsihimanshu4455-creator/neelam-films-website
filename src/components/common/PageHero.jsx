@@ -35,7 +35,7 @@ export default function PageHero({ eyebrow, title, subtitle, image, children }) 
           {eyebrow && (
             <div className="mb-5 flex items-center gap-3">
               <span className="h-px w-12 bg-primary-400" />
-              <span className="text-xs font-semibold uppercase tracking-[0.3em] text-primary-300">{eyebrow}</span>
+              <span className="text-xs font-semibold uppercase tracking-[0.3em] text-gold-300">{eyebrow}</span>
             </div>
           )}
           <h1 className="font-display text-4xl font-extrabold leading-[1.0] tracking-tightest text-white sm:text-6xl lg:text-7xl">

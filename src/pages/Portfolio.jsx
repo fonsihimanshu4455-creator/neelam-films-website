@@ -36,8 +36,8 @@ export default function Portfolio() {
                 onClick={() => setFilter(f)}
                 className={`rounded-full px-5 py-2.5 text-sm font-semibold transition ${
                   filter === f
-                    ? 'bg-primary-500 text-white shadow-glow'
-                    : 'border border-white/10 bg-white/5 text-slate-300 hover:border-primary-400'
+                    ? 'bg-gold-400 text-white shadow-glow'
+                    : 'border border-white/10 bg-white/5 text-slate-300 hover:border-gold-400'
                 }`}
               >
                 {f}
@@ -67,11 +67,11 @@ export default function Portfolio() {
                     className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-dark-900/90 via-dark-900/20 to-transparent" />
-                  <span className="absolute left-1/2 top-1/2 flex h-14 w-14 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white/90 text-primary-600 opacity-0 transition group-hover:opacity-100">
+                  <span className="absolute left-1/2 top-1/2 flex h-14 w-14 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white/90 text-gold-400 opacity-0 transition group-hover:opacity-100">
                     <Play size={22} fill="currentColor" />
                   </span>
                   <div className="absolute bottom-0 left-0 p-5">
-                    <span className="text-xs font-semibold uppercase tracking-wider text-primary-400">
+                    <span className="text-xs font-semibold uppercase tracking-wider text-gold-400">
                       {p.category} • {p.year}
                     </span>
                     <h3 className="font-display text-lg font-bold text-white">{p.title}</h3>

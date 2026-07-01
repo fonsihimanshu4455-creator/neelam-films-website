@@ -44,8 +44,8 @@ export default function Hero() {
           allow="autoplay; encrypted-media"
           frameBorder="0"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-ink-950/85 via-ink-950/70 to-[#08090f]" />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#08090f] via-transparent to-[#08090f]/60" />
+        <div className="absolute inset-0 bg-gradient-to-b from-ink-950/85 via-ink-950/70 to-[#121212]" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#121212] via-transparent to-[#121212]/60" />
       </div>
 
       {/* Rotating brand badge */}
@@ -60,11 +60,11 @@ export default function Hero() {
             <defs>
               <path id="badge" d="M50,50 m-37,0 a37,37 0 1,1 74,0 a37,37 0 1,1 -74,0" />
             </defs>
-            <text className="fill-primary-300 text-[8.5px] font-semibold uppercase tracking-[0.28em]">
+            <text className="fill-gold-400 text-[8.5px] font-semibold uppercase tracking-[0.28em]">
               <textPath href="#badge">Neelam Films • Production • Live Events • </textPath>
             </text>
           </svg>
-          <span className="absolute left-1/2 top-1/2 flex h-12 w-12 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-primary-400/40 bg-primary-500/10 text-primary-300">
+          <span className="absolute left-1/2 top-1/2 flex h-12 w-12 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-gold-400/40 bg-primary-500/10 text-gold-300">
             <Star size={18} fill="currentColor" />
           </span>
         </div>
@@ -76,9 +76,9 @@ export default function Hero() {
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="mb-6 flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.3em] text-primary-300"
+          className="mb-6 flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.3em] text-gold-300"
         >
-          <span className="h-px w-10 bg-primary-500" />
+          <span className="h-px w-10 bg-gold-400" />
           Delhi's Production House · Since 1995
         </motion.div>
 
@@ -123,7 +123,7 @@ export default function Hero() {
               onClick={() => setOpen(true)}
               className="group inline-flex items-center gap-3 text-sm font-bold uppercase tracking-[0.12em] text-white"
             >
-              <span className="flex h-12 w-12 items-center justify-center rounded-full border border-white/20 bg-white/5 transition group-hover:scale-110 group-hover:border-primary-400 group-hover:bg-primary-500">
+              <span className="flex h-12 w-12 items-center justify-center rounded-full border border-white/20 bg-white/5 transition group-hover:scale-110 group-hover:border-gold-400 group-hover:bg-gold-400">
                 <Play size={16} fill="currentColor" className="ml-0.5" />
               </span>
               Watch Showreel
@@ -150,7 +150,7 @@ export default function Hero() {
               ))}
             </div>
             <div>
-              <div className="flex items-center gap-1 text-primary-300">
+              <div className="flex items-center gap-1 text-gold-300">
                 {Array.from({ length: 5 }).map((_, i) => (
                   <Star key={i} size={13} fill="currentColor" />
                 ))}
@@ -173,7 +173,7 @@ export default function Hero() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="social"
-                className="flex h-10 w-10 items-center justify-center rounded-full border border-white/15 text-slate-300 transition hover:border-primary-500 hover:bg-primary-500 hover:text-white"
+                className="flex h-10 w-10 items-center justify-center rounded-full border border-white/15 text-slate-300 transition hover:border-gold-400 hover:bg-gold-400 hover:text-white"
               >
                 <SocialIcon path={path} />
               </a>

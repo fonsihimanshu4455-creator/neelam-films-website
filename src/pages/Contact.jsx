@@ -58,7 +58,7 @@ export default function Contact() {
                   value={form.service}
                   onChange={handleChange}
                   required
-                  className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white outline-none transition focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20"
+                  className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white outline-none transition focus:border-gold-400 focus:ring-2 focus:ring-gold-400/20"
                 >
                   <option value="">Select a service</option>
                   {services.map((s) => (
@@ -77,7 +77,7 @@ export default function Contact() {
                   onChange={handleChange}
                   required
                   placeholder="Tell us about your project..."
-                  className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder-slate-400 outline-none transition focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20"
+                  className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder-slate-400 outline-none transition focus:border-gold-400 focus:ring-2 focus:ring-gold-400/20"
                 />
               </div>
 
@@ -85,7 +85,7 @@ export default function Contact() {
                 type="submit"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                className="flex w-full items-center justify-center gap-2 rounded-full bg-primary-500 py-3.5 text-sm font-semibold text-white shadow-glow transition hover:bg-primary-600"
+                className="flex w-full items-center justify-center gap-2 rounded-full bg-gold-400 py-3.5 text-sm font-semibold text-white shadow-glow transition hover:bg-primary-600"
               >
                 <Send size={18} />
                 Send message
@@ -114,7 +114,7 @@ export default function Contact() {
           >
             <div className="rounded-3xl bg-gradient-to-br from-primary-600 to-primary-800 p-8 text-white shadow-soft md:p-10">
               <h2 className="font-display text-2xl font-bold">Contact information</h2>
-              <p className="mt-2 text-sm text-primary-100">Reach us directly through any of these channels.</p>
+              <p className="mt-2 text-sm text-white/70">Reach us directly through any of these channels.</p>
 
               <ul className="mt-7 space-y-5 text-sm">
                 <InfoRow icon={MapPin} label="Address" value={contact.address} />
@@ -128,7 +128,7 @@ export default function Contact() {
                 href={`https://wa.me/${contact.whatsapp}?text=Hi%20Neelam%20Films`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-7 flex items-center justify-center gap-2 rounded-full bg-white py-3.5 text-sm font-semibold text-primary-700 transition hover:bg-primary-50"
+                className="mt-7 flex items-center justify-center gap-2 rounded-full bg-white py-3.5 text-sm font-semibold text-gold-400 transition hover:bg-gold-500"
               >
                 <MessageCircle size={18} className="text-[#25D366]" fill="currentColor" />
                 Chat on WhatsApp
@@ -164,7 +164,7 @@ function Field({ label, name, type = 'text', value, onChange, required }) {
         value={value}
         onChange={onChange}
         required={required}
-        className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white outline-none transition focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20"
+        className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white outline-none transition focus:border-gold-400 focus:ring-2 focus:ring-gold-400/20"
       />
     </div>
   )
@@ -177,7 +177,7 @@ function InfoRow({ icon: IconCmp, label, value, href }) {
         <IconCmp size={18} />
       </span>
       <div>
-        <p className="text-xs uppercase tracking-wider text-primary-200">{label}</p>
+        <p className="text-xs uppercase tracking-wider text-gold-400">{label}</p>
         <p className="text-white">{value}</p>
       </div>
     </div>

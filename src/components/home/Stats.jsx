@@ -19,7 +19,7 @@ export default function Stats() {
 
       <div className="relative mx-auto max-w-7xl px-5 py-20 md:px-8 md:py-28">
         <div className="mb-14 max-w-3xl">
-          <span className="text-xs font-semibold uppercase tracking-[0.3em] text-primary-400">
+          <span className="text-xs font-semibold uppercase tracking-[0.3em] text-gold-400">
             Proof of outcome
           </span>
           <h2 className="mt-4 font-display text-4xl font-extrabold leading-[1.05] tracking-tightest text-white md:text-6xl">

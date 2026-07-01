@@ -25,7 +25,7 @@ export default function Statement() {
 
       <div className="relative z-10 mx-auto max-w-6xl px-5 md:px-8">
         <div className="mb-8 text-center">
-          <span className="text-xs font-semibold uppercase tracking-[0.3em] text-primary-400">
+          <span className="text-xs font-semibold uppercase tracking-[0.3em] text-gold-400">
             Neelam Films · Our promise
           </span>
         </div>

@@ -47,7 +47,7 @@ export default function Dashboard() {
           { label: 'Equipment', value: data.equipment.length },
         ].map((s) => (
           <div key={s.label} className="rounded-2xl bg-white p-5 shadow-sm">
-            <div className="font-display text-3xl font-extrabold text-primary-500">{s.value}</div>
+            <div className="font-display text-3xl font-extrabold text-gold-400">{s.value}</div>
             <p className="mt-1 text-sm text-slate-400">{s.label}</p>
           </div>
         ))}
@@ -67,7 +67,7 @@ export default function Dashboard() {
               to={c.to}
               className="group flex items-center gap-4 rounded-2xl bg-white p-5 shadow-sm transition hover:shadow-md"
             >
-              <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary-50 text-primary-500">
+              <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary-50 text-gold-400">
                 <c.icon size={22} />
               </span>
               <div className="flex-1">
@@ -76,7 +76,7 @@ export default function Dashboard() {
               </div>
               <ArrowRight
                 size={18}
-                className="text-slate-300 transition group-hover:translate-x-1 group-hover:text-primary-500"
+                className="text-slate-300 transition group-hover:translate-x-1 group-hover:text-gold-400"
               />
             </Link>
           </motion.div>

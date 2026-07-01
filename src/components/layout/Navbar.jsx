@@ -33,7 +33,7 @@ export default function Navbar() {
 
   const linkClass = ({ isActive }) =>
     `link-underline text-xs font-bold uppercase tracking-[0.12em] transition-colors ${
-      isActive ? 'text-primary-400' : 'text-white hover:text-primary-400'
+      isActive ? 'text-gold-400' : 'text-white hover:text-gold-400'
     }`
 
   return (
@@ -60,7 +60,7 @@ export default function Navbar() {
             onMouseEnter={() => setServicesOpen(true)}
             onMouseLeave={() => setServicesOpen(false)}
           >
-            <button className="flex items-center gap-1 text-xs font-bold uppercase tracking-[0.12em] text-white transition-colors hover:text-primary-400">
+            <button className="flex items-center gap-1 text-xs font-bold uppercase tracking-[0.12em] text-white transition-colors hover:text-gold-400">
               Services
               <ChevronDown size={15} className={`transition ${servicesOpen ? 'rotate-180' : ''}`} />
             </button>
@@ -78,7 +78,7 @@ export default function Navbar() {
                       <Link
                         key={s.id}
                         to={s.slug}
-                        className="flex items-center justify-between rounded-xl px-4 py-2.5 text-sm font-medium text-slate-300 transition hover:bg-white/5 hover:text-primary-400"
+                        className="flex items-center justify-between rounded-xl px-4 py-2.5 text-sm font-medium text-slate-300 transition hover:bg-white/5 hover:text-gold-400"
                       >
                         {s.title}
                         <ChevronDown size={14} className="-rotate-90 opacity-40" />
@@ -139,7 +139,7 @@ export default function Navbar() {
                     className="overflow-hidden pl-4"
                   >
                     {services.map((s) => (
-                      <Link key={s.id} to={s.slug} className="block rounded-lg px-3 py-2 text-sm text-slate-400 hover:bg-white/5 hover:text-primary-400">
+                      <Link key={s.id} to={s.slug} className="block rounded-lg px-3 py-2 text-sm text-slate-400 hover:bg-white/5 hover:text-gold-400">
                         {s.title}
                       </Link>
                     ))}

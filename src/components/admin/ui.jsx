@@ -30,7 +30,7 @@ export function EditorHeader({ title, subtitle, onSave, onReset, previewLink, sa
         </button>
         <button
           onClick={onSave}
-          className="flex items-center gap-1.5 rounded-full bg-primary-500 px-5 py-2 text-sm font-semibold text-white shadow transition hover:bg-primary-600"
+          className="flex items-center gap-1.5 rounded-full bg-gold-400 px-5 py-2 text-sm font-semibold text-white shadow transition hover:bg-primary-600"
         >
           <Save size={15} /> Save Changes
         </button>
@@ -53,7 +53,7 @@ export function TextField({ label, value, onChange, type = 'text', placeholder }
         value={value ?? ''}
         onChange={(e) => onChange(e.target.value)}
         placeholder={placeholder}
-        className="w-full rounded-xl border border-white/10 px-4 py-2.5 text-sm outline-none transition focus:border-primary-500 focus:ring-2 focus:ring-primary-100"
+        className="w-full rounded-xl border border-white/10 px-4 py-2.5 text-sm outline-none transition focus:border-gold-400 focus:ring-2 focus:ring-gold-400"
       />
     </div>
   )
@@ -67,7 +67,7 @@ export function TextArea({ label, value, onChange, rows = 3 }) {
         rows={rows}
         value={value ?? ''}
         onChange={(e) => onChange(e.target.value)}
-        className="w-full rounded-xl border border-white/10 px-4 py-2.5 text-sm outline-none transition focus:border-primary-500 focus:ring-2 focus:ring-primary-100"
+        className="w-full rounded-xl border border-white/10 px-4 py-2.5 text-sm outline-none transition focus:border-gold-400 focus:ring-2 focus:ring-gold-400"
       />
     </div>
   )
@@ -92,7 +92,7 @@ export function ImageField({ label = 'Image URL', value, onChange }) {
           value={value ?? ''}
           onChange={(e) => onChange(e.target.value)}
           placeholder="Use Unsplash/Pexels URL for now"
-          className="w-full rounded-xl border border-white/10 px-4 py-2.5 text-sm outline-none transition focus:border-primary-500 focus:ring-2 focus:ring-primary-100"
+          className="w-full rounded-xl border border-white/10 px-4 py-2.5 text-sm outline-none transition focus:border-gold-400 focus:ring-2 focus:ring-gold-400"
         />
       </div>
     </div>
@@ -149,7 +149,7 @@ export function AddButton({ onClick, label = 'Add Item' }) {
   return (
     <button
       onClick={onClick}
-      className="flex items-center gap-2 rounded-xl border-2 border-dashed border-white/15 px-5 py-3 text-sm font-medium text-slate-400 transition hover:border-primary-400 hover:text-primary-500"
+      className="flex items-center gap-2 rounded-xl border-2 border-dashed border-white/15 px-5 py-3 text-sm font-medium text-slate-400 transition hover:border-gold-400 hover:text-gold-400"
     >
       <Plus size={16} /> {label}
     </button>
