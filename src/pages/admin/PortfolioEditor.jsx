@@ -54,7 +54,7 @@ export default function PortfolioEditor() {
                   <select
                     value={p.category}
                     onChange={(e) => update(i, 'category', e.target.value)}
-                    className="w-full rounded-xl border border-slate-200 px-4 py-2.5 text-sm outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-100"
+                    className="w-full rounded-xl border border-white/10 px-4 py-2.5 text-sm outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-100"
                   >
                     {CATEGORIES.map((c) => (
                       <option key={c}>{c}</option>

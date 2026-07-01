@@ -39,10 +39,10 @@ export default function Contact() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="rounded-3xl border border-slate-100 bg-white p-8 shadow-soft md:p-10"
+            className="rounded-3xl border border-white/10 bg-white/[0.03] p-8 shadow-soft md:p-10"
           >
-            <h2 className="font-display text-2xl font-bold text-ink-900">Send us a message</h2>
-            <p className="mt-2 text-sm text-slate-500">Fill the form and we'll get back within 24 hours.</p>
+            <h2 className="font-display text-2xl font-bold text-white">Send us a message</h2>
+            <p className="mt-2 text-sm text-slate-400">Fill the form and we'll get back within 24 hours.</p>
 
             <form onSubmit={handleSubmit} className="mt-8 space-y-5">
               <div className="grid gap-5 sm:grid-cols-2">
@@ -52,13 +52,13 @@ export default function Contact() {
               <Field label="Email" name="email" type="email" value={form.email} onChange={handleChange} required />
 
               <div>
-                <label className="mb-1.5 block text-sm font-medium text-ink-800">Service</label>
+                <label className="mb-1.5 block text-sm font-medium text-slate-100">Service</label>
                 <select
                   name="service"
                   value={form.service}
                   onChange={handleChange}
                   required
-                  className="w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm text-ink-900 outline-none transition focus:border-primary-500 focus:ring-2 focus:ring-primary-100"
+                  className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white outline-none transition focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20"
                 >
                   <option value="">Select a service</option>
                   {services.map((s) => (
@@ -69,7 +69,7 @@ export default function Contact() {
               </div>
 
               <div>
-                <label className="mb-1.5 block text-sm font-medium text-ink-800">Message</label>
+                <label className="mb-1.5 block text-sm font-medium text-slate-100">Message</label>
                 <textarea
                   name="message"
                   rows={4}
@@ -77,7 +77,7 @@ export default function Contact() {
                   onChange={handleChange}
                   required
                   placeholder="Tell us about your project..."
-                  className="w-full rounded-xl border border-slate-200 px-4 py-3 text-sm text-ink-900 placeholder-slate-400 outline-none transition focus:border-primary-500 focus:ring-2 focus:ring-primary-100"
+                  className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder-slate-400 outline-none transition focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20"
                 />
               </div>
 
@@ -135,7 +135,7 @@ export default function Contact() {
               </a>
             </div>
 
-            <div className="overflow-hidden rounded-3xl border border-slate-200 shadow-sm">
+            <div className="overflow-hidden rounded-3xl border border-white/10 shadow-sm">
               <iframe
                 title="Neelam Films location"
                 src={contact.mapEmbed}
@@ -157,14 +157,14 @@ export default function Contact() {
 function Field({ label, name, type = 'text', value, onChange, required }) {
   return (
     <div>
-      <label className="mb-1.5 block text-sm font-medium text-ink-800">{label}</label>
+      <label className="mb-1.5 block text-sm font-medium text-slate-100">{label}</label>
       <input
         type={type}
         name={name}
         value={value}
         onChange={onChange}
         required={required}
-        className="w-full rounded-xl border border-slate-200 px-4 py-3 text-sm text-ink-900 outline-none transition focus:border-primary-500 focus:ring-2 focus:ring-primary-100"
+        className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white outline-none transition focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20"
       />
     </div>
   )

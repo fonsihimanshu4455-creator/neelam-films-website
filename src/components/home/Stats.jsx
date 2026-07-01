@@ -15,11 +15,11 @@ export default function Stats() {
       {/* pattern + edge glow */}
       <div className="pattern-dots-dark pointer-events-none absolute inset-0 opacity-70" />
       <div className="pointer-events-none absolute -left-24 top-0 h-72 w-72 rounded-full bg-primary-500/15 blur-[120px]" />
-      <div className="pointer-events-none absolute -right-24 bottom-0 h-72 w-72 rounded-full bg-gold-500/10 blur-[120px]" />
+      <div className="pointer-events-none absolute -right-24 bottom-0 h-72 w-72 rounded-full bg-primary-500/10 blur-[120px]" />
 
       <div className="relative mx-auto max-w-7xl px-5 py-20 md:px-8 md:py-28">
         <div className="mb-14 max-w-3xl">
-          <span className="text-xs font-semibold uppercase tracking-[0.3em] text-gold-400">
+          <span className="text-xs font-semibold uppercase tracking-[0.3em] text-primary-400">
             Proof of outcome
           </span>
           <h2 className="mt-4 font-display text-4xl font-extrabold leading-[1.05] tracking-tightest text-white md:text-6xl">

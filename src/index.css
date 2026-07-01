@@ -1,29 +1,31 @@
-@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Sora:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-* {
-  font-family: 'Inter', sans-serif;
-}
+@layer base {
+  * {
+    font-family: 'Inter', sans-serif;
+  }
 
-h1,
-h2,
-h3,
-h4 {
-  font-family: 'Archivo Black', Impact, sans-serif;
-  letter-spacing: -0.02em;
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: 'Sora', 'Inter', sans-serif;
+    letter-spacing: -0.02em;
+  }
 }
 
 html {
   scroll-behavior: smooth;
-  background: #f4f0e6;
+  background: #08090f;
 }
 
 body {
   margin: 0;
-  background: #f4f0e6;
-  color: #0f1d33;
+  background: #08090f;
+  color: #e7e9f2;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
   overflow-x: hidden;
@@ -34,17 +36,17 @@ body {
   color: #fff;
 }
 
-/* Warm scrollbar */
+/* Dark scrollbar */
 ::-webkit-scrollbar {
   width: 10px;
 }
 ::-webkit-scrollbar-track {
-  background: #e9e2d2;
+  background: #0a0c12;
 }
 ::-webkit-scrollbar-thumb {
-  background: #c9a86e;
-  border-radius: 0;
-  border: 2px solid #e9e2d2;
+  background: #1e2330;
+  border-radius: 999px;
+  border: 2px solid #0a0c12;
 }
 ::-webkit-scrollbar-thumb:hover {
   background: #2b90e8;
@@ -59,23 +61,27 @@ body {
 }
 
 @layer components {
+  .font-display {
+    font-family: 'Anton', Impact, sans-serif;
+  }
+
   .text-gradient {
-    background-image: linear-gradient(120deg, #195ca8 0%, #2b90e8 55%, #57b2f5 100%);
+    background-image: linear-gradient(120deg, #8ecdff 0%, #2b90e8 50%, #1b74cf 100%);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
   }
 
-  /* Warm gold gradient — editorial italic-serif accent words (like the reference) */
+  /* alias kept from earlier iterations — now a blue gradient */
   .text-gold {
-    background-image: linear-gradient(120deg, #9c7a45 0%, #c9a86e 50%, #b8935a 100%);
+    background-image: linear-gradient(120deg, #8ecdff 0%, #57b2f5 50%, #2b90e8 100%);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
   }
 
   .text-shimmer {
-    background: linear-gradient(110deg, #5a6b85 35%, #2b90e8 50%, #5a6b85 65%);
+    background: linear-gradient(110deg, #6b7690 30%, #8ecdff 50%, #6b7690 70%);
     background-size: 200% auto;
     -webkit-background-clip: text;
     background-clip: text;
@@ -83,17 +89,42 @@ body {
     animation: shimmer 6s linear infinite;
   }
 
+  /* Image-filled headline text (AnimotionX-style WOW) */
+  .text-image {
+    background-image: url('https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=1600&q=80');
+    background-size: cover;
+    background-position: center;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.08);
+  }
+
   .glass {
-    background: rgba(255, 255, 255, 0.7);
-    border: 1px solid rgba(13, 27, 46, 0.1);
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
     backdrop-filter: blur(16px);
   }
 
+  /* Dark card surface with subtle top-light + hover lift */
+  .card-dark {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.015));
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  /* Gradient hairline border (blue) */
+  .border-glow {
+    border: 1px solid transparent;
+    background:
+      linear-gradient(#0a0c12, #0a0c12) padding-box,
+      linear-gradient(135deg, rgba(87, 178, 245, 0.6), rgba(255, 255, 255, 0.04) 45%, rgba(43, 144, 232, 0.5)) border-box;
+  }
+
   .shadow-soft {
-    box-shadow: 0 1px 2px rgba(13, 27, 46, 0.05), 0 14px 36px -14px rgba(13, 27, 46, 0.22);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4), 0 24px 60px -22px rgba(0, 0, 0, 0.75);
   }
   .shadow-glow {
-    box-shadow: 0 18px 50px -18px rgba(43, 144, 232, 0.6);
+    box-shadow: 0 0 0 1px rgba(87, 178, 245, 0.25), 0 18px 60px -14px rgba(43, 144, 232, 0.7);
   }
 
   .link-underline {
@@ -116,68 +147,38 @@ body {
     transform-origin: left;
   }
 
-  /* Trending: animated multi-stop gradient wash (use as bg for dark bands) */
   .bg-animated-gradient {
-    background: linear-gradient(120deg, #0f1d33, #1a2c47, #195ca8, #0a1526);
+    background: linear-gradient(120deg, #0a0c12, #12151f, #195ca8, #05060a);
     background-size: 220% 220%;
     animation: gradientShift 12s ease infinite;
   }
 
-  /* Warm ivory section base */
   .bg-paper {
-    background: linear-gradient(180deg, #faf8f2 0%, #f4f0e6 60%, #efe8d8 100%);
+    background: #08090f;
   }
-
-  /* Deep navy section base */
   .bg-navy {
-    background: linear-gradient(180deg, #0f1d33 0%, #12223c 100%);
+    background: linear-gradient(180deg, #0a0c12 0%, #0d1120 100%);
   }
 
-  /* --- Geometric background patterns (from brand reference art) --- */
-
-  /* Diamond crosshatch line-art (warm) — for light editorial bands */
-  .pattern-crosshatch {
-    background-image:
-      linear-gradient(45deg, rgba(156, 122, 69, 0.38) 1px, transparent 1px),
-      linear-gradient(-45deg, rgba(156, 122, 69, 0.38) 1px, transparent 1px);
-    background-size: 42px 42px;
-  }
-
-  /* Chevron / triangle weave — for the services band */
-  .pattern-triangles {
-    background-image:
-      linear-gradient(135deg, rgba(156, 122, 69, 0.28) 25%, transparent 25%),
-      linear-gradient(225deg, rgba(156, 122, 69, 0.28) 25%, transparent 25%);
-    background-size: 32px 32px;
-    background-position: 0 0;
-  }
-
-  /* Warm dot grid */
-  .pattern-dots {
-    background-image: radial-gradient(rgba(156, 122, 69, 0.28) 1.4px, transparent 1.4px);
-    background-size: 22px 22px;
-  }
-
-  /* Diamond crosshatch (light) — for dark navy bands */
+  /* --- subtle dark geometric textures --- */
+  .pattern-grid,
   .pattern-diamond-dark {
     background-image:
-      linear-gradient(45deg, rgba(200, 168, 110, 0.10) 1px, transparent 1px),
-      linear-gradient(-45deg, rgba(200, 168, 110, 0.10) 1px, transparent 1px);
-    background-size: 52px 52px;
+      linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+    background-size: 60px 60px;
   }
-
-  /* Dot grid (light) — for dark navy bands */
+  .pattern-dots,
   .pattern-dots-dark {
-    background-image: radial-gradient(rgba(200, 168, 110, 0.16) 1.3px, transparent 1.3px);
+    background-image: radial-gradient(rgba(255, 255, 255, 0.06) 1.2px, transparent 1.2px);
     background-size: 26px 26px;
   }
-
-  /* Fine grid pattern */
-  .pattern-grid {
+  .pattern-crosshatch,
+  .pattern-triangles {
     background-image:
-      linear-gradient(rgba(15, 29, 51, 0.05) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(15, 29, 51, 0.05) 1px, transparent 1px);
-    background-size: 46px 46px;
+      linear-gradient(45deg, rgba(87, 178, 245, 0.06) 1px, transparent 1px),
+      linear-gradient(-45deg, rgba(87, 178, 245, 0.06) 1px, transparent 1px);
+    background-size: 54px 54px;
   }
 }
 
@@ -188,11 +189,10 @@ body {
   inset: 0;
   z-index: 9999;
   pointer-events: none;
-  opacity: 0.04;
+  opacity: 0.05;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
-/* Respect reduced-motion preference */
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,

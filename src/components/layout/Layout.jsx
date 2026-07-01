@@ -13,7 +13,7 @@ export default function Layout() {
   const location = useLocation()
 
   return (
-    <div className="grain relative flex min-h-screen flex-col text-ink-900">
+    <div className="grain relative flex min-h-screen flex-col text-white">
       <MeshBackground />
       <ScrollProgress />
       <Navbar />

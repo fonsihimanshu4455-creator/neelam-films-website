@@ -37,7 +37,7 @@ export default function Portfolio() {
                 className={`rounded-full px-5 py-2.5 text-sm font-semibold transition ${
                   filter === f
                     ? 'bg-primary-500 text-white shadow-glow'
-                    : 'border border-slate-200 bg-white text-slate-600 hover:border-primary-300'
+                    : 'border border-white/10 bg-white/5 text-slate-300 hover:border-primary-400'
                 }`}
               >
                 {f}

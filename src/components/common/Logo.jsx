@@ -15,7 +15,7 @@ export default function Logo({ className = 'h-12 w-auto', to = '/' }) {
         <Clapperboard size={20} />
       </span>
       <span className="flex flex-col leading-none">
-        <span className="font-display text-lg font-extrabold tracking-tight text-ink-900">
+        <span className="font-display text-lg font-extrabold tracking-tight text-white">
           Neelam<span className="text-primary-500"> Films</span>
         </span>
         <span className="text-[9px] font-medium uppercase tracking-[0.3em] text-slate-400">

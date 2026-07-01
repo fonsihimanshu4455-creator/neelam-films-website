@@ -37,7 +37,7 @@ export default function EquipmentGrid() {
               className={`rounded-full px-5 py-2 text-sm font-semibold transition ${
                 filter === f
                   ? 'bg-primary-500 text-white shadow-glow'
-                  : 'border border-slate-200 bg-white text-slate-600 hover:border-primary-300'
+                  : 'border border-white/10 bg-white/5 text-slate-300 hover:border-primary-400'
               }`}
             >
               {f}
@@ -57,7 +57,7 @@ export default function EquipmentGrid() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: (i % 3) * 0.06 }}
                 whileHover={{ y: -6 }}
-                className="group overflow-hidden rounded-3xl border border-slate-100 bg-white shadow-sm transition hover:border-primary-200 hover:shadow-soft"
+                className="group overflow-hidden rounded-3xl border border-white/10 bg-white/[0.03] shadow-sm transition hover:border-primary-500/50 hover:shadow-soft"
               >
                 <div className="relative h-44 overflow-hidden">
                   <img
@@ -72,8 +72,8 @@ export default function EquipmentGrid() {
                   </span>
                 </div>
                 <div className="p-6">
-                  <h3 className="font-display text-lg font-bold text-ink-900">{e.name}</h3>
-                  <p className="mt-1 text-sm text-slate-500">{e.desc}</p>
+                  <h3 className="font-display text-lg font-bold text-white">{e.name}</h3>
+                  <p className="mt-1 text-sm text-slate-400">{e.desc}</p>
                   <div className="mt-4 flex items-center justify-between">
                     <span className="font-display text-xl font-extrabold text-gradient">
                       {e.rate}

@@ -28,8 +28,8 @@ export default function Testimonials() {
 
       <div className="relative mx-auto max-w-5xl">
         <Reveal>
-          <span className="mb-12 flex items-center justify-center gap-2 text-xs font-bold uppercase tracking-[0.25em] text-gold-400">
-            <span className="h-px w-8 bg-gold-500" /> Client love <span className="h-px w-8 bg-gold-500" />
+          <span className="mb-12 flex items-center justify-center gap-2 text-xs font-bold uppercase tracking-[0.25em] text-primary-400">
+            <span className="h-px w-8 bg-primary-500" /> Client love <span className="h-px w-8 bg-primary-500" />
           </span>
         </Reveal>
 
@@ -56,7 +56,7 @@ export default function Testimonials() {
                 src={t.avatar}
                 alt={t.name}
                 loading="lazy"
-                className="h-14 w-14 rounded-full border-2 border-gold-400/60 object-cover"
+                className="h-14 w-14 rounded-full border-2 border-primary-400/60 object-cover"
               />
               <div className="text-left">
                 <p className="font-display font-bold text-white">{t.name}</p>

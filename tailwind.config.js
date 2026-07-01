@@ -4,8 +4,7 @@ export default {
   theme: {
     extend: {
       colors: {
-        // Brand blue — pulled from the Neelam Films "n" logo
-        // (bright sky-cyan highlight → deep royal blue)
+        // Brand blue — from the Neelam Films "n" logo (bright cyan → royal blue)
         primary: {
           50: '#eef7ff',
           100: '#d9edff',
@@ -19,37 +18,38 @@ export default {
           900: '#1b426f',
           950: '#122845',
         },
-        // Deep navy "ink" for text & dark blocks
+        // Near-black cinematic surfaces (slight blue tint) — used for cards/sections
         ink: {
-          950: '#0a1526',
-          900: '#0f1d33',
-          800: '#1a2c47',
-          700: '#33455f',
-          600: '#5a6b85',
+          950: '#05060a',
+          900: '#0a0c12',
+          800: '#12151f',
+          700: '#1e2330',
+          600: '#2f3646',
         },
-        // Warm ivory "paper" neutrals — premium editorial base
+        // Formerly "paper" — now the dark page/section backgrounds
         cream: {
-          50: '#faf8f2',
-          100: '#f4f0e6',
-          200: '#e9e2d2',
-          300: '#dacfb8',
+          50: '#0f121b',
+          100: '#0a0c12',
+          200: '#070810',
+          300: '#191d29',
         },
-        // Muted brass / gold — subtle luxury detailing accent
+        // Kept for any lingering refs — mapped to blue-friendly neutrals
         gold: {
-          300: '#dcc79c',
-          400: '#c9a86e',
-          500: '#b8935a',
-          600: '#9c7a45',
+          300: '#8ecdff',
+          400: '#57b2f5',
+          500: '#2b90e8',
+          600: '#1b74cf',
         },
         dark: {
-          900: '#0f1d33',
-          800: '#1a2c47',
-          700: '#33455f',
+          900: '#0a0c12',
+          800: '#12151f',
+          700: '#1e2330',
         },
       },
       fontFamily: {
         sans: ['Inter', 'sans-serif'],
-        display: ['"Archivo Black"', 'Impact', 'sans-serif'],
+        display: ['Anton', 'Impact', 'sans-serif'],
+        heading: ['Sora', 'Inter', 'sans-serif'],
         serif: ['"Instrument Serif"', 'Georgia', 'serif'],
       },
       letterSpacing: {
@@ -71,23 +71,27 @@ export default {
         },
         shimmer: { '0%': { backgroundPosition: '200% center' }, '100%': { backgroundPosition: '-200% center' } },
         spinSlow: { to: { transform: 'rotate(360deg)' } },
-        // Trending: animated gradient wash
         gradientShift: {
           '0%, 100%': { backgroundPosition: '0% 50%' },
           '50%': { backgroundPosition: '100% 50%' },
         },
-        // Trending: slow drifting geometric pattern
         patternDrift: {
           '0%': { backgroundPosition: '0 0' },
           '100%': { backgroundPosition: '120px 120px' },
         },
-        // Trending: shine sweep across cards
         shine: {
           '0%': { transform: 'translateX(-120%) skewX(-20deg)' },
           '100%': { transform: 'translateX(220%) skewX(-20deg)' },
         },
-        // Conic glow rotation behind hero art
         conicSpin: { to: { transform: 'rotate(360deg)' } },
+        glowPulse: {
+          '0%, 100%': { opacity: '0.55' },
+          '50%': { opacity: '1' },
+        },
+        fadeUp: {
+          '0%': { opacity: '0', transform: 'translateY(24px)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' },
+        },
       },
       animation: {
         marquee: 'marquee 36s linear infinite',
@@ -102,6 +106,7 @@ export default {
         'pattern-drift': 'patternDrift 24s linear infinite',
         shine: 'shine 1.1s ease-out',
         'conic-spin': 'conicSpin 14s linear infinite',
+        'glow-pulse': 'glowPulse 4s ease-in-out infinite',
       },
     },
   },

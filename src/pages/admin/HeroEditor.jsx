@@ -40,14 +40,14 @@ export default function HeroEditor() {
         />
 
         <div className="grid gap-5 md:grid-cols-2">
-          <div className="rounded-xl bg-slate-50 p-4">
+          <div className="rounded-xl bg-white/5 p-4">
             <p className="mb-3 text-sm font-semibold text-dark-900">Primary CTA</p>
             <div className="space-y-3">
               <TextField label="Label" value={draft.primaryCta.label} onChange={(v) => setCta('primaryCta', 'label', v)} />
               <TextField label="Link" value={draft.primaryCta.link} onChange={(v) => setCta('primaryCta', 'link', v)} />
             </div>
           </div>
-          <div className="rounded-xl bg-slate-50 p-4">
+          <div className="rounded-xl bg-white/5 p-4">
             <p className="mb-3 text-sm font-semibold text-dark-900">Secondary CTA</p>
             <div className="space-y-3">
               <TextField label="Label" value={draft.secondaryCta.label} onChange={(v) => setCta('secondaryCta', 'label', v)} />

@@ -30,13 +30,13 @@ export default function SectionHeader({
       )}
       <h2
         className={`font-display text-3xl font-extrabold leading-tight md:text-5xl ${
-          light ? 'text-white' : 'text-ink-900'
+          light ? 'text-white' : 'text-white'
         }`}
       >
         {title}
       </h2>
       {subtitle && (
-        <p className={`text-base md:text-lg ${light ? 'text-slate-300' : 'text-slate-500'}`}>
+        <p className={`text-base md:text-lg ${light ? 'text-slate-300' : 'text-slate-400'}`}>
           {subtitle}
         </p>
       )}

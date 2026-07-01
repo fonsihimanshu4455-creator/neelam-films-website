@@ -25,7 +25,7 @@ export default function Statement() {
 
       <div className="relative z-10 mx-auto max-w-6xl px-5 md:px-8">
         <div className="mb-8 text-center">
-          <span className="text-xs font-semibold uppercase tracking-[0.3em] text-gold-500">
+          <span className="text-xs font-semibold uppercase tracking-[0.3em] text-primary-400">
             Neelam Films · Our promise
           </span>
         </div>
@@ -47,7 +47,7 @@ function Word({ progress, range, word }) {
     word.toLowerCase().includes(k),
   )
   return (
-    <motion.span style={{ opacity }} className={highlight ? 'text-gold' : 'text-ink-900'}>
+    <motion.span style={{ opacity }} className={highlight ? 'text-gold' : 'text-white'}>
       {word}
     </motion.span>
   )

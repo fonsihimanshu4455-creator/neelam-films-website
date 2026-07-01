@@ -43,7 +43,7 @@ export default function AdminLogin() {
           <h1 className="mt-4 font-display text-2xl font-extrabold text-dark-900">
             Neelam<span className="text-primary-500"> Films</span>
           </h1>
-          <p className="text-sm text-slate-500">Admin Panel Login</p>
+          <p className="text-sm text-slate-400">Admin Panel Login</p>
         </div>
 
         <form onSubmit={handleSubmit} className="mt-8 space-y-5">
@@ -56,7 +56,7 @@ export default function AdminLogin() {
                 onChange={(e) => setUsername(e.target.value)}
                 placeholder="himanshu"
                 required
-                className="w-full rounded-xl border border-slate-200 py-3 pl-11 pr-4 text-sm outline-none transition focus:border-primary-500 focus:ring-2 focus:ring-primary-100"
+                className="w-full rounded-xl border border-white/10 py-3 pl-11 pr-4 text-sm outline-none transition focus:border-primary-500 focus:ring-2 focus:ring-primary-100"
               />
             </div>
           </div>
@@ -71,7 +71,7 @@ export default function AdminLogin() {
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="••••••••"
                 required
-                className="w-full rounded-xl border border-slate-200 py-3 pl-11 pr-4 text-sm outline-none transition focus:border-primary-500 focus:ring-2 focus:ring-primary-100"
+                className="w-full rounded-xl border border-white/10 py-3 pl-11 pr-4 text-sm outline-none transition focus:border-primary-500 focus:ring-2 focus:ring-primary-100"
               />
             </div>
           </div>

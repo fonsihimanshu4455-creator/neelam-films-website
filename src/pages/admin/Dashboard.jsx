@@ -33,7 +33,7 @@ export default function Dashboard() {
         <h1 className="font-display text-2xl font-extrabold text-dark-900">
           Welcome back, Himanshu 👋
         </h1>
-        <p className="mt-1 text-sm text-slate-500">
+        <p className="mt-1 text-sm text-slate-400">
           Manage your website content. All changes save to your browser instantly.
         </p>
       </div>
@@ -48,7 +48,7 @@ export default function Dashboard() {
         ].map((s) => (
           <div key={s.label} className="rounded-2xl bg-white p-5 shadow-sm">
             <div className="font-display text-3xl font-extrabold text-primary-500">{s.value}</div>
-            <p className="mt-1 text-sm text-slate-500">{s.label}</p>
+            <p className="mt-1 text-sm text-slate-400">{s.label}</p>
           </div>
         ))}
       </div>
@@ -72,7 +72,7 @@ export default function Dashboard() {
               </span>
               <div className="flex-1">
                 <h3 className="font-display font-bold text-dark-900">{c.label}</h3>
-                <p className="text-xs text-slate-500">{c.desc}</p>
+                <p className="text-xs text-slate-400">{c.desc}</p>
               </div>
               <ArrowRight
                 size={18}
