@@ -1,53 +1,70 @@
-@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,400;1,9..144,600;1,9..144,900&family=Sora:wght@300;400;500;600;700;800&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-* {
-  font-family: 'Inter', sans-serif;
-}
+@layer base {
+  * {
+    font-family: 'Sora', sans-serif;
+  }
 
-h1,
-h2,
-h3,
-h4 {
-  font-family: 'Archivo Black', Impact, sans-serif;
-  letter-spacing: -0.02em;
+  /* Characterful display serif for all headings */
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: 'Fraunces', Georgia, serif;
+    letter-spacing: -0.015em;
+    color: #7a0e2c;
+  }
+
+  .font-display {
+    font-family: 'Fraunces', Georgia, serif;
+    font-weight: 900;
+    letter-spacing: -0.02em;
+  }
+  .font-heading {
+    font-family: 'Sora', sans-serif !important;
+    letter-spacing: -0.01em;
+  }
+  .font-serif {
+    font-family: 'Fraunces', Georgia, serif;
+  }
 }
 
 html {
   scroll-behavior: smooth;
-  background: #f8f3ea;
+  background: #ffffff;
 }
 
 body {
   margin: 0;
-  background: #f8f3ea;
-  color: #1c1714;
+  background: #ffffff;
+  color: #222222;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
   overflow-x: hidden;
 }
 
 ::selection {
-  background: #f9580f;
+  background: #7a0e2c;
   color: #fff;
 }
 
-/* Warm scrollbar */
+/* Scrollbar */
 ::-webkit-scrollbar {
   width: 10px;
 }
 ::-webkit-scrollbar-track {
-  background: #efe7d8;
+  background: #f3ebe0;
 }
 ::-webkit-scrollbar-thumb {
-  background: #c7b8a3;
-  border-radius: 0;
-  border: 2px solid #efe7d8;
+  background: #d4a24b;
+  border-radius: 999px;
+  border: 2px solid #f3ebe0;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #f9580f;
+  background: #7a0e2c;
 }
 
 .no-scrollbar::-webkit-scrollbar {
@@ -58,16 +75,42 @@ body {
   scrollbar-width: none;
 }
 
+/* Dark sections: headings default to warm white (overrides burgundy base) */
+.bg-night-900 h1,
+.bg-night-900 h2,
+.bg-night-900 h3,
+.bg-night-900 h4,
+.bg-navy h1,
+.bg-navy h2,
+.bg-navy h3,
+.bg-navy h4 {
+  color: #f7f1e8;
+}
+
 @layer components {
+  /* Gold gradient text */
   .text-gradient {
-    background-image: linear-gradient(120deg, #c2330c 0%, #f9580f 55%, #fb923c 100%);
+    background-image: linear-gradient(120deg, #e7c06a 0%, #d4a24b 50%, #a5751f 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .text-gold {
+    background-image: linear-gradient(120deg, #e7c06a 0%, #d4a24b 55%, #a5751f 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  /* Burgundy gradient text */
+  .text-burgundy-gradient {
+    background-image: linear-gradient(120deg, #9c1c3e 0%, #7a0e2c 100%);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
   }
 
   .text-shimmer {
-    background: linear-gradient(110deg, #6b5d52 35%, #f9580f 50%, #6b5d52 65%);
+    background: linear-gradient(110deg, #9c1c3e 30%, #d4a24b 50%, #9c1c3e 70%);
     background-size: 200% auto;
     -webkit-background-clip: text;
     background-clip: text;
@@ -77,15 +120,23 @@ body {
 
   .glass {
     background: rgba(255, 255, 255, 0.7);
-    border: 1px solid rgba(28, 23, 20, 0.1);
+    border: 1px solid rgba(122, 14, 44, 0.12);
     backdrop-filter: blur(16px);
   }
 
+  /* Brand gradients for buttons/fills */
+  .bg-burgundy-grad {
+    background-image: linear-gradient(135deg, #7a0e2c 0%, #9c1c3e 100%);
+  }
+  .bg-gold-grad {
+    background-image: linear-gradient(135deg, #e7c06a 0%, #d4a24b 100%);
+  }
+
   .shadow-soft {
-    box-shadow: 0 1px 2px rgba(28, 23, 20, 0.05), 0 14px 36px -14px rgba(28, 23, 20, 0.2);
+    box-shadow: 0 1px 2px rgba(122, 14, 44, 0.06), 0 18px 44px -18px rgba(122, 14, 44, 0.22);
   }
   .shadow-glow {
-    box-shadow: 0 18px 50px -18px rgba(249, 88, 15, 0.55);
+    box-shadow: 0 12px 34px -12px rgba(212, 162, 75, 0.55);
   }
 
   .link-underline {
@@ -107,6 +158,47 @@ body {
     transform: scaleX(1);
     transform-origin: left;
   }
+
+  /* Section bases */
+  .bg-paper {
+    background: #ffffff;
+  }
+  .bg-cream-soft {
+    background: #fbf8f4;
+  }
+  .bg-navy,
+  .bg-night {
+    background: #1b0a11;
+  }
+
+  /* Subtle geometric textures */
+  .pattern-grid {
+    background-image:
+      linear-gradient(rgba(122, 14, 44, 0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(122, 14, 44, 0.05) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+  .pattern-dots {
+    background-image: radial-gradient(rgba(122, 14, 44, 0.12) 1.2px, transparent 1.2px);
+    background-size: 26px 26px;
+  }
+  .pattern-dots-dark {
+    background-image: radial-gradient(rgba(212, 162, 75, 0.12) 1.2px, transparent 1.2px);
+    background-size: 26px 26px;
+  }
+  .pattern-diamond-dark {
+    background-image:
+      linear-gradient(45deg, rgba(212, 162, 75, 0.07) 1px, transparent 1px),
+      linear-gradient(-45deg, rgba(212, 162, 75, 0.07) 1px, transparent 1px);
+    background-size: 54px 54px;
+  }
+  .pattern-crosshatch,
+  .pattern-triangles {
+    background-image:
+      linear-gradient(45deg, rgba(122, 14, 44, 0.06) 1px, transparent 1px),
+      linear-gradient(-45deg, rgba(122, 14, 44, 0.06) 1px, transparent 1px);
+    background-size: 54px 54px;
+  }
 }
 
 /* Film grain overlay */
@@ -116,6 +208,17 @@ body {
   inset: 0;
   z-index: 9999;
   pointer-events: none;
-  opacity: 0.04;
+  opacity: 0.025;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
 }

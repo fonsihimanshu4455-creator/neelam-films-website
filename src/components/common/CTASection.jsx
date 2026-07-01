@@ -30,6 +30,7 @@ export default function CTASection({
       />
       <div className="absolute inset-0 bg-ink-950/75" />
       <div className="absolute inset-0 bg-gradient-to-br from-primary-700/70 via-primary-900/40 to-transparent" />
+      <div className="pattern-diamond-dark absolute inset-0 opacity-70" />
 
       <div className="relative z-10 mx-auto max-w-4xl px-5 py-28 text-center md:py-36">
         <motion.div
@@ -38,7 +39,7 @@ export default function CTASection({
           viewport={{ once: true }}
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
         >
-          <span className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.25em] text-primary-200">
+          <span className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.25em] text-gold-400">
             <span className="h-px w-8 bg-white/50" /> Let's talk
           </span>
           <h2 className="mx-auto mt-5 max-w-3xl font-display text-4xl font-extrabold leading-tight text-white md:text-6xl">
@@ -54,7 +55,7 @@ export default function CTASection({
             <Button
               href={`tel:${contact.phoneRaw}`}
               variant="outline"
-              className="border-white/40 text-white before:bg-white hover:text-primary-700"
+              className="border-white/40 text-white before:bg-white hover:text-gold-400"
             >
               <Phone size={16} />
               {contact.phone}

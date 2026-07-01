@@ -47,7 +47,7 @@ export default function EquipmentEditor() {
                   <select
                     value={e.category}
                     onChange={(ev) => update(i, 'category', ev.target.value)}
-                    className="w-full rounded-xl border border-slate-200 px-3 py-2.5 text-sm outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-100"
+                    className="w-full rounded-xl border border-white/10 px-3 py-2.5 text-sm outline-none focus:border-gold-400 focus:ring-2 focus:ring-gold-400"
                   >
                     {CATEGORIES.map((c) => (
                       <option key={c}>{c}</option>

@@ -16,14 +16,27 @@ export default function Statement() {
   const words = TEXT.split(' ')
 
   return (
-    <section ref={ref} className="relative mx-auto max-w-6xl px-5 py-28 md:px-8 md:py-40">
-      <p className="flex flex-wrap gap-x-3 gap-y-2 font-serif text-3xl italic leading-snug sm:text-5xl lg:text-[3.75rem] lg:leading-[1.2]">
-        {words.map((w, i) => {
-          const start = i / words.length
-          const end = start + 1 / words.length
-          return <Word key={i} progress={scrollYProgress} range={[start, end]} word={w} />
-        })}
-      </p>
+    <section ref={ref} className="relative overflow-hidden bg-gradient-to-b from-cream-100 via-cream-200/70 to-cream-100 py-28 md:py-40">
+      {/* crosshatch diamond band */}
+      <div
+        className="pattern-crosshatch pointer-events-none absolute inset-0"
+        style={{ maskImage: 'radial-gradient(ellipse 95% 95% at 50% 50%, #000 65%, transparent 100%)', WebkitMaskImage: 'radial-gradient(ellipse 95% 95% at 50% 50%, #000 65%, transparent 100%)' }}
+      />
+
+      <div className="relative z-10 mx-auto max-w-6xl px-5 md:px-8">
+        <div className="mb-8 text-center">
+          <span className="text-xs font-semibold uppercase tracking-[0.3em] text-gold-400">
+            Neelam Films · Our promise
+          </span>
+        </div>
+        <p className="flex flex-wrap justify-center gap-x-3 gap-y-2 text-center font-serif text-3xl italic leading-snug sm:text-5xl lg:text-[3.75rem] lg:leading-[1.2]">
+          {words.map((w, i) => {
+            const start = i / words.length
+            const end = start + 1 / words.length
+            return <Word key={i} progress={scrollYProgress} range={[start, end]} word={w} />
+          })}
+        </p>
+      </div>
     </section>
   )
 }
@@ -34,7 +47,7 @@ function Word({ progress, range, word }) {
     word.toLowerCase().includes(k),
   )
   return (
-    <motion.span style={{ opacity }} className={highlight ? 'text-gradient' : 'text-ink-900'}>
+    <motion.span style={{ opacity }} className={highlight ? 'text-gold' : 'text-ink-900'}>
       {word}
     </motion.span>
   )

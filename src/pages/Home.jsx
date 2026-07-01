@@ -5,6 +5,8 @@ import Statement from '../components/home/Statement'
 import ClientsMarquee from '../components/home/ClientsMarquee'
 import FeaturedPortfolio from '../components/home/FeaturedPortfolio'
 import Testimonials from '../components/home/Testimonials'
+import ProcessSteps from '../components/home/ProcessSteps'
+import Stats from '../components/home/Stats'
 import CTASection from '../components/common/CTASection'
 import Marquee from '../components/common/Marquee'
 
@@ -14,17 +16,19 @@ export default function Home() {
   return (
     <>
       <Hero />
+      <ClientsMarquee />
       <ServicesGrid />
 
-      {/* Kinetic divider */}
-      <div className="overflow-hidden bg-gradient-to-r from-primary-600 via-primary-500 to-primary-600 py-6">
-        <Marquee items={WORDS} white />
+      {/* Kinetic outline marquee divider */}
+      <div className="overflow-hidden border-y border-cream-300 bg-cream-100 py-8">
+        <Marquee items={WORDS} outline />
       </div>
 
-      <ParallaxBanner />
-      <Statement />
+      <Stats />
+      <ProcessSteps />
       <FeaturedPortfolio />
-      <ClientsMarquee />
+      <Statement />
+      <ParallaxBanner />
       <Testimonials />
       <CTASection />
     </>

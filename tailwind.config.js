@@ -4,44 +4,63 @@ export default {
   theme: {
     extend: {
       colors: {
-        // Bold warm orange accent (was blue)
+        // Brand burgundy (official Neelam Films palette)
         primary: {
-          50: '#fff7ed',
-          100: '#ffedd5',
-          200: '#fed7aa',
-          300: '#fdba74',
-          400: '#fb923c',
-          500: '#f9580f',
-          600: '#ea420c',
-          700: '#c2330c',
-          800: '#9a2a12',
-          900: '#7c2512',
+          50: '#fbeef1',
+          100: '#f7dbe1',
+          200: '#eeb7c3',
+          300: '#e08ba0',
+          400: '#c85470',
+          500: '#a3284a',
+          600: '#9c1c3e', // secondary burgundy
+          700: '#7a0e2c', // primary brand burgundy
+          800: '#640f27',
+          900: '#4f0f22',
+          950: '#2c0712',
         },
-        // Warm espresso "ink" for text & dark blocks
+        // Premium gold
+        gold: {
+          200: '#f3dfae',
+          300: '#e7c06a', // light gold
+          400: '#d4a24b', // premium gold
+          500: '#c08a2f',
+          600: '#a5751f',
+          700: '#835c18',
+        },
+        // Matte-black text scale
         ink: {
-          950: '#140f0c',
-          900: '#1c1714',
-          800: '#2c2521',
-          700: '#473d36',
-          600: '#6b5d52',
+          950: '#111111',
+          900: '#222222', // matte black text
+          800: '#333333',
+          700: '#666666', // secondary text
+          600: '#888888',
         },
-        // Warm paper neutrals
+        // Warm light surfaces (light theme)
         cream: {
-          50: '#fdfbf7',
-          100: '#f8f3ea',
-          200: '#efe7d8',
-          300: '#e3d6c0',
+          50: '#ffffff',
+          100: '#fbf8f4', // soft/cream
+          200: '#f3ebe0',
+          300: '#eae1d4', // borders
+        },
+        // Dark theme surfaces
+        night: {
+          950: '#140710',
+          900: '#1b0a11', // dark bg
+          800: '#22101a', // dark cards
+          700: '#2e1620',
+          600: '#3a1c29',
         },
         dark: {
-          900: '#1c1714',
-          800: '#2c2521',
-          700: '#473d36',
+          900: '#1b0a11',
+          800: '#22101a',
+          700: '#2e1620',
         },
       },
       fontFamily: {
-        sans: ['Inter', 'sans-serif'],
-        display: ['"Archivo Black"', 'Impact', 'sans-serif'],
-        serif: ['"Instrument Serif"', 'Georgia', 'serif'],
+        sans: ['Sora', 'Inter', 'sans-serif'],
+        display: ['Fraunces', 'Georgia', 'serif'],
+        heading: ['Sora', 'Inter', 'sans-serif'],
+        serif: ['Fraunces', 'Georgia', 'serif'],
       },
       letterSpacing: {
         tightest: '-0.04em',
@@ -62,6 +81,16 @@ export default {
         },
         shimmer: { '0%': { backgroundPosition: '200% center' }, '100%': { backgroundPosition: '-200% center' } },
         spinSlow: { to: { transform: 'rotate(360deg)' } },
+        gradientShift: {
+          '0%, 100%': { backgroundPosition: '0% 50%' },
+          '50%': { backgroundPosition: '100% 50%' },
+        },
+        shine: {
+          '0%': { transform: 'translateX(-120%) skewX(-20deg)' },
+          '100%': { transform: 'translateX(220%) skewX(-20deg)' },
+        },
+        conicSpin: { to: { transform: 'rotate(360deg)' } },
+        glowPulse: { '0%, 100%': { opacity: '0.55' }, '50%': { opacity: '1' } },
       },
       animation: {
         marquee: 'marquee 36s linear infinite',
@@ -72,6 +101,10 @@ export default {
         aurora: 'auroraMove 18s ease-in-out infinite',
         shimmer: 'shimmer 6s linear infinite',
         'spin-slow': 'spinSlow 24s linear infinite',
+        'gradient-shift': 'gradientShift 8s ease infinite',
+        shine: 'shine 1.1s ease-out',
+        'conic-spin': 'conicSpin 14s linear infinite',
+        'glow-pulse': 'glowPulse 4s ease-in-out infinite',
       },
     },
   },

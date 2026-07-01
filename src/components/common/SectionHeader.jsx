@@ -23,20 +23,20 @@ export default function SectionHeader({
       className={`flex max-w-2xl flex-col gap-4 ${alignClass}`}
     >
       {eyebrow && (
-        <span className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.25em] text-primary-400">
-          <span className="h-px w-8 bg-primary-500" />
+        <span className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.25em] text-gold-400">
+          <span className="h-px w-8 bg-gold-400" />
           {eyebrow}
         </span>
       )}
       <h2
         className={`font-display text-3xl font-extrabold leading-tight md:text-5xl ${
-          light ? 'text-white' : 'text-ink-900'
+          light ? 'text-ink-900' : 'text-ink-900'
         }`}
       >
         {title}
       </h2>
       {subtitle && (
-        <p className={`text-base md:text-lg ${light ? 'text-slate-300' : 'text-slate-500'}`}>
+        <p className={`text-base md:text-lg ${light ? 'text-ink-700' : 'text-ink-700'}`}>
           {subtitle}
         </p>
       )}
