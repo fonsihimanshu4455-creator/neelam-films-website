@@ -3,6 +3,7 @@
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
   "framework": "vite",
+  "cleanUrls": true,
   "rewrites": [
     { "source": "/live-events", "destination": "/live-events.html" },
     { "source": "/(.*)", "destination": "/index.html" }
