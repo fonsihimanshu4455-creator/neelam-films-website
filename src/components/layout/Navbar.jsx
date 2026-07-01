@@ -44,8 +44,8 @@ export default function Navbar() {
           : 'border-b border-transparent bg-cream-50/85 backdrop-blur-md'
       }`}
     >
-      <nav className="mx-auto flex h-[86px] max-w-7xl items-center justify-between px-5 md:px-8">
-        <Logo className="h-[74px] w-auto" />
+      <nav className="mx-auto flex h-[100px] max-w-7xl items-center justify-between px-5 md:px-8">
+        <Logo className="h-[92px] w-auto" />
 
         {/* Desktop nav */}
         <div className="hidden items-center gap-8 lg:flex">

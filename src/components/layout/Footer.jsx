@@ -33,7 +33,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-4">
           {/* About */}
           <div>
-            <Logo className="h-14 w-auto" />
+            <Logo className="h-32 w-auto" />
             <p className="mt-5 text-sm leading-relaxed text-slate-400">
               Delhi's trusted production house & live event specialists since 1995. Three decades of
               crafting stories that move and events that matter.
