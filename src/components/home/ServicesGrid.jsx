@@ -13,8 +13,14 @@ export default function ServicesGrid() {
   const services = data.services
 
   return (
-    <section className="relative py-24 md:py-32">
-      <div className="mx-auto max-w-7xl px-5 md:px-8">
+    <section className="relative overflow-hidden bg-gradient-to-b from-cream-100 via-cream-50 to-cream-100 py-24 md:py-32">
+      {/* warm cream band with a subtle triangle weave */}
+      <div
+        className="pattern-triangles pointer-events-none absolute inset-0 opacity-80"
+        style={{ maskImage: 'linear-gradient(180deg, transparent, #000 12%, #000 88%, transparent)', WebkitMaskImage: 'linear-gradient(180deg, transparent, #000 12%, #000 88%, transparent)' }}
+      />
+
+      <div className="relative z-10 mx-auto max-w-7xl px-5 md:px-8">
         <div className="mb-14 flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
           <div>
             <Reveal>
@@ -38,7 +44,7 @@ export default function ServicesGrid() {
       </div>
 
       {/* Bands */}
-      <div className="flex flex-col gap-4 px-5 md:px-8">
+      <div className="relative z-10 flex flex-col gap-4 px-5 md:px-8">
         {services.map((s, i) => (
           <motion.div
             key={s.id}

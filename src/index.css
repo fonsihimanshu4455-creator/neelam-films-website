@@ -17,13 +17,13 @@ h4 {
 
 html {
   scroll-behavior: smooth;
-  background: #f2f7fc;
+  background: #f4f0e6;
 }
 
 body {
   margin: 0;
-  background: #f2f7fc;
-  color: #0d1b2e;
+  background: #f4f0e6;
+  color: #0f1d33;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
   overflow-x: hidden;
@@ -34,17 +34,17 @@ body {
   color: #fff;
 }
 
-/* Cool blue scrollbar */
+/* Warm scrollbar */
 ::-webkit-scrollbar {
   width: 10px;
 }
 ::-webkit-scrollbar-track {
-  background: #e4eef7;
+  background: #e9e2d2;
 }
 ::-webkit-scrollbar-thumb {
-  background: #8ecdff;
+  background: #c9a86e;
   border-radius: 0;
-  border: 2px solid #e4eef7;
+  border: 2px solid #e9e2d2;
 }
 ::-webkit-scrollbar-thumb:hover {
   background: #2b90e8;
@@ -61,6 +61,14 @@ body {
 @layer components {
   .text-gradient {
     background-image: linear-gradient(120deg, #195ca8 0%, #2b90e8 55%, #57b2f5 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  /* Warm gold gradient — editorial italic-serif accent words (like the reference) */
+  .text-gold {
+    background-image: linear-gradient(120deg, #9c7a45 0%, #c9a86e 50%, #b8935a 100%);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
@@ -110,31 +118,65 @@ body {
 
   /* Trending: animated multi-stop gradient wash (use as bg for dark bands) */
   .bg-animated-gradient {
-    background: linear-gradient(120deg, #0d1b2e, #182a44, #195ca8, #122845);
+    background: linear-gradient(120deg, #0f1d33, #1a2c47, #195ca8, #0a1526);
     background-size: 220% 220%;
     animation: gradientShift 12s ease infinite;
   }
 
-  /* Geometric diamond line-art pattern (like the brand reference art) */
-  .pattern-diamond {
-    background-color: transparent;
-    background-image:
-      linear-gradient(45deg, rgba(43, 144, 232, 0.09) 1px, transparent 1px),
-      linear-gradient(-45deg, rgba(43, 144, 232, 0.09) 1px, transparent 1px);
-    background-size: 60px 60px;
+  /* Warm ivory section base */
+  .bg-paper {
+    background: linear-gradient(180deg, #faf8f2 0%, #f4f0e6 60%, #efe8d8 100%);
   }
+
+  /* Deep navy section base */
+  .bg-navy {
+    background: linear-gradient(180deg, #0f1d33 0%, #12223c 100%);
+  }
+
+  /* --- Geometric background patterns (from brand reference art) --- */
+
+  /* Diamond crosshatch line-art (warm) — for light editorial bands */
+  .pattern-crosshatch {
+    background-image:
+      linear-gradient(45deg, rgba(156, 122, 69, 0.38) 1px, transparent 1px),
+      linear-gradient(-45deg, rgba(156, 122, 69, 0.38) 1px, transparent 1px);
+    background-size: 42px 42px;
+  }
+
+  /* Chevron / triangle weave — for the services band */
+  .pattern-triangles {
+    background-image:
+      linear-gradient(135deg, rgba(156, 122, 69, 0.28) 25%, transparent 25%),
+      linear-gradient(225deg, rgba(156, 122, 69, 0.28) 25%, transparent 25%);
+    background-size: 32px 32px;
+    background-position: 0 0;
+  }
+
+  /* Warm dot grid */
+  .pattern-dots {
+    background-image: radial-gradient(rgba(156, 122, 69, 0.28) 1.4px, transparent 1.4px);
+    background-size: 22px 22px;
+  }
+
+  /* Diamond crosshatch (light) — for dark navy bands */
   .pattern-diamond-dark {
     background-image:
-      linear-gradient(45deg, rgba(142, 205, 255, 0.08) 1px, transparent 1px),
-      linear-gradient(-45deg, rgba(142, 205, 255, 0.08) 1px, transparent 1px);
-    background-size: 60px 60px;
+      linear-gradient(45deg, rgba(200, 168, 110, 0.10) 1px, transparent 1px),
+      linear-gradient(-45deg, rgba(200, 168, 110, 0.10) 1px, transparent 1px);
+    background-size: 52px 52px;
+  }
+
+  /* Dot grid (light) — for dark navy bands */
+  .pattern-dots-dark {
+    background-image: radial-gradient(rgba(200, 168, 110, 0.16) 1.3px, transparent 1.3px);
+    background-size: 26px 26px;
   }
 
   /* Fine grid pattern */
   .pattern-grid {
     background-image:
-      linear-gradient(rgba(13, 27, 46, 0.05) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(13, 27, 46, 0.05) 1px, transparent 1px);
+      linear-gradient(rgba(15, 29, 51, 0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(15, 29, 51, 0.05) 1px, transparent 1px);
     background-size: 46px 46px;
   }
 }

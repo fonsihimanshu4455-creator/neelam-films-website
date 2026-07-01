@@ -4,11 +4,10 @@ import { Play, ArrowRight, Star } from 'lucide-react'
 import { useData } from '../../context/DataContext'
 import Button from '../common/Button'
 import VideoModal from '../common/VideoModal'
-import Chain from '../common/Chain'
 
 /**
- * Bold editorial / film-poster hero: huge uppercase type on cool paper,
- * blue accents, a wide showreel key-art band "hung" from swaying chains.
+ * Bold editorial / film-poster hero: huge mixed sans + italic-serif type on
+ * warm ivory paper, blue accents, scattered geometric decor & a showreel band.
  */
 export default function Hero() {
   const { data } = useData()
@@ -22,7 +21,24 @@ export default function Hero() {
   }
 
   return (
-    <section className="relative px-5 pt-28 md:px-8 md:pt-32">
+    <section className="relative overflow-hidden px-5 pt-28 md:px-8 md:pt-32">
+      {/* Scattered editorial decor (dots, circles, squares) */}
+      <div className="pointer-events-none absolute inset-0 -z-10" aria-hidden="true">
+        <div
+          className="absolute left-6 top-40 h-40 w-40 opacity-60"
+          style={{
+            backgroundImage: 'radial-gradient(rgba(184,147,90,0.5) 1.6px, transparent 1.6px)',
+            backgroundSize: '18px 18px',
+          }}
+        />
+        <div className="absolute left-24 top-36 h-6 w-6 rounded-full bg-gold-400/40" />
+        <div className="absolute left-16 bottom-24 h-16 w-16 rounded-full border border-ink-900/15" />
+        <div className="absolute right-[42%] top-56 h-3.5 w-3.5 rounded-full bg-primary-400/50" />
+        <div className="absolute right-24 top-[46%] h-5 w-5 rounded-sm bg-ink-900/10" />
+        <div className="absolute right-40 bottom-24 h-4 w-4 rounded-sm border border-ink-900/15" />
+        <div className="absolute right-8 top-24 h-2.5 w-2.5 rounded-full bg-primary-500/40" />
+      </div>
+
       <div className="mx-auto max-w-7xl">
         {/* label row */}
         <motion.div
@@ -80,34 +96,30 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Wide showreel key-art — "hung" from swaying chains */}
+      {/* Wide showreel key-art */}
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
         className="relative mx-auto mt-16 max-w-7xl"
       >
-        {/* rotating conic glow behind the poster */}
-        <div className="pointer-events-none absolute -inset-6 -z-10 opacity-60 blur-2xl">
+        {/* soft glow behind the poster */}
+        <div className="pointer-events-none absolute -inset-6 -z-10 opacity-70 blur-2xl">
           <div
-            className="h-full w-full animate-conic-spin rounded-[2rem]"
+            className="h-full w-full animate-conic-spin rounded-[2.5rem]"
             style={{
               background:
-                'conic-gradient(from 0deg, rgba(43,144,232,0.35), rgba(142,205,255,0.05), rgba(25,92,168,0.35), rgba(43,144,232,0.35))',
+                'conic-gradient(from 0deg, rgba(43,144,232,0.30), rgba(184,147,90,0.12), rgba(15,29,51,0.20), rgba(43,144,232,0.30))',
             }}
           />
         </div>
 
-        {/* hanging chains */}
-        <Chain className="absolute -top-16 left-10 z-10 md:left-20" links={7} />
-        <Chain className="absolute -top-16 right-10 z-10 md:right-20" links={7} swayAlt />
-
         <button
           onClick={() => setOpen(true)}
-          className="group relative block aspect-[16/9] w-full overflow-hidden border-2 border-ink-900 bg-ink-950 md:aspect-[21/9]"
+          className="group relative block aspect-[16/9] w-full overflow-hidden rounded-3xl border border-ink-900/10 bg-ink-950 shadow-soft md:aspect-[21/9]"
         >
           {/* trending shine sweep on hover */}
-          <span className="pointer-events-none absolute inset-0 z-20 overflow-hidden">
+          <span className="pointer-events-none absolute inset-0 z-20 overflow-hidden rounded-3xl">
             <span className="absolute -inset-y-2 left-0 w-1/3 -translate-x-[120%] bg-gradient-to-r from-transparent via-white/25 to-transparent group-hover:animate-shine" />
           </span>
           <iframe
@@ -117,14 +129,14 @@ export default function Hero() {
             allow="autoplay; encrypted-media"
             frameBorder="0"
           />
-          <div className="absolute inset-0 bg-ink-950/30 transition group-hover:bg-ink-950/10" />
+          <div className="absolute inset-0 bg-gradient-to-t from-ink-950/80 via-ink-950/20 to-ink-950/30 transition group-hover:from-ink-950/60" />
           <span className="absolute left-1/2 top-1/2 flex h-24 w-24 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-primary-500 text-white shadow-glow transition group-hover:scale-110">
             <Play size={34} fill="currentColor" className="ml-1" />
           </span>
-          <span className="absolute bottom-4 left-4 bg-white px-3 py-1.5 text-xs font-bold uppercase tracking-wider text-ink-900">
+          <span className="absolute bottom-4 left-4 rounded-full bg-white/95 px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-ink-900">
             ▶ Showreel 2025
           </span>
-          <span className="absolute right-4 top-4 flex items-center gap-1.5 bg-primary-500 px-3 py-1.5 text-xs font-bold uppercase tracking-wider text-white">
+          <span className="absolute right-4 top-4 flex items-center gap-1.5 rounded-full bg-primary-500 px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-white">
             <Star size={12} fill="currentColor" /> 30+ Years
           </span>
         </button>

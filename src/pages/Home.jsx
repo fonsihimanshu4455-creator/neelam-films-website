@@ -7,7 +7,7 @@ import FeaturedPortfolio from '../components/home/FeaturedPortfolio'
 import Testimonials from '../components/home/Testimonials'
 import CTASection from '../components/common/CTASection'
 import Marquee from '../components/common/Marquee'
-import Chain from '../components/common/Chain'
+import Stats from '../components/home/Stats'
 
 const WORDS = ['Production', 'Live Events', 'Streaming', 'Recording', 'Equipment', 'Websites', 'Apps', 'Digital Growth']
 
@@ -15,23 +15,18 @@ export default function Home() {
   return (
     <>
       <Hero />
+      <ClientsMarquee />
+      <Stats />
       <ServicesGrid />
 
       {/* Kinetic divider */}
-      <div className="overflow-hidden bg-gradient-to-r from-primary-600 via-primary-500 to-primary-600 py-6">
+      <div className="overflow-hidden bg-gradient-to-r from-primary-700 via-primary-500 to-primary-700 py-6">
         <Marquee items={WORDS} white />
       </div>
 
-      <ParallaxBanner />
       <Statement />
       <FeaturedPortfolio />
-
-      {/* Decorative chain divider */}
-      <div className="flex justify-center py-8">
-        <Chain orientation="horizontal" links={16} />
-      </div>
-
-      <ClientsMarquee />
+      <ParallaxBanner />
       <Testimonials />
       <CTASection />
     </>

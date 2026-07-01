@@ -19,24 +19,31 @@ export default {
           900: '#1b426f',
           950: '#122845',
         },
-        // Cool navy "ink" for text & dark blocks
+        // Deep navy "ink" for text & dark blocks
         ink: {
-          950: '#08111f',
-          900: '#0d1b2e',
-          800: '#182a44',
+          950: '#0a1526',
+          900: '#0f1d33',
+          800: '#1a2c47',
           700: '#33455f',
           600: '#5a6b85',
         },
-        // Cool paper neutrals (white theme)
+        // Warm ivory "paper" neutrals — premium editorial base
         cream: {
-          50: '#fbfdff',
-          100: '#f2f7fc',
-          200: '#e4eef7',
-          300: '#d0e0ee',
+          50: '#faf8f2',
+          100: '#f4f0e6',
+          200: '#e9e2d2',
+          300: '#dacfb8',
+        },
+        // Muted brass / gold — subtle luxury detailing accent
+        gold: {
+          300: '#dcc79c',
+          400: '#c9a86e',
+          500: '#b8935a',
+          600: '#9c7a45',
         },
         dark: {
-          900: '#0d1b2e',
-          800: '#182a44',
+          900: '#0f1d33',
+          800: '#1a2c47',
           700: '#33455f',
         },
       },
@@ -64,15 +71,6 @@ export default {
         },
         shimmer: { '0%': { backgroundPosition: '200% center' }, '100%': { backgroundPosition: '-200% center' } },
         spinSlow: { to: { transform: 'rotate(360deg)' } },
-        // Decorative hanging-chain sway
-        chainSway: {
-          '0%, 100%': { transform: 'rotate(-3.5deg)' },
-          '50%': { transform: 'rotate(3.5deg)' },
-        },
-        chainSwayAlt: {
-          '0%, 100%': { transform: 'rotate(3deg)' },
-          '50%': { transform: 'rotate(-3deg)' },
-        },
         // Trending: animated gradient wash
         gradientShift: {
           '0%, 100%': { backgroundPosition: '0% 50%' },
@@ -100,8 +98,6 @@ export default {
         aurora: 'auroraMove 18s ease-in-out infinite',
         shimmer: 'shimmer 6s linear infinite',
         'spin-slow': 'spinSlow 24s linear infinite',
-        'chain-sway': 'chainSway 5s ease-in-out infinite',
-        'chain-sway-alt': 'chainSwayAlt 6s ease-in-out infinite',
         'gradient-shift': 'gradientShift 8s ease infinite',
         'pattern-drift': 'patternDrift 24s linear infinite',
         shine: 'shine 1.1s ease-out',
