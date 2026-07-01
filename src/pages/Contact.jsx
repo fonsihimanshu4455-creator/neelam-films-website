@@ -39,10 +39,10 @@ export default function Contact() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="rounded-3xl border border-white/10 bg-white/[0.03] p-8 shadow-soft md:p-10"
+            className="rounded-3xl border border-cream-300 bg-cream-100 p-8 shadow-soft md:p-10"
           >
-            <h2 className="font-display text-2xl font-bold text-white">Send us a message</h2>
-            <p className="mt-2 text-sm text-slate-400">Fill the form and we'll get back within 24 hours.</p>
+            <h2 className="font-display text-2xl font-bold text-primary-700">Send us a message</h2>
+            <p className="mt-2 text-sm text-ink-700">Fill the form and we'll get back within 24 hours.</p>
 
             <form onSubmit={handleSubmit} className="mt-8 space-y-5">
               <div className="grid gap-5 sm:grid-cols-2">
@@ -52,13 +52,13 @@ export default function Contact() {
               <Field label="Email" name="email" type="email" value={form.email} onChange={handleChange} required />
 
               <div>
-                <label className="mb-1.5 block text-sm font-medium text-slate-100">Service</label>
+                <label className="mb-1.5 block text-sm font-medium text-ink-900">Service</label>
                 <select
                   name="service"
                   value={form.service}
                   onChange={handleChange}
                   required
-                  className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white outline-none transition focus:border-gold-400 focus:ring-2 focus:ring-gold-400/20"
+                  className="w-full rounded-xl border border-cream-300 bg-cream-100 px-4 py-3 text-sm text-ink-900 outline-none transition focus:border-gold-400 focus:ring-2 focus:ring-gold-400/20"
                 >
                   <option value="">Select a service</option>
                   {services.map((s) => (
@@ -69,7 +69,7 @@ export default function Contact() {
               </div>
 
               <div>
-                <label className="mb-1.5 block text-sm font-medium text-slate-100">Message</label>
+                <label className="mb-1.5 block text-sm font-medium text-ink-900">Message</label>
                 <textarea
                   name="message"
                   rows={4}
@@ -77,7 +77,7 @@ export default function Contact() {
                   onChange={handleChange}
                   required
                   placeholder="Tell us about your project..."
-                  className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder-slate-400 outline-none transition focus:border-gold-400 focus:ring-2 focus:ring-gold-400/20"
+                  className="w-full rounded-xl border border-cream-300 bg-cream-100 px-4 py-3 text-sm text-ink-900 placeholder-slate-400 outline-none transition focus:border-gold-400 focus:ring-2 focus:ring-gold-400/20"
                 />
               </div>
 
@@ -85,7 +85,7 @@ export default function Contact() {
                 type="submit"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                className="flex w-full items-center justify-center gap-2 rounded-full bg-gold-400 py-3.5 text-sm font-semibold text-white shadow-glow transition hover:bg-primary-600"
+                className="flex w-full items-center justify-center gap-2 rounded-full bg-gold-400 py-3.5 text-sm font-semibold text-ink-900 shadow-glow transition hover:bg-primary-600"
               >
                 <Send size={18} />
                 Send message
@@ -113,7 +113,7 @@ export default function Contact() {
             className="space-y-6"
           >
             <div className="rounded-3xl bg-gradient-to-br from-primary-600 to-primary-800 p-8 text-white shadow-soft md:p-10">
-              <h2 className="font-display text-2xl font-bold">Contact information</h2>
+              <h2 className="font-display text-2xl font-bold !text-white">Contact information</h2>
               <p className="mt-2 text-sm text-white/70">Reach us directly through any of these channels.</p>
 
               <ul className="mt-7 space-y-5 text-sm">
@@ -128,14 +128,14 @@ export default function Contact() {
                 href={`https://wa.me/${contact.whatsapp}?text=Hi%20Neelam%20Films`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-7 flex items-center justify-center gap-2 rounded-full bg-white py-3.5 text-sm font-semibold text-gold-400 transition hover:bg-gold-500"
+                className="mt-7 flex items-center justify-center gap-2 rounded-full bg-white py-3.5 text-sm font-semibold text-primary-700 transition hover:bg-cream-100"
               >
                 <MessageCircle size={18} className="text-[#25D366]" fill="currentColor" />
                 Chat on WhatsApp
               </a>
             </div>
 
-            <div className="overflow-hidden rounded-3xl border border-white/10 shadow-sm">
+            <div className="overflow-hidden rounded-3xl border border-cream-300 shadow-sm">
               <iframe
                 title="Neelam Films location"
                 src={contact.mapEmbed}
@@ -157,14 +157,14 @@ export default function Contact() {
 function Field({ label, name, type = 'text', value, onChange, required }) {
   return (
     <div>
-      <label className="mb-1.5 block text-sm font-medium text-slate-100">{label}</label>
+      <label className="mb-1.5 block text-sm font-medium text-ink-900">{label}</label>
       <input
         type={type}
         name={name}
         value={value}
         onChange={onChange}
         required={required}
-        className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white outline-none transition focus:border-gold-400 focus:ring-2 focus:ring-gold-400/20"
+        className="w-full rounded-xl border border-cream-300 bg-cream-100 px-4 py-3 text-sm text-ink-900 outline-none transition focus:border-gold-400 focus:ring-2 focus:ring-gold-400/20"
       />
     </div>
   )
@@ -177,7 +177,7 @@ function InfoRow({ icon: IconCmp, label, value, href }) {
         <IconCmp size={18} />
       </span>
       <div>
-        <p className="text-xs uppercase tracking-wider text-gold-400">{label}</p>
+        <p className="text-xs uppercase tracking-wider text-gold-300">{label}</p>
         <p className="text-white">{value}</p>
       </div>
     </div>

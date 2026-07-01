@@ -6,8 +6,10 @@ import { Star } from 'lucide-react'
  */
 export default function Marquee({ items = [], reverse = false, outline = false, white = false, className = '' }) {
   const track = [...items, ...items]
-  const fill = 'text-white'
-  const stroke = 'text-transparent [-webkit-text-stroke:1.5px_rgba(255,255,255,0.22)]'
+  const fill = white ? 'text-white' : 'text-primary-700'
+  const stroke = white
+    ? 'text-transparent [-webkit-text-stroke:1.5px_rgba(255,255,255,0.5)]'
+    : 'text-transparent [-webkit-text-stroke:1.5px_rgba(122,14,44,0.28)]'
 
   return (
     <div

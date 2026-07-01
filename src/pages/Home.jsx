@@ -20,7 +20,7 @@ export default function Home() {
       <ServicesGrid />
 
       {/* Kinetic outline marquee divider */}
-      <div className="overflow-hidden border-y border-white/10 bg-white/[0.015] py-8">
+      <div className="overflow-hidden border-y border-cream-300 bg-cream-100 py-8">
         <Marquee items={WORDS} outline />
       </div>
 

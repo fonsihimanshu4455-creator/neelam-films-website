@@ -4,7 +4,7 @@ export default {
   theme: {
     extend: {
       colors: {
-        // Brand burgundy (from the Neelam Films logo + colour guide)
+        // Brand burgundy (official Neelam Films palette)
         primary: {
           50: '#fbeef1',
           100: '#f7dbe1',
@@ -18,41 +18,48 @@ export default {
           900: '#4f0f22',
           950: '#2c0712',
         },
-        // Premium gold accent + buttons
+        // Premium gold
         gold: {
           200: '#f3dfae',
           300: '#e7c06a', // light gold
-          400: '#d4a24b', // premium gold (buttons)
-          500: '#c08a2f', // button hover
+          400: '#d4a24b', // premium gold
+          500: '#c08a2f',
           600: '#a5751f',
           700: '#835c18',
         },
-        // Matte-black cinematic surfaces
+        // Matte-black text scale
         ink: {
-          950: '#0c0c0c',
-          900: '#141414',
-          800: '#1c1c1c',
-          700: '#282828',
-          600: '#3a3a3a',
+          950: '#111111',
+          900: '#222222', // matte black text
+          800: '#333333',
+          700: '#666666', // secondary text
+          600: '#888888',
         },
-        // Light neutrals (for any light blocks)
+        // Warm light surfaces (light theme)
         cream: {
           50: '#ffffff',
-          100: '#f7f7f7',
-          200: '#ededed',
-          300: '#e0e0e0',
+          100: '#fbf8f4', // soft/cream
+          200: '#f3ebe0',
+          300: '#eae1d4', // borders
+        },
+        // Dark theme surfaces
+        night: {
+          950: '#140710',
+          900: '#1b0a11', // dark bg
+          800: '#22101a', // dark cards
+          700: '#2e1620',
+          600: '#3a1c29',
         },
         dark: {
-          900: '#141414',
-          800: '#1c1c1c',
-          700: '#282828',
+          900: '#1b0a11',
+          800: '#22101a',
+          700: '#2e1620',
         },
       },
       fontFamily: {
-        sans: ['Inter', 'sans-serif'],
-        display: ['Anton', 'Impact', 'sans-serif'],
+        sans: ['Sora', 'Inter', 'sans-serif'],
+        display: ['"Bebas Neue"', 'Impact', 'sans-serif'],
         heading: ['Sora', 'Inter', 'sans-serif'],
-        script: ['"Great Vibes"', 'cursive'],
         serif: ['"Instrument Serif"', 'Georgia', 'serif'],
       },
       letterSpacing: {
@@ -83,10 +90,7 @@ export default {
           '100%': { transform: 'translateX(220%) skewX(-20deg)' },
         },
         conicSpin: { to: { transform: 'rotate(360deg)' } },
-        glowPulse: {
-          '0%, 100%': { opacity: '0.55' },
-          '50%': { opacity: '1' },
-        },
+        glowPulse: { '0%, 100%': { opacity: '0.55' }, '50%': { opacity: '1' } },
       },
       animation: {
         marquee: 'marquee 36s linear infinite',

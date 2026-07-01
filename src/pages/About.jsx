@@ -13,7 +13,7 @@ export default function About() {
   const { founder, timeline, mission, vision } = team
 
   return (
-    <>
+    <div className="bg-night-900 text-slate-200">
       <PageHero
         eyebrow="Since 1995"
         title="Three decades of storytelling"
@@ -72,7 +72,7 @@ export default function About() {
       </section>
 
       {/* Timeline */}
-      <section className="border-y border-white/60 bg-white/55 px-5 py-24 backdrop-blur-md md:px-8 md:py-32">
+      <section className="border-y border-white/10 bg-night-800 px-5 py-24 md:px-8 md:py-32">
         <div className="mx-auto max-w-5xl">
           <div className="mb-16 flex justify-center text-center">
             <SectionHeader
@@ -97,7 +97,7 @@ export default function About() {
                     i % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
                   }`}
                 >
-                  <div className="absolute left-4 top-2 z-10 h-4 w-4 -translate-x-1/2 rounded-full border-4 border-white bg-gold-400 shadow md:left-1/2" />
+                  <div className="absolute left-4 top-2 z-10 h-4 w-4 -translate-x-1/2 rounded-full border-4 border-night-900 bg-gold-400 shadow md:left-1/2" />
                   <div className={`ml-10 md:ml-0 md:w-1/2 ${i % 2 === 0 ? 'md:pr-12 md:text-right' : 'md:pl-12'}`}>
                     <div className="rounded-2xl border border-white/10 bg-white/5 p-5 transition hover:border-gold-400/50 hover:shadow-soft">
                       <span className="font-display text-2xl font-extrabold text-gradient">{t.year}</span>
@@ -129,7 +129,7 @@ export default function About() {
               className={`relative overflow-hidden rounded-3xl p-9 shadow-soft ${
                 b.blue
                   ? 'bg-gradient-to-br from-primary-500 to-primary-700 text-white'
-                  : 'border border-white/10 bg-white'
+                  : 'border border-white/10 bg-night-800'
               }`}
             >
               <span className={`flex h-14 w-14 items-center justify-center rounded-2xl ${b.blue ? 'bg-white/15 text-white' : 'bg-gold-400/10 text-gold-400'}`}>
@@ -146,7 +146,7 @@ export default function About() {
 
       {/* Founder */}
       {founder.show !== false && (
-      <section className="border-t border-white/60 bg-white/55 px-5 py-24 backdrop-blur-md md:px-8 md:py-32">
+      <section className="border-t border-white/10 bg-night-800 px-5 py-24 md:px-8 md:py-32">
         <div className="mx-auto max-w-5xl">
           <div className="mb-14 flex justify-center text-center">
             <SectionHeader eyebrow="Leadership" title="Meet our founder" />
@@ -175,6 +175,6 @@ export default function About() {
       )}
 
       <CTASection />
-    </>
+    </div>
   )
 }

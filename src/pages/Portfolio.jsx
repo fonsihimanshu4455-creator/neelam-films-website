@@ -18,7 +18,7 @@ export default function Portfolio() {
     filter === 'All' ? portfolio : portfolio.filter((p) => p.category === filter)
 
   return (
-    <>
+    <div className="bg-night-900 text-slate-200">
       <PageHero
         eyebrow="Our Work"
         title="A Portfolio Built Over 30 Years"
@@ -67,7 +67,7 @@ export default function Portfolio() {
                     className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-dark-900/90 via-dark-900/20 to-transparent" />
-                  <span className="absolute left-1/2 top-1/2 flex h-14 w-14 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white/90 text-gold-400 opacity-0 transition group-hover:opacity-100">
+                  <span className="absolute left-1/2 top-1/2 flex h-14 w-14 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white text-primary-700 opacity-0 transition group-hover:opacity-100">
                     <Play size={22} fill="currentColor" />
                   </span>
                   <div className="absolute bottom-0 left-0 p-5">
@@ -96,6 +96,6 @@ export default function Portfolio() {
         videoId={active?.videoId}
         title={active?.title}
       />
-    </>
+    </div>
   )
 }

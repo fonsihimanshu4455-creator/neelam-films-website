@@ -33,19 +33,19 @@ export default function Navbar() {
 
   const linkClass = ({ isActive }) =>
     `link-underline text-xs font-bold uppercase tracking-[0.12em] transition-colors ${
-      isActive ? 'text-gold-400' : 'text-white hover:text-gold-400'
+      isActive ? 'text-primary-700' : 'text-ink-900 hover:text-primary-700'
     }`
 
   return (
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${
         scrolled
-          ? 'border-b border-white/10 bg-ink-950/80 backdrop-blur-xl'
-          : 'bg-transparent'
+          ? 'border-b border-cream-300 bg-cream-50/95 shadow-soft backdrop-blur-xl'
+          : 'border-b border-transparent bg-cream-50/85 backdrop-blur-md'
       }`}
     >
-      <nav className="mx-auto flex h-[78px] max-w-7xl items-center justify-between px-5 md:px-8">
-        <Logo className="h-12 w-auto md:h-14" />
+      <nav className="mx-auto flex h-[86px] max-w-7xl items-center justify-between px-5 md:px-8">
+        <Logo className="h-[74px] w-auto" />
 
         {/* Desktop nav */}
         <div className="hidden items-center gap-8 lg:flex">
@@ -60,7 +60,7 @@ export default function Navbar() {
             onMouseEnter={() => setServicesOpen(true)}
             onMouseLeave={() => setServicesOpen(false)}
           >
-            <button className="flex items-center gap-1 text-xs font-bold uppercase tracking-[0.12em] text-white transition-colors hover:text-gold-400">
+            <button className="flex items-center gap-1 text-xs font-bold uppercase tracking-[0.12em] text-ink-900 transition-colors hover:text-primary-700">
               Services
               <ChevronDown size={15} className={`transition ${servicesOpen ? 'rotate-180' : ''}`} />
             </button>
@@ -73,12 +73,12 @@ export default function Navbar() {
                   transition={{ duration: 0.2 }}
                   className="absolute left-1/2 top-full w-72 -translate-x-1/2 pt-4"
                 >
-                  <div className="overflow-hidden rounded-2xl border border-white/10 bg-ink-900 p-2 shadow-soft">
+                  <div className="overflow-hidden rounded-2xl border border-cream-300 bg-cream-50 p-2 shadow-soft">
                     {services.map((s) => (
                       <Link
                         key={s.id}
                         to={s.slug}
-                        className="flex items-center justify-between rounded-xl px-4 py-2.5 text-sm font-medium text-slate-300 transition hover:bg-white/5 hover:text-gold-400"
+                        className="flex items-center justify-between rounded-xl px-4 py-2.5 text-sm font-medium text-ink-700 transition hover:bg-cream-100 hover:text-primary-700"
                       >
                         {s.title}
                         <ChevronDown size={14} className="-rotate-90 opacity-40" />
@@ -99,7 +99,7 @@ export default function Navbar() {
         </div>
 
         <button
-          className="text-white lg:hidden"
+          className="text-ink-900 lg:hidden"
           onClick={() => setOpen((o) => !o)}
           aria-label="Toggle menu"
         >
@@ -115,17 +115,17 @@ export default function Navbar() {
             animate={{ height: 'auto', opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="overflow-hidden border-t border-white/10 bg-ink-950 lg:hidden"
+            className="overflow-hidden border-t border-cream-300 bg-cream-50 lg:hidden"
           >
             <div className="flex flex-col gap-1 px-5 py-5">
               {NAV_LINKS.map((l) => (
-                <NavLink key={l.to} to={l.to} className="rounded-lg px-3 py-2.5 font-medium text-slate-100 hover:bg-white/5">
+                <NavLink key={l.to} to={l.to} className="rounded-lg px-3 py-2.5 font-medium text-ink-900 hover:bg-cream-100">
                   {l.label}
                 </NavLink>
               ))}
               <button
                 onClick={() => setServicesOpen((s) => !s)}
-                className="flex items-center justify-between rounded-lg px-3 py-2.5 font-medium text-slate-100 hover:bg-white/5"
+                className="flex items-center justify-between rounded-lg px-3 py-2.5 font-medium text-ink-900 hover:bg-cream-100"
               >
                 Services
                 <ChevronDown size={16} className={servicesOpen ? 'rotate-180' : ''} />
@@ -139,15 +139,15 @@ export default function Navbar() {
                     className="overflow-hidden pl-4"
                   >
                     {services.map((s) => (
-                      <Link key={s.id} to={s.slug} className="block rounded-lg px-3 py-2 text-sm text-slate-400 hover:bg-white/5 hover:text-gold-400">
+                      <Link key={s.id} to={s.slug} className="block rounded-lg px-3 py-2 text-sm text-ink-700 hover:bg-cream-100 hover:text-primary-700">
                         {s.title}
                       </Link>
                     ))}
                   </motion.div>
                 )}
               </AnimatePresence>
-              <NavLink to="/portfolio" className="rounded-lg px-3 py-2.5 font-medium text-slate-100 hover:bg-white/5">Portfolio</NavLink>
-              <NavLink to="/contact" className="rounded-lg px-3 py-2.5 font-medium text-slate-100 hover:bg-white/5">Contact</NavLink>
+              <NavLink to="/portfolio" className="rounded-lg px-3 py-2.5 font-medium text-ink-900 hover:bg-cream-100">Portfolio</NavLink>
+              <NavLink to="/contact" className="rounded-lg px-3 py-2.5 font-medium text-ink-900 hover:bg-cream-100">Contact</NavLink>
               <Button to="/contact" className="mt-2 w-full">Get Quote</Button>
             </div>
           </motion.div>

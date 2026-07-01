@@ -21,7 +21,7 @@ export default function ServicePage({ serviceId }) {
 
   if (!service) {
     return (
-      <div className="flex min-h-[60vh] items-center justify-center text-slate-400">
+      <div className="flex min-h-[60vh] items-center justify-center text-ink-700">
         Service not found.
       </div>
     )
@@ -60,13 +60,13 @@ export default function ServicePage({ serviceId }) {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: (i % 3) * 0.08 }}
                 whileHover={{ y: -6 }}
-                className="group rounded-3xl border border-white/10 bg-white/[0.03] p-7 shadow-sm transition hover:border-gold-400/50 hover:shadow-soft"
+                className="group rounded-3xl border border-cream-300 bg-cream-100 p-7 shadow-sm transition hover:border-gold-400/50 hover:shadow-soft"
               >
-                <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gold-400/10 text-gold-400 transition group-hover:bg-gold-400 group-hover:text-white">
+                <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gold-400/10 text-gold-400 transition group-hover:bg-gold-400 group-hover:text-ink-900">
                   <Icon name={service.icon} size={24} />
                 </span>
-                <h3 className="mt-5 font-display text-xl font-bold text-white">{o.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-slate-400">{o.desc}</p>
+                <h3 className="mt-5 font-display text-xl font-bold text-primary-700">{o.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-ink-700">{o.desc}</p>
               </motion.div>
             ))}
           </div>
@@ -77,7 +77,7 @@ export default function ServicePage({ serviceId }) {
       {service.id === 'equipment-rental' && <EquipmentGrid />}
 
       {/* Our process */}
-      <section className="border-y border-white/60 bg-white/55 px-5 py-24 backdrop-blur-md md:px-8 md:py-32">
+      <section className="border-y border-white/60 bg-cream-1005 px-5 py-24 backdrop-blur-md md:px-8 md:py-32">
         <div className="mx-auto max-w-7xl">
           <div className="mb-14 flex justify-center text-center">
             <SectionHeader
@@ -94,11 +94,11 @@ export default function ServicePage({ serviceId }) {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
-                className="relative rounded-3xl border border-white/10 bg-white/5 p-7"
+                className="relative rounded-3xl border border-cream-300 bg-cream-100 p-7"
               >
                 <span className="font-display text-6xl font-extrabold text-gold-400/25">{p.step}</span>
-                <h3 className="mt-3 font-display text-lg font-bold text-white">{p.title}</h3>
-                <p className="mt-2 text-sm text-slate-400">{p.desc}</p>
+                <h3 className="mt-3 font-display text-lg font-bold text-primary-700">{p.title}</h3>
+                <p className="mt-2 text-sm text-ink-700">{p.desc}</p>
               </motion.div>
             ))}
           </div>
@@ -119,7 +119,7 @@ export default function ServicePage({ serviceId }) {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: (i % 3) * 0.08 }}
-                className="group aspect-square overflow-hidden rounded-2xl border border-white/10"
+                className="group aspect-square overflow-hidden rounded-2xl border border-cream-300"
               >
                 <img
                   src={img}
@@ -142,7 +142,7 @@ export default function ServicePage({ serviceId }) {
           <Reveal variant="scale">
             <button
               onClick={() => setVideoOpen(true)}
-              className="group relative block aspect-video w-full overflow-hidden rounded-3xl border border-white/10 shadow-soft"
+              className="group relative block aspect-video w-full overflow-hidden rounded-3xl border border-cream-300 shadow-soft"
             >
               <img
                 src={service.gallery[0]}
@@ -161,7 +161,7 @@ export default function ServicePage({ serviceId }) {
 
       {/* Pricing */}
       {service.pricing && service.pricing.length > 0 && (
-        <section className="border-t border-white/60 bg-white/55 px-5 py-24 backdrop-blur-md md:px-8 md:py-32">
+        <section className="border-t border-white/60 bg-cream-1005 px-5 py-24 backdrop-blur-md md:px-8 md:py-32">
           <div className="mx-auto max-w-7xl">
             <div className="mb-14 flex justify-center text-center">
               <SectionHeader
@@ -181,17 +181,17 @@ export default function ServicePage({ serviceId }) {
                   className={`flex flex-col rounded-3xl border p-8 ${
                     i === 1
                       ? 'border-gold-400 bg-gold-400/10 shadow-soft'
-                      : 'border-white/10 bg-white/[0.03] shadow-sm'
+                      : 'border-cream-300 bg-cream-100 shadow-sm'
                   }`}
                 >
-                  <h3 className="font-display text-lg font-bold text-white">{p.name}</h3>
+                  <h3 className="font-display text-lg font-bold text-primary-700">{p.name}</h3>
                   <div className="mt-3 flex items-end gap-1">
                     <span className="font-display text-3xl font-extrabold text-gradient">{p.price}</span>
-                    <span className="mb-1 text-sm text-slate-400">/ {p.unit}</span>
+                    <span className="mb-1 text-sm text-ink-700">/ {p.unit}</span>
                   </div>
                   <ul className="mt-6 flex-1 space-y-3">
                     {p.features.map((f) => (
-                      <li key={f} className="flex items-center gap-2 text-sm text-slate-300">
+                      <li key={f} className="flex items-center gap-2 text-sm text-ink-700">
                         <Check size={16} className="text-gold-400" />
                         {f}
                       </li>

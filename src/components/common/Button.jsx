@@ -2,15 +2,16 @@ import { Link } from 'react-router-dom'
 import Magnetic from './Magnetic'
 
 /**
- * Cinematic pill button: uppercase, sliding fill + blue glow on hover.
- * Variants: primary | outline | white | ghost | dark
+ * Brand pill button.
+ * Variants: primary (burgundy) | gold | outline | white | ghost | dark
  */
 const VARIANTS = {
-  primary: 'text-white bg-gold-400 before:bg-white hover:text-ink-950 shadow-glow',
-  outline: 'text-white border border-white/25 before:bg-gold-400 hover:text-white hover:border-gold-400',
-  white: 'text-ink-950 bg-white before:bg-gold-400 hover:text-white',
-  ghost: 'text-white border border-white/20 before:bg-white/10 hover:text-white',
-  dark: 'text-white bg-white/5 border border-white/10 before:bg-gold-400 hover:text-white',
+  primary: 'text-white bg-burgundy-grad hover:brightness-110 shadow-soft',
+  gold: 'text-ink-900 bg-gold-grad hover:brightness-105 shadow-glow',
+  outline: 'text-primary-700 border border-primary-700/40 hover:bg-primary-700 hover:text-white',
+  white: 'text-primary-700 bg-white hover:bg-cream-100 shadow-soft',
+  ghost: 'text-ink-900 border border-cream-300 hover:border-primary-700 hover:text-primary-700',
+  dark: 'text-white bg-white/10 border border-white/15 hover:bg-gold-grad hover:text-ink-900',
 }
 
 export default function Button({
@@ -23,8 +24,7 @@ export default function Button({
   ...props
 }) {
   const base =
-    'group relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-full px-7 py-3.5 text-xs font-bold uppercase tracking-[0.12em] transition-all duration-500 ' +
-    'before:absolute before:inset-0 before:-z-0 before:origin-bottom before:scale-y-0 before:transition-transform before:duration-500 before:ease-[cubic-bezier(0.65,0,0.35,1)] hover:before:scale-y-100 ' +
+    'group relative inline-flex items-center justify-center gap-2 rounded-full px-7 py-3.5 text-xs font-bold uppercase tracking-[0.12em] transition-all duration-300 ' +
     (VARIANTS[variant] || VARIANTS.primary) +
     ' ' +
     className

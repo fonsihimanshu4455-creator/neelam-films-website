@@ -47,7 +47,7 @@ function Word({ progress, range, word }) {
     word.toLowerCase().includes(k),
   )
   return (
-    <motion.span style={{ opacity }} className={highlight ? 'text-gold' : 'text-white'}>
+    <motion.span style={{ opacity }} className={highlight ? 'text-gold' : 'text-ink-900'}>
       {word}
     </motion.span>
   )

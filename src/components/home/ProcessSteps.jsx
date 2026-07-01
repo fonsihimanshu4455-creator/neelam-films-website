@@ -25,7 +25,7 @@ export default function ProcessSteps() {
             </span>
           </Reveal>
           <Reveal delay={0.1}>
-            <h2 className="mt-4 font-display text-5xl uppercase leading-[0.95] tracking-tight text-white md:text-7xl">
+            <h2 className="mt-4 font-display text-5xl uppercase leading-[0.95] tracking-tight text-primary-700 md:text-7xl">
               A process built <span className="text-gradient">to deliver</span>
             </h2>
           </Reveal>
@@ -45,13 +45,13 @@ export default function ProcessSteps() {
               className="relative"
             >
               <div className="relative z-10 mb-6 flex h-18 w-18">
-                <span className="flex h-16 w-16 items-center justify-center rounded-2xl border border-white/10 bg-ink-900 text-gold-300 shadow-glow">
+                <span className="flex h-16 w-16 items-center justify-center rounded-2xl border border-cream-300 bg-ink-900 text-gold-300 shadow-glow">
                   <s.Icon size={24} />
                 </span>
-                <span className="absolute -right-1 -top-2 font-display text-2xl text-white/10">{s.n}</span>
+                <span className="absolute -right-1 -top-2 font-display text-2xl text-primary-700/10">{s.n}</span>
               </div>
-              <h3 className="font-heading text-xl font-bold text-white">{s.title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-slate-400">{s.desc}</p>
+              <h3 className="font-heading text-xl font-bold text-primary-700">{s.title}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-ink-700">{s.desc}</p>
             </motion.div>
           ))}
         </div>

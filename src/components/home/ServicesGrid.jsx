@@ -26,13 +26,13 @@ export default function ServicesGrid() {
               </span>
             </Reveal>
             <Reveal delay={0.1}>
-              <h2 className="mt-4 max-w-2xl font-display text-5xl uppercase leading-[0.95] tracking-tight text-white md:text-7xl">
+              <h2 className="mt-4 max-w-2xl font-display text-5xl uppercase leading-[0.95] tracking-tight text-primary-700 md:text-7xl">
                 Everything under <span className="text-gradient">one roof</span>
               </h2>
             </Reveal>
           </div>
           <Reveal delay={0.15}>
-            <p className="max-w-sm text-slate-400">
+            <p className="max-w-sm text-ink-700">
               From cinematic production & live events to websites, apps and digital growth — one
               trusted partner for every story.
             </p>
@@ -51,7 +51,7 @@ export default function ServicesGrid() {
               <Link
                 to={s.slug}
                 data-cursor
-                className="group relative flex h-full flex-col overflow-hidden rounded-3xl border border-white/10 bg-white/[0.03] transition duration-500 hover:border-gold-400/50 hover:bg-white/[0.06]"
+                className="group relative flex h-full flex-col overflow-hidden rounded-3xl border border-cream-300 bg-cream-100 transition duration-500 hover:border-gold-400/50 hover:bg-cream-200"
               >
                 {/* image */}
                 <div className="relative aspect-[16/10] overflow-hidden">
@@ -62,10 +62,10 @@ export default function ServicesGrid() {
                     className="h-full w-full object-cover opacity-80 transition duration-700 group-hover:scale-110 group-hover:opacity-100"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-ink-950 via-ink-950/40 to-transparent" />
-                  <span className="absolute left-4 top-4 flex h-11 w-11 items-center justify-center rounded-xl border border-white/15 bg-ink-950/70 text-gold-300 backdrop-blur-sm">
+                  <span className="absolute left-4 top-4 flex h-11 w-11 items-center justify-center rounded-xl border border-cream-300 bg-ink-950/70 text-gold-300 backdrop-blur-sm">
                     <Icon name={s.icon} size={20} />
                   </span>
-                  <span className="absolute right-4 top-4 flex h-9 w-9 items-center justify-center rounded-full bg-gold-400 text-white opacity-0 transition duration-500 group-hover:opacity-100">
+                  <span className="absolute right-4 top-4 flex h-9 w-9 items-center justify-center rounded-full bg-gold-400 text-ink-900 opacity-0 transition duration-500 group-hover:opacity-100">
                     <ArrowUpRight size={16} />
                   </span>
                 </div>
@@ -73,11 +73,11 @@ export default function ServicesGrid() {
                 {/* body */}
                 <div className="flex flex-1 flex-col p-6">
                   <span className="font-display text-xs text-gold-400">0{i + 1}</span>
-                  <h3 className="mt-1 font-heading text-xl font-bold text-white transition group-hover:text-gold-300">
+                  <h3 className="mt-1 font-heading text-xl font-bold text-primary-700 transition group-hover:text-gold-300">
                     {s.title}
                   </h3>
-                  <p className="mt-2 line-clamp-2 text-sm text-slate-400">{s.short}</p>
-                  <span className="mt-5 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.12em] text-slate-300 transition group-hover:text-gold-400">
+                  <p className="mt-2 line-clamp-2 text-sm text-ink-700">{s.short}</p>
+                  <span className="mt-5 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.12em] text-ink-700 transition group-hover:text-gold-400">
                     Explore <ArrowUpRight size={14} />
                   </span>
                 </div>
