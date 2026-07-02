@@ -38,6 +38,13 @@
    .nav-links a{color:var(--ink);text-decoration:none;transition:color .2s}
    .nav-links a:hover{color:var(--burgundy)}
    @media(max-width:900px){.nav-links{display:none}}
+   .nav-burger{display:none;background:none;border:0;color:var(--burgundy);cursor:pointer;padding:6px;margin-left:8px}
+   .nav-burger svg{width:28px;height:28px;display:block}
+   .mobile-menu{display:none;flex-direction:column;background:#fff;border-top:1px solid var(--line)}
+   .mobile-menu.open{display:flex}
+   .mobile-menu a{padding:15px 24px;color:var(--ink);text-decoration:none;font-weight:600;border-bottom:1px solid var(--line)}
+   .mobile-menu a:active{background:#fbf8f4;color:var(--burgundy)}
+   @media(max-width:900px){.nav-burger{display:block}}
    #services,#why,#process,#quote{scroll-margin-top:104px}
    html{scroll-behavior:smooth}
   .brand img{height:74px;width:auto;filter:drop-shadow(0 6px 14px rgba(122,14,44,.18))}
@@ -208,6 +215,15 @@
       <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
       <span>Get a Quote</span>
     </a>
+    <button class="nav-burger" aria-label="Open menu" onclick="document.getElementById(&quot;mobileMenu&quot;).classList.toggle(&quot;open&quot;)">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#services" onclick="this.parentNode.classList.remove(&quot;open&quot;)">Services</a>
+    <a href="#why" onclick="this.parentNode.classList.remove(&quot;open&quot;)">Why Us</a>
+    <a href="#process" onclick="this.parentNode.classList.remove(&quot;open&quot;)">Process</a>
+    <a href="#quote" onclick="this.parentNode.classList.remove(&quot;open&quot;)">Contact</a>
   </div>
 </header>
 
