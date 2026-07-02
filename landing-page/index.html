@@ -46,6 +46,9 @@
    .mobile-menu a{padding:15px 24px;color:var(--ink);text-decoration:none;font-weight:600;border-bottom:1px solid var(--line)}
    .mobile-menu a:active{background:#fbf8f4;color:var(--burgundy)}
    .nav-burger{display:none!important}
+   .nav-call{display:none;align-items:center;justify-content:center;width:42px;height:42px;border-radius:50%;background:var(--grad-burg);color:#fff;box-shadow:0 8px 20px -8px rgba(122,14,44,.5)}
+   .nav-call svg{width:20px;height:20px}
+   @media(max-width:560px){.nav-call{display:inline-flex}}
    #services,#why,#process,#quote{scroll-margin-top:104px}
    html{scroll-behavior:smooth}
   .brand img{height:74px;width:auto;filter:drop-shadow(0 6px 14px rgba(122,14,44,.18))}
@@ -216,6 +219,7 @@
       <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
       <span>Get a Quote</span>
     </a>
+    <a class="nav-call" href="tel:+919999672912" aria-label="Call us"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.18z"/></svg></a>
     <button class="nav-burger" aria-label="Open menu" onclick="document.getElementById(&quot;mobileMenu&quot;).classList.toggle(&quot;open&quot;)">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
     </button>
