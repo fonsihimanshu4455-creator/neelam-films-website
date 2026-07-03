@@ -11,13 +11,10 @@ export default function ClientsMarquee() {
   const rowB = [...clients.slice(mid), ...clients.slice(mid)]
 
   const Logo = ({ c }) => (
-    <div className="flex h-16 w-40 shrink-0 items-center justify-center rounded-2xl border border-cream-300 bg-cream-100 px-6 transition hover:border-gold-400/40 hover:bg-cream-200">
-      <img
-        src={c.logo}
-        alt={c.name}
-        loading="lazy"
-        className="max-h-9 w-auto opacity-60 grayscale transition hover:opacity-100 hover:grayscale-0"
-      />
+    <div className="group flex h-16 min-w-[10rem] shrink-0 items-center justify-center rounded-2xl border border-cream-300 bg-cream-100 px-7 transition hover:border-gold-400/50 hover:bg-cream-200">
+      <span className="whitespace-nowrap text-center text-sm font-bold uppercase tracking-wide text-primary-700/70 transition group-hover:text-primary-700">
+        {c.name}
+      </span>
     </div>
   )
 
