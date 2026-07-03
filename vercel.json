@@ -6,6 +6,7 @@
   "cleanUrls": true,
   "rewrites": [
     { "source": "/live-events", "destination": "/live-events.html" },
+    { "source": "/camera-rental", "destination": "/camera-rental.html" },
     { "source": "/(.*)", "destination": "/index.html" }
   ]
 }
