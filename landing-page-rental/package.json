@@ -1,0 +1,8 @@
+{
+  "name": "neelam-camera-rental",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "mkdir -p dist && cp index.html dist/index.html && cp logo.png dist/logo.png && cp favicon.png dist/favicon.png && cp apple-touch-icon.png dist/apple-touch-icon.png"
+  }
+}

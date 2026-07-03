@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="icon" type="image/png" href="favicon.png" />
+<link rel="apple-touch-icon" href="apple-touch-icon.png" />
+<title>Neelam Films — Camera & Equipment Rental in Delhi | Cinema Cameras, Lenses, Lights</title>
+<meta name="description" content="Rent pro camera & film equipment in Delhi from Neelam Films. Cinema cameras (Sony, RED, Blackmagic), DSLR/mirrorless, lenses, LED lighting, audio, gimbals, drones & full kits. Same-day delivery, insured gear, 30+ years trusted." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Sora:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  :root{
+    --white:#ffffff;
+    --bg-soft:#fbf8f4;
+    --burgundy:#7A0E2C;
+    --burgundy-2:#9C1C3E;
+    --gold:#D4A24B;
+    --gold-2:#E7C06A;
+    --ink:#222222;
+    --ink-dim:#666666;
+    --line:#eae1d4;
+    --grad-burg:linear-gradient(120deg,#7A0E2C,#9C1C3E);
+    --grad-gold:linear-gradient(120deg,#E7C06A,#D4A24B);
+  }
+  html{scroll-behavior:smooth}
+  body{font-family:'Sora',sans-serif;background:var(--white);color:var(--ink);line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+  a{color:inherit}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 22px}
+
+  /* ---------- header ---------- */
+  header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.88);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:74px}
+  .brand{display:flex;align-items:center;gap:10px}
+  .brand img{height:52px;width:auto;display:block}
+  .nav-links{display:flex;align-items:center;gap:30px;font-size:14px;font-weight:600}
+  .nav-links a{color:var(--ink);text-decoration:none;transition:color .2s}
+  .nav-links a:hover{color:var(--burgundy)}
+  .nav-right{display:flex;align-items:center;gap:12px}
+  .nav-cta{display:inline-flex;align-items:center;gap:8px;background:var(--grad-burg);color:#fff;padding:12px 22px;border-radius:50px;font-weight:700;font-size:14px;text-decoration:none;box-shadow:0 10px 24px -10px rgba(122,14,44,.5)}
+  .nav-call{display:none;align-items:center;justify-content:center;width:42px;height:42px;border-radius:50%;background:var(--grad-burg);color:#fff;text-decoration:none;box-shadow:0 8px 20px -8px rgba(122,14,44,.5)}
+  .nav-call svg{width:20px;height:20px}
+  @media(max-width:760px){.nav-links{display:none}}
+  @media(max-width:560px){.nav-cta{display:none}.nav-call{display:inline-flex}}
+
+  /* ---------- reusable photo w/ fallback ---------- */
+  .ph{position:relative;background:var(--grad-burg);overflow:hidden}
+  .ph img{position:relative;z-index:1;width:100%;height:100%;object-fit:cover;display:block}
+  .ph img.failed{display:none}
+  .ph-fb{position:absolute;inset:0;z-index:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;color:var(--gold-2);text-align:center;padding:14px}
+  .ph-fb svg{width:34px;height:34px;opacity:.9}
+  .ph-fb span{font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#fff;opacity:.85}
+
+  /* ---------- hero ---------- */
+  .hero{position:relative;padding:64px 0 74px;background:
+     radial-gradient(1000px 460px at 88% -6%,rgba(212,162,75,.16),transparent 60%),
+     radial-gradient(900px 500px at -6% 108%,rgba(122,14,44,.10),transparent 60%),
+     var(--bg-soft)}
+  .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center}
+  .eyebrow{display:inline-flex;align-items:center;gap:9px;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--burgundy);border:1px solid var(--line);background:var(--white);padding:8px 15px;border-radius:50px;margin-bottom:22px;font-weight:700}
+  .eyebrow .live{width:8px;height:8px;border-radius:50%;background:var(--burgundy-2);animation:pulse 1.8s infinite}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(156,28,62,.5)}70%{box-shadow:0 0 0 9px rgba(156,28,62,0)}100%{box-shadow:0 0 0 0 rgba(156,28,62,0)}}
+  h1.hero-title{font-family:'Bebas Neue';font-size:clamp(46px,6.6vw,84px);line-height:.98;letter-spacing:1px;margin-bottom:16px;color:var(--ink)}
+  h1.hero-title .g{background:var(--grad-burg);-webkit-background-clip:text;background-clip:text;color:transparent}
+  h1.hero-title .gold{background:var(--grad-gold);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .hero-sub{font-size:17px;color:var(--ink-dim);max-width:520px;margin-bottom:12px}
+  .hero-sub b{color:var(--ink);font-weight:600}
+  .hero-estd{font-size:14px;color:var(--ink-dim);margin:2px 0 24px;font-weight:500}
+  .hero-estd b{color:var(--burgundy);font-weight:700}
+  .btn-row{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:30px}
+  .btn{display:inline-flex;align-items:center;gap:9px;padding:14px 26px;border-radius:50px;font-weight:700;font-size:15px;text-decoration:none;cursor:pointer;border:0;transition:transform .15s,box-shadow .2s}
+  .btn svg{width:18px;height:18px}
+  .btn:hover{transform:translateY(-2px)}
+  .btn-primary{background:var(--grad-burg);color:#fff;box-shadow:0 14px 30px -12px rgba(122,14,44,.6)}
+  .btn-gold{background:var(--grad-gold);color:#3a2410;box-shadow:0 14px 30px -12px rgba(212,162,75,.6)}
+  .btn-ghost{background:var(--white);color:var(--burgundy);border:1.5px solid var(--line)}
+  .hero-stats{display:flex;gap:30px;flex-wrap:wrap}
+  .hero-stats .s .n{font-family:'Bebas Neue';font-size:36px;background:var(--grad-gold);-webkit-background-clip:text;background-clip:text;color:transparent;line-height:1}
+  .hero-stats .s .l{font-size:12px;color:var(--ink-dim)}
+
+  /* hero visual collage */
+  .hero-collage{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:200px 150px;gap:14px}
+  .hero-collage .ph{border-radius:18px;box-shadow:0 30px 60px -30px rgba(122,14,44,.4)}
+  .hero-collage .big{grid-row:1 / span 2}
+  .hero-badge{position:absolute;z-index:3;bottom:14px;left:14px;background:rgba(255,255,255,.94);color:var(--burgundy);font-weight:800;font-size:12px;padding:8px 13px;border-radius:50px;box-shadow:0 8px 18px -8px rgba(0,0,0,.3);display:flex;align-items:center;gap:6px}
+  .hero-badge .dot{width:7px;height:7px;border-radius:50%;background:#2ecc71}
+
+  /* ---------- strip ---------- */
+  .strip{background:var(--grad-burg);padding:20px 0}
+  .strip-in{display:flex;flex-wrap:wrap;justify-content:center;gap:14px 34px}
+  .strip-item{display:flex;align-items:center;gap:9px;color:#fff;font-size:13.5px;font-weight:600}
+  .strip-item svg{width:20px;height:20px;color:var(--gold-2)}
+
+  /* ---------- sections ---------- */
+  section{padding:74px 0}
+  .sec-head{max-width:640px;margin:0 auto 46px;text-align:center}
+  .sec-eyebrow{font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);font-weight:800;margin-bottom:12px}
+  h2{font-family:'Bebas Neue';font-size:clamp(34px,5vw,56px);line-height:1.02;letter-spacing:1px;color:var(--burgundy)}
+  .sec-head p{color:var(--ink-dim);margin-top:12px;font-size:16px}
+
+  /* categories */
+  .cats{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+  .cat{background:var(--white);border:1px solid var(--line);border-radius:18px;overflow:hidden;transition:transform .2s,box-shadow .2s,border-color .2s;text-decoration:none;color:inherit;display:block}
+  .cat:hover{transform:translateY(-5px);box-shadow:0 26px 46px -26px rgba(122,14,44,.4);border-color:rgba(212,162,75,.5)}
+  .cat .ph{height:132px}
+  .cat .body{padding:15px 16px 18px}
+  .cat h3{font-size:16px;font-weight:700;color:var(--ink);margin-bottom:4px;display:flex;align-items:center;gap:8px}
+  .cat p{font-size:12.5px;color:var(--ink-dim)}
+
+  /* gear gallery */
+  .gears{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .gear{border-radius:18px;overflow:hidden;border:1px solid var(--line);background:var(--white);position:relative}
+  .gear .ph{height:210px}
+  .gear .tag{position:absolute;top:12px;left:12px;z-index:3;background:rgba(255,255,255,.94);color:var(--burgundy);font-size:11px;font-weight:800;letter-spacing:.5px;text-transform:uppercase;padding:6px 11px;border-radius:50px}
+  .gear .cap{padding:14px 16px}
+  .gear .cap h4{font-size:15.5px;font-weight:700;color:var(--ink)}
+  .gear .cap p{font-size:12.5px;color:var(--ink-dim)}
+
+  /* why */
+  .why{background:var(--grad-burg);color:#fff;position:relative;overflow:hidden}
+  .why:before{content:"";position:absolute;right:-140px;top:-80px;width:360px;height:360px;border-radius:50%;background:radial-gradient(circle,rgba(212,162,75,.25),transparent 70%)}
+  .why-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:50px;align-items:center;position:relative}
+  .why .sec-eyebrow{color:var(--gold-2)}
+  .why h2{color:#fff}
+  .why-list{margin-top:22px;display:grid;gap:16px}
+  .why-list .li{display:flex;gap:13px;align-items:flex-start}
+  .why-list svg{width:22px;height:22px;color:var(--gold-2);flex-shrink:0;margin-top:2px}
+  .why-list b{display:block;font-size:15.5px;margin-bottom:2px}
+  .why-list p{font-size:13.5px;color:rgba(255,255,255,.78)}
+  .why-stats{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+  .why-stats .st{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);border-radius:16px;padding:22px}
+  .why-stats .st .n{font-family:'Bebas Neue';font-size:48px;background:var(--grad-gold);-webkit-background-clip:text;background-clip:text;color:transparent;line-height:1}
+  .why-stats .st .l{font-size:13px;color:rgba(255,255,255,.8);margin-top:4px}
+
+  /* steps */
+  .steps-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+  .step{text-align:center;padding:10px}
+  .step .n{font-family:'Bebas Neue';font-size:22px;width:52px;height:52px;border-radius:50%;background:var(--grad-burg);color:#fff;display:grid;place-items:center;margin:0 auto 14px}
+  .step h4{font-size:16px;font-weight:700;margin-bottom:6px;color:var(--ink)}
+  .step p{font-size:13px;color:var(--ink-dim)}
+
+  /* form */
+  .quote-wrap{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:center}
+  .quote-left h2{margin-bottom:14px}
+  .quote-left p{color:var(--ink-dim);font-size:15.5px;margin-bottom:20px}
+  .quote-points{display:grid;gap:12px}
+  .quote-points .qp{display:flex;gap:11px;align-items:center;font-size:14.5px;font-weight:600;color:var(--ink)}
+  .quote-points svg{width:20px;height:20px;color:var(--burgundy);flex-shrink:0}
+  .form-card{background:var(--white);border:1px solid var(--line);border-radius:22px;padding:28px;box-shadow:0 34px 70px -40px rgba(122,14,44,.35)}
+  .form-card h3{font-size:22px;font-weight:800;color:var(--burgundy)}
+  .form-card .fp{font-size:13px;color:var(--ink-dim);margin-bottom:18px}
+  .field{margin-bottom:13px}
+  .field label{display:block;font-size:12px;color:var(--ink-dim);margin-bottom:5px;font-weight:600}
+  .field input,.field select{width:100%;background:var(--bg-soft);border:1px solid var(--line);border-radius:11px;padding:13px 14px;color:var(--ink);font-family:inherit;font-size:14px;outline:none;transition:border .2s}
+  .field input:focus,.field select:focus{border-color:var(--burgundy);background:#fff}
+  .form-card .btn{width:100%;justify-content:center;margin-top:6px}
+  .form-note{font-size:11px;color:var(--ink-dim);text-align:center;margin-top:10px}
+  .form-success{display:none;text-align:center;padding:20px 4px}
+  .form-success .ok{width:64px;height:64px;border-radius:50%;background:var(--grad-burg);display:grid;place-items:center;margin:0 auto 14px}
+  .form-success .ok svg{width:32px;height:32px;color:#fff}
+  .form-success h4{font-size:20px;margin-bottom:6px;color:var(--burgundy)}
+  .form-success p{font-size:13px;color:var(--ink-dim);margin-bottom:16px}
+
+  /* final */
+  .final{background:var(--bg-soft);text-align:center}
+  .final h2{margin-bottom:14px}
+  .final p{color:var(--ink-dim);font-size:16px;max-width:560px;margin:0 auto 26px}
+  .final .btn-row{justify-content:center}
+
+  /* footer */
+  footer{background:#1B0A11;color:rgba(255,255,255,.72);padding:46px 0 30px}
+  .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:34px;margin-bottom:30px}
+  footer img.flogo{height:64px;margin-bottom:14px}
+  footer p.fdesc{font-size:13.5px;max-width:300px}
+  footer h5{color:#fff;font-size:14px;margin-bottom:14px;letter-spacing:.5px}
+  footer a{display:block;color:rgba(255,255,255,.72);text-decoration:none;font-size:13.5px;margin-bottom:9px;transition:color .2s}
+  footer a:hover{color:var(--gold-2)}
+  .foot-bottom{border-top:1px solid rgba(255,255,255,.1);padding-top:20px;text-align:center;font-size:12.5px;color:rgba(255,255,255,.5)}
+
+  /* sticky mobile CTA */
+  .sticky-cta{display:none;position:fixed;bottom:0;left:0;right:0;z-index:60;background:#fff;border-top:1px solid var(--line);padding:10px 14px;gap:10px;box-shadow:0 -8px 24px -12px rgba(0,0,0,.2)}
+  .sticky-cta .btn{flex:1;justify-content:center;padding:13px}
+  @media(max-width:560px){.sticky-cta{display:flex}body{padding-bottom:72px}}
+
+  /* responsive */
+  @media(max-width:900px){
+    .hero-grid{grid-template-columns:1fr;gap:34px}
+    .cats{grid-template-columns:repeat(2,1fr)}
+    .gears{grid-template-columns:repeat(2,1fr)}
+    .why-grid{grid-template-columns:1fr;gap:32px}
+    .steps-grid{grid-template-columns:repeat(2,1fr)}
+    .quote-wrap{grid-template-columns:1fr;gap:28px}
+    .foot-grid{grid-template-columns:1fr 1fr}
+  }
+  @media(max-width:520px){
+    .gears{grid-template-columns:1fr}
+    .hero-collage{grid-template-rows:170px 130px}
+    .foot-grid{grid-template-columns:1fr}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#top"><img src="logo.png" alt="Neelam Films" /></a>
+    <nav class="nav-links">
+      <a href="#gear">Gear</a>
+      <a href="#why">Why Us</a>
+      <a href="#how">How It Works</a>
+      <a href="#quote">Get Quote</a>
+    </nav>
+    <div class="nav-right">
+      <a class="nav-cta" href="#quote">Rent Now</a>
+      <a class="nav-call" href="tel:+919999672912" aria-label="Call us"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.18z"/></svg></a>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <span class="eyebrow"><span class="live"></span> Camera &amp; Equipment Rental · Delhi</span>
+      <h1 class="hero-title">Rent <span class="g">Pro Camera</span><br/>&amp; Film <span class="gold">Gear</span> in Delhi</h1>
+      <p class="hero-sub">Cinema cameras, lenses, lighting, audio, gimbals &amp; drones — <b>studio-grade equipment</b> for shoots, films, weddings &amp; events. Book what you need, we deliver.</p>
+      <p class="hero-estd">By <b>Neelam Films</b> — Delhi's trusted production house, <b>established 1995</b>. 500+ gear items, always shoot-ready.</p>
+      <div class="btn-row">
+        <a class="btn btn-primary" href="#quote"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 14H4V8h16v10z"/></svg> Get a Rental Quote</a>
+        <a class="btn btn-ghost" href="tel:+919999672912"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.18z"/></svg> Call Now</a>
+      </div>
+      <div class="hero-stats">
+        <div class="s"><div class="n">500+</div><div class="l">Gear items in stock</div></div>
+        <div class="s"><div class="n">30+</div><div class="l">Years in the industry</div></div>
+        <div class="s"><div class="n">24/7</div><div class="l">Support &amp; backup</div></div>
+        <div class="s"><div class="n">Same-day</div><div class="l">Delivery in Delhi NCR</div></div>
+      </div>
+    </div>
+
+    <div class="hero-collage">
+      <div class="ph big">
+        <img src="https://images.unsplash.com/photo-1510127034890-ba27508e9f1c?auto=format&fit=crop&w=800&q=70" alt="Cinema camera on rent" loading="eager" onerror="this.classList.add('failed')">
+        <div class="ph-fb"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17 10.5V7c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1v10c0 .55.45 1 1 1h12c.55 0 1-.45 1-1v-3.5l4 4v-11l-4 4z"/></svg><span>Cinema Cameras</span></div>
+        <div class="hero-badge"><span class="dot"></span> In stock &amp; ready</div>
+      </div>
+      <div class="ph">
+        <img src="https://images.unsplash.com/photo-1519638831568-d9897f54ed69?auto=format&fit=crop&w=500&q=70" alt="Camera lenses on rent" loading="eager" onerror="this.classList.add('failed')">
+        <div class="ph-fb"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm0 16a6 6 0 110-12 6 6 0 010 12zm0-9a3 3 0 100 6 3 3 0 000-6z"/></svg><span>Prime Lenses</span></div>
+      </div>
+      <div class="ph">
+        <img src="https://images.unsplash.com/photo-1471970471555-19d4b113e9ed?auto=format&fit=crop&w=500&q=70" alt="Studio lighting on rent" loading="eager" onerror="this.classList.add('failed')">
+        <div class="ph-fb"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 21c0 .55.45 1 1 1h4c.55 0 1-.45 1-1v-1H9v1zm3-19C8.14 2 5 5.14 5 9c0 2.38 1.19 4.47 3 5.74V17c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-2.26c1.81-1.27 3-3.36 3-5.74 0-3.86-3.14-7-7-7z"/></svg><span>LED &amp; Lighting</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST STRIP -->
+<div class="strip">
+  <div class="wrap strip-in">
+    <div class="strip-item"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 8h-3V4H3c-1.1 0-2 .9-2 2v11h2a3 3 0 006 0h6a3 3 0 006 0h2v-5l-3-4zM6 18.5A1.5 1.5 0 116 15.5a1.5 1.5 0 010 3zm12 0a1.5 1.5 0 110-3 1.5 1.5 0 010 3zM17 12V9.5h2.5L21 12h-4z"/></svg> Same-day delivery in Delhi NCR</div>
+    <div class="strip-item"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg> Fully insured &amp; tested gear</div>
+    <div class="strip-item"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg> Backup units on standby</div>
+    <div class="strip-item"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg> Operators available on request</div>
+  </div>
+</div>
+
+<!-- CATEGORIES -->
+<section id="gear">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-eyebrow">What you can rent</div>
+      <h2>Every piece of kit for a perfect shoot</h2>
+      <p>From flagship cinema bodies to the smallest accessory — pick a category or ask us for a full package.</p>
+    </div>
+    <div class="cats">
+      <a class="cat" href="#quote">
+        <div class="ph"><img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=500&q=70" alt="Cinema & mirrorless cameras" loading="lazy" onerror="this.classList.add('failed')"><div class="ph-fb"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17 10.5V7c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1v10c0 .55.45 1 1 1h12c.55 0 1-.45 1-1v-3.5l4 4v-11l-4 4z"/></svg><span>Cameras</span></div></div>
+        <div class="body"><h3>Cinema &amp; Cameras</h3><p>Sony, RED, Blackmagic, Canon, DSLR &amp; mirrorless bodies.</p></div>
+      </a>
+      <a class="cat" href="#quote">
+        <div class="ph"><img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=500&q=70" alt="Lenses" loading="lazy" onerror="this.classList.add('failed')"><div class="ph-fb"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm0 16a6 6 0 110-12 6 6 0 010 12zm0-9a3 3 0 100 6 3 3 0 000-6z"/></svg><span>Lenses</span></div></div>
+        <div class="body"><h3>Lenses &amp; Optics</h3><p>Primes, zooms, cine glass &amp; specialty lenses for every mount.</p></div>
+      </a>
+      <a class="cat" href="#quote">
+        <div class="ph"><img src="https://images.unsplash.com/photo-1606986628253-05620e9b7f76?auto=format&fit=crop&w=500&q=70" alt="Lighting" loading="lazy" onerror="this.classList.add('failed')"><div class="ph-fb"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 21c0 .55.45 1 1 1h4c.55 0 1-.45 1-1v-1H9v1zm3-19C8.14 2 5 5.14 5 9c0 2.38 1.19 4.47 3 5.74V17c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-2.26c1.81-1.27 3-3.36 3-5.74 0-3.86-3.14-7-7-7z"/></svg><span>Lighting</span></div></div>
+        <div class="body"><h3>Lighting &amp; Grip</h3><p>LED panels, softboxes, HMIs, stands, C-stands &amp; rigging.</p></div>
+      </a>
+      <a class="cat" href="#quote">
+        <div class="ph"><img src="https://images.unsplash.com/photo-1598899134739-24c46f58b8c0?auto=format&fit=crop&w=500&q=70" alt="Audio equipment" loading="lazy" onerror="this.classList.add('failed')"><div class="ph-fb"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 14c1.66 0 3-1.34 3-3V5c0-1.66-1.34-3-3-3S9 3.34 9 5v6c0 1.66 1.34 3 3 3zm5-3c0 2.76-2.24 5-5 5s-5-2.24-5-5H5c0 3.53 2.61 6.43 6 6.92V21h2v-3.08c3.39-.49 6-3.39 6-6.92h-2z"/></svg><span>Audio</span></div></div>
+        <div class="body"><h3>Audio &amp; Sound</h3><p>Lav &amp; shotgun mics, recorders, mixers, wireless &amp; PA.</p></div>
+      </a>
+      <a class="cat" href="#quote">
+        <div class="ph"><img src="https://images.unsplash.com/photo-1533928298208-27ff66555d8d?auto=format&fit=crop&w=500&q=70" alt="Tripods and support" loading="lazy" onerror="this.classList.add('failed')"><div class="ph-fb"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13 4h-2v6H5l7 10 7-10h-6z"/></svg><span>Support</span></div></div>
+        <div class="body"><h3>Tripods &amp; Support</h3><p>Fluid heads, tripods, sliders, jibs &amp; heavy-duty stands.</p></div>
+      </a>
+      <a class="cat" href="#quote">
+        <div class="ph"><img src="https://images.unsplash.com/photo-1520869562399-e772f042f422?auto=format&fit=crop&w=500&q=70" alt="Gimbals and stabilizers" loading="lazy" onerror="this.classList.add('failed')"><div class="ph-fb"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm0 15a5 5 0 110-10 5 5 0 010 10z"/></svg><span>Gimbals</span></div></div>
+        <div class="body"><h3>Gimbals &amp; Movement</h3><p>Ronin &amp; handheld gimbals, sliders, dollies &amp; motion gear.</p></div>
+      </a>
+      <a class="cat" href="#quote">
+        <div class="ph"><img src="https://images.unsplash.com/photo-1473968512647-3e447244af8f?auto=format&fit=crop&w=500&q=70" alt="Drones" loading="lazy" onerror="this.classList.add('failed')"><div class="ph-fb"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 11h-4.17l3.24-3.24-1.41-1.41L15 11h-2V9l3.66-4.66-1.41-1.41L12 6.17 8.76 2.93 7.34 4.34 11 9v2H9L4.34 5.34 2.93 6.76 6.17 10H2v2h4.17l-3.24 3.24 1.41 1.41L9 13h2v2l-3.66 4.66 1.41 1.41L12 17.83l3.24 3.24 1.42-1.41L13 15v-2h2l4.66 4.66 1.41-1.42L17.83 13H22z"/></svg><span>Drones</span></div></div>
+        <div class="body"><h3>Drones &amp; Aerial</h3><p>4K aerial drones with certified pilots for cinematic shots.</p></div>
+      </a>
+      <a class="cat" href="#quote">
+        <div class="ph"><img src="https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&w=500&q=70" alt="Monitors and accessories" loading="lazy" onerror="this.classList.add('failed')"><div class="ph-fb"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 3H4c-1.1 0-2 .9-2 2v11c0 1.1.9 2 2 2h5l-1 1v2h8v-2l-1-1h5c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 13H4V5h16v11z"/></svg><span>Monitors</span></div></div>
+        <div class="body"><h3>Monitors &amp; More</h3><p>On-camera monitors, batteries, cards, cages &amp; accessories.</p></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURED GEAR GALLERY -->
+<section style="background:var(--bg-soft)">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-eyebrow">In our rental fleet</div>
+      <h2>Studio-grade gear, shoot-ready</h2>
+      <p>Meticulously maintained, tested before every dispatch and backed by spare units.</p>
+    </div>
+    <div class="gears">
+      <div class="gear">
+        <div class="ph"><img src="https://images.unsplash.com/photo-1502920917128-1aa500764cbd?auto=format&fit=crop&w=600&q=70" alt="Professional cinema camera" loading="lazy" onerror="this.classList.add('failed')"><div class="ph-fb"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17 10.5V7c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1v10c0 .55.45 1 1 1h12c.55 0 1-.45 1-1v-3.5l4 4v-11l-4 4z"/></svg><span>Cinema Camera</span></div></div>
+        <span class="tag">Cinema</span>
+        <div class="cap"><h4>Pro Cinema Bodies</h4><p>Sony FX / RED / Blackmagic — 4K–8K, log &amp; RAW ready.</p></div>
+      </div>
+      <div class="gear">
+        <div class="ph"><img src="https://images.unsplash.com/photo-1495707902641-75cac588d2e9?auto=format&fit=crop&w=600&q=70" alt="Mirrorless camera kit" loading="lazy" onerror="this.classList.add('failed')"><div class="ph-fb"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17 10.5V7c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1v10c0 .55.45 1 1 1h12c.55 0 1-.45 1-1v-3.5l4 4v-11l-4 4z"/></svg><span>Mirrorless Kit</span></div></div>
+        <span class="tag">Popular</span>
+        <div class="cap"><h4>DSLR &amp; Mirrorless</h4><p>Sony A7 series, Canon &amp; Nikon with kit &amp; prime lenses.</p></div>
+      </div>
+      <div class="gear">
+        <div class="ph"><img src="https://images.unsplash.com/photo-1617005082133-548c4dd27f35?auto=format&fit=crop&w=600&q=70" alt="Prime lens set" loading="lazy" onerror="this.classList.add('failed')"><div class="ph-fb"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm0 16a6 6 0 110-12 6 6 0 010 12zm0-9a3 3 0 100 6 3 3 0 000-6z"/></svg><span>Lens Sets</span></div></div>
+        <span class="tag">Glass</span>
+        <div class="cap"><h4>Prime &amp; Cine Lenses</h4><p>Fast primes, cine glass &amp; zooms — E, RF, EF &amp; PL mounts.</p></div>
+      </div>
+      <div class="gear">
+        <div class="ph"><img src="https://images.unsplash.com/photo-1533229414681-2eb00bb8de1c?auto=format&fit=crop&w=600&q=70" alt="LED lighting panel" loading="lazy" onerror="this.classList.add('failed')"><div class="ph-fb"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 21c0 .55.45 1 1 1h4c.55 0 1-.45 1-1v-1H9v1zm3-19C8.14 2 5 5.14 5 9c0 2.38 1.19 4.47 3 5.74V17c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-2.26c1.81-1.27 3-3.36 3-5.74 0-3.86-3.14-7-7-7z"/></svg><span>LED Lighting</span></div></div>
+        <span class="tag">Lighting</span>
+        <div class="cap"><h4>LED, HMI &amp; Softbox</h4><p>Bi-colour LED panels, HMIs, softboxes &amp; full grip support.</p></div>
+      </div>
+      <div class="gear">
+        <div class="ph"><img src="https://images.unsplash.com/photo-1590602847861-f357a9332bbc?auto=format&fit=crop&w=600&q=70" alt="Gimbal stabilizer" loading="lazy" onerror="this.classList.add('failed')"><div class="ph-fb"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm0 15a5 5 0 110-10 5 5 0 010 10z"/></svg><span>Gimbals</span></div></div>
+        <span class="tag">Motion</span>
+        <div class="cap"><h4>Gimbals &amp; Sliders</h4><p>DJI Ronin, handheld gimbals, sliders &amp; dollies for smooth moves.</p></div>
+      </div>
+      <div class="gear">
+        <div class="ph"><img src="https://images.unsplash.com/photo-1508614589041-895b88991e3e?auto=format&fit=crop&w=600&q=70" alt="Audio recording gear" loading="lazy" onerror="this.classList.add('failed')"><div class="ph-fb"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 14c1.66 0 3-1.34 3-3V5c0-1.66-1.34-3-3-3S9 3.34 9 5v6c0 1.66 1.34 3 3 3zm5-3c0 2.76-2.24 5-5 5s-5-2.24-5-5H5c0 3.53 2.61 6.43 6 6.92V21h2v-3.08c3.39-.49 6-3.39 6-6.92h-2z"/></svg><span>Audio Gear</span></div></div>
+        <span class="tag">Sound</span>
+        <div class="cap"><h4>Pro Audio Kits</h4><p>Wireless lavs, shotgun mics, field recorders &amp; mixers.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section class="why" id="why">
+  <div class="wrap why-grid">
+    <div>
+      <div class="sec-eyebrow">Why Neelam Films</div>
+      <h2>Delhi's most trusted rental partner</h2>
+      <div class="why-list">
+        <div class="li"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-3z"/></svg><div><b>Tested before every dispatch</b><p>Every camera, lens &amp; light is checked and cleaned so it works flawlessly on set.</p></div></div>
+        <div class="li"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg><div><b>Backup units, zero downtime</b><p>Spare bodies &amp; batteries on standby — a shoot never stops because of gear.</p></div></div>
+        <div class="li"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 8h-3V4H3c-1.1 0-2 .9-2 2v11h2a3 3 0 006 0h6a3 3 0 006 0h2v-5l-3-4z"/></svg><div><b>Delivery &amp; pickup in Delhi NCR</b><p>Same-day delivery across Delhi NCR — gear reaches you, not the other way round.</p></div></div>
+        <div class="li"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg><div><b>Crew &amp; operators on request</b><p>Need a camera operator, gaffer or sound person? We can add trained crew.</p></div></div>
+      </div>
+    </div>
+    <div class="why-stats">
+      <div class="st"><div class="n">30+</div><div class="l">Years serving filmmakers &amp; brands</div></div>
+      <div class="st"><div class="n">500+</div><div class="l">Gear items in the rental fleet</div></div>
+      <div class="st"><div class="n">1000+</div><div class="l">Shoots &amp; events equipped</div></div>
+      <div class="st"><div class="n">24/7</div><div class="l">Support during your rental</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section id="how">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-eyebrow">Simple &amp; fast</div>
+      <h2>Rent in 4 easy steps</h2>
+      <p>Tell us what you need — we handle the rest so you can focus on the shoot.</p>
+    </div>
+    <div class="steps-grid">
+      <div class="step"><div class="n">1</div><h4>Share your list</h4><p>Send the gear &amp; dates you need through the form or WhatsApp.</p></div>
+      <div class="step"><div class="n">2</div><h4>Get a quick quote</h4><p>We confirm availability and share the best rental rate — fast.</p></div>
+      <div class="step"><div class="n">3</div><h4>We deliver</h4><p>Tested, cleaned gear reaches your location on time, ready to roll.</p></div>
+      <div class="step"><div class="n">4</div><h4>Shoot &amp; return</h4><p>Create freely with backup on standby; we handle easy pickup.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- QUOTE / FORM -->
+<section id="quote" style="background:var(--bg-soft)">
+  <div class="wrap quote-wrap">
+    <div class="quote-left">
+      <div class="sec-eyebrow">Get a rental quote</div>
+      <h2>Tell us what you need</h2>
+      <p>Share your gear list and shoot dates — we'll check availability and reply with the best rate, usually within the hour.</p>
+      <div class="quote-points">
+        <div class="qp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg> No fixed packages — pay only for what you need</div>
+        <div class="qp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg> Best rates for multi-day &amp; full-kit rentals</div>
+        <div class="qp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg> Delivery, pickup &amp; support included</div>
+      </div>
+    </div>
+
+    <div class="form-card">
+      <div id="formView">
+        <h3>Request a Quote</h3>
+        <p class="fp">Fill this in — we'll get back with availability &amp; price.</p>
+        <div class="field"><label>Your Name</label><input id="f-name" type="text" placeholder="Full name" /></div>
+        <div class="field"><label>Phone / WhatsApp</label><input id="f-phone" type="tel" placeholder="+91 " /></div>
+        <div class="field">
+          <label>What do you need?</label>
+          <select id="f-type">
+            <option value="">Select gear type</option>
+            <option>Cinema Camera</option>
+            <option>DSLR / Mirrorless</option>
+            <option>Lenses</option>
+            <option>Lighting &amp; Grip</option>
+            <option>Audio / Sound</option>
+            <option>Gimbal / Stabilizer</option>
+            <option>Drone / Aerial</option>
+            <option>Full Kit / Package</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="field"><label>Shoot Dates &amp; City</label><input id="f-detail" type="text" placeholder="e.g. 15–17 Aug, Delhi" /></div>
+        <button class="btn btn-primary" id="submitBtn">Get My Quote</button>
+        <a class="btn btn-gold" id="wa-form" href="#" target="_blank" rel="noopener" style="margin-top:10px"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 00-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1012 2zm0 18a8 8 0 01-4.1-1.1l-.3-.2-2.9.8.8-2.8-.2-.3A8 8 0 1112 20zm4.4-6c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.5.1-.2.2-.6.8-.7.9-.1.1-.3.1-.5 0-.2-.1-1-.4-1.9-1.2-.7-.6-1.2-1.4-1.3-1.6-.1-.2 0-.3.1-.4l.4-.4c.1-.1.1-.2.2-.4 0-.1 0-.3-.1-.4l-.7-1.7c-.2-.4-.4-.4-.5-.4h-.5c-.1 0-.4.1-.6.3-.2.2-.8.8-.8 1.9s.8 2.2.9 2.4c.1.2 1.6 2.5 3.9 3.5.5.2 1 .4 1.3.5.5.2 1 .1 1.4.1.4-.1 1.4-.6 1.6-1.1.2-.5.2-1 .1-1.1z"/></svg> Or chat on WhatsApp</a>
+        <p class="form-note">🔒 We only use your details to send a quote. No spam.</p>
+      </div>
+      <div class="form-success" id="successView">
+        <div class="ok"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></div>
+        <h4>Request received!</h4>
+        <p>Thanks — our team will check availability and get back to you shortly with the best rate.</p>
+        <a class="btn btn-gold" id="wa-success" href="#" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 00-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1012 2z"/></svg> Message us on WhatsApp</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final">
+  <div class="wrap">
+    <div class="sec-eyebrow">Shoot starts soon?</div>
+    <h2>Lock your gear today</h2>
+    <p>Popular kit books out fast on shoot days. Reserve your camera, lenses &amp; lights now and shoot worry-free.</p>
+    <div class="btn-row">
+      <a class="btn btn-primary" href="#quote"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2z"/></svg> Get a Rental Quote</a>
+      <a class="btn btn-gold" id="wa-final" href="#" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 00-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1012 2z"/></svg> WhatsApp Us</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <img class="flogo" src="logo.png" alt="Neelam Films" />
+        <p class="fdesc">Delhi's trusted production house &amp; equipment rental since 1995. Cameras, lenses, lighting, audio &amp; full film kits — shoot-ready, insured &amp; delivered.</p>
+      </div>
+      <div>
+        <h5>Rentals</h5>
+        <a href="#gear">Cinema &amp; Cameras</a>
+        <a href="#gear">Lenses &amp; Optics</a>
+        <a href="#gear">Lighting &amp; Grip</a>
+        <a href="#gear">Audio &amp; Drones</a>
+      </div>
+      <div>
+        <h5>Contact</h5>
+        <a href="tel:+919999672912">&#128222; +91 99996 72912</a>
+        <a id="wa-footer" href="#" target="_blank" rel="noopener">&#128172; WhatsApp Us</a>
+        <a href="https://www.google.com/maps/place/Neelam+Films/@28.6143019,77.2877825,17z" target="_blank" rel="noopener">&#128205; Mayur Vihar Phase 1, Delhi</a>
+      </div>
+    </div>
+    <div class="foot-bottom">© Neelam Films — Production &amp; Equipment Rental · Established 1995 · Delhi, India</div>
+  </div>
+</footer>
+
+<!-- STICKY MOBILE CTA -->
+<div class="sticky-cta">
+  <a class="btn btn-ghost" href="tel:+919999672912"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.18z"/></svg> Call</a>
+  <a class="btn btn-primary" href="#quote">Get a Quote</a>
+</div>
+
+<script>
+var WHATSAPP_NUMBER = "919999672912";
+var WA_MSG = "Hi Neelam Films 👋 I'd like to rent some camera / film equipment. Please share availability and a quote.";
+var SHEET_ENDPOINT = "https://script.google.com/macros/s/AKfycbyfg6fbi_k9mB1cOA6SgAWI1T-qHb8Fdw996LB8iFmVuGnhsuGPEg6aFS67qzOka6teuA/exec";
+
+function waLink(extra){ var m = WA_MSG + (extra ? ("\n\n"+extra) : ""); return "https://wa.me/"+WHATSAPP_NUMBER+"?text="+encodeURIComponent(m); }
+["wa-form","wa-final","wa-footer","wa-success"].forEach(function(id){var el=document.getElementById(id);if(el)el.href=waLink();});
+
+document.getElementById("submitBtn").addEventListener("click", async function(){
+  var name=document.getElementById("f-name").value.trim();
+  var phone=document.getElementById("f-phone").value.trim();
+  var type=document.getElementById("f-type").value;
+  var detail=document.getElementById("f-detail").value.trim();
+  if(!name || !phone){ alert("Please enter your name and phone number."); return; }
+
+  var payload={name:name,phone:phone,eventType:(type||"Equipment Rental"),eventDetail:detail,source:"Camera Rental Landing Page",timestamp:new Date().toISOString()};
+  if(SHEET_ENDPOINT){try{await fetch(SHEET_ENDPOINT,{method:"POST",mode:"no-cors",headers:{"Content-Type":"application/json"},body:JSON.stringify(payload)});}catch(e){}}
+
+  var extra = "Name: "+name+"\nPhone: "+phone+(type?("\nGear: "+type):"")+(detail?("\nDates/City: "+detail):"");
+  var ws=document.getElementById("wa-success"); if(ws) ws.href=waLink(extra);
+
+  document.getElementById("formView").style.display="none";
+  document.getElementById("successView").style.display="block";
+  if(typeof fbq==="function"){fbq('track','Lead',{content_name:'Camera Rental Lead'});}
+});
+</script>
+</body>
+</html>
