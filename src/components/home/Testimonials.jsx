@@ -52,12 +52,9 @@ export default function Testimonials() {
             </p>
 
             <div className="mt-10 flex items-center justify-center gap-4">
-              <img
-                src={t.avatar}
-                alt={t.name}
-                loading="lazy"
-                className="h-14 w-14 rounded-full border-2 border-gold-400/60 object-cover"
-              />
+              <div className="flex h-14 w-14 items-center justify-center rounded-full border-2 border-gold-400/60 bg-primary-700 font-display text-lg font-bold text-white">
+                {t.name.split(' ').slice(0, 2).map((w) => w[0]).join('').toUpperCase()}
+              </div>
               <div className="text-left">
                 <p className="font-display font-bold text-white">{t.name}</p>
                 <p className="text-sm text-slate-400">{t.role}</p>
