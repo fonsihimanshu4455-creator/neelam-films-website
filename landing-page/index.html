@@ -433,6 +433,10 @@ var WA_MSG = "Hi Neelam Films \ud83d\udc4b I would like to plan a live event. Pl
 var SHEET_ENDPOINT = "https://script.google.com/macros/s/AKfycbyfg6fbi_k9mB1cOA6SgAWI1T-qHb8Fdw996LB8iFmVuGnhsuGPEg6aFS67qzOka6teuA/exec";
 function waLink(extra){ var m = WA_MSG + (extra ? ("\n\n"+extra) : ""); return "https://wa.me/"+WHATSAPP_NUMBER+"?text="+encodeURIComponent(m); }
 ["wa-hero","wa-final","wa-footer","wa-sticky","wa-success"].forEach(function(id){var el=document.getElementById(id);if(el)el.href=waLink();});
+
+// Meta Pixel: fire "Contact" on WhatsApp & Call button clicks
+["wa-hero","wa-final","wa-footer","wa-sticky","wa-success"].forEach(function(id){var el=document.getElementById(id);if(el)el.addEventListener("click",function(){if(typeof fbq==="function")fbq("track","Contact",{content_name:"WhatsApp Click"});});});
+document.querySelectorAll('a[href^="tel:"]').forEach(function(el){el.addEventListener("click",function(){if(typeof fbq==="function")fbq("track","Contact",{content_name:"Call Click"});});});
 document.getElementById("submitBtn").addEventListener("click", async function(){
   var name=document.getElementById("f-name").value.trim();
   var phone=document.getElementById("f-phone").value.trim();
