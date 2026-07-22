@@ -5,6 +5,7 @@ import Footer from './Footer'
 import WhatsAppButton from './WhatsAppButton'
 import ScrollProgress from '../common/ScrollProgress'
 import MeshBackground from '../common/MeshBackground'
+import NeelamLoader from '../common/NeelamLoader'
 
 /**
  * Public site shell: scroll bar + grain + navbar + animated outlet + footer.
@@ -14,6 +15,7 @@ export default function Layout() {
 
   return (
     <div className="grain relative flex min-h-screen flex-col text-white">
+      <NeelamLoader />
       <MeshBackground />
       <ScrollProgress />
       <Navbar />
