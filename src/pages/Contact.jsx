@@ -6,20 +6,46 @@ import PageHero from '../components/common/PageHero'
 
 const INITIAL = { name: '', phone: '', email: '', service: '', message: '' }
 
+// Same Google Apps Script endpoint used by the landing pages → logs to the "Leads" sheet
+const SHEET_ENDPOINT = 'https://script.google.com/macros/s/AKfycbyfg6fbi_k9mB1cOA6SgAWI1T-qHb8Fdw996LB8iFmVuGnhsuGPEg6aFS67qzOka6teuA/exec'
+
 export default function Contact() {
   const { data } = useData()
   const { contact, services } = data
   const [form, setForm] = useState(INITIAL)
   const [sent, setSent] = useState(false)
+  const [sending, setSending] = useState(false)
 
   const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value })
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    console.log('Contact form submission:', form)
+    setSending(true)
+
+    const payload = {
+      name: form.name,
+      phone: form.phone,
+      eventType: form.service || 'General Enquiry',
+      eventDetail: `Email: ${form.email || '—'} | Message: ${form.message || '—'}`,
+      source: 'Website Contact Form',
+      timestamp: new Date().toISOString(),
+    }
+
+    try {
+      await fetch(SHEET_ENDPOINT, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      })
+    } catch {
+      // no-cors: we can't read the response; treat submission as sent
+    }
+
+    setSending(false)
     setSent(true)
     setForm(INITIAL)
-    setTimeout(() => setSent(false), 5000)
+    setTimeout(() => setSent(false), 6000)
   }
 
   return (
@@ -83,12 +109,22 @@ export default function Contact() {
 
               <motion.button
                 type="submit"
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                className="flex w-full items-center justify-center gap-2 rounded-full bg-gold-400 py-3.5 text-sm font-semibold text-ink-900 shadow-glow transition hover:bg-primary-600"
+                disabled={sending}
+                whileHover={{ scale: sending ? 1 : 1.02 }}
+                whileTap={{ scale: sending ? 1 : 0.98 }}
+                className="flex w-full items-center justify-center gap-2 rounded-full bg-gold-400 py-3.5 text-sm font-semibold text-ink-900 shadow-glow transition hover:bg-primary-600 disabled:cursor-not-allowed disabled:opacity-70"
               >
-                <Send size={18} />
-                Send message
+                {sending ? (
+                  <>
+                    <span className="h-4 w-4 animate-spin rounded-full border-2 border-ink-900/30 border-t-ink-900" />
+                    Sending…
+                  </>
+                ) : (
+                  <>
+                    <Send size={18} />
+                    Send message
+                  </>
+                )}
               </motion.button>
 
               {sent && (
