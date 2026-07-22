@@ -245,9 +245,9 @@
       "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80"
     ],
     "pricing": [
-      { "name": "Starter Site", "price": "₹15,000+", "unit": "project", "features": ["Up to 5 pages", "Mobile responsive", "Contact form", "Basic SEO"] },
-      { "name": "Business Pro", "price": "₹35,000+", "unit": "project", "features": ["Up to 12 pages", "CMS / admin panel", "Advanced SEO", "Analytics setup"] },
-      { "name": "E-commerce", "price": "₹60,000+", "unit": "project", "features": ["Online store", "Payment gateway", "Inventory & orders", "Launch support"] }
+      { "name": "Starter Site", "price": "₹35,000+", "unit": "project", "features": ["Up to 5 pages", "Mobile responsive", "Contact form", "Basic SEO"] },
+      { "name": "Business Pro", "price": "₹60,000+", "unit": "project", "features": ["Up to 12 pages", "CMS / admin panel", "Advanced SEO", "Analytics setup"] },
+      { "name": "E-commerce", "price": "₹80,000+", "unit": "project", "features": ["Online store", "Payment gateway", "Inventory & orders", "Launch support"] }
     ]
   },
   {
@@ -284,8 +284,8 @@
       "https://images.unsplash.com/photo-1481349518771-20055b2a7b24?w=800&q=80"
     ],
     "pricing": [
-      { "name": "MVP App", "price": "₹60,000+", "unit": "project", "features": ["Core features", "Single platform", "Basic backend", "Store launch"] },
-      { "name": "Business App", "price": "₹1,20,000+", "unit": "project", "features": ["Android + iOS", "Custom backend", "Admin panel", "3 months support"] },
+      { "name": "MVP App", "price": "₹80,000+", "unit": "project", "features": ["Core features", "Single platform", "Basic backend", "Store launch"] },
+      { "name": "Business App", "price": "₹1,50,000+", "unit": "project", "features": ["Android + iOS", "Custom backend", "Admin panel", "3 months support"] },
       { "name": "Enterprise", "price": "Custom", "unit": "quote", "features": ["Complex features", "Integrations", "Scalable infra", "Dedicated team"] }
     ]
   }

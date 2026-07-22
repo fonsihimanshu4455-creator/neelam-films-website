@@ -29,7 +29,7 @@ export default function EquipmentGrid() {
   const items = filter === 'All' ? equipment : equipment.filter((e) => e.category === filter)
 
   return (
-    <section className="border-y border-white/60 bg-cream-1005 px-5 py-24 backdrop-blur-md md:px-8 md:py-32">
+    <section className="border-y border-cream-300 bg-cream-100 px-5 py-24 md:px-8 md:py-32">
       <div className="mx-auto max-w-7xl">
         <div className="mb-12 flex justify-center text-center">
           <SectionHeader
@@ -63,9 +63,8 @@ export default function EquipmentGrid() {
                 key={e.id}
                 layout
                 initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: (i % 3) * 0.06 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, delay: Math.min(i, 8) * 0.04 }}
                 whileHover={{ y: -6 }}
                 className="group overflow-hidden rounded-3xl border border-cream-300 bg-cream-100 shadow-sm transition hover:border-gold-400/50 hover:shadow-soft"
               >

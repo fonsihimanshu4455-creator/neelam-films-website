@@ -1,6 +1,6 @@
 import { useState } from 'react'
-import { motion } from 'framer-motion'
-import { Check, Play, ArrowRight } from 'lucide-react'
+import { motion, AnimatePresence } from 'framer-motion'
+import { Check, Play, ArrowRight, ChevronDown } from 'lucide-react'
 import { useData } from '../context/DataContext'
 import PageHero from '../components/common/PageHero'
 import SectionHeader from '../components/common/SectionHeader'
@@ -12,12 +12,44 @@ import Reveal from '../components/common/Reveal'
 import EquipmentGrid from '../components/services/EquipmentGrid'
 
 /**
+ * FAQs for a service — uses service.faqs from services.json if present,
+ * otherwise falls back to a sensible, brand-appropriate default set.
+ */
+function getFaqs(service) {
+  if (service.faqs && service.faqs.length) return service.faqs
+  const name = service.title.toLowerCase()
+  return [
+    {
+      q: `How do I get a quote for ${name}?`,
+      a: `Just fill the contact form or WhatsApp us with your requirement, dates and budget. We usually reply the same day with availability and a clear, itemised quote.`,
+    },
+    {
+      q: 'Do you work across Delhi NCR and outside?',
+      a: 'Yes. We are based in Mayur Vihar, Delhi and regularly work across Delhi NCR. For projects outside NCR we travel too — just tell us the location and we will include it in the quote.',
+    },
+    {
+      q: 'How do payments and booking work?',
+      a: 'A booking is confirmed with an advance, and the balance is settled as per the agreed milestones. We share everything in writing before we start — no hidden charges.',
+    },
+    {
+      q: 'Are the prices fixed?',
+      a: 'The prices shown are indicative starting points. Your final quote depends on scope, duration and add-ons — contact us and we will tailor a package to your exact needs.',
+    },
+    {
+      q: 'Why Neelam Films?',
+      a: '30+ years in the industry, a trained in-house team, well-maintained gear with backups, and 500+ brands & events delivered. You get reliability and quality under one roof.',
+    },
+  ]
+}
+
+/**
  * Generic light service page driven by the service id (services.json).
  */
 export default function ServicePage({ serviceId }) {
   const { data } = useData()
   const service = data.services.find((s) => s.id === serviceId)
   const [videoOpen, setVideoOpen] = useState(false)
+  const [openFaq, setOpenFaq] = useState(0)
 
   if (!service) {
     return (
@@ -77,7 +109,7 @@ export default function ServicePage({ serviceId }) {
       {service.id === 'equipment-rental' && <EquipmentGrid />}
 
       {/* Our process */}
-      <section className="border-y border-white/60 bg-cream-1005 px-5 py-24 backdrop-blur-md md:px-8 md:py-32">
+      <section className="border-y border-cream-300 bg-cream-100 px-5 py-24 md:px-8 md:py-32">
         <div className="mx-auto max-w-7xl">
           <div className="mb-14 flex justify-center text-center">
             <SectionHeader
@@ -119,12 +151,13 @@ export default function ServicePage({ serviceId }) {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: (i % 3) * 0.08 }}
-                className="group aspect-square overflow-hidden rounded-2xl border border-cream-300"
+                className="group aspect-square overflow-hidden rounded-2xl border border-cream-300 bg-gradient-to-br from-primary-700 to-primary-600"
               >
                 <img
                   src={img}
                   alt={`${service.title} work ${i + 1}`}
                   loading="lazy"
+                  onError={(ev) => { ev.currentTarget.style.display = 'none' }}
                   className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
               </motion.div>
@@ -161,7 +194,7 @@ export default function ServicePage({ serviceId }) {
 
       {/* Pricing */}
       {service.pricing && service.pricing.length > 0 && (
-        <section className="border-t border-white/60 bg-cream-1005 px-5 py-24 backdrop-blur-md md:px-8 md:py-32">
+        <section className="border-t border-cream-300 bg-cream-100 px-5 py-24 md:px-8 md:py-32">
           <div className="mx-auto max-w-7xl">
             <div className="mb-14 flex justify-center text-center">
               <SectionHeader
@@ -206,6 +239,56 @@ export default function ServicePage({ serviceId }) {
           </div>
         </section>
       )}
+
+      {/* FAQ */}
+      <section className="px-5 py-24 md:px-8 md:py-32">
+        <div className="mx-auto max-w-3xl">
+          <div className="mb-14 flex justify-center text-center">
+            <SectionHeader
+              eyebrow="Good to know"
+              title="Frequently asked questions"
+              subtitle="Quick answers about how we work. Still unsure? Just reach out."
+            />
+          </div>
+          <div className="space-y-3">
+            {getFaqs(service).map((f, i) => {
+              const isOpen = openFaq === i
+              return (
+                <div
+                  key={i}
+                  className={`overflow-hidden rounded-2xl border transition ${
+                    isOpen ? 'border-gold-400/60 bg-cream-100' : 'border-cream-300 bg-cream-100'
+                  }`}
+                >
+                  <button
+                    onClick={() => setOpenFaq(isOpen ? -1 : i)}
+                    className="flex w-full items-center justify-between gap-4 px-6 py-5 text-left"
+                  >
+                    <span className="font-heading text-base font-semibold text-primary-700">{f.q}</span>
+                    <ChevronDown
+                      size={20}
+                      className={`shrink-0 text-gold-400 transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`}
+                    />
+                  </button>
+                  <AnimatePresence initial={false}>
+                    {isOpen && (
+                      <motion.div
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: 'auto', opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.3, ease: 'easeInOut' }}
+                        className="overflow-hidden"
+                      >
+                        <p className="px-6 pb-5 text-sm leading-relaxed text-ink-700">{f.a}</p>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+              )
+            })}
+          </div>
+        </div>
+      </section>
 
       <CTASection title={`Ready to start your ${service.title.toLowerCase()} project?`} />
 
