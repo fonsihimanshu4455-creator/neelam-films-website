@@ -1,7 +1,7 @@
 import useEditor from '../../components/admin/useEditor'
 import { EditorHeader, TextField, ImageField, Card, AddButton } from '../../components/admin/ui'
 
-const CATEGORIES = ['Camera', 'Light', 'Audio', 'Studio']
+const CATEGORIES = ['Camera', 'Lens', 'Light', 'Audio', 'Stand', 'Tripod', 'Drone', 'Live Production', 'Studio']
 
 export default function EquipmentEditor() {
   const { draft, setDraft, save, reset, saved } = useEditor('equipment')

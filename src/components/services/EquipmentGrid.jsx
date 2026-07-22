@@ -1,12 +1,22 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import { Camera, Lightbulb, Mic, Building2 } from 'lucide-react'
+import { Camera, Aperture, Lightbulb, Mic, MoveVertical, GitCommitVertical, Plane, SlidersHorizontal, Building2 } from 'lucide-react'
 import { useData } from '../../context/DataContext'
 import SectionHeader from '../common/SectionHeader'
 import Button from '../common/Button'
 
-const CATEGORY_ICONS = { Camera, Light: Lightbulb, Audio: Mic, Studio: Building2 }
-const FILTERS = ['All', 'Camera', 'Light', 'Audio', 'Studio']
+const CATEGORY_ICONS = {
+  Camera,
+  Lens: Aperture,
+  Light: Lightbulb,
+  Audio: Mic,
+  Stand: MoveVertical,
+  Tripod: GitCommitVertical,
+  Drone: Plane,
+  'Live Production': SlidersHorizontal,
+  Studio: Building2,
+}
+const FILTERS = ['All', 'Camera', 'Lens', 'Light', 'Audio', 'Stand', 'Tripod', 'Drone', 'Live Production', 'Studio']
 
 /**
  * Filterable equipment rental cards with daily/hourly rates (light theme).
@@ -59,14 +69,18 @@ export default function EquipmentGrid() {
                 whileHover={{ y: -6 }}
                 className="group overflow-hidden rounded-3xl border border-cream-300 bg-cream-100 shadow-sm transition hover:border-gold-400/50 hover:shadow-soft"
               >
-                <div className="relative h-44 overflow-hidden">
+                <div className="relative h-44 overflow-hidden bg-gradient-to-br from-primary-700 to-primary-600">
+                  <div className="absolute inset-0 flex items-center justify-center text-gold-300">
+                    <CatIcon size={40} strokeWidth={1.5} />
+                  </div>
                   <img
                     src={e.image}
                     alt={e.name}
                     loading="lazy"
-                    className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    onError={(ev) => { ev.currentTarget.style.display = 'none' }}
+                    className="relative z-[1] h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
                   />
-                  <span className="absolute left-3 top-3 flex items-center gap-1 rounded-full bg-white/90 px-3 py-1 text-xs font-semibold text-gold-400 backdrop-blur">
+                  <span className="absolute left-3 top-3 z-[2] flex items-center gap-1 rounded-full bg-white/90 px-3 py-1 text-xs font-semibold text-gold-400 backdrop-blur">
                     <CatIcon size={14} />
                     {e.category}
                   </span>
