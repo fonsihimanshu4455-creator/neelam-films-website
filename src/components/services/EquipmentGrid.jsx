@@ -1,9 +1,15 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import { Camera, Aperture, Lightbulb, Mic, MoveVertical, GitCommitVertical, Plane, SlidersHorizontal, Building2 } from 'lucide-react'
+import { Camera, Aperture, Lightbulb, Mic, MoveVertical, GitCommitVertical, Plane, SlidersHorizontal, Building2, MessageCircle } from 'lucide-react'
 import { useData } from '../../context/DataContext'
 import SectionHeader from '../common/SectionHeader'
-import Button from '../common/Button'
+
+// WhatsApp number for rental enquiries (+91 99996 72912)
+const WHATSAPP_NUMBER = '919999672912'
+const rentLink = (e) => {
+  const msg = `Hi Neelam Films 👋 I want to rent the *${e.name}* (${e.rate} / ${e.unit}). Please share availability & best price.`
+  return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`
+}
 
 const CATEGORY_ICONS = {
   Camera,
@@ -92,9 +98,15 @@ export default function EquipmentGrid() {
                       {e.rate}
                       <span className="text-sm font-medium text-ink-700"> / {e.unit}</span>
                     </span>
-                    <Button to="/contact" className="px-5 py-2 text-xs" magnetic={false}>
+                    <a
+                      href={rentLink(e)}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 rounded-full bg-[#25D366] px-4 py-2 text-xs font-semibold text-white shadow-sm transition hover:brightness-95"
+                    >
+                      <MessageCircle size={14} fill="currentColor" />
                       Rent now
-                    </Button>
+                    </a>
                   </div>
                 </div>
               </motion.div>
