@@ -96,13 +96,14 @@ export default function Contact() {
               </div>
 
               <div>
-                <label className="mb-1.5 block text-sm font-medium text-ink-900">Message</label>
+                <label className="mb-1.5 block text-sm font-medium text-ink-900">
+                  Message <span className="font-normal text-ink-700">(optional)</span>
+                </label>
                 <textarea
                   name="message"
                   rows={4}
                   value={form.message}
                   onChange={handleChange}
-                  required
                   placeholder="Tell us about your project..."
                   className="w-full rounded-xl border border-cream-300 bg-cream-100 px-4 py-3 text-sm text-ink-900 placeholder-slate-400 outline-none transition focus:border-gold-400 focus:ring-2 focus:ring-gold-400/20"
                 />
