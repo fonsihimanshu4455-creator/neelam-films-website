@@ -1,33 +1,68 @@
 /**
- * Neelam Films — Live Event Landing Page → Google Sheet
+ * Neelam Films — Lead capture → Google Sheet
  * ------------------------------------------------------
- * This Apps Script receives each form submission from /live-events
- * and appends a new row to the bound Google Sheet.
+ * Receives form submissions from ALL sources (live-event landing page,
+ * camera-rental landing page and the main website contact form) and writes
+ * each one into the bound Google Sheet.
  *
- * SETUP (see ../GOOGLE-SHEET-SETUP.md for the full walkthrough):
- *   1. Create a Google Sheet.
- *   2. Extensions → Apps Script.  Paste this whole file.
- *   3. Deploy → New deployment → type "Web app".
- *        - Execute as: Me
- *        - Who has access: Anyone
- *   4. Copy the Web-app URL (ends with /exec).
- *   5. Paste it into  public/live-events.html  →  var SHEET_ENDPOINT = "…";
+ * This version writes by COLUMN NAME (not position), so:
+ *   - Email & Message get their own columns.
+ *   - Any missing column is created automatically.
+ *   - Your manually-added columns (e.g. "Status") are never disturbed.
+ *   - Existing rows are left exactly as they are.
+ *
+ * SETUP / UPDATE:
+ *   1. Open your Google Sheet → Extensions → Apps Script.
+ *   2. Replace everything with this file → Save.
+ *   3. Deploy → Manage deployments → (edit the existing Web app) →
+ *        Version: "New version" → Deploy.
+ *      The /exec URL stays the SAME — no website change needed.
  */
 
 var SHEET_NAME = 'Leads';
-var HEADERS = ['Timestamp', 'Name', 'Phone', 'Event Type', 'Event Detail', 'Source'];
+
+// Column headers in the order they should first appear.
+var COLUMNS = ['Timestamp', 'Name', 'Phone', 'Email', 'Event Type', 'Event Detail', 'Message', 'Source'];
+
+// Maps incoming JSON keys -> the sheet column header they belong under.
+var FIELD_TO_COLUMN = {
+  timestamp: 'Timestamp',
+  name: 'Name',
+  phone: 'Phone',
+  email: 'Email',
+  eventType: 'Event Type',
+  eventDetail: 'Event Detail',
+  message: 'Message',
+  source: 'Source'
+};
 
 function getSheet_() {
   var ss = SpreadsheetApp.getActiveSpreadsheet();
   var sheet = ss.getSheetByName(SHEET_NAME);
-  if (!sheet) {
-    sheet = ss.insertSheet(SHEET_NAME);
-  }
+  if (!sheet) sheet = ss.insertSheet(SHEET_NAME);
   if (sheet.getLastRow() === 0) {
-    sheet.appendRow(HEADERS);
-    sheet.getRange(1, 1, 1, HEADERS.length).setFontWeight('bold');
+    sheet.appendRow(COLUMNS);
+    sheet.getRange(1, 1, 1, COLUMNS.length).setFontWeight('bold');
   }
   return sheet;
+}
+
+/** Returns { header: columnIndex } for the current header row, adding any missing required columns. */
+function getHeaderMap_(sheet) {
+  var lastCol = Math.max(1, sheet.getLastColumn());
+  var headers = sheet.getRange(1, 1, 1, lastCol).getValues()[0];
+  var map = {};
+  headers.forEach(function (h, i) { if (h !== '' && h != null) map[String(h).trim()] = i + 1; });
+
+  // Add any required column that doesn't exist yet (appended at the end).
+  COLUMNS.forEach(function (col) {
+    if (!map[col]) {
+      var newIndex = sheet.getLastColumn() + 1;
+      sheet.getRange(1, newIndex).setValue(col).setFontWeight('bold');
+      map[col] = newIndex;
+    }
+  });
+  return map;
 }
 
 function doPost(e) {
@@ -41,14 +76,25 @@ function doPost(e) {
     }
 
     var sheet = getSheet_();
-    sheet.appendRow([
-      data.timestamp || new Date().toISOString(),
-      data.name || '',
-      data.phone || '',
-      data.eventType || '',
-      data.eventDetail || '',
-      data.source || 'Live Event Landing Page'
-    ]);
+    var headerMap = getHeaderMap_(sheet);
+
+    // Build a row array sized to the current number of columns.
+    var width = sheet.getLastColumn();
+    var row = new Array(width).fill('');
+
+    // Always stamp a timestamp.
+    if (!data.timestamp) data.timestamp = new Date().toISOString();
+    if (!data.source) data.source = 'Website';
+
+    Object.keys(FIELD_TO_COLUMN).forEach(function (field) {
+      var header = FIELD_TO_COLUMN[field];
+      var colIndex = headerMap[header];
+      if (colIndex && data[field] != null && data[field] !== '') {
+        row[colIndex - 1] = data[field];
+      }
+    });
+
+    sheet.appendRow(row);
 
     return ContentService
       .createTextOutput(JSON.stringify({ ok: true }))
