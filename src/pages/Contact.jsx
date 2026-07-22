@@ -25,8 +25,9 @@ export default function Contact() {
     const payload = {
       name: form.name,
       phone: form.phone,
+      email: form.email,
       eventType: form.service || 'General Enquiry',
-      eventDetail: `Email: ${form.email || '—'} | Message: ${form.message || '—'}`,
+      message: form.message,
       source: 'Website Contact Form',
       timestamp: new Date().toISOString(),
     }
