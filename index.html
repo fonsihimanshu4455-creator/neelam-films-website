@@ -39,8 +39,32 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Instant branded loading screen (shows on every refresh, before JS loads) -->
+    <style>
+      #app-loader{position:fixed;inset:0;z-index:99999;display:flex;align-items:center;justify-content:center;
+        background:radial-gradient(60% 60% at 50% 40%,#ffffff 0%,#fbf8f4 100%);
+        transition:opacity .55s ease,visibility .55s ease}
+      #app-loader.hide{opacity:0;visibility:hidden}
+      #app-loader .al-inner{display:flex;flex-direction:column;align-items:center;gap:24px}
+      #app-loader .al-logo{height:96px;width:auto;display:block;animation:al-pulse 1.6s ease-in-out infinite;
+        filter:drop-shadow(0 8px 20px rgba(122,14,44,.18))}
+      #app-loader .al-ring{width:40px;height:40px;border-radius:50%;
+        border:3px solid #eae1d4;border-top-color:#7A0E2C;animation:al-spin .8s linear infinite}
+      #app-loader .al-text{font-family:'Sora',system-ui,sans-serif;font-size:11px;font-weight:700;
+        letter-spacing:.34em;text-transform:uppercase;color:#9C1C3E}
+      @keyframes al-spin{to{transform:rotate(360deg)}}
+      @keyframes al-pulse{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(.955);opacity:.82}}
+    </style>
   </head>
   <body>
+    <div id="app-loader">
+      <div class="al-inner">
+        <img src="/logo.png" alt="Neelam Films" class="al-logo" />
+        <div class="al-ring"></div>
+        <div class="al-text">Neelam Films</div>
+      </div>
+    </div>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
