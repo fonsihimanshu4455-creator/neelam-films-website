@@ -7,7 +7,8 @@ import SectionHeader from '../common/SectionHeader'
 // WhatsApp number for rental enquiries (+91 99996 72912)
 const WHATSAPP_NUMBER = '919999672912'
 const rentLink = (e) => {
-  const msg = `Hi Neelam Films 👋 I want to rent the *${e.name}* (${e.rate} / ${e.unit}). Please share availability & best price.`
+  const wave = '\u{1F44B}' // 👋 as an escape so it never breaks during build/encoding
+  const msg = `Hi Neelam Films ${wave} I want to rent the *${e.name}* (${e.rate} / ${e.unit}). Please share availability & best price.`
   return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`
 }
 
