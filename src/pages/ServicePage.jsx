@@ -84,7 +84,7 @@ export default function ServicePage({ serviceId }) {
             />
           </div>
           <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {service.offers.map((o, i) => (
+            {(service.offers || []).map((o, i) => (
               <motion.div
                 key={o.title}
                 initial={{ opacity: 0, y: 24 }}
@@ -119,7 +119,7 @@ export default function ServicePage({ serviceId }) {
             />
           </div>
           <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
-            {service.process.map((p, i) => (
+            {(service.process || []).map((p, i) => (
               <motion.div
                 key={p.step}
                 initial={{ opacity: 0, y: 24 }}
@@ -138,6 +138,7 @@ export default function ServicePage({ serviceId }) {
       </section>
 
       {/* Gallery */}
+      {service.gallery && service.gallery.length > 0 && (
       <section className="px-5 py-24 md:px-8 md:py-32">
         <div className="mx-auto max-w-7xl">
           <div className="mb-14 flex justify-center text-center">
@@ -165,8 +166,10 @@ export default function ServicePage({ serviceId }) {
           </div>
         </div>
       </section>
+      )}
 
       {/* Sample video */}
+      {service.gallery && service.gallery.length > 0 && (
       <section className="px-5 pb-24 md:px-8 md:pb-32">
         <div className="mx-auto max-w-5xl">
           <div className="mb-14 flex justify-center text-center">
@@ -175,12 +178,13 @@ export default function ServicePage({ serviceId }) {
           <Reveal variant="scale">
             <button
               onClick={() => setVideoOpen(true)}
-              className="group relative block aspect-video w-full overflow-hidden rounded-3xl border border-cream-300 shadow-soft"
+              className="group relative block aspect-video w-full overflow-hidden rounded-3xl border border-cream-300 bg-gradient-to-br from-primary-700 to-primary-600 shadow-soft"
             >
               <img
                 src={service.gallery[0]}
                 alt="Sample reel"
                 loading="lazy"
+                onError={(ev) => { ev.currentTarget.style.display = 'none' }}
                 className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-ink-900/30" />
@@ -191,6 +195,7 @@ export default function ServicePage({ serviceId }) {
           </Reveal>
         </div>
       </section>
+      )}
 
       {/* Pricing */}
       {service.pricing && service.pricing.length > 0 && (

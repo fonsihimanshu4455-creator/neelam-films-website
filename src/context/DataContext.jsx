@@ -26,6 +26,23 @@ const DEFAULTS = {
 
 const STORAGE_PREFIX = 'neelam_'
 
+// Bump this whenever the shape/content of the default JSON data changes.
+// On mismatch we drop any old cached overrides so stale data can never break
+// the UI (blank pages, missing fields, outdated pricing, etc.).
+const DATA_VERSION = '2026-07-03'
+
+function ensureVersion() {
+  try {
+    const stored = localStorage.getItem(STORAGE_PREFIX + 'version')
+    if (stored !== DATA_VERSION) {
+      Object.keys(DEFAULTS).forEach((key) => localStorage.removeItem(STORAGE_PREFIX + key))
+      localStorage.setItem(STORAGE_PREFIX + 'version', DATA_VERSION)
+    }
+  } catch {
+    // storage unavailable (private mode) — nothing to clear
+  }
+}
+
 /**
  * Reads a value from localStorage (override) or falls back to the JSON default.
  */
@@ -41,6 +58,7 @@ function loadKey(key) {
 
 export function DataProvider({ children }) {
   const [data, setData] = useState(() => {
+    ensureVersion()
     const initial = {}
     Object.keys(DEFAULTS).forEach((key) => {
       initial[key] = loadKey(key)

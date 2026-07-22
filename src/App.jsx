@@ -4,6 +4,7 @@ import { DataProvider } from './context/DataContext'
 import { AuthProvider } from './context/AuthContext'
 
 import ScrollToTop from './components/common/ScrollToTop'
+import ErrorBoundary from './components/common/ErrorBoundary'
 import Layout from './components/layout/Layout'
 import ProtectedRoute from './components/admin/ProtectedRoute'
 import AdminLayout from './components/admin/AdminLayout'
@@ -34,6 +35,7 @@ export default function App() {
       <AuthProvider>
         <BrowserRouter>
           <ScrollToTop />
+          <ErrorBoundary>
           <Routes>
             {/* Public site */}
             <Route element={<Layout />}>
@@ -74,6 +76,7 @@ export default function App() {
               <Route path="/admin/contact" element={<ContactEditor />} />
             </Route>
           </Routes>
+          </ErrorBoundary>
         </BrowserRouter>
       </AuthProvider>
     </DataProvider>
