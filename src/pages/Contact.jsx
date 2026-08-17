@@ -184,6 +184,17 @@ export default function Contact() {
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
               />
+              {contact.mapLink && (
+                <a
+                  href={contact.mapLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center gap-2 bg-primary-700 py-3.5 text-sm font-semibold text-white transition hover:bg-primary-600"
+                >
+                  <MapPin size={18} />
+                  Get Directions
+                </a>
+              )}
             </div>
           </motion.div>
         </div>
