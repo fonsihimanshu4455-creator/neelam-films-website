@@ -28,6 +28,7 @@ export default function ContactEditor() {
         <TextArea label="Address" value={draft.address} onChange={(v) => set('address', v)} />
         <TextField label="Working Hours" value={draft.hours} onChange={(v) => set('hours', v)} />
         <TextArea label="Google Maps Embed URL" value={draft.mapEmbed} onChange={(v) => set('mapEmbed', v)} rows={3} />
+        <TextArea label="Google Maps Directions Link (Get Directions button)" value={draft.mapLink} onChange={(v) => set('mapLink', v)} rows={3} />
       </div>
     </div>
   )
