@@ -4,6 +4,12 @@
   "outputDirectory": "dist",
   "framework": "vite",
   "cleanUrls": true,
+  "redirects": [
+    { "source": "/webmail", "destination": "https://webmail.neelamfilms.com", "permanent": false },
+    { "source": "/webmail/:path*", "destination": "https://webmail.neelamfilms.com", "permanent": false },
+    { "source": "/mail", "destination": "https://webmail.neelamfilms.com", "permanent": false },
+    { "source": "/cpanel", "destination": "https://cpanel.neelamfilms.com", "permanent": false }
+  ],
   "rewrites": [
     { "source": "/live-events", "destination": "/live-events.html" },
     { "source": "/camera-rental", "destination": "/camera-rental.html" },
