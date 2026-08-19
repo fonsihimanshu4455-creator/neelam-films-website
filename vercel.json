@@ -5,10 +5,10 @@
   "framework": "vite",
   "cleanUrls": true,
   "redirects": [
-    { "source": "/webmail", "destination": "https://webmail.neelamfilms.com", "permanent": false },
-    { "source": "/webmail/:path*", "destination": "https://webmail.neelamfilms.com", "permanent": false },
-    { "source": "/mail", "destination": "https://webmail.neelamfilms.com", "permanent": false },
-    { "source": "/cpanel", "destination": "https://cpanel.neelamfilms.com", "permanent": false }
+    { "source": "/webmail", "destination": "https://webmail.neelamfilms.com:2096", "permanent": false },
+    { "source": "/webmail/:path*", "destination": "https://webmail.neelamfilms.com:2096", "permanent": false },
+    { "source": "/mail", "destination": "https://webmail.neelamfilms.com:2096", "permanent": false },
+    { "source": "/cpanel", "destination": "https://cpanel.neelamfilms.com:2083", "permanent": false }
   ],
   "rewrites": [
     { "source": "/live-events", "destination": "/live-events.html" },
