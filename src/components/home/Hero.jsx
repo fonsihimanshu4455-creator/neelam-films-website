@@ -37,19 +37,6 @@ export default function Hero() {
       <div className="relative mx-auto grid max-w-7xl items-center gap-12 px-5 pb-20 pt-32 md:px-8 md:pt-40 lg:grid-cols-[1.05fr_0.95fr]">
         {/* Left */}
         <div>
-          <motion.div
-            initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}
-            className="mb-7 flex items-center gap-3.5"
-          >
-            <span className="h-10 w-[3px] rounded-full bg-gold-grad" />
-            <div className="leading-tight">
-              <p className="font-serif text-lg italic text-primary-700 sm:text-xl">Rolling since 1995</p>
-              <p className="mt-0.5 text-[10.5px] font-bold uppercase tracking-[0.3em] text-ink-700">
-                Production · Live Events · Delhi
-              </p>
-            </div>
-          </motion.div>
-
           <motion.h1
             initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.1 }}
             className="font-display text-[3.4rem] leading-[0.95] text-primary-700 sm:text-6xl lg:text-[5.5rem]"
@@ -83,6 +70,14 @@ export default function Hero() {
             initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.8, delay: 0.5 }}
             className="mt-12 flex flex-wrap items-center gap-x-8 gap-y-5 border-t border-cream-300 pt-8"
           >
+            <div className="flex items-center gap-3">
+              <span className="h-9 w-[3px] rounded-full bg-gold-grad" />
+              <div className="leading-tight">
+                <p className="font-display text-xl font-extrabold text-primary-700">Est. 1995</p>
+                <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-ink-700">Delhi · 30+ Years</p>
+              </div>
+            </div>
+            <div className="hidden h-10 w-px bg-cream-300 sm:block" />
             <div className="flex items-center gap-3">
               <div className="flex -space-x-3">
                 {['12', '32', '45', '8'].map((n) => (
