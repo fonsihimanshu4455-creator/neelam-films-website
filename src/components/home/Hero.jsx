@@ -39,10 +39,15 @@ export default function Hero() {
         <div>
           <motion.div
             initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}
-            className="mb-6 inline-flex items-center gap-3 rounded-full border border-cream-300 bg-white px-4 py-2 text-[11px] font-bold uppercase tracking-[0.25em] text-primary-700 shadow-soft"
+            className="mb-7 flex items-center gap-3.5"
           >
-            <span className="h-2 w-2 rounded-full bg-gold-400" />
-            Delhi's Production House · Since 1995
+            <span className="h-10 w-[3px] rounded-full bg-gold-grad" />
+            <div className="leading-tight">
+              <p className="font-serif text-lg italic text-primary-700 sm:text-xl">Rolling since 1995</p>
+              <p className="mt-0.5 text-[10.5px] font-bold uppercase tracking-[0.3em] text-ink-700">
+                Production · Live Events · Delhi
+              </p>
+            </div>
           </motion.div>
 
           <motion.h1
