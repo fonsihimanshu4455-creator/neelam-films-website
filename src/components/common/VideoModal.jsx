@@ -38,16 +38,16 @@ export default function VideoModal({ open, onClose, videoId, title }) {
           </button>
 
           <motion.div
-            initial={{ scale: 0.9, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            exit={{ scale: 0.9, opacity: 0 }}
-            transition={{ type: 'spring', damping: 25, stiffness: 300 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.25 }}
             onClick={(e) => e.stopPropagation()}
-            className="aspect-video w-full max-w-4xl overflow-hidden rounded-2xl shadow-2xl"
+            className="aspect-video w-full max-w-4xl overflow-hidden rounded-2xl bg-black shadow-2xl"
           >
             <iframe
               className="h-full w-full"
-              src={`https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`}
+              src={`https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0&playsinline=1`}
               title={title || 'Video player'}
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
