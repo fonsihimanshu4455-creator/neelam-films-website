@@ -1,6 +1,7 @@
 import { AnimatePresence, motion } from 'framer-motion'
 import { X } from 'lucide-react'
 import { useEffect } from 'react'
+import { createPortal } from 'react-dom'
 
 /**
  * Full-screen YouTube video modal.
@@ -19,7 +20,9 @@ export default function VideoModal({ open, onClose, videoId, title }) {
     }
   }, [open, onClose])
 
-  return (
+  if (typeof document === 'undefined') return null
+
+  return createPortal(
     <AnimatePresence>
       {open && (
         <motion.div
@@ -55,6 +58,7 @@ export default function VideoModal({ open, onClose, videoId, title }) {
           </motion.div>
         </motion.div>
       )}
-    </AnimatePresence>
+    </AnimatePresence>,
+    document.body
   )
 }
