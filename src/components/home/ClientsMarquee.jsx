@@ -10,14 +10,14 @@ function ClientLogo({ c }) {
   const [failed, setFailed] = useState(false)
   const showImg = c.logo && !failed
   return (
-    <div className="group flex h-16 min-w-[10rem] shrink-0 items-center justify-center rounded-2xl border border-cream-300 bg-white px-7 transition hover:border-gold-400/50 hover:shadow-soft">
+    <div className="group flex h-16 min-w-[9rem] shrink-0 items-center justify-center rounded-2xl border border-cream-300 bg-white px-8 transition hover:border-gold-400/50 hover:shadow-soft">
       {showImg ? (
         <img
           src={c.logo}
           alt={c.name}
           loading="lazy"
           onError={() => setFailed(true)}
-          className="max-h-10 w-auto max-w-[7.5rem] object-contain opacity-90 transition duration-300 group-hover:opacity-100 group-hover:scale-105"
+          className="h-10 w-auto max-w-[10.5rem] object-contain opacity-90 transition duration-300 group-hover:opacity-100 group-hover:scale-105"
         />
       ) : (
         <span className="whitespace-nowrap text-center text-sm font-bold uppercase tracking-wide text-primary-700/70 transition group-hover:text-primary-700">
