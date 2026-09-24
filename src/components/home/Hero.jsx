@@ -110,13 +110,13 @@ export default function Hero() {
         >
           <div className="absolute -inset-3 -z-10 rounded-[2rem] bg-gold-grad opacity-20 blur-2xl" />
           <button onClick={() => setOpen(true)} className="group relative block aspect-[4/5] w-full overflow-hidden rounded-[1.75rem] border border-cream-300 bg-ink-900 shadow-soft">
-            <img
-              src={`https://img.youtube.com/vi/${vid}/maxresdefault.jpg`}
-              onError={(e) => { e.currentTarget.src = `https://img.youtube.com/vi/${vid}/hqdefault.jpg` }}
-              alt="Neelam Films showreel"
-              className="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-105"
+            <iframe
+              title="Showreel preview" tabIndex={-1}
+              className="pointer-events-none absolute left-1/2 top-1/2 h-[135%] w-[135%] -translate-x-1/2 -translate-y-1/2"
+              src={`https://www.youtube.com/embed/${vid}?autoplay=1&mute=1&loop=1&controls=0&showinfo=0&modestbranding=1&rel=0&playsinline=1&playlist=${vid}`}
+              allow="autoplay; encrypted-media" frameBorder="0"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-primary-950/80 via-primary-950/10 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-primary-950/80 via-primary-950/5 to-transparent" />
             <span className="absolute left-1/2 top-1/2 flex h-20 w-20 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-gold-grad text-ink-900 shadow-glow transition group-hover:scale-110">
               <Play size={30} fill="currentColor" className="ml-1" />
             </span>
