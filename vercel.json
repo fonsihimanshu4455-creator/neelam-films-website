@@ -3,7 +3,6 @@
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
   "framework": "vite",
-  "cleanUrls": true,
   "redirects": [
     { "source": "/webmail", "destination": "https://webmail.neelamfilms.com:2096", "permanent": false },
     { "source": "/webmail/:path*", "destination": "https://webmail.neelamfilms.com:2096", "permanent": false },
