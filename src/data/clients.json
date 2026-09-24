@@ -1,16 +1,16 @@
 [
-  { "name": "HP", "logo": "https://logo.clearbit.com/hp.com" },
+  { "name": "HP", "logo": "/logos/hp.svg" },
   { "name": "Indian Oil", "logo": "https://logo.clearbit.com/iocl.com" },
-  { "name": "DHL", "logo": "https://logo.clearbit.com/dhl.com" },
-  { "name": "Audi", "logo": "https://logo.clearbit.com/audi.com" },
-  { "name": "Nokia", "logo": "https://logo.clearbit.com/nokia.com" },
+  { "name": "DHL", "logo": "/logos/dhl.svg" },
+  { "name": "Audi", "logo": "/logos/audi.svg" },
+  { "name": "Nokia", "logo": "/logos/nokia.svg" },
   { "name": "Bharat Petroleum", "logo": "https://logo.clearbit.com/bharatpetroleum.in" },
   { "name": "Colgate", "logo": "https://logo.clearbit.com/colgate.com" },
-  { "name": "FoodPanda", "logo": "https://logo.clearbit.com/foodpanda.com" },
+  { "name": "FoodPanda", "logo": "/logos/foodpanda.svg" },
   { "name": "Godrej", "logo": "https://logo.clearbit.com/godrej.com" },
   { "name": "JK Tyre", "logo": "https://logo.clearbit.com/jktyre.com" },
   { "name": "Treebo", "logo": "https://logo.clearbit.com/treebo.com" },
   { "name": "NHPC", "logo": "https://logo.clearbit.com/nhpcindia.com" },
   { "name": "Sangeet Natak Academy", "logo": "" },
-  { "name": "YouTube / Google", "logo": "https://logo.clearbit.com/youtube.com" }
+  { "name": "YouTube / Google", "logo": "/logos/youtube.svg" }
 ]
