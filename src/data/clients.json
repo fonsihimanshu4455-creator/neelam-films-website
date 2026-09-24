@@ -7,10 +7,10 @@
   { "name": "Bharat Petroleum", "logo": "/logos/bharat-petroleum.webp" },
   { "name": "Colgate", "logo": "/logos/colgate.png" },
   { "name": "FoodPanda", "logo": "/logos/foodpanda.svg" },
-  { "name": "Godrej", "logo": "https://logo.clearbit.com/godrej.com" },
+  { "name": "Godrej", "logo": "/logos/godrej.webp" },
   { "name": "JK Tyre", "logo": "/logos/jk-tyre.png" },
-  { "name": "Treebo", "logo": "https://logo.clearbit.com/treebo.com" },
-  { "name": "NHPC", "logo": "https://logo.clearbit.com/nhpcindia.com" },
+  { "name": "Treebo", "logo": "/logos/treebo.webp" },
+  { "name": "NHPC", "logo": "/logos/nhpc.png" },
   { "name": "Sangeet Natak Academy", "logo": "/logos/sangeet-natak.png" },
   { "name": "YouTube / Google", "logo": "/logos/youtube.svg" }
 ]
