@@ -17,7 +17,7 @@ function ClientLogo({ c }) {
           alt={c.name}
           loading="lazy"
           onError={() => setFailed(true)}
-          className="max-h-9 w-auto max-w-[8rem] object-contain opacity-80 grayscale transition duration-300 group-hover:opacity-100 group-hover:grayscale-0"
+          className="max-h-10 w-auto max-w-[7.5rem] object-contain opacity-90 transition duration-300 group-hover:opacity-100 group-hover:scale-105"
         />
       ) : (
         <span className="whitespace-nowrap text-center text-sm font-bold uppercase tracking-wide text-primary-700/70 transition group-hover:text-primary-700">
