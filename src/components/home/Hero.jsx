@@ -80,8 +80,18 @@ export default function Hero() {
             <div className="hidden h-10 w-px bg-cream-300 sm:block" />
             <div className="flex items-center gap-3">
               <div className="flex -space-x-3">
-                {['12', '32', '45', '8'].map((n) => (
-                  <img key={n} src={`https://i.pravatar.cc/80?img=${n}`} alt="" className="h-10 w-10 rounded-full border-2 border-white object-cover shadow-soft" />
+                {[
+                  { i: 'RS', c: 'from-primary-600 to-primary-800' },
+                  { i: 'AV', c: 'from-gold-500 to-gold-700' },
+                  { i: 'PK', c: 'from-primary-500 to-primary-700' },
+                  { i: 'SM', c: 'from-gold-400 to-gold-600' },
+                ].map((a) => (
+                  <span
+                    key={a.i}
+                    className={`flex h-10 w-10 items-center justify-center rounded-full border-2 border-white bg-gradient-to-br ${a.c} text-[11px] font-bold text-white shadow-soft`}
+                  >
+                    {a.i}
+                  </span>
                 ))}
               </div>
               <div>
