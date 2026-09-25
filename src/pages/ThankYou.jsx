@@ -1,16 +1,28 @@
 import { motion } from 'framer-motion'
+import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { CheckCircle2, ArrowRight, MessageCircle, Phone } from 'lucide-react'
 import { useData } from '../context/DataContext'
 
 /**
  * Post-submit "Thank you" page.
- * The contact form redirects here after a successful submission — this URL
- * (/thank-you) is what Google Ads tracks as a Contact / lead conversion.
+ * The contact form redirects here after a successful submission — this page
+ * fires the Google Ads conversion (Contact / lead) on load.
  */
 export default function ThankYou() {
   const { data } = useData()
   const { contact } = data
+
+  // Fire the Google Ads "Contact" conversion when this page loads
+  useEffect(() => {
+    if (typeof window !== 'undefined' && typeof window.gtag === 'function') {
+      window.gtag('event', 'conversion', {
+        send_to: 'AW-18234415584/CS9ECKCS5IQdEOCz7PZD',
+        value: 1.0,
+        currency: 'INR',
+      })
+    }
+  }, [])
 
   return (
     <section className="relative flex min-h-[80vh] items-center justify-center overflow-hidden px-5 py-24 md:px-8">
