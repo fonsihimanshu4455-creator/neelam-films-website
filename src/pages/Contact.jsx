@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { MapPin, Phone, Mail, Clock, MessageCircle, Send, CheckCircle2, Camera as Instagram } from 'lucide-react'
 import { useData } from '../context/DataContext'
@@ -12,6 +13,7 @@ const SHEET_ENDPOINT = 'https://script.google.com/macros/s/AKfycbyfg6fbi_k9mB1cO
 export default function Contact() {
   const { data } = useData()
   const { contact, services } = data
+  const navigate = useNavigate()
   const [form, setForm] = useState(INITIAL)
   const [sent, setSent] = useState(false)
   const [sending, setSending] = useState(false)
@@ -44,9 +46,9 @@ export default function Contact() {
     }
 
     setSending(false)
-    setSent(true)
     setForm(INITIAL)
-    setTimeout(() => setSent(false), 6000)
+    // Redirect to the thank-you page (this URL is tracked as a lead in Google Ads)
+    navigate('/thank-you')
   }
 
   return (

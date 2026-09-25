@@ -15,6 +15,7 @@ import About from './pages/About'
 import ServicePage from './pages/ServicePage'
 import Portfolio from './pages/Portfolio'
 import Contact from './pages/Contact'
+import ThankYou from './pages/ThankYou'
 import NotFound from './pages/NotFound'
 
 // Admin pages
@@ -51,6 +52,7 @@ export default function App() {
               <Route path="/services/app-development" element={<ServicePage serviceId="app-development" />} />
               <Route path="/portfolio" element={<Portfolio />} />
               <Route path="/contact" element={<Contact />} />
+              <Route path="/thank-you" element={<ThankYou />} />
               <Route path="*" element={<NotFound />} />
             </Route>
 
