@@ -15,8 +15,15 @@ const SocialIcon = ({ path, size = 16 }) => (
 )
 
 /**
- * Light editorial hero (white theme): burgundy Bebas headline, gold accents,
- * a framed showreel card, trust + social row.
+ * Cinematic full-bleed hero.
+ * The showreel plays muted/looping as a full-cover background (no black bars),
+ * a dark bottom gradient carries the headline, CTAs and trust row, and a
+ * central play button opens the full showreel with sound.
+ *
+ * NOTE: the background <iframe> must NOT sit inside any element with a CSS
+ * transform (framer-motion included) or Chromium renders it black (audio only).
+ * So the video + overlays are plain children of <section>; only the text block
+ * uses motion transforms.
  */
 export default function Hero() {
   const { data } = useData()
@@ -25,116 +32,149 @@ export default function Hero() {
   const vid = hero.videoId
   const [open, setOpen] = useState(false)
 
+  // 16:9 cover sizing — always fills the section edge-to-edge, cropping instead
+  // of letterboxing, regardless of the viewport aspect ratio.
+  const coverStyle = {
+    position: 'absolute',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
+    width: 'max(100vw, 177.78svh)',
+    height: 'max(56.25vw, 100svh)',
+    pointerEvents: 'none',
+  }
+
   return (
-    <section className="relative overflow-hidden bg-cream-soft">
-      {/* soft brand decor */}
-      <div className="pointer-events-none absolute inset-0" aria-hidden="true">
-        <div className="absolute -left-24 top-10 h-72 w-72 rounded-full bg-primary-700/5 blur-[110px]" />
-        <div className="absolute right-0 top-1/3 h-80 w-80 rounded-full bg-gold-400/10 blur-[120px]" />
-        <div className="pattern-dots absolute left-8 top-40 h-40 w-40 opacity-50" />
+    <section className="relative flex h-[100svh] min-h-[600px] w-full flex-col overflow-hidden bg-night-950">
+      {/* ---- Full-cover showreel (no transformed ancestor) ---- */}
+      <div className="absolute inset-0 overflow-hidden">
+        <iframe
+          title="Neelam Films showreel"
+          tabIndex={-1}
+          style={coverStyle}
+          src={`https://www.youtube.com/embed/${vid}?autoplay=1&mute=1&loop=1&controls=0&showinfo=0&modestbranding=1&rel=0&playsinline=1&disablekb=1&playlist=${vid}`}
+          allow="autoplay; encrypted-media"
+          frameBorder="0"
+        />
       </div>
 
-      <div className="relative mx-auto grid max-w-7xl items-center gap-12 px-5 pb-20 pt-32 md:px-8 md:pt-40 lg:grid-cols-[1.05fr_0.95fr]">
-        {/* Left */}
-        <div>
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.1 }}
-            className="font-display text-[3.4rem] leading-[0.95] text-primary-700 sm:text-6xl lg:text-[5.5rem]"
-          >
-            Stories that <span className="font-serif font-normal italic text-gradient">move</span><br />
-            <span className="text-ink-900">&amp; events</span> <span className="font-serif font-normal italic text-gradient">that&nbsp;matter</span>
-          </motion.h1>
+      {/* ---- Cinematic gradient shadows (for text legibility) ---- */}
+      <div className="pointer-events-none absolute inset-0" aria-hidden="true">
+        {/* bottom-up deep shadow where the text sits */}
+        <div className="absolute inset-x-0 bottom-0 h-[80%] bg-gradient-to-t from-night-950 via-night-950/70 to-transparent" />
+        {/* left-side wash so copy reads even over bright frames */}
+        <div className="absolute inset-0 bg-gradient-to-r from-night-950/75 via-night-950/25 to-transparent" />
+        {/* top vignette under the navbar */}
+        <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-night-950/70 to-transparent" />
+        {/* overall cinematic tint */}
+        <div className="absolute inset-0 bg-primary-950/15" />
+      </div>
 
-          <motion.p
-            initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.25 }}
-            className="mt-6 max-w-xl text-base leading-relaxed text-ink-700 md:text-lg"
-          >
-            {hero.subheadline}
-          </motion.p>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.35 }}
-            className="mt-9 flex flex-wrap items-center gap-4"
-          >
-            <Button to={hero.primaryCta.link}>{hero.primaryCta.label}<ArrowRight size={18} /></Button>
-            <button onClick={() => setOpen(true)} className="group inline-flex items-center gap-3 text-sm font-bold uppercase tracking-[0.12em] text-ink-900">
-              <span className="flex h-12 w-12 items-center justify-center rounded-full bg-gold-grad text-ink-900 shadow-glow transition group-hover:scale-110">
-                <Play size={16} fill="currentColor" className="ml-0.5" />
-              </span>
-              Watch Showreel
-            </button>
-          </motion.div>
-
-          {/* trust + social */}
-          <motion.div
-            initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.8, delay: 0.5 }}
-            className="mt-12 flex flex-wrap items-center gap-x-8 gap-y-5 border-t border-cream-300 pt-8"
-          >
-            <div className="flex items-center gap-3">
-              <span className="h-9 w-[3px] rounded-full bg-gold-grad" />
-              <div className="leading-tight">
-                <p className="font-display text-xl font-extrabold text-primary-700">Est. 1995</p>
-                <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-ink-700">Delhi · 30+ Years</p>
-              </div>
-            </div>
-            <div className="hidden h-10 w-px bg-cream-300 sm:block" />
-            <div className="flex items-center gap-3">
-              <div className="flex -space-x-3">
-                {[
-                  { i: 'RS', c: 'from-primary-600 to-primary-800' },
-                  { i: 'AV', c: 'from-gold-500 to-gold-700' },
-                  { i: 'PK', c: 'from-primary-500 to-primary-700' },
-                  { i: 'SM', c: 'from-gold-400 to-gold-600' },
-                ].map((a) => (
-                  <span
-                    key={a.i}
-                    className={`flex h-10 w-10 items-center justify-center rounded-full border-2 border-white bg-gradient-to-br ${a.c} text-[11px] font-bold text-white shadow-soft`}
-                  >
-                    {a.i}
-                  </span>
-                ))}
-              </div>
-              <div>
-                <div className="flex items-center gap-0.5 text-gold-400">
-                  {Array.from({ length: 5 }).map((_, i) => <Star key={i} size={13} fill="currentColor" />)}
-                </div>
-                <p className="mt-0.5 text-xs text-ink-700">Trusted by 500+ brands</p>
-              </div>
-            </div>
-            <div className="hidden h-8 w-px bg-cream-300 sm:block" />
-            <div className="flex items-center gap-3">
-              {[SOCIALS.instagram, SOCIALS.facebook, SOCIALS.youtube].map((path, i) => (
-                <a key={i} href={[contact.instagramUrl, contact.facebookUrl, contact.youtubeUrl][i] || '#'} target="_blank" rel="noopener noreferrer" aria-label="social"
-                  className="flex h-10 w-10 items-center justify-center rounded-full border border-cream-300 bg-white text-primary-700 transition hover:bg-primary-700 hover:text-white">
-                  <SocialIcon path={path} />
-                </a>
-              ))}
-            </div>
-          </motion.div>
-        </div>
-
-        {/* Right — framed showreel card */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.96 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.8, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
-          className="relative"
-        >
-          <div className="absolute -inset-3 -z-10 rounded-[2rem] bg-gold-grad opacity-20 blur-2xl" />
-          <button onClick={() => setOpen(true)} className="group relative block aspect-[4/5] w-full overflow-hidden rounded-[1.75rem] border border-cream-300 bg-ink-900 shadow-soft">
-            <iframe
-              title="Showreel preview" tabIndex={-1}
-              className="pointer-events-none absolute left-1/2 top-1/2 h-[135%] w-[135%] -translate-x-1/2 -translate-y-1/2"
-              src={`https://www.youtube.com/embed/${vid}?autoplay=1&mute=1&loop=1&controls=0&showinfo=0&modestbranding=1&rel=0&playsinline=1&playlist=${vid}`}
-              allow="autoplay; encrypted-media" frameBorder="0"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-primary-950/80 via-primary-950/5 to-transparent" />
-            <span className="absolute left-1/2 top-1/2 flex h-20 w-20 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-gold-grad text-ink-900 shadow-glow transition group-hover:scale-110">
+      {/* ---- Click-to-play layer + floating play button ---- */}
+      <div className="group absolute inset-0 z-10">
+        {/* full-area click target (sits behind the bottom content, which is z-20) */}
+        <button
+          onClick={() => setOpen(true)}
+          aria-label="Play showreel"
+          className="absolute inset-0 h-full w-full cursor-pointer"
+        />
+        {/* visual play button — hidden on mobile (the Watch Showreel button covers it), right-of-centre on desktop */}
+        <div className="pointer-events-none absolute right-[11%] top-1/2 hidden -translate-y-1/2 sm:block lg:right-[14%]">
+          <span className="relative flex h-20 w-20 items-center justify-center sm:h-28 sm:w-28">
+            <span className="absolute inset-0 animate-pulseRing rounded-full bg-gold-400/40" />
+            <span className="absolute inset-0 animate-pulseRing rounded-full bg-gold-400/30 [animation-delay:0.8s]" />
+            <span className="relative flex h-16 w-16 items-center justify-center rounded-full bg-gold-grad text-ink-900 shadow-glow transition duration-300 group-hover:scale-110 sm:h-20 sm:w-20">
               <Play size={30} fill="currentColor" className="ml-1" />
             </span>
-            <span className="absolute bottom-5 left-5 right-5 flex items-center justify-between">
-              <span className="rounded-full bg-white/95 px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-primary-700">▶ Watch the reel</span>
-              <span className="flex items-center gap-1.5 rounded-full bg-primary-700 px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-white"><Star size={12} fill="currentColor" /> 30+ Yrs</span>
+          </span>
+        </div>
+      </div>
+
+      {/* ---- Content (text sits on the shadow) ---- */}
+      <div className="relative z-20 mx-auto mt-auto w-full max-w-7xl px-5 pb-10 md:px-8 md:pb-16">
+        {/* kicker */}
+        <motion.div
+          initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.15 }}
+          className="mb-4 flex items-center gap-3 sm:mb-5"
+        >
+          <span className="h-px w-10 bg-gold-grad" />
+          <span className="text-[11px] font-bold uppercase tracking-[0.28em] text-gold-300 sm:text-xs">
+            Delhi&apos;s Storytellers · Since 1995
+          </span>
+        </motion.div>
+
+        <motion.h1
+          initial={{ opacity: 0, y: 22 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.22 }}
+          className="font-display text-[2.45rem] leading-[1.02] text-white sm:text-6xl sm:leading-[0.92] lg:text-[5.75rem]"
+          style={{ textShadow: '0 2px 40px rgba(0,0,0,0.45)' }}
+        >
+          Stories that <span className="font-serif font-normal italic text-gradient">move</span><br />
+          &amp; events <span className="font-serif font-normal italic text-gradient">that&nbsp;matter</span>
+        </motion.h1>
+
+        <motion.p
+          initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.34 }}
+          className="mt-4 max-w-xl text-sm leading-relaxed text-cream-200/90 sm:mt-6 md:text-lg"
+          style={{ textShadow: '0 1px 20px rgba(0,0,0,0.4)' }}
+        >
+          {hero.subheadline}
+        </motion.p>
+
+        <motion.div
+          initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.44 }}
+          className="mt-6 flex flex-wrap items-center gap-4 sm:mt-8"
+        >
+          <Button variant="gold" to={hero.primaryCta.link}>{hero.primaryCta.label}<ArrowRight size={18} /></Button>
+          <button
+            onClick={() => setOpen(true)}
+            className="group inline-flex items-center gap-3 text-xs font-bold uppercase tracking-[0.12em] text-white"
+          >
+            <span className="flex h-11 w-11 items-center justify-center rounded-full border border-white/30 bg-white/10 text-white backdrop-blur-sm transition group-hover:bg-gold-grad group-hover:text-ink-900">
+              <Play size={14} fill="currentColor" className="ml-0.5" />
             </span>
+            Watch Showreel
           </button>
+        </motion.div>
+
+        {/* trust row */}
+        <motion.div
+          initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.8, delay: 0.6 }}
+          className="mt-7 flex flex-wrap items-center gap-x-7 gap-y-4 border-t border-white/15 pt-6 sm:mt-10 sm:pt-7"
+        >
+          <div className="flex items-center gap-3">
+            <span className="h-9 w-[3px] rounded-full bg-gold-grad" />
+            <div className="leading-tight">
+              <p className="font-display text-xl font-extrabold text-white">Est. 1995</p>
+              <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-cream-200/70">Delhi · 30+ Years</p>
+            </div>
+          </div>
+
+          <div className="hidden h-10 w-px bg-white/15 sm:block" />
+
+          {/* real Google rating */}
+          <div className="leading-tight">
+            <div className="flex items-center gap-0.5 text-gold-300">
+              {Array.from({ length: 5 }).map((_, i) => <Star key={i} size={14} fill="currentColor" />)}
+            </div>
+            <p className="mt-1 text-xs text-cream-200/80">
+              <span className="font-bold text-white">4.3</span> on Google · Trusted by 500+ brands
+            </p>
+          </div>
+
+          <div className="hidden h-8 w-px bg-white/15 sm:block" />
+
+          <div className="flex items-center gap-2.5">
+            {[SOCIALS.instagram, SOCIALS.facebook, SOCIALS.youtube].map((path, i) => (
+              <a
+                key={i}
+                href={[contact.instagramUrl, contact.facebookUrl, contact.youtubeUrl][i] || '#'}
+                target="_blank" rel="noopener noreferrer" aria-label="social"
+                className="flex h-10 w-10 items-center justify-center rounded-full border border-white/20 bg-white/10 text-white backdrop-blur-sm transition hover:bg-gold-grad hover:text-ink-900"
+              >
+                <SocialIcon path={path} />
+              </a>
+            ))}
+          </div>
         </motion.div>
       </div>
 
