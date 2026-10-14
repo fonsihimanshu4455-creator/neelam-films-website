@@ -10,20 +10,21 @@ const SOCIALS = {
   facebook: 'M22 12a10 10 0 10-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.75-1.6 1.5V12h2.8l-.45 2.9h-2.35v7A10 10 0 0022 12z',
   youtube: 'M23 12s0-3.3-.4-4.8a2.5 2.5 0 00-1.8-1.8C19.3 5 12 5 12 5s-7.3 0-8.8.4A2.5 2.5 0 001.4 7.2C1 8.7 1 12 1 12s0 3.3.4 4.8a2.5 2.5 0 001.8 1.8C4.7 19 12 19 12 19s7.3 0 8.8-.4a2.5 2.5 0 001.8-1.8C23 15.3 23 12 23 12zm-13 3.1V8.9l5.2 3.1-5.2 3.1z',
 }
-const SocialIcon = ({ path, size = 16 }) => (
+const SocialIcon = ({ path, size = 15 }) => (
   <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d={path} /></svg>
 )
 
 /**
  * Cinematic full-bleed hero.
- * The showreel plays muted/looping as a full-cover background (no black bars),
- * a dark bottom gradient carries the headline, CTAs and trust row, and a
- * central play button opens the full showreel with sound.
+ * The showreel plays muted/looping as a full-cover background (no black bars).
+ * The headline + CTAs sit in the LEFT column (vertically centred) so the video
+ * stays visible on the right, and a slim full-width strip at the very bottom
+ * carries the trust badges (Est. 1995, Google rating, socials).
  *
  * NOTE: the background <iframe> must NOT sit inside any element with a CSS
  * transform (framer-motion included) or Chromium renders it black (audio only).
- * So the video + overlays are plain children of <section>; only the text block
- * uses motion transforms.
+ * So the video + overlays are plain children of <section>; only the text uses
+ * motion transforms.
  */
 export default function Hero() {
   const { data } = useData()
@@ -45,7 +46,7 @@ export default function Hero() {
   }
 
   return (
-    <section className="relative flex h-[100svh] min-h-[600px] w-full flex-col overflow-hidden bg-night-950">
+    <section className="relative h-[100svh] min-h-[600px] w-full overflow-hidden bg-night-950">
       {/* ---- Full-cover showreel (no transformed ancestor) ---- */}
       <div className="absolute inset-0 overflow-hidden">
         <iframe
@@ -58,55 +59,51 @@ export default function Hero() {
         />
       </div>
 
-      {/* ---- Cinematic gradient shadows (for text legibility) ---- */}
+      {/* ---- Cinematic gradient shadows (lighter, so the reel shows through) ---- */}
       <div className="pointer-events-none absolute inset-0" aria-hidden="true">
-        {/* bottom-up deep shadow where the text sits */}
-        <div className="absolute inset-x-0 bottom-0 h-[80%] bg-gradient-to-t from-night-950 via-night-950/70 to-transparent" />
-        {/* left-side wash so copy reads even over bright frames */}
-        <div className="absolute inset-0 bg-gradient-to-r from-night-950/75 via-night-950/25 to-transparent" />
+        {/* left wash behind the headline column */}
+        <div className="absolute inset-0 bg-gradient-to-r from-night-950/85 via-night-950/35 to-transparent" />
+        {/* deep bottom band under the trust strip */}
+        <div className="absolute inset-x-0 bottom-0 h-[38%] bg-gradient-to-t from-night-950 via-night-950/70 to-transparent" />
         {/* top vignette under the navbar */}
-        <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-night-950/70 to-transparent" />
-        {/* overall cinematic tint */}
-        <div className="absolute inset-0 bg-primary-950/15" />
+        <div className="absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-night-950/60 to-transparent" />
       </div>
 
       {/* ---- Click-to-play layer + floating play button ---- */}
       <div className="group absolute inset-0 z-10">
-        {/* full-area click target (sits behind the bottom content, which is z-20) */}
         <button
           onClick={() => setOpen(true)}
           aria-label="Play showreel"
           className="absolute inset-0 h-full w-full cursor-pointer"
         />
-        {/* visual play button — hidden on mobile (the Watch Showreel button covers it), right-of-centre on desktop */}
-        <div className="pointer-events-none absolute right-[11%] top-1/2 hidden -translate-y-1/2 sm:block lg:right-[14%]">
-          <span className="relative flex h-20 w-20 items-center justify-center sm:h-28 sm:w-28">
+        {/* visual play button — hidden on mobile (Watch Showreel button covers it), right-centre on desktop */}
+        <div className="pointer-events-none absolute right-[9%] top-1/2 hidden -translate-y-1/2 sm:block lg:right-[12%]">
+          <span className="relative flex h-24 w-24 items-center justify-center">
             <span className="absolute inset-0 animate-pulseRing rounded-full bg-gold-400/40" />
             <span className="absolute inset-0 animate-pulseRing rounded-full bg-gold-400/30 [animation-delay:0.8s]" />
-            <span className="relative flex h-16 w-16 items-center justify-center rounded-full bg-gold-grad text-ink-900 shadow-glow transition duration-300 group-hover:scale-110 sm:h-20 sm:w-20">
-              <Play size={30} fill="currentColor" className="ml-1" />
+            <span className="relative flex h-[72px] w-[72px] items-center justify-center rounded-full bg-gold-grad text-ink-900 shadow-glow transition duration-300 group-hover:scale-110">
+              <Play size={28} fill="currentColor" className="ml-1" />
             </span>
           </span>
         </div>
       </div>
 
-      {/* ---- Content (text sits on the shadow) ---- */}
-      <div className="relative z-20 mx-auto mt-auto w-full max-w-7xl px-5 pb-10 md:px-8 md:pb-16">
-        {/* kicker */}
+      {/* ---- Headline column (vertically centred, left) ---- */}
+      <div className="relative z-20 mx-auto flex h-full max-w-7xl flex-col justify-center px-5 pb-28 pt-28 md:px-8 md:pb-24">
         <motion.div
           initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.15 }}
-          className="mb-4 flex items-center gap-3 sm:mb-5"
+          className="mb-4 flex items-center gap-3"
         >
           <span className="h-px w-10 bg-gold-grad" />
-          <span className="text-[11px] font-bold uppercase tracking-[0.28em] text-gold-300 sm:text-xs">
+          <span className="text-[11px] font-bold uppercase tracking-[0.28em] text-gold-300">
             Delhi&apos;s Storytellers · Since 1995
           </span>
         </motion.div>
 
         <motion.h1
           initial={{ opacity: 0, y: 22 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.22 }}
-          className="font-display text-[2.45rem] leading-[1.02] text-white sm:text-6xl sm:leading-[0.92] lg:text-[5.75rem]"
-          style={{ textShadow: '0 2px 40px rgba(0,0,0,0.45)' }}
+          className="max-w-2xl font-display text-[2.45rem] leading-[1.02] text-white sm:text-5xl sm:leading-[0.95] lg:text-[4.75rem]"
+          style={{ textShadow: '0 2px 36px rgba(0,0,0,0.5)' }}
         >
           Stories that <span className="font-serif font-normal italic text-gradient">move</span><br />
           &amp; events <span className="font-serif font-normal italic text-gradient">that&nbsp;matter</span>
@@ -114,15 +111,16 @@ export default function Hero() {
 
         <motion.p
           initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.34 }}
-          className="mt-4 max-w-xl text-sm leading-relaxed text-cream-200/90 sm:mt-6 md:text-lg"
-          style={{ textShadow: '0 1px 20px rgba(0,0,0,0.4)' }}
+          className="mt-5 max-w-md text-sm leading-relaxed text-cream-200/90 md:text-base"
+          style={{ textShadow: '0 1px 18px rgba(0,0,0,0.5)' }}
         >
-          {hero.subheadline}
+          Delhi&apos;s trusted production house &amp; live-event specialists for 30+ years — from
+          cinematic films to grand live productions.
         </motion.p>
 
         <motion.div
           initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.44 }}
-          className="mt-6 flex flex-wrap items-center gap-4 sm:mt-8"
+          className="mt-7 flex flex-wrap items-center gap-4"
         >
           <Button variant="gold" to={hero.primaryCta.link}>{hero.primaryCta.label}<ArrowRight size={18} /></Button>
           <button
@@ -135,33 +133,32 @@ export default function Hero() {
             Watch Showreel
           </button>
         </motion.div>
+      </div>
 
-        {/* trust row */}
-        <motion.div
-          initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.8, delay: 0.6 }}
-          className="mt-7 flex flex-wrap items-center gap-x-7 gap-y-4 border-t border-white/15 pt-6 sm:mt-10 sm:pt-7"
-        >
-          <div className="flex items-center gap-3">
-            <span className="h-9 w-[3px] rounded-full bg-gold-grad" />
-            <div className="leading-tight">
-              <p className="font-display text-xl font-extrabold text-white">Est. 1995</p>
-              <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-cream-200/70">Delhi · 30+ Years</p>
+      {/* ---- Bottom trust strip (full-width line) ---- */}
+      <motion.div
+        initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.8, delay: 0.6 }}
+        className="absolute inset-x-0 bottom-0 z-20"
+      >
+        <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-x-6 gap-y-3 border-t border-white/15 px-5 py-4 md:px-8 md:py-5">
+          <div className="flex flex-wrap items-center gap-x-5 gap-y-2">
+            <div className="flex items-center gap-2.5">
+              <span className="h-8 w-[3px] rounded-full bg-gold-grad" />
+              <div className="leading-tight">
+                <p className="font-display text-lg font-extrabold text-white">Est. 1995</p>
+                <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-cream-200/70">Delhi · 30+ Years</p>
+              </div>
+            </div>
+            <div className="hidden h-8 w-px bg-white/15 sm:block" />
+            <div className="flex items-center gap-2">
+              <div className="flex items-center gap-0.5 text-gold-300">
+                {Array.from({ length: 5 }).map((_, i) => <Star key={i} size={13} fill="currentColor" />)}
+              </div>
+              <p className="text-xs text-cream-200/85">
+                <span className="font-bold text-white">4.3</span> on Google · Trusted by 500+ brands
+              </p>
             </div>
           </div>
-
-          <div className="hidden h-10 w-px bg-white/15 sm:block" />
-
-          {/* real Google rating */}
-          <div className="leading-tight">
-            <div className="flex items-center gap-0.5 text-gold-300">
-              {Array.from({ length: 5 }).map((_, i) => <Star key={i} size={14} fill="currentColor" />)}
-            </div>
-            <p className="mt-1 text-xs text-cream-200/80">
-              <span className="font-bold text-white">4.3</span> on Google · Trusted by 500+ brands
-            </p>
-          </div>
-
-          <div className="hidden h-8 w-px bg-white/15 sm:block" />
 
           <div className="flex items-center gap-2.5">
             {[SOCIALS.instagram, SOCIALS.facebook, SOCIALS.youtube].map((path, i) => (
@@ -169,14 +166,14 @@ export default function Hero() {
                 key={i}
                 href={[contact.instagramUrl, contact.facebookUrl, contact.youtubeUrl][i] || '#'}
                 target="_blank" rel="noopener noreferrer" aria-label="social"
-                className="flex h-10 w-10 items-center justify-center rounded-full border border-white/20 bg-white/10 text-white backdrop-blur-sm transition hover:bg-gold-grad hover:text-ink-900"
+                className="flex h-9 w-9 items-center justify-center rounded-full border border-white/20 bg-white/10 text-white backdrop-blur-sm transition hover:bg-gold-grad hover:text-ink-900"
               >
                 <SocialIcon path={path} />
               </a>
             ))}
           </div>
-        </motion.div>
-      </div>
+        </div>
+      </motion.div>
 
       <VideoModal open={open} onClose={() => setOpen(false)} videoId={vid} title="Neelam Films Showreel" />
     </section>
