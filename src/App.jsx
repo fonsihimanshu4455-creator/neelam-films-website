@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 
 import { DataProvider } from './context/DataContext'
 import { AuthProvider } from './context/AuthContext'
@@ -13,7 +13,6 @@ import AdminLayout from './components/admin/AdminLayout'
 import Home from './pages/Home'
 import About from './pages/About'
 import ServicePage from './pages/ServicePage'
-import Portfolio from './pages/Portfolio'
 import Contact from './pages/Contact'
 import ThankYou from './pages/ThankYou'
 import NotFound from './pages/NotFound'
@@ -50,7 +49,8 @@ export default function App() {
               <Route path="/services/digital-growth" element={<ServicePage serviceId="digital-growth" />} />
               <Route path="/services/web-development" element={<ServicePage serviceId="web-development" />} />
               <Route path="/services/app-development" element={<ServicePage serviceId="app-development" />} />
-              <Route path="/portfolio" element={<Portfolio />} />
+              {/* Portfolio page hidden until real work is added — redirect to home */}
+              <Route path="/portfolio" element={<Navigate to="/" replace />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/thank-you" element={<ThankYou />} />
               <Route path="*" element={<NotFound />} />

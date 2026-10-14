@@ -67,7 +67,6 @@ export default function Footer() {
               {[
                 { label: 'Home', to: '/' },
                 { label: 'About Us', to: '/about' },
-                { label: 'Portfolio', to: '/portfolio' },
                 { label: 'Contact', to: '/contact' },
               ].map((l) => (
                 <li key={l.to}>

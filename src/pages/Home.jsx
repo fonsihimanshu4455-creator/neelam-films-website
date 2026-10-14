@@ -3,7 +3,6 @@ import ServicesGrid from '../components/home/ServicesGrid'
 import ParallaxBanner from '../components/home/ParallaxBanner'
 import Statement from '../components/home/Statement'
 import ClientsMarquee from '../components/home/ClientsMarquee'
-import FeaturedPortfolio from '../components/home/FeaturedPortfolio'
 import Testimonials from '../components/home/Testimonials'
 import ProcessSteps from '../components/home/ProcessSteps'
 import Stats from '../components/home/Stats'
@@ -26,7 +25,6 @@ export default function Home() {
 
       <Stats />
       <ProcessSteps />
-      <FeaturedPortfolio />
       <Statement />
       <ParallaxBanner />
       <Testimonials />
