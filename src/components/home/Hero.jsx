@@ -59,10 +59,12 @@ export default function Hero() {
         />
       </div>
 
-      {/* ---- Cinematic gradient shadows (lighter, so the reel shows through) ---- */}
+      {/* ---- Cinematic gradient shadows (dark left for text legibility, clear right for the reel) ---- */}
       <div className="pointer-events-none absolute inset-0" aria-hidden="true">
-        {/* left wash behind the headline column */}
-        <div className="absolute inset-0 bg-gradient-to-r from-night-950/85 via-night-950/35 to-transparent" />
+        {/* strong left wash so overlaid copy stays readable even over the reel's own captions */}
+        <div className="absolute inset-0 bg-gradient-to-r from-night-950 via-night-950/75 to-transparent" />
+        {/* extra deep patch behind the headline column (fades out before the video area) */}
+        <div className="absolute inset-y-0 left-0 w-[62%] bg-gradient-to-r from-night-950/90 to-transparent" />
         {/* deep bottom band under the trust strip */}
         <div className="absolute inset-x-0 bottom-0 h-[38%] bg-gradient-to-t from-night-950 via-night-950/70 to-transparent" />
         {/* top vignette under the navbar */}
