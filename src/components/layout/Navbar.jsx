@@ -11,6 +11,9 @@ const NAV_LINKS = [
   { label: 'About', to: '/about' },
 ]
 
+// Live events landing page (separate Vercel project on a subdomain)
+const EVENTS_URL = 'https://events.neelamfilms.com'
+
 export default function Navbar() {
   const { data } = useData()
   const services = data.services
@@ -90,6 +93,7 @@ export default function Navbar() {
             </AnimatePresence>
           </div>
 
+          <a href={EVENTS_URL} className={linkClass({ isActive: false })}>Events</a>
           <NavLink to="/portfolio" className={linkClass}>Portfolio</NavLink>
           <NavLink to="/contact" className={linkClass}>Contact</NavLink>
         </div>
@@ -146,6 +150,7 @@ export default function Navbar() {
                   </motion.div>
                 )}
               </AnimatePresence>
+              <a href={EVENTS_URL} className="rounded-lg px-3 py-2.5 font-medium text-ink-900 hover:bg-cream-100">Events</a>
               <NavLink to="/portfolio" className="rounded-lg px-3 py-2.5 font-medium text-ink-900 hover:bg-cream-100">Portfolio</NavLink>
               <NavLink to="/contact" className="rounded-lg px-3 py-2.5 font-medium text-ink-900 hover:bg-cream-100">Contact</NavLink>
               <Button to="/contact" className="mt-2 w-full">Get Quote</Button>

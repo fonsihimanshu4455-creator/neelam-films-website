@@ -76,6 +76,11 @@ export default function Footer() {
                   </Link>
                 </li>
               ))}
+              <li>
+                <a href="https://events.neelamfilms.com" className="text-slate-400 transition hover:text-gold-400">
+                  Live Events
+                </a>
+              </li>
             </ul>
           </div>
 
