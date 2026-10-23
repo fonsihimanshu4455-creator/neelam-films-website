@@ -5,23 +5,54 @@
     "title": "Production House",
     "slug": "/services/production",
     "short": "TVCs, corporate films, documentaries, short films & music videos crafted with cinematic precision.",
-    "image": "https://images.unsplash.com/photo-1485846234645-a62644f84728?w=800&q=80",
+    "image": "/services/production.jpg",
     "hero": "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=1600&q=80",
     "tagline": "Cinematic storytelling for brands that demand the best.",
     "description": "For three decades, Neelam Films has produced award-winning films that connect brands with audiences. Our end-to-end production capabilities cover everything from concept to final delivery.",
     "videoId": "dQw4w9WgXcQ",
     "offers": [
-      { "title": "TV Commercials (TVCs)", "desc": "High-impact commercials engineered for television and digital reach." },
-      { "title": "Corporate Films", "desc": "Polished brand films, profiles, and internal communications." },
-      { "title": "Documentaries", "desc": "Compelling long-form storytelling rooted in real narratives." },
-      { "title": "Short Films", "desc": "Festival-grade short films with strong creative direction." },
-      { "title": "Music Videos", "desc": "Visually arresting music videos for artists and labels." }
+      {
+        "title": "TV Commercials (TVCs)",
+        "desc": "High-impact commercials engineered for television and digital reach."
+      },
+      {
+        "title": "Corporate Films",
+        "desc": "Polished brand films, profiles, and internal communications."
+      },
+      {
+        "title": "Documentaries",
+        "desc": "Compelling long-form storytelling rooted in real narratives."
+      },
+      {
+        "title": "Short Films",
+        "desc": "Festival-grade short films with strong creative direction."
+      },
+      {
+        "title": "Music Videos",
+        "desc": "Visually arresting music videos for artists and labels."
+      }
     ],
     "process": [
-      { "step": "01", "title": "Discovery", "desc": "We understand your brand, goals & audience." },
-      { "step": "02", "title": "Pre-Production", "desc": "Scripting, storyboarding, casting & planning." },
-      { "step": "03", "title": "Production", "desc": "Cinema-grade shoot with our expert crew." },
-      { "step": "04", "title": "Post & Delivery", "desc": "Editing, color, sound & multi-format delivery." }
+      {
+        "step": "01",
+        "title": "Discovery",
+        "desc": "We understand your brand, goals & audience."
+      },
+      {
+        "step": "02",
+        "title": "Pre-Production",
+        "desc": "Scripting, storyboarding, casting & planning."
+      },
+      {
+        "step": "03",
+        "title": "Production",
+        "desc": "Cinema-grade shoot with our expert crew."
+      },
+      {
+        "step": "04",
+        "title": "Post & Delivery",
+        "desc": "Editing, color, sound & multi-format delivery."
+      }
     ],
     "gallery": [
       "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=800&q=80",
@@ -39,24 +70,58 @@
     "title": "Live Events",
     "slug": "/services/live-events",
     "short": "End-to-end live event production — sound, LED, stage, lighting & multi-cam coverage.",
-    "image": "https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?w=800&q=80",
+    "image": "/services/live-events.jpg",
     "hero": "https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?w=1600&q=80",
     "tagline": "Grand productions, flawlessly executed.",
     "description": "From corporate conferences to grand religious gatherings, Neelam Films delivers turnkey live event production with world-class equipment and a seasoned crew.",
     "videoId": "dQw4w9WgXcQ",
     "offers": [
-      { "title": "Professional Sound", "desc": "Line-array systems for crystal-clear audio at any scale." },
-      { "title": "LED Walls & Screens", "desc": "High-resolution LED displays for immersive visuals." },
-      { "title": "Stage & Truss", "desc": "Custom stage design, fabrication & rigging." },
-      { "title": "Stage Lighting", "desc": "Dynamic intelligent lighting & ambience design." },
-      { "title": "Multi-Cam Coverage", "desc": "Live multi-camera switching & recording." },
-      { "title": "Religious Events", "desc": "Specialists in ISKCON, Jagran & devotional events." }
+      {
+        "title": "Professional Sound",
+        "desc": "Line-array systems for crystal-clear audio at any scale."
+      },
+      {
+        "title": "LED Walls & Screens",
+        "desc": "High-resolution LED displays for immersive visuals."
+      },
+      {
+        "title": "Stage & Truss",
+        "desc": "Custom stage design, fabrication & rigging."
+      },
+      {
+        "title": "Stage Lighting",
+        "desc": "Dynamic intelligent lighting & ambience design."
+      },
+      {
+        "title": "Multi-Cam Coverage",
+        "desc": "Live multi-camera switching & recording."
+      },
+      {
+        "title": "Religious Events",
+        "desc": "Specialists in ISKCON, Jagran & devotional events."
+      }
     ],
     "process": [
-      { "step": "01", "title": "Consultation", "desc": "We map your vision, venue & scale." },
-      { "step": "02", "title": "Design & Plan", "desc": "Stage, sound & lighting blueprint." },
-      { "step": "03", "title": "Setup & Rig", "desc": "On-site installation & sound check." },
-      { "step": "04", "title": "Live Execution", "desc": "Flawless show-day management." }
+      {
+        "step": "01",
+        "title": "Consultation",
+        "desc": "We map your vision, venue & scale."
+      },
+      {
+        "step": "02",
+        "title": "Design & Plan",
+        "desc": "Stage, sound & lighting blueprint."
+      },
+      {
+        "step": "03",
+        "title": "Setup & Rig",
+        "desc": "On-site installation & sound check."
+      },
+      {
+        "step": "04",
+        "title": "Live Execution",
+        "desc": "Flawless show-day management."
+      }
     ],
     "gallery": [
       "https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?w=800&q=80",
@@ -74,22 +139,50 @@
     "title": "Live Streaming",
     "slug": "/services/live-streaming",
     "short": "Multi-platform live streaming for cricket, religious, corporate & sports events.",
-    "image": "https://images.unsplash.com/photo-1574267432553-4b4628081c31?w=800&q=80",
+    "image": "/services/live-streaming.jpg",
     "hero": "https://images.unsplash.com/photo-1574267432553-4b4628081c31?w=1600&q=80",
     "tagline": "Broadcast-quality streaming to the world.",
     "description": "Reach audiences everywhere with our professional live streaming services. Multi-platform, multi-camera, broadcast-grade — engineered for reliability.",
     "videoId": "dQw4w9WgXcQ",
     "offers": [
-      { "title": "Cricket & Sports", "desc": "Live scoreboards, replays & multi-cam coverage." },
-      { "title": "Religious Streaming", "desc": "Devotional events streamed with reverence." },
-      { "title": "Corporate Webcasts", "desc": "AGMs, launches & town-halls in HD." },
-      { "title": "Multi-Platform", "desc": "Simulcast to YouTube, Facebook & more." }
+      {
+        "title": "Cricket & Sports",
+        "desc": "Live scoreboards, replays & multi-cam coverage."
+      },
+      {
+        "title": "Religious Streaming",
+        "desc": "Devotional events streamed with reverence."
+      },
+      {
+        "title": "Corporate Webcasts",
+        "desc": "AGMs, launches & town-halls in HD."
+      },
+      {
+        "title": "Multi-Platform",
+        "desc": "Simulcast to YouTube, Facebook & more."
+      }
     ],
     "process": [
-      { "step": "01", "title": "Tech Recce", "desc": "Internet, power & camera planning." },
-      { "step": "02", "title": "Setup", "desc": "Encoders, cameras & graphics ready." },
-      { "step": "03", "title": "Go Live", "desc": "Stable multi-platform broadcast." },
-      { "step": "04", "title": "Archive", "desc": "Recording & VOD delivery." }
+      {
+        "step": "01",
+        "title": "Tech Recce",
+        "desc": "Internet, power & camera planning."
+      },
+      {
+        "step": "02",
+        "title": "Setup",
+        "desc": "Encoders, cameras & graphics ready."
+      },
+      {
+        "step": "03",
+        "title": "Go Live",
+        "desc": "Stable multi-platform broadcast."
+      },
+      {
+        "step": "04",
+        "title": "Archive",
+        "desc": "Recording & VOD delivery."
+      }
     ],
     "gallery": [
       "https://images.unsplash.com/photo-1574267432553-4b4628081c31?w=800&q=80",
@@ -100,9 +193,38 @@
       "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=80"
     ],
     "pricing": [
-      { "name": "Cricket / Sports Stream", "price": "₹5,000+", "unit": "per match", "features": ["Multi-cam", "Live scoreboard", "Instant replays", "YouTube simulcast"] },
-      { "name": "Religious Stream", "price": "₹4,000+", "unit": "per event", "features": ["HD coverage", "Multi-platform", "Recording included"] },
-      { "name": "Corporate Webcast", "price": "₹8,000+", "unit": "per event", "features": ["Pro graphics", "Multi-cam", "Private streaming", "Analytics"] }
+      {
+        "name": "Cricket / Sports Stream",
+        "price": "₹5,000+",
+        "unit": "per match",
+        "features": [
+          "Multi-cam",
+          "Live scoreboard",
+          "Instant replays",
+          "YouTube simulcast"
+        ]
+      },
+      {
+        "name": "Religious Stream",
+        "price": "₹4,000+",
+        "unit": "per event",
+        "features": [
+          "HD coverage",
+          "Multi-platform",
+          "Recording included"
+        ]
+      },
+      {
+        "name": "Corporate Webcast",
+        "price": "₹8,000+",
+        "unit": "per event",
+        "features": [
+          "Pro graphics",
+          "Multi-cam",
+          "Private streaming",
+          "Analytics"
+        ]
+      }
     ]
   },
   {
@@ -111,22 +233,50 @@
     "title": "Recording Studio",
     "slug": "/services/recording-studio",
     "short": "Professional song recording, voice-overs, dubbing & podcast production.",
-    "image": "https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=800&q=80",
+    "image": "/services/recording-studio.jpg",
     "hero": "https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=1600&q=80",
     "tagline": "Where sound becomes art.",
     "description": "Our acoustically-treated studio is equipped with premium gear for pristine recordings. Whether it's a chartbuster, a brand voice-over or a podcast — we deliver studio perfection.",
     "videoId": "dQw4w9WgXcQ",
     "offers": [
-      { "title": "Song Recording", "desc": "Full vocal & instrument recording sessions." },
-      { "title": "Voice-Over", "desc": "Ads, films, e-learning & IVR voice-overs." },
-      { "title": "Dubbing", "desc": "Multilingual dubbing & ADR services." },
-      { "title": "Podcast Production", "desc": "Record, edit & publish your podcast." }
+      {
+        "title": "Song Recording",
+        "desc": "Full vocal & instrument recording sessions."
+      },
+      {
+        "title": "Voice-Over",
+        "desc": "Ads, films, e-learning & IVR voice-overs."
+      },
+      {
+        "title": "Dubbing",
+        "desc": "Multilingual dubbing & ADR services."
+      },
+      {
+        "title": "Podcast Production",
+        "desc": "Record, edit & publish your podcast."
+      }
     ],
     "process": [
-      { "step": "01", "title": "Book Session", "desc": "Pick your slot & service." },
-      { "step": "02", "title": "Setup", "desc": "Mic, monitoring & levels dialed in." },
-      { "step": "03", "title": "Record", "desc": "Capture with our sound engineer." },
-      { "step": "04", "title": "Mix & Master", "desc": "Polished, release-ready output." }
+      {
+        "step": "01",
+        "title": "Book Session",
+        "desc": "Pick your slot & service."
+      },
+      {
+        "step": "02",
+        "title": "Setup",
+        "desc": "Mic, monitoring & levels dialed in."
+      },
+      {
+        "step": "03",
+        "title": "Record",
+        "desc": "Capture with our sound engineer."
+      },
+      {
+        "step": "04",
+        "title": "Mix & Master",
+        "desc": "Polished, release-ready output."
+      }
     ],
     "gallery": [
       "https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=800&q=80",
@@ -137,9 +287,37 @@
       "https://images.unsplash.com/photo-1574267432553-4b4628081c31?w=800&q=80"
     ],
     "pricing": [
-      { "name": "Song Recording", "price": "₹3,000–5,000", "unit": "per song", "features": ["Vocal recording", "Basic mixing", "Sound engineer", "Studio time"] },
-      { "name": "Voice-Over", "price": "₹2,000+", "unit": "per script", "features": ["Pro mic chain", "Multiple takes", "Clean export"] },
-      { "name": "Podcast Studio", "price": "₹500", "unit": "per hour", "features": ["Multi-mic setup", "Recording", "Basic edit"] }
+      {
+        "name": "Song Recording",
+        "price": "₹3,000–5,000",
+        "unit": "per song",
+        "features": [
+          "Vocal recording",
+          "Basic mixing",
+          "Sound engineer",
+          "Studio time"
+        ]
+      },
+      {
+        "name": "Voice-Over",
+        "price": "₹2,000+",
+        "unit": "per script",
+        "features": [
+          "Pro mic chain",
+          "Multiple takes",
+          "Clean export"
+        ]
+      },
+      {
+        "name": "Podcast Studio",
+        "price": "₹500",
+        "unit": "per hour",
+        "features": [
+          "Multi-mic setup",
+          "Recording",
+          "Basic edit"
+        ]
+      }
     ]
   },
   {
@@ -148,22 +326,50 @@
     "title": "Equipment Rental",
     "slug": "/services/equipment-rental",
     "short": "Rent pro cameras, lights, audio gear & studios at the best daily rates in Delhi.",
-    "image": "https://images.unsplash.com/photo-1502920917128-1aa500764cbd?w=800&q=80",
+    "image": "/services/equipment-rental.jpg",
     "hero": "https://images.unsplash.com/photo-1502920917128-1aa500764cbd?w=1600&q=80",
     "tagline": "Pro gear, ready when you are.",
     "description": "Access our extensive inventory of professional cinema cameras, lighting, and audio equipment at competitive daily rates. Well-maintained, fully insured, ready to roll.",
     "videoId": "dQw4w9WgXcQ",
     "offers": [
-      { "title": "Cinema Cameras", "desc": "Canon, Sony & action cameras for any shoot." },
-      { "title": "Lighting Kits", "desc": "Godox & Aputure LED & continuous lights." },
-      { "title": "Audio Gear", "desc": "Wireless mics, recorders & monitoring." },
-      { "title": "Studio Spaces", "desc": "Chroma, recording & podcast studios on rent." }
+      {
+        "title": "Cinema Cameras",
+        "desc": "Canon, Sony & action cameras for any shoot."
+      },
+      {
+        "title": "Lighting Kits",
+        "desc": "Godox & Aputure LED & continuous lights."
+      },
+      {
+        "title": "Audio Gear",
+        "desc": "Wireless mics, recorders & monitoring."
+      },
+      {
+        "title": "Studio Spaces",
+        "desc": "Chroma, recording & podcast studios on rent."
+      }
     ],
     "process": [
-      { "step": "01", "title": "Browse", "desc": "Pick your gear & dates." },
-      { "step": "02", "title": "Reserve", "desc": "Confirm availability & quote." },
-      { "step": "03", "title": "Collect / Deliver", "desc": "Pickup or doorstep delivery." },
-      { "step": "04", "title": "Return", "desc": "Easy returns, no hassle." }
+      {
+        "step": "01",
+        "title": "Browse",
+        "desc": "Pick your gear & dates."
+      },
+      {
+        "step": "02",
+        "title": "Reserve",
+        "desc": "Confirm availability & quote."
+      },
+      {
+        "step": "03",
+        "title": "Collect / Deliver",
+        "desc": "Pickup or doorstep delivery."
+      },
+      {
+        "step": "04",
+        "title": "Return",
+        "desc": "Easy returns, no hassle."
+      }
     ],
     "gallery": [
       "https://images.unsplash.com/photo-1502920917128-1aa500764cbd?w=800&q=80",
@@ -181,25 +387,62 @@
     "title": "Digital Growth",
     "slug": "/services/digital-growth",
     "short": "Website & app development, Meta & Google Ads, SEO, social media & data analytics.",
-    "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80",
+    "image": "/services/digital-growth.jpg",
     "hero": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1600&q=80",
     "tagline": "Grow your brand, the digital way.",
     "description": "Beyond the lens, we help brands scale online. From performance marketing to full-stack development, our digital team drives measurable growth.",
     "videoId": "dQw4w9WgXcQ",
     "offers": [
-      { "title": "Meta Ads", "desc": "ROI-focused Facebook & Instagram campaigns." },
-      { "title": "Google Ads", "desc": "Search, display & YouTube ad management." },
-      { "title": "Website Development", "desc": "Fast, modern, conversion-ready websites." },
-      { "title": "App Development", "desc": "Cross-platform mobile apps." },
-      { "title": "SEO", "desc": "Rank higher & drive organic traffic." },
-      { "title": "Social Media", "desc": "Content, management & community growth." },
-      { "title": "Data Analytics", "desc": "Insights & dashboards that drive decisions." }
+      {
+        "title": "Meta Ads",
+        "desc": "ROI-focused Facebook & Instagram campaigns."
+      },
+      {
+        "title": "Google Ads",
+        "desc": "Search, display & YouTube ad management."
+      },
+      {
+        "title": "Website Development",
+        "desc": "Fast, modern, conversion-ready websites."
+      },
+      {
+        "title": "App Development",
+        "desc": "Cross-platform mobile apps."
+      },
+      {
+        "title": "SEO",
+        "desc": "Rank higher & drive organic traffic."
+      },
+      {
+        "title": "Social Media",
+        "desc": "Content, management & community growth."
+      },
+      {
+        "title": "Data Analytics",
+        "desc": "Insights & dashboards that drive decisions."
+      }
     ],
     "process": [
-      { "step": "01", "title": "Audit", "desc": "Analyze your current digital footprint." },
-      { "step": "02", "title": "Strategy", "desc": "Custom growth roadmap." },
-      { "step": "03", "title": "Execute", "desc": "Launch campaigns & builds." },
-      { "step": "04", "title": "Optimize", "desc": "Measure, learn & scale." }
+      {
+        "step": "01",
+        "title": "Audit",
+        "desc": "Analyze your current digital footprint."
+      },
+      {
+        "step": "02",
+        "title": "Strategy",
+        "desc": "Custom growth roadmap."
+      },
+      {
+        "step": "03",
+        "title": "Execute",
+        "desc": "Launch campaigns & builds."
+      },
+      {
+        "step": "04",
+        "title": "Optimize",
+        "desc": "Measure, learn & scale."
+      }
     ],
     "gallery": [
       "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80",
@@ -217,24 +460,58 @@
     "title": "Website Development",
     "slug": "/services/web-development",
     "short": "Fast, modern, conversion-ready websites — business sites, e-commerce & web apps.",
-    "image": "https://images.unsplash.com/photo-1547658719-da2b51169166?w=800&q=80",
+    "image": "/services/web-development.jpg",
     "hero": "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=1600&q=80",
     "tagline": "Websites that work as hard as you do.",
     "description": "We design and build blazing-fast, beautiful websites that turn visitors into customers. From sleek business sites to full e-commerce stores — responsive, SEO-ready and built to scale.",
     "videoId": "dQw4w9WgXcQ",
     "offers": [
-      { "title": "Business Websites", "desc": "Premium, responsive sites that build instant trust." },
-      { "title": "E-commerce Stores", "desc": "Secure online stores with payments & inventory." },
-      { "title": "Landing Pages", "desc": "High-converting pages for campaigns & launches." },
-      { "title": "Web Applications", "desc": "Custom dashboards, portals & SaaS products." },
-      { "title": "SEO & Speed", "desc": "Optimised to rank higher and load instantly." },
-      { "title": "Care & Maintenance", "desc": "Ongoing updates, security & support." }
+      {
+        "title": "Business Websites",
+        "desc": "Premium, responsive sites that build instant trust."
+      },
+      {
+        "title": "E-commerce Stores",
+        "desc": "Secure online stores with payments & inventory."
+      },
+      {
+        "title": "Landing Pages",
+        "desc": "High-converting pages for campaigns & launches."
+      },
+      {
+        "title": "Web Applications",
+        "desc": "Custom dashboards, portals & SaaS products."
+      },
+      {
+        "title": "SEO & Speed",
+        "desc": "Optimised to rank higher and load instantly."
+      },
+      {
+        "title": "Care & Maintenance",
+        "desc": "Ongoing updates, security & support."
+      }
     ],
     "process": [
-      { "step": "01", "title": "Discovery", "desc": "We map goals, audience & content." },
-      { "step": "02", "title": "Design", "desc": "Modern UI mockups for your approval." },
-      { "step": "03", "title": "Build", "desc": "Pixel-perfect, responsive development." },
-      { "step": "04", "title": "Launch", "desc": "Deploy, test & hand over." }
+      {
+        "step": "01",
+        "title": "Discovery",
+        "desc": "We map goals, audience & content."
+      },
+      {
+        "step": "02",
+        "title": "Design",
+        "desc": "Modern UI mockups for your approval."
+      },
+      {
+        "step": "03",
+        "title": "Build",
+        "desc": "Pixel-perfect, responsive development."
+      },
+      {
+        "step": "04",
+        "title": "Launch",
+        "desc": "Deploy, test & hand over."
+      }
     ],
     "gallery": [
       "https://images.unsplash.com/photo-1547658719-da2b51169166?w=800&q=80",
@@ -245,9 +522,39 @@
       "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80"
     ],
     "pricing": [
-      { "name": "Starter Site", "price": "₹35,000+", "unit": "project", "features": ["Up to 5 pages", "Mobile responsive", "Contact form", "Basic SEO"] },
-      { "name": "Business Pro", "price": "₹60,000+", "unit": "project", "features": ["Up to 12 pages", "CMS / admin panel", "Advanced SEO", "Analytics setup"] },
-      { "name": "E-commerce", "price": "₹80,000+", "unit": "project", "features": ["Online store", "Payment gateway", "Inventory & orders", "Launch support"] }
+      {
+        "name": "Starter Site",
+        "price": "₹35,000+",
+        "unit": "project",
+        "features": [
+          "Up to 5 pages",
+          "Mobile responsive",
+          "Contact form",
+          "Basic SEO"
+        ]
+      },
+      {
+        "name": "Business Pro",
+        "price": "₹60,000+",
+        "unit": "project",
+        "features": [
+          "Up to 12 pages",
+          "CMS / admin panel",
+          "Advanced SEO",
+          "Analytics setup"
+        ]
+      },
+      {
+        "name": "E-commerce",
+        "price": "₹80,000+",
+        "unit": "project",
+        "features": [
+          "Online store",
+          "Payment gateway",
+          "Inventory & orders",
+          "Launch support"
+        ]
+      }
     ]
   },
   {
@@ -256,24 +563,58 @@
     "title": "App Development",
     "slug": "/services/app-development",
     "short": "Cross-platform Android & iOS apps that are fast, beautiful and loved by users.",
-    "image": "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&q=80",
+    "image": "/services/app-development.jpg",
     "hero": "https://images.unsplash.com/photo-1526498460520-4c246339dccb?w=1600&q=80",
     "tagline": "Your idea, in everyone's pocket.",
     "description": "From concept to the app store, we build cross-platform mobile apps with smooth performance and delightful design. Android, iOS and everything in between — backed by solid engineering.",
     "videoId": "dQw4w9WgXcQ",
     "offers": [
-      { "title": "Android & iOS", "desc": "Native-quality apps for both platforms." },
-      { "title": "Cross-Platform", "desc": "One codebase, every device, faster launch." },
-      { "title": "UI / UX Design", "desc": "Intuitive, modern interfaces users enjoy." },
-      { "title": "Backend & APIs", "desc": "Scalable servers, databases & integrations." },
-      { "title": "App Store Launch", "desc": "We handle publishing on Play Store & App Store." },
-      { "title": "Support & Updates", "desc": "Ongoing maintenance & feature rollouts." }
+      {
+        "title": "Android & iOS",
+        "desc": "Native-quality apps for both platforms."
+      },
+      {
+        "title": "Cross-Platform",
+        "desc": "One codebase, every device, faster launch."
+      },
+      {
+        "title": "UI / UX Design",
+        "desc": "Intuitive, modern interfaces users enjoy."
+      },
+      {
+        "title": "Backend & APIs",
+        "desc": "Scalable servers, databases & integrations."
+      },
+      {
+        "title": "App Store Launch",
+        "desc": "We handle publishing on Play Store & App Store."
+      },
+      {
+        "title": "Support & Updates",
+        "desc": "Ongoing maintenance & feature rollouts."
+      }
     ],
     "process": [
-      { "step": "01", "title": "Strategy", "desc": "Define features, flows & scope." },
-      { "step": "02", "title": "Design", "desc": "Prototype the full app experience." },
-      { "step": "03", "title": "Develop", "desc": "Build, integrate & test rigorously." },
-      { "step": "04", "title": "Launch", "desc": "Publish & support post-launch." }
+      {
+        "step": "01",
+        "title": "Strategy",
+        "desc": "Define features, flows & scope."
+      },
+      {
+        "step": "02",
+        "title": "Design",
+        "desc": "Prototype the full app experience."
+      },
+      {
+        "step": "03",
+        "title": "Develop",
+        "desc": "Build, integrate & test rigorously."
+      },
+      {
+        "step": "04",
+        "title": "Launch",
+        "desc": "Publish & support post-launch."
+      }
     ],
     "gallery": [
       "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&q=80",
@@ -284,9 +625,39 @@
       "https://images.unsplash.com/photo-1481349518771-20055b2a7b24?w=800&q=80"
     ],
     "pricing": [
-      { "name": "MVP App", "price": "₹80,000+", "unit": "project", "features": ["Core features", "Single platform", "Basic backend", "Store launch"] },
-      { "name": "Business App", "price": "₹1,50,000+", "unit": "project", "features": ["Android + iOS", "Custom backend", "Admin panel", "3 months support"] },
-      { "name": "Enterprise", "price": "Custom", "unit": "quote", "features": ["Complex features", "Integrations", "Scalable infra", "Dedicated team"] }
+      {
+        "name": "MVP App",
+        "price": "₹80,000+",
+        "unit": "project",
+        "features": [
+          "Core features",
+          "Single platform",
+          "Basic backend",
+          "Store launch"
+        ]
+      },
+      {
+        "name": "Business App",
+        "price": "₹1,50,000+",
+        "unit": "project",
+        "features": [
+          "Android + iOS",
+          "Custom backend",
+          "Admin panel",
+          "3 months support"
+        ]
+      },
+      {
+        "name": "Enterprise",
+        "price": "Custom",
+        "unit": "quote",
+        "features": [
+          "Complex features",
+          "Integrations",
+          "Scalable infra",
+          "Dedicated team"
+        ]
+      }
     ]
   }
 ]
