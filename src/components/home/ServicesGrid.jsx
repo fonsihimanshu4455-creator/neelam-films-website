@@ -59,9 +59,9 @@ export default function ServicesGrid() {
                     src={s.image}
                     alt={s.title}
                     loading="lazy"
-                    className="h-full w-full object-cover opacity-80 transition duration-700 group-hover:scale-110 group-hover:opacity-100"
+                    className="h-full w-full object-cover opacity-90 transition duration-700 group-hover:scale-110 group-hover:opacity-100"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-ink-950 via-ink-950/40 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-ink-950/35 via-transparent to-transparent" />
                   <span className="absolute left-4 top-4 flex h-11 w-11 items-center justify-center rounded-xl border border-cream-300 bg-ink-950/70 text-gold-300 backdrop-blur-sm">
                     <Icon name={s.icon} size={20} />
                   </span>
