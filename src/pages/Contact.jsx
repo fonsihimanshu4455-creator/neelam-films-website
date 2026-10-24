@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useSearchParams } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { MapPin, Phone, Mail, Clock, MessageCircle, Send, CheckCircle2, Camera as Instagram } from 'lucide-react'
 import { useData } from '../context/DataContext'
@@ -14,7 +14,13 @@ export default function Contact() {
   const { data } = useData()
   const { contact, services } = data
   const navigate = useNavigate()
-  const [form, setForm] = useState(INITIAL)
+  const [searchParams] = useSearchParams()
+  // Pre-fill from URL params (e.g. clicking a pricing package "Book now")
+  const [form, setForm] = useState(() => ({
+    ...INITIAL,
+    service: searchParams.get('service') || '',
+    message: searchParams.get('message') || '',
+  }))
   const [sent, setSent] = useState(false)
   const [sending, setSending] = useState(false)
 

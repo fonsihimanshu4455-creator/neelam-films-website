@@ -68,7 +68,7 @@ export default function ServicePage({ serviceId }) {
         subtitle={service.description}
         image={service.hero}
       >
-        <Button to="/contact">
+        <Button to={`/contact?service=${encodeURIComponent(service.title)}`}>
           Request a quote <ArrowRight size={18} />
         </Button>
       </PageHero>
@@ -236,7 +236,13 @@ export default function ServicePage({ serviceId }) {
                       </li>
                     ))}
                   </ul>
-                  <Button to="/contact" variant={i === 1 ? 'primary' : 'outline'} className="mt-7 w-full">
+                  <Button
+                    to={`/contact?service=${encodeURIComponent(service.title)}&message=${encodeURIComponent(
+                      `Hi Neelam Films, I'm interested in the "${p.name}" package (${p.price} / ${p.unit}) for ${service.title}. Please share more details.`
+                    )}`}
+                    variant={i === 1 ? 'primary' : 'outline'}
+                    className="mt-7 w-full"
+                  >
                     Book now
                   </Button>
                 </motion.div>
