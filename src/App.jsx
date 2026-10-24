@@ -28,6 +28,7 @@ import TestimonialsEditor from './pages/admin/TestimonialsEditor'
 import EquipmentEditor from './pages/admin/EquipmentEditor'
 import ContactEditor from './pages/admin/ContactEditor'
 import AboutEditor from './pages/admin/AboutEditor'
+import SettingsEditor from './pages/admin/SettingsEditor'
 
 export default function App() {
   return (
@@ -76,6 +77,7 @@ export default function App() {
               <Route path="/admin/equipment" element={<EquipmentEditor />} />
               <Route path="/admin/about" element={<AboutEditor />} />
               <Route path="/admin/contact" element={<ContactEditor />} />
+              <Route path="/admin/settings" element={<SettingsEditor />} />
             </Route>
           </Routes>
           </ErrorBoundary>

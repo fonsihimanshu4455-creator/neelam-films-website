@@ -11,6 +11,7 @@ import {
   Camera,
   UserSquare,
   Phone,
+  Settings,
   LogOut,
   ExternalLink,
   Menu,
@@ -28,6 +29,7 @@ const NAV = [
   { to: '/admin/equipment', label: 'Equipment', icon: Camera },
   { to: '/admin/about', label: 'About / Founder', icon: UserSquare },
   { to: '/admin/contact', label: 'Contact', icon: Phone },
+  { to: '/admin/settings', label: 'Settings', icon: Settings },
 ]
 
 export default function AdminLayout() {

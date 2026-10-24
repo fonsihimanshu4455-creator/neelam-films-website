@@ -48,6 +48,7 @@ function getFaqs(service) {
 export default function ServicePage({ serviceId }) {
   const { data } = useData()
   const service = data.services.find((s) => s.id === serviceId)
+  const settings = data.settings || {}
   const [videoOpen, setVideoOpen] = useState(false)
   const [openFaq, setOpenFaq] = useState(0)
 
@@ -137,8 +138,8 @@ export default function ServicePage({ serviceId }) {
         </div>
       </section>
 
-      {/* Gallery */}
-      {service.gallery && service.gallery.length > 0 && (
+      {/* Gallery ("Recent work") — toggle in Admin → Settings */}
+      {settings.showServiceGallery && service.gallery && service.gallery.length > 0 && (
       <section className="px-5 py-24 md:px-8 md:py-32">
         <div className="mx-auto max-w-7xl">
           <div className="mb-14 flex justify-center text-center">
@@ -168,8 +169,8 @@ export default function ServicePage({ serviceId }) {
       </section>
       )}
 
-      {/* Sample video */}
-      {service.gallery && service.gallery.length > 0 && (
+      {/* Sample reel — toggle in Admin → Settings */}
+      {settings.showServiceReel && service.gallery && service.gallery.length > 0 && (
       <section className="px-5 pb-24 md:px-8 md:pb-32">
         <div className="mx-auto max-w-5xl">
           <div className="mb-14 flex justify-center text-center">

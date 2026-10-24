@@ -9,6 +9,7 @@ import testimonialsDefault from '../data/testimonials.json'
 import equipmentDefault from '../data/equipment.json'
 import teamDefault from '../data/team.json'
 import contactDefault from '../data/contact.json'
+import settingsDefault from '../data/settings.json'
 
 const DataContext = createContext(null)
 
@@ -22,6 +23,7 @@ const DEFAULTS = {
   equipment: equipmentDefault,
   team: teamDefault,
   contact: contactDefault,
+  settings: settingsDefault,
 }
 
 const STORAGE_PREFIX = 'neelam_'
@@ -29,7 +31,7 @@ const STORAGE_PREFIX = 'neelam_'
 // Bump this whenever the shape/content of the default JSON data changes.
 // On mismatch we drop any old cached overrides so stale data can never break
 // the UI (blank pages, missing fields, outdated pricing, etc.).
-const DATA_VERSION = '2026-10-23b'
+const DATA_VERSION = '2026-10-24a'
 
 function ensureVersion() {
   try {

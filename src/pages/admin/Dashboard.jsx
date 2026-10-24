@@ -9,6 +9,7 @@ import {
   Camera,
   UserSquare,
   Phone,
+  Settings,
   ArrowRight,
 } from 'lucide-react'
 import { useData } from '../../context/DataContext'
@@ -22,6 +23,7 @@ const CARDS = [
   { to: '/admin/equipment', label: 'Equipment', icon: Camera, key: 'equipment', desc: 'Rental inventory' },
   { to: '/admin/about', label: 'About / Founder', icon: UserSquare, key: null, desc: 'Founder, mission & timeline' },
   { to: '/admin/contact', label: 'Contact Info', icon: Phone, key: null, desc: 'Address & channels' },
+  { to: '/admin/settings', label: 'Settings', icon: Settings, key: null, desc: 'Show/hide sections' },
 ]
 
 export default function Dashboard() {
