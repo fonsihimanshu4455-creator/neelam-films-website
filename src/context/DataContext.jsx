@@ -31,7 +31,7 @@ const STORAGE_PREFIX = 'neelam_'
 // Bump this whenever the shape/content of the default JSON data changes.
 // On mismatch we drop any old cached overrides so stale data can never break
 // the UI (blank pages, missing fields, outdated pricing, etc.).
-const DATA_VERSION = '2026-11-05a'
+const DATA_VERSION = '2026-11-05b'
 
 function ensureVersion() {
   try {

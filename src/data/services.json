@@ -329,6 +329,125 @@
     "seoDescription": "Book Delhi's professional recording studio — song recording, voice-overs, dubbing & podcast production. Pro mics & acoustics. Check availability."
   },
   {
+    "id": "podcast",
+    "icon": "Mic",
+    "title": "Podcast Studio",
+    "slug": "/services/podcast",
+    "short": "Delhi’s pro video podcast studio — 4K cameras, pro mics, editing & reels.",
+    "image": "/services/recording-studio.jpg?v=2",
+    "hero": "/services/recording-studio.jpg?v=2",
+    "tagline": "Record, edit & publish your podcast — all in one Delhi studio",
+    "description": "A fully-equipped video podcast studio in Delhi with 4K multi-camera setup, broadcast-grade microphones, acoustic treatment and professional lighting. Just walk in and record — we handle the shoot, editing and ready-to-post reels. Packages from ₹5,000.",
+    "videoId": "wOnpuGu5pkU",
+    "seoTitle": "Podcast Studio in Delhi | Video Podcast Recording & Editing — Neelam Films",
+    "seoDescription": "Record your podcast at Delhi’s pro studio — 4K video, crisp audio, editing & reels. Packages from ₹5,000. Book your slot on WhatsApp.",
+    "offers": [
+      {
+        "title": "Video Podcast Recording",
+        "desc": "Multi-camera 4K video podcast shoots with broadcast-grade audio."
+      },
+      {
+        "title": "Audio Podcast Recording",
+        "desc": "Studio-quality audio recording with pro mics & acoustic treatment."
+      },
+      {
+        "title": "Editing & Post-Production",
+        "desc": "Full editing, colour, sound mixing and intro/outro branding."
+      },
+      {
+        "title": "Short-Form Reels",
+        "desc": "Ready-to-post reels & clips for Instagram, YouTube Shorts & LinkedIn."
+      },
+      {
+        "title": "Multi-Guest Setup",
+        "desc": "Comfortable seating for 2–4 guests on camera, plus remote-guest support."
+      },
+      {
+        "title": "Publishing Support",
+        "desc": "Formatting & export for Spotify, YouTube and all major platforms."
+      }
+    ],
+    "process": [
+      {
+        "step": "01",
+        "title": "Book a Slot",
+        "desc": "Pick your date & package on WhatsApp."
+      },
+      {
+        "step": "02",
+        "title": "Record",
+        "desc": "Walk in & record — we handle cameras, audio & lighting."
+      },
+      {
+        "step": "03",
+        "title": "Edit",
+        "desc": "We edit the full episode plus short reels."
+      },
+      {
+        "step": "04",
+        "title": "Publish",
+        "desc": "Get platform-ready files for Spotify, YouTube & socials."
+      }
+    ],
+    "pricing": [
+      {
+        "name": "Starter",
+        "price": "₹5,000",
+        "unit": "session",
+        "features": [
+          "1 hour studio time",
+          "Single-camera 4K",
+          "Pro mic & audio",
+          "Raw files delivered"
+        ]
+      },
+      {
+        "name": "Creator",
+        "price": "₹12,000",
+        "unit": "episode",
+        "features": [
+          "Up to 2 hours studio",
+          "Multi-cam 4K setup",
+          "Fully edited episode",
+          "2 short reels included"
+        ]
+      },
+      {
+        "name": "Pro",
+        "price": "₹25,000",
+        "unit": "month",
+        "features": [
+          "4 episodes / month",
+          "Multi-cam + editing",
+          "6 reels + thumbnails",
+          "Publishing support"
+        ]
+      }
+    ],
+    "faqs": [
+      {
+        "q": "How much does it cost to record a podcast in Delhi?",
+        "a": "Our podcast packages start at ₹5,000 for a single session. The final cost depends on studio time, number of cameras, editing and reels. Share your plan on WhatsApp for a custom quote."
+      },
+      {
+        "q": "Do you provide video podcast recording?",
+        "a": "Yes. We offer 4K multi-camera video podcast recording along with broadcast-grade audio — perfect for YouTube, Spotify video and Instagram."
+      },
+      {
+        "q": "Can you edit the podcast and make reels?",
+        "a": "Absolutely. We provide full episode editing plus ready-to-post short reels & clips for Instagram, YouTube Shorts and LinkedIn."
+      },
+      {
+        "q": "How many guests can the studio fit?",
+        "a": "Our Delhi podcast studio comfortably seats 2–4 people on camera, and we also support remote-guest recording."
+      },
+      {
+        "q": "Where is the studio located?",
+        "a": "We are based in Delhi and serve creators across Delhi NCR. Message us for the exact location and a studio tour."
+      }
+    ]
+  },
+  {
     "id": "equipment-rental",
     "icon": "Camera",
     "title": "Equipment Rental",
