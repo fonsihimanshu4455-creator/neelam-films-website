@@ -7,9 +7,10 @@ const SITE = 'https://www.neelamfilms.com'
  * Sets <title>, meta description, Open Graph tags, canonical URL and robots
  * on route change. Falls back to sensible defaults when a field is omitted.
  *
- * Props: title, description, path (e.g. "/services/live-events"), image, noindex
+ * Props: title, description, path (e.g. "/services/live-events"), image, noindex, schema
+ * `schema` is a JSON-LD object (or array) injected per route for rich results.
  */
-export default function Seo({ title, description, path = '', image, noindex = false }) {
+export default function Seo({ title, description, path = '', image, noindex = false, schema }) {
   useEffect(() => {
     if (title) document.title = title
 
@@ -45,7 +46,22 @@ export default function Seo({ title, description, path = '', image, noindex = fa
       document.head.appendChild(link)
     }
     link.setAttribute('href', href)
-  }, [title, description, path, image, noindex])
+
+    // Per-route JSON-LD structured data (replaced on each route change)
+    const existing = document.getElementById('ld-json-page')
+    if (schema) {
+      let s = existing
+      if (!s) {
+        s = document.createElement('script')
+        s.type = 'application/ld+json'
+        s.id = 'ld-json-page'
+        document.head.appendChild(s)
+      }
+      s.textContent = JSON.stringify(schema)
+    } else if (existing) {
+      existing.remove()
+    }
+  }, [title, description, path, image, noindex, schema])
 
   return null
 }

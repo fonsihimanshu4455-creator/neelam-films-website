@@ -61,6 +61,29 @@ export default function ServicePage({ serviceId }) {
     )
   }
 
+  const faqs = getFaqs(service)
+  const schema = [
+    {
+      '@context': 'https://schema.org',
+      '@type': 'Service',
+      name: service.title,
+      serviceType: service.title,
+      areaServed: 'Delhi NCR',
+      url: `https://www.neelamfilms.com${service.slug}`,
+      description: service.seoDescription || service.description,
+      provider: { '@type': 'LocalBusiness', name: 'Neelam Films', '@id': 'https://www.neelamfilms.com/#business' },
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: faqs.map((f) => ({
+        '@type': 'Question',
+        name: f.q,
+        acceptedAnswer: { '@type': 'Answer', text: f.a },
+      })),
+    },
+  ]
+
   return (
     <>
       <Seo
@@ -68,6 +91,7 @@ export default function ServicePage({ serviceId }) {
         description={service.seoDescription || service.description}
         path={service.slug}
         image={service.image ? `https://www.neelamfilms.com${service.image}` : undefined}
+        schema={schema}
       />
       <PageHero
         eyebrow={service.title}
@@ -270,7 +294,7 @@ export default function ServicePage({ serviceId }) {
             />
           </div>
           <div className="space-y-3">
-            {getFaqs(service).map((f, i) => {
+            {faqs.map((f, i) => {
               const isOpen = openFaq === i
               return (
                 <div
