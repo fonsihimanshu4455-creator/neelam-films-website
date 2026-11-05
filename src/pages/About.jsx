@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import { Target, Eye, Quote } from 'lucide-react'
 import { useData } from '../context/DataContext'
+import Seo from '../components/common/Seo'
 import PageHero from '../components/common/PageHero'
 import SectionHeader from '../components/common/SectionHeader'
 import CTASection from '../components/common/CTASection'
@@ -14,6 +15,11 @@ export default function About() {
 
   return (
     <div className="bg-night-900 text-slate-200">
+      <Seo
+        title="About Neelam Films — Delhi's Production House & Live Events Since 1995"
+        description="30+ years of storytelling. Neelam Films is one of Delhi's most trusted production houses — film production, live events, streaming & more. Meet the team behind 500+ projects."
+        path="/about"
+      />
       <PageHero
         eyebrow="Since 1995"
         title="Three decades of storytelling"

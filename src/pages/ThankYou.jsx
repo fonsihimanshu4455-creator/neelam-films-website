@@ -3,6 +3,7 @@ import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { CheckCircle2, ArrowRight, MessageCircle, Phone } from 'lucide-react'
 import { useData } from '../context/DataContext'
+import Seo from '../components/common/Seo'
 
 /**
  * Post-submit "Thank you" page.
@@ -26,6 +27,7 @@ export default function ThankYou() {
 
   return (
     <section className="relative flex min-h-[80vh] items-center justify-center overflow-hidden px-5 py-24 md:px-8">
+      <Seo title="Thank You — Neelam Films" noindex />
       {/* soft brand glows */}
       <div className="pointer-events-none absolute -right-40 top-0 h-96 w-96 rounded-full bg-gold-400/10 blur-[130px]" />
       <div className="pointer-events-none absolute -left-40 bottom-0 h-96 w-96 rounded-full bg-primary-600/10 blur-[130px]" />

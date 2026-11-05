@@ -62,7 +62,9 @@
       "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800&q=80",
       "https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?w=800&q=80"
     ],
-    "pricing": []
+    "pricing": [],
+    "seoTitle": "Video Production Company in Delhi | TVCs & Corporate Films — Neelam Films",
+    "seoDescription": "Professional video production in Delhi — TVCs, corporate films, documentaries & music videos. 30+ years, cinema-grade crew. Request a free quote."
   },
   {
     "id": "live-events",
@@ -131,7 +133,9 @@
       "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800&q=80",
       "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=800&q=80"
     ],
-    "pricing": []
+    "pricing": [],
+    "seoTitle": "Live Event Coverage & Videography in Delhi NCR | Neelam Films",
+    "seoDescription": "Multi-camera live event coverage in Delhi NCR — weddings, corporate events, concerts & religious events with LED, sound & live streaming. Book now."
   },
   {
     "id": "live-streaming",
@@ -225,7 +229,9 @@
           "Analytics"
         ]
       }
-    ]
+    ],
+    "seoTitle": "Live Streaming Services in Delhi | Events, Weddings & Corporate",
+    "seoDescription": "Professional multi-camera live streaming in Delhi — stream weddings, corporate events & religious functions to YouTube/Facebook in HD. Get a quote."
   },
   {
     "id": "recording-studio",
@@ -318,7 +324,9 @@
           "Basic edit"
         ]
       }
-    ]
+    ],
+    "seoTitle": "Professional Recording Studio in Delhi | Song, Voice-Over & Dubbing",
+    "seoDescription": "Book Delhi's professional recording studio — song recording, voice-overs, dubbing & podcast production. Pro mics & acoustics. Check availability."
   },
   {
     "id": "equipment-rental",
@@ -379,7 +387,9 @@
       "https://images.unsplash.com/photo-1542204165-65bf26472b9b?w=800&q=80",
       "https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=800&q=80"
     ],
-    "pricing": []
+    "pricing": [],
+    "seoTitle": "Camera & Equipment Rental in Delhi | Sony, Canon, Lights, Drone",
+    "seoDescription": "Rent pro cameras, lenses, lights, audio & drones in Delhi at the best daily rates — Sony FX6, FX3, Canon & more. Same-day booking on WhatsApp."
   },
   {
     "id": "digital-growth",
@@ -452,7 +462,9 @@
       "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=800&q=80",
       "https://images.unsplash.com/photo-1533750349088-cd871a92f312?w=800&q=80"
     ],
-    "pricing": []
+    "pricing": [],
+    "seoTitle": "Digital Marketing Services in Delhi | Meta & Google Ads, SEO",
+    "seoDescription": "Grow your brand with Neelam Films — Meta & Google Ads, SEO, social media & analytics. Data-driven digital marketing in Delhi. Get a quote."
   },
   {
     "id": "web-development",
@@ -555,7 +567,9 @@
           "Launch support"
         ]
       }
-    ]
+    ],
+    "seoTitle": "Website Development in Delhi | Business Sites & E-commerce",
+    "seoDescription": "Fast, modern, conversion-ready websites in Delhi — business sites, e-commerce & web apps. Built by Neelam Films. Request a quote."
   },
   {
     "id": "app-development",
@@ -658,6 +672,8 @@
           "Dedicated team"
         ]
       }
-    ]
+    ],
+    "seoTitle": "App Development in Delhi | Android & iOS Apps — Neelam Films",
+    "seoDescription": "Cross-platform Android & iOS app development in Delhi — fast, beautiful apps users love. Get a custom quote from Neelam Films."
   }
 ]

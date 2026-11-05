@@ -3,6 +3,7 @@ import { useNavigate, useSearchParams } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { MapPin, Phone, Mail, Clock, MessageCircle, Send, CheckCircle2, Camera as Instagram } from 'lucide-react'
 import { useData } from '../context/DataContext'
+import Seo from '../components/common/Seo'
 import PageHero from '../components/common/PageHero'
 
 const INITIAL = { name: '', phone: '', email: '', service: '', message: '' }
@@ -59,6 +60,11 @@ export default function Contact() {
 
   return (
     <>
+      <Seo
+        title="Contact Neelam Films — Delhi Production & Live Events | Get a Free Quote"
+        description="Get a free quote from Neelam Films, Delhi. Call +91 99990 00873 or WhatsApp us for film production, live events, streaming, recording studio & equipment rental."
+        path="/contact"
+      />
       <PageHero
         eyebrow="Get in touch"
         title="Let's talk about your project"

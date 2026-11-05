@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Check, Play, ArrowRight, ChevronDown } from 'lucide-react'
 import { useData } from '../context/DataContext'
+import Seo from '../components/common/Seo'
 import PageHero from '../components/common/PageHero'
 import SectionHeader from '../components/common/SectionHeader'
 import CTASection from '../components/common/CTASection'
@@ -62,6 +63,12 @@ export default function ServicePage({ serviceId }) {
 
   return (
     <>
+      <Seo
+        title={service.seoTitle || `${service.title} in Delhi | Neelam Films`}
+        description={service.seoDescription || service.description}
+        path={service.slug}
+        image={service.image ? `https://www.neelamfilms.com${service.image}` : undefined}
+      />
       <PageHero
         eyebrow={service.title}
         title={service.tagline}
