@@ -14,6 +14,8 @@ import Home from './pages/Home'
 import About from './pages/About'
 import ServicePage from './pages/ServicePage'
 import Contact from './pages/Contact'
+import Blog from './pages/Blog'
+import BlogPost from './pages/BlogPost'
 import ThankYou from './pages/ThankYou'
 import NotFound from './pages/NotFound'
 
@@ -54,6 +56,8 @@ export default function App() {
               {/* Portfolio page hidden until real work is added — redirect to home */}
               <Route path="/portfolio" element={<Navigate to="/" replace />} />
               <Route path="/contact" element={<Contact />} />
+              <Route path="/blog" element={<Blog />} />
+              <Route path="/blog/:slug" element={<BlogPost />} />
               <Route path="/thank-you" element={<ThankYou />} />
               <Route path="*" element={<NotFound />} />
             </Route>

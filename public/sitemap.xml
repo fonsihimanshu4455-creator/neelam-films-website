@@ -11,6 +11,26 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://www.neelamfilms.com/blog</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.neelamfilms.com/blog/wedding-videography-cost-in-delhi</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.neelamfilms.com/blog/podcast-recording-cost-in-delhi</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.neelamfilms.com/blog/camera-on-rent-in-delhi-rates-and-tips</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://www.neelamfilms.com/contact</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>

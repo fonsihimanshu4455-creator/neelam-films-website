@@ -90,6 +90,7 @@ export default function Navbar() {
             </AnimatePresence>
           </div>
 
+          <NavLink to="/blog" className={linkClass}>Blog</NavLink>
           <NavLink to="/contact" className={linkClass}>Contact</NavLink>
         </div>
 
@@ -145,6 +146,7 @@ export default function Navbar() {
                   </motion.div>
                 )}
               </AnimatePresence>
+              <NavLink to="/blog" className="rounded-lg px-3 py-2.5 font-medium text-ink-900 hover:bg-cream-100">Blog</NavLink>
               <NavLink to="/contact" className="rounded-lg px-3 py-2.5 font-medium text-ink-900 hover:bg-cream-100">Contact</NavLink>
               <Button to="/contact" className="mt-2 w-full">Get Quote</Button>
             </div>
