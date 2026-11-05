@@ -23,6 +23,16 @@ function FlipText({ children }) {
   )
 }
 
+/** Nav label: roll-up flip + a gold underline that sweeps in on hover. */
+function NavLabel({ children }) {
+  return (
+    <span className="relative inline-block">
+      <FlipText>{children}</FlipText>
+      <span className="pointer-events-none absolute -bottom-1.5 left-0 h-[2px] w-full origin-left scale-x-0 rounded-full bg-gold-grad transition-transform duration-300 ease-out group-hover:scale-x-100" />
+    </span>
+  )
+}
+
 export default function Navbar() {
   const { data } = useData()
   const services = data.services
@@ -63,7 +73,7 @@ export default function Navbar() {
         <div className="hidden items-center gap-8 lg:flex">
           {NAV_LINKS.map((l) => (
             <NavLink key={l.to} to={l.to} className={linkClass}>
-              <FlipText>{l.label}</FlipText>
+              <NavLabel>{l.label}</NavLabel>
             </NavLink>
           ))}
 
@@ -73,7 +83,7 @@ export default function Navbar() {
             onMouseLeave={() => setServicesOpen(false)}
           >
             <button className="group flex items-center gap-1 text-xs font-bold uppercase tracking-[0.12em] text-ink-900 transition-colors">
-              <FlipText>Services</FlipText>
+              <NavLabel>Services</NavLabel>
               <ChevronDown size={15} className={`transition ${servicesOpen ? 'rotate-180' : ''}`} />
             </button>
             <AnimatePresence>
@@ -102,8 +112,8 @@ export default function Navbar() {
             </AnimatePresence>
           </div>
 
-          <NavLink to="/blog" className={linkClass}><FlipText>Blog</FlipText></NavLink>
-          <NavLink to="/contact" className={linkClass}><FlipText>Contact</FlipText></NavLink>
+          <NavLink to="/blog" className={linkClass}><NavLabel>Blog</NavLabel></NavLink>
+          <NavLink to="/contact" className={linkClass}><NavLabel>Contact</NavLabel></NavLink>
         </div>
 
         <div className="hidden lg:block">
