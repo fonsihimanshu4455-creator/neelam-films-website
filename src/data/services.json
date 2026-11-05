@@ -389,41 +389,7 @@
         "desc": "Get platform-ready files for Spotify, YouTube & socials."
       }
     ],
-    "pricing": [
-      {
-        "name": "Starter",
-        "price": "₹5,000",
-        "unit": "session",
-        "features": [
-          "1 hour studio time",
-          "Single-camera 4K",
-          "Pro mic & audio",
-          "Raw files delivered"
-        ]
-      },
-      {
-        "name": "Creator",
-        "price": "₹12,000",
-        "unit": "episode",
-        "features": [
-          "Up to 2 hours studio",
-          "Multi-cam 4K setup",
-          "Fully edited episode",
-          "2 short reels included"
-        ]
-      },
-      {
-        "name": "Pro",
-        "price": "₹25,000",
-        "unit": "month",
-        "features": [
-          "4 episodes / month",
-          "Multi-cam + editing",
-          "6 reels + thumbnails",
-          "Publishing support"
-        ]
-      }
-    ],
+    "pricing": [],
     "faqs": [
       {
         "q": "How much does it cost to record a podcast in Delhi?",
@@ -443,7 +409,7 @@
       },
       {
         "q": "Where is the studio located?",
-        "a": "We are based in Delhi and serve creators across Delhi NCR. Message us for the exact location and a studio tour."
+        "a": "Our podcast studio is in Mayur Vihar Phase, Delhi. We serve creators across Delhi NCR — message or call us for the exact address and a studio tour."
       }
     ]
   },

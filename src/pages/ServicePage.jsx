@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Check, Play, ArrowRight, ChevronDown } from 'lucide-react'
+import { Check, Play, ArrowRight, ChevronDown, Phone, MessageCircle } from 'lucide-react'
 import { useData } from '../context/DataContext'
 import Seo from '../components/common/Seo'
 import PageHero from '../components/common/PageHero'
@@ -278,6 +278,42 @@ export default function ServicePage({ serviceId }) {
                   </Button>
                 </motion.div>
               ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Enquiry CTA (shown when a service has no pricing table, e.g. Podcast) */}
+      {(!service.pricing || service.pricing.length === 0) && (
+        <section className="border-t border-cream-300 bg-cream-100 px-5 py-24 md:px-8 md:py-32">
+          <div className="mx-auto max-w-3xl">
+            <div className="mb-10 flex justify-center text-center">
+              <SectionHeader
+                eyebrow="Get started"
+                title={`Let's plan your ${service.title.toLowerCase()}`}
+                subtitle="Share your requirement and we'll send a custom quote. Prefer to talk? Message or call us directly."
+              />
+            </div>
+            <div className="flex flex-wrap items-center justify-center gap-4">
+              <Button to={`/contact?service=${encodeURIComponent(service.title)}`}>
+                Get a free quote <ArrowRight size={18} />
+              </Button>
+              <a
+                href={`https://wa.me/${data.contact.whatsapp}?text=${encodeURIComponent(
+                  `Hi Neelam Films, I'm interested in ${service.title}. Please share details.`
+                )}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-full bg-[#25D366] px-7 py-3.5 text-xs font-bold uppercase tracking-[0.12em] text-white shadow-sm transition hover:brightness-95"
+              >
+                <MessageCircle size={16} fill="currentColor" /> WhatsApp
+              </a>
+              <a
+                href={`tel:${data.contact.phoneRaw}`}
+                className="inline-flex items-center gap-2 rounded-full border border-primary-700/40 px-7 py-3.5 text-xs font-bold uppercase tracking-[0.12em] text-primary-700 transition hover:bg-primary-700 hover:text-white"
+              >
+                <Phone size={16} /> Call now
+              </a>
             </div>
           </div>
         </section>
