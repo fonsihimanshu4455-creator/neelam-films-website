@@ -139,6 +139,31 @@ body {
     box-shadow: 0 12px 34px -12px rgba(212, 162, 75, 0.55);
   }
 
+  /* Trendy nav "text roll / flip" hover */
+  .nav-flip {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    vertical-align: top;
+    line-height: 1.15;
+    height: 1.15em;
+  }
+  .nav-flip__inner {
+    display: block;
+    transition: transform 0.42s cubic-bezier(0.76, 0, 0.24, 1);
+  }
+  .nav-flip__inner > span {
+    display: block;
+  }
+  /* revealed (second) copy colour */
+  .nav-flip__inner > span:last-child {
+    color: #a5751f;
+  }
+  .group:hover .nav-flip__inner,
+  .nav-flip:hover .nav-flip__inner {
+    transform: translateY(-50%);
+  }
+
   .link-underline {
     position: relative;
   }

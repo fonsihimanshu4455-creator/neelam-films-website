@@ -11,6 +11,18 @@ const NAV_LINKS = [
   { label: 'About', to: '/about' },
 ]
 
+/** Trendy text roll-up on hover (two stacked copies). */
+function FlipText({ children }) {
+  return (
+    <span className="nav-flip">
+      <span className="nav-flip__inner">
+        <span>{children}</span>
+        <span aria-hidden="true">{children}</span>
+      </span>
+    </span>
+  )
+}
+
 export default function Navbar() {
   const { data } = useData()
   const services = data.services
@@ -32,8 +44,8 @@ export default function Navbar() {
   }, [])
 
   const linkClass = ({ isActive }) =>
-    `link-underline text-xs font-bold uppercase tracking-[0.12em] transition-colors ${
-      isActive ? 'text-primary-700' : 'text-ink-900 hover:text-primary-700'
+    `group text-xs font-bold uppercase tracking-[0.12em] transition-colors ${
+      isActive ? 'text-primary-700' : 'text-ink-900'
     }`
 
   return (
@@ -51,7 +63,7 @@ export default function Navbar() {
         <div className="hidden items-center gap-8 lg:flex">
           {NAV_LINKS.map((l) => (
             <NavLink key={l.to} to={l.to} className={linkClass}>
-              {l.label}
+              <FlipText>{l.label}</FlipText>
             </NavLink>
           ))}
 
@@ -60,8 +72,8 @@ export default function Navbar() {
             onMouseEnter={() => setServicesOpen(true)}
             onMouseLeave={() => setServicesOpen(false)}
           >
-            <button className="flex items-center gap-1 text-xs font-bold uppercase tracking-[0.12em] text-ink-900 transition-colors hover:text-primary-700">
-              Services
+            <button className="group flex items-center gap-1 text-xs font-bold uppercase tracking-[0.12em] text-ink-900 transition-colors">
+              <FlipText>Services</FlipText>
               <ChevronDown size={15} className={`transition ${servicesOpen ? 'rotate-180' : ''}`} />
             </button>
             <AnimatePresence>
@@ -90,8 +102,8 @@ export default function Navbar() {
             </AnimatePresence>
           </div>
 
-          <NavLink to="/blog" className={linkClass}>Blog</NavLink>
-          <NavLink to="/contact" className={linkClass}>Contact</NavLink>
+          <NavLink to="/blog" className={linkClass}><FlipText>Blog</FlipText></NavLink>
+          <NavLink to="/contact" className={linkClass}><FlipText>Contact</FlipText></NavLink>
         </div>
 
         <div className="hidden lg:block">
